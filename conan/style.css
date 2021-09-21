@@ -1,0 +1,544 @@
+/**************** body and tag styles ****************/
+	body {
+	margin-top: 0px;
+	margin-bottom: 30px;
+	background-color: #FFC;
+	  }
+
+	#container {
+	width: 750px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 1.6em;
+	color: #CCC;
+	background-color: #FFF;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	border-top-width: thin;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-top-color: #09F;
+	border-right-color: #09F;
+	border-bottom-color: #09F;
+	border-left-color: #09F;
+	  }
+	  
+	#container2 {
+	width: 100%;
+	font-family: "微軟正黑體";
+	font-size: 11px;
+	line-height: 1.6em;
+	background-color: #FFF;
+	color: #FFF;
+	border-bottom-color: #FFF;
+	margin: 0px;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-left-color: #FFF;
+	float: none;
+	  }
+		
+	h1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 32px;
+	color: #6DA6E2;
+	margin-bottom: 30px;
+	background-color: #FFFFFF;
+	text-align: center;
+	  }
+		
+	h2 {
+	color: #666666;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	text-align: left;
+	  }
+		
+	a {
+	  color: #6DA6E2;
+	  background-color: #FFFFFF;
+	  text-decoration: none;
+	  font-weight: bold;
+	  }
+
+	a:hover {
+	  background-color: #FFFFFF;
+	  color: inherit;
+	  font-weight: bold;
+	  text-decoration: underline;
+	  }
+
+/**************** images styles ****************/		
+	a img{
+	  border: none;
+	  }
+
+	img.left,img.center,img.right {
+	  padding: 4px;
+	  border: 1px solid #a0a0a0;
+	  }
+
+	img.left {
+	  float: left;
+	  margin: 0 12px 5px 0;
+	  }
+
+	img.center {
+	  display: block;
+	  margin: 0 auto 5px auto;
+	  }
+
+	img.right {
+	  float: right;
+	  margin: 0 0 5px 12px;
+	  }
+
+/**************** form styles ****************/
+	form {
+	  float:right;
+	  font-size: 9px;
+	  }
+		
+	input {
+	  background-color: #FFFFFF;
+	  color: #999999;
+	  border: 1px solid #2763A5;
+	  font-size: 11px;
+	  padding: 3px;
+	  }
+		
+	.button {
+	  padding: 2px;
+	  background-color: #6DA6E2;
+	  color: #FFFFFF;
+	  border: 1px solid #2763A5;
+	  font-size: 11px;
+	  }
+
+/**************** header styles ****************/
+	#header {
+	width: 750px;
+
+	  border: 0px
+	  padding-bottom: 10px;
+	padding-top: 10px;
+	clear: both;
+	border-top-width: thick;
+	border-top-style: double;
+	border-top-color: #06C;
+	  }
+	#header p { 
+	  margin-top: -20px;
+	  margin-left: 30px;
+	  color: #999999;
+	  }
+
+/**************** menu styles ****************/
+    #tabs10 {
+	float:left;
+	width:750px;
+	font-size:93%;
+	padding-bottom: 1px;
+	line-height:normal;
+	border-top-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 4px;
+	border-bottom-style: solid;
+	border-top-color: #3999FD;
+	border-right-color: #3999FD;
+	border-bottom-color: #039;
+	border-left-color: #3999FD;
+      }
+    #tabs10 ul {
+	margin:0;
+	list-style:none;
+	border-left-width: 1px;
+	border-left-color: #86B0FF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+      }
+    #tabs10 li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabs10 a {
+      float:left;
+      background:url("tableft10.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 4px;
+      text-decoration:none;
+      }
+    #tabs10 a span {
+	float:left;
+	display:block;
+	color:#06C;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #06F;
+	border-right-color: #06F;
+	border-bottom-color: #06F;
+	border-left-color: #06F;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-right: 6px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+      }
+    #tabs10 a span {
+	  float:none;
+	  }
+    #tabs10 a:hover {
+      background-position:0% -42px;
+      }
+    #tabs10 a:hover span {
+	background-position:100% -42px;
+	background-color: #06C;
+	text-align: center;
+	color: #FFF;
+      }
+
+/**************** content styles ****************/
+	#content {
+	width: 400px;
+	float: left;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	  }
+		
+	#content p {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #DDDDDD;
+	font-size: 14px;
+	font-family: "Courier New", Courier, monospace;
+	color: #373737;
+	font-weight: normal;
+	background-color: #FFF;
+	  }
+	  
+/**************** sidebar styles ****************/
+	#sidebar {
+	width: 200px;
+	padding-left: 21px;
+	padding-right: 10px;
+	padding-top: 10px;
+	float: right;
+	  }
+/**************** sidebar styles ****************/
+	#sidebar02 {
+	float: none;
+	padding: 5px;
+	margin: 0px;
+	  }
+		
+	#sidebar p {
+	padding-bottom: 10px;
+	border-bottom-color: #DDDDDD;
+	  }
+	  
+/**************** footer styles ****************/
+	#footer {
+	clear: both;
+	width: 742px;
+	background-color:#FFF;
+	font-size: 12px;
+	color: #039;
+	text-align: center;
+	font-weight: bolder;
+	font-family: "微軟正黑體";
+	padding: 1px;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-color: #039;
+	border-right-color: #039;
+	border-bottom-color: #039;
+	border-left-color: #039;
+	  }
+		
+	#footer p {
+	color:#000;
+	padding: 5px;
+	text-align: center;
+	  }
+		
+	#footer p a {
+	  color: #FFFFFF;
+	  background-color:#2763A5;
+	  font-weight:100;
+	  border-bottom: 1px dotted #FFFFFF;
+	  }
+		
+	#footer p a:hover {
+	  color: #FFFFFF;
+	  text-decoration: none;
+	  border-top: 1px dotted #FFFFFF;
+	  border-bottom: 0px dotted #FFFFFF;
+	  }
+.title2 {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	font-weight: bolder;
+	color: #000;
+	background-color: #FFF;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+.eeeee {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	font-weight: bold;
+	color: #039;
+	background-color: #FFF;
+	text-align: center;
+}
+.star {
+	font-size: 14px;
+	color: #FF0;
+	background-color: #000;
+	font-weight: bolder;
+}
+.point {
+	color: #F00;
+	background-color: #FF0;
+}
+.<span class="fbi">FBI</span> {
+	color: #F0<span class="FBI">FBI</span>
+	background-color: #FFC;
+	font-weight: bold;
+}
+.<span class="cia">CIA</span> {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #03C;
+	background-color: #FFC;
+}
+.main {
+	font-family: "微軟正黑體";
+	font-weight: normal;
+	color: #F00;
+	background-color: #FFF;
+	font-size: 16px;
+}
+.two {
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	color: #06F;
+	font-size: 12px;
+}
+.kid {
+	font-family: "微軟正黑體";
+	color: #039;
+	background-color: #FFF;
+	font-weight: bold;
+	font-size: 14px;
+}
+.<span class="FBI">FBI</span> {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #F00;
+	background-color: #FFC;
+}
+.CIA {
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	color: #03C;
+	background-color: #FFFFDF;
+	font-size: 14px;
+}
+.FBI {
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	color: #C03;
+	background-color: #FFFFE1;
+	font-size: 14px;
+}
+.inside {
+	color: #030;
+	font-weight: normal;
+	background-color: #FFF;
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	width: 100%;
+}
+.hh {
+	font-size: 14px;
+	color: #333;
+	font-weight: normal;
+	font-family: "微軟正黑體";
+	border-bottom-color: #333;
+}
+.type1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: bolder;
+	color: #039;
+}
+.tpye2 {
+	font-family: "微軟正黑體";
+	font-size: 22px;
+	color: #039;
+	font-weight: bold;
+}
+#container2 table tr .hh {
+	font-size: 12px;
+	line-height: 1.5em;
+	padding: 10px;
+	border-bottom-color: #000;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-left-color: #FFF;
+}
+#container2 table tr th {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #039;
+	background-color: #FFF;
+	border-top-color: #039;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #039;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-right-color: #039;
+	border-left-color: #039;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+#container2 table tr .hh {
+	border-bottom-color: #FFF;
+	border-bottom-width: 1px;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-left-color: #FFF;
+}
+.indexlist {
+	font-size: 16px;
+	line-height: 1.2em;
+	font-weight: bolder;
+	color: #039;
+	font-family: "微軟正黑體";
+	background-color: #FFF;
+}
+#container2 table tr td {
+	font-size: 12px;
+	/* [disabled]line-height: 1.5em; */
+	padding: 10px;
+	color: #000;
+	border: 1px dashed #666;
+	font-family: "微軟正黑體";
+	background-color: #FFF;
+}
+h4 {
+	font-size: 16px;
+	font-weight: bolder;
+	color: #001F5E;
+}
+.index1 {
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	font-weight: bolder;
+	color: #CCC;
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #12359B;
+}
+h5 {
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	font-weight: bolder;
+	padding: 1px;
+}
+.title3 {
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+}
+#container2 table tr td .title2 {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 1.5em;
+	color: #000;
+}
+.stars {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	font-weight: bolder;
+	color: #C00;
+	background-color: #FFF;
+}
+#starss {
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	font-weight: normal;
+	color: #002400;
+	background-color: #FFF;
+}
+CollapsiblePanelContent table {
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	line-height: 1.2em;
+	color: #000;
+}
+.underline {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #039;
+	margin: 10px;
+	padding: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #333;
+	background-color: #FFF;
+}
+.titlemine {
+}
+.dw {
+	border: 1px solid #999;
+}
+.image01 {
+	padding: 3px;
+	border: 1px solid #333;
+}
+character1 {
+	border: thin solid #06C;
+}
+.character1 {
+	border: thin solid #06C;
+}
+#container #container2 .image02         {
+	padding: 6px;
+	border: 1.5px dashed #06C;
+}
+image03           {
+	padding: 6px;
+	border: 1px dashed #06C;
+}
+#container #container2 ul li #CollapsiblePanel1200 {
+	width: 500px;
+}
