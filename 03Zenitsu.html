@@ -93,7 +93,16 @@
 			<div align="center">
 				<p>&nbsp;</p>
 				<p class="indexlist">
-				<ul class="list"></ul>
+					<script>
+						var url = location.href;
+						if (url.indexOf('?') != -1) {
+							var ary1 = url.split('?');
+							var ary2 = ary1[1].split('&');
+							var ary3 = ary2[0].split('=');
+							var id = ary3[1];
+						}
+						document.write('<a href="https://www.tsailun.tk/man.html#' + id + '"><span class="tpye2">回上一頁</span></a>');
+					</script>
 				</p>
 				<p>&nbsp;</p>
 			</div>
@@ -101,6 +110,5 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="DemonSlayer/id.js"></script>
 
 </html>
