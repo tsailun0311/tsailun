@@ -23,3 +23,6 @@ if(url.indexOf('?')!=-1)
     var id = ary3[1];
 
 }
+document.write('<a href="https://www.tsailun.tk/man.html#');
+document.write(id);
+document.write('"><span class="tpye2">回上一頁</span></a>');
