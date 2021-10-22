@@ -23,5 +23,5 @@ if(url.indexOf('?')!=-1)
     var id = ary3[1];
 
 }
-var el = document.querySelector(".list"); //選取到 class="list"
-el.innerHTML = '<a href="https://www.tsailun.tk/man.html#' + id + '"><span class="tpye2">回上一頁</span></a>';
+//var el = document.querySelector(".list"); //選取到 class="list"
+//el.innerHTML = '<a href="https://www.tsailun.tk/man.html#' + id + '"><span class="tpye2">回上一頁</span></a>';
