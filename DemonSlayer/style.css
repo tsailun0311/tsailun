@@ -198,14 +198,37 @@ input {
   padding: 0;
 }
 
-#tabs10 a {
+#tabs10 li { /*原本a*/
   float: left;
   background: url("tableft10.gif") no-repeat left top;
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;
 }
-
+#tabs10 li span { /*自己家的*/
+  float: left;
+  display: block;
+  color: #06C;
+  background-repeat: no-repeat;
+  background-position: right top;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-top-color: #06F;
+  border-right-color: #06F;
+  border-bottom-color: #06F;
+  border-left-color: #06F;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-right: 6px;
+  padding-bottom: 1px;/*4px*/
+  padding-left: 6px;
+}
 #tabs10 a span {
   float: left;
   display: block;

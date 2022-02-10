@@ -1,6 +1,7 @@
 var url = location.href;
 if (url.indexOf('?') != -1) {
   var ary1 = url.split('?');
+  var now = ary1[0];
 }
 document.write( /* image map by http://www.image-map.net/ */
   '<img src="./DemonSlayer/headimg.jfif" usemap="#image-map" >' +
@@ -26,8 +27,10 @@ document.write( /* image map by http://www.image-map.net/ */
   '<li><a href="https://www.tsailun.tk/train.html" title="無限列車"><span class="indexlist">無限列車</span></a></li>' +
   '<li><a href="https://www.tsailun.tk/no2.html" title="第二季"><span class="indexlist">第二季</span></a></li>'
 );
-if(ary1[0]=="https://www.tsailun.tk/man.html"){
-  document.write('<li>搜尋：<input id="search" type="text" placeholder="輸入角色名"></li>');
+if(now=="https://www.tsailun.tk/man.html"){
+ document.write('<li><span class="indexlist">搜尋：<input id="search" type="text" placeholder="輸入角色名"></span></li>');
+
 }
-document.write('</ul></div>'
+document.write(
+  '</ul></div>'
 );
