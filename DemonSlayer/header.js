@@ -1,6 +1,6 @@
 var url = location.href;
 if (url.indexOf('?') != -1) {
-  var ary1 = url.split('?');
+  var ary1 = url.split('#');
   var now = ary1[0];
 }
 document.write( /* image map by http://www.image-map.net/ */
