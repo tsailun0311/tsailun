@@ -23,11 +23,11 @@ document.write( /* image map by http://www.image-map.net/ */
 document.write(
   '<div id="tabs10">' +
   '<ul>' +
-  '<li><a href="https://www.tsailun.tk/index.html" title="首頁"><span class="indexlist">首頁</span></a></li>' +
-  '<li><a href="https://www.tsailun.tk/man.html" title="角色介紹"><span class="indexlist">角色介紹</span></a></li>' +
-  '<li><a href="https://www.tsailun.tk/no1.html" title="第一季"><span class="indexlist">第一季</span></a></li>' +
-  '<li><a href="https://www.tsailun.tk/train.html" title="無限列車"><span class="indexlist">無限列車</span></a></li>' +
-  '<li><a href="https://www.tsailun.tk/no2.html" title="第二季"><span class="indexlist">第二季</span></a></li>'
+  '<li><span class="indexlist"><a href="https://www.tsailun.tk/index.html" title="首頁">首頁</a></span></li>' +
+  '<li><span class="indexlist"><a href="https://www.tsailun.tk/man.html" title="角色介紹">角色介紹</a></span></li>' +
+  '<li><span class="indexlist"><a href="https://www.tsailun.tk/no1.html" title="第一季">第一季</a></span></li>' +
+  '<li><span class="indexlist"><a href="https://www.tsailun.tk/train.html" title="無限列車">無限列車</a></span></li>' +
+  '<li><span class="indexlist"><a href="https://www.tsailun.tk/no2.html" title="第二季">第二季</a></span></li>'
 );
 if (now == "https://www.tsailun.tk/man.html" || url == "https://www.tsailun.tk/man.html") {
   document.write('<li><span class="indexlist">搜尋：<input id="search" type="text" placeholder="輸入角色名"></span></li>');
