@@ -30,7 +30,7 @@ document.write(
   '<li><span class="indexlist"><a href="https://www.tsailun.tk/no2.html" title="第二季">第二季</a></span></li>'
 );
 if (now == "https://www.tsailun.tk/man.html" || url == "https://www.tsailun.tk/man.html") {
-  document.write('<li><span class="indexlist">搜尋：<input id="search" type="text" placeholder="輸入角色名"></span></li>');
+  document.write('<li><span class="indexlist"><input id="search" type="text" placeholder="輸入角色名"></span></li>');
 }
 document.write(
   '</ul></div>'
