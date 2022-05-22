@@ -24,12 +24,11 @@ a:active {
 
 /**************** body and tag styles ****************/
 body {
-  background-color: #54c09c;
   background-image: url(background.jpg);
   background-repeat: repeat;
   margin-top: 0px;
   margin-bottom: 30px;
-  /*background-color: #FFC;*/
+  background-color: #ffff95;
 }
 
 #container {
