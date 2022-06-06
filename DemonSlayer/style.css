@@ -272,7 +272,7 @@ input {
 }
 #tabs10 span:hover input {/*自己加的*/
   background-position: 100% -42px;
-  background-color: #06C;
+  background-color: #FFF;
   text-align: center;
   color: #FFF;
 }
