@@ -33,5 +33,6 @@ if (now == "https://www.tsailun.tk/man.html" || url == "https://www.tsailun.tk/m
   document.write('<li><span class="indexlist"><input id="search" type="text" placeholder="輸入角色名"></span></li>');
 }
 document.write(
-  '</ul></div>'
+  '</ul></div>'+
+  '<script src="DemonSlayer/mouselove.js"></script>'
 );
