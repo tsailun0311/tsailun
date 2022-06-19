@@ -1,5 +1,5 @@
 document.write(
-  '<img src="headimg.jpg" width="730"  style="border-style:double;border-width:10px;border-color:rgb(249, 176, 255);">'+
+  '<img src="headimg.jpg" width="730"  style="border-style:double;border-width:10px;border-color:rgb(229, 229, 105);">'+
   '<div id="tabs10">' +
   '<ul>' +
   '<li><span class="indexlist"><a href="https://www.tsailun.tk/index.html" title="首頁">首頁</a></span></li>' +
