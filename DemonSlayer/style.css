@@ -236,6 +236,9 @@ form {
 
 #tabs10 span a {
   /*原本 a span*/
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
   float: left;
   display: block;
   color: #06C;
@@ -267,9 +270,6 @@ form {
 
 #tabs10 span input {
   /*自己加的*/
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline: none;
   float: none;
 }
 
@@ -288,9 +288,6 @@ form {
 
 #tabs10 span:hover input {
   /*自己加的*/
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline: none;
   background-position: 100% -42px;
   background-color: #06C;
   color: #FFF;
