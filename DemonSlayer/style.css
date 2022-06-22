@@ -209,7 +209,7 @@ form {
   /*自己加的*/
   -webkit-appearance: none;
   border-radius: 0;
-  outline: none;
+  outline: none !important; 
   float: left;
   display: block;
   color: #06C;
