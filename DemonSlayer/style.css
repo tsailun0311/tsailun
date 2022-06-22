@@ -233,6 +233,7 @@ input {
   padding-left: 6px;
   -webkit-appearance: none;
   border-radius: 0;
+  outline:none; 
 }
 
 #tabs10 span a {
