@@ -29,7 +29,6 @@ body {
   background-repeat: repeat;
   margin-top: 0px;
   margin-bottom: 30px;
-  /*background-color: #FFC;*/
 }
 
 #container {
@@ -139,7 +138,6 @@ form {
   font-size: 11px;
   padding: 3px;
 }*/
-
 .button {
   padding: 2px;
   background-color: #6DA6E2;
@@ -209,6 +207,9 @@ form {
 
 #tabs10 span input {
   /*自己加的*/
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
   float: left;
   display: block;
   color: #06C;
@@ -231,9 +232,6 @@ form {
   padding-right: 6px;
   padding-bottom: 4px;
   padding-left: 6px;
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline:none;
 }
 
 #tabs10 span a {
@@ -269,6 +267,9 @@ form {
 
 #tabs10 span input {
   /*自己加的*/
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
   float: none;
 }
 
@@ -287,19 +288,19 @@ form {
 
 #tabs10 span:hover input {
   /*自己加的*/
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
   background-position: 100% -42px;
   background-color: #06C;
   color: #FFF;
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline:none;
 }
+
 #tabs10 span input:focus {
   /*自己加的*/
-
   -webkit-appearance: none;
   border-radius: 0;
-  outline:none;
+  outline: none;
 }
 
 /**************** content styles ****************/
