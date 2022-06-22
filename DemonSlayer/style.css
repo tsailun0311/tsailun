@@ -198,14 +198,17 @@ input {
   padding: 0;
 }
 
-#tabs10 span { /*原本a*/
+#tabs10 span {
+  /*原本a*/
   float: left;
   background: url("tableft10.gif") no-repeat left top;
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;
 }
-#tabs10 span input { /*自己加的*/
+
+#tabs10 span input {
+  /*自己加的*/
   float: left;
   display: block;
   color: #06C;
@@ -228,8 +231,12 @@ input {
   padding-right: 6px;
   padding-bottom: 4px;
   padding-left: 6px;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
-#tabs10 span a { /*原本 a span*/
+
+#tabs10 span a {
+  /*原本 a span*/
   float: left;
   display: block;
   color: #06C;
@@ -254,28 +261,36 @@ input {
   padding-left: 6px;
 }
 
-#tabs10  span a{/*原本 a span*/
+#tabs10 span a {
+  /*原本 a span*/
   float: none;
 }
-#tabs10  span input{/*自己加的*/
+
+#tabs10 span input {
+  /*自己加的*/
   float: none;
 }
-#tabs10 span:hover {/*原本 a */
+
+#tabs10 span:hover {
+  /*原本 a */
   background-position: 0% -42px;
 }
 
-#tabs10 span:hover a {/*原本 a span*/
+#tabs10 span:hover a {
+  /*原本 a span*/
   background-position: 100% -42px;
   background-color: #06C;
   text-align: center;
   color: #FFF;
 }
-#tabs10 span:hover input {/*自己加的*/
+
+#tabs10 span:hover input {
+  /*自己加的*/
   background-position: 100% -42px;
   background-color: #FFF;
-  text-align: center;
-  color: #FFF;
+  color: #000;
 }
+
 /**************** content styles ****************/
 #content {
   width: 400px;
