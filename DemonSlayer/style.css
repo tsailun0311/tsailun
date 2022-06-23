@@ -131,13 +131,18 @@ form {
   font-size: 9px;
 }
 
-/*input { 自己家的
+input {
+  -webkit-appearance: none;
+  outline-style: none;
+  border-radius: 0;
+  width: 150px;
   background-color: #FFFFFF;
-  color: #999999;
-  border: 1px solid #2763A5;
-  font-size: 11px;
+  color: #000;
+  border: 1px solid #FFF;
+  font-size: 16px;
   padding: 3px;
-}*/
+}
+
 .button {
   padding: 2px;
   background-color: #6DA6E2;
@@ -196,8 +201,7 @@ form {
   padding: 0;
 }
 
-#tabs10 span {
-  /*原本a*/
+#tabs10 a {
   float: left;
   background: url("tableft10.gif") no-repeat left top;
   margin: 0;
@@ -205,11 +209,7 @@ form {
   text-decoration: none;
 }
 
-#tabs10 span input {
-  /*自己加的*/
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline: none !important; 
+#tabs10 a span {
   float: left;
   display: block;
   color: #06C;
@@ -234,70 +234,19 @@ form {
   padding-left: 6px;
 }
 
-#tabs10 span a {
-  /*原本 a span*/
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline: none;
-  float: left;
-  display: block;
-  color: #06C;
-  background-repeat: no-repeat;
-  background-position: right top;
-  border-top-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: none;
-  border-left-style: solid;
-  border-top-color: #06F;
-  border-right-color: #06F;
-  border-bottom-color: #06F;
-  border-left-color: #06F;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-right: 6px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-}
-
-#tabs10 span a {
-  /*原本 a span*/
+#tabs10 a span {
   float: none;
 }
 
-#tabs10 span input {
-  /*自己加的*/
-  float: none;
-}
-
-#tabs10 span:hover {
-  /*原本 a */
+#tabs10 a:hover {
   background-position: 0% -42px;
 }
 
-#tabs10 span:hover a {
-  /*原本 a span*/
+#tabs10 a:hover span {
   background-position: 100% -42px;
   background-color: #06C;
   text-align: center;
   color: #FFF;
-}
-
-#tabs10 span:hover input {
-  /*自己加的*/
-  background-position: 100% -42px;
-  background-color: #06C;
-  color: #FFF;
-}
-
-#tabs10 span input:focus {
-  /*自己加的*/
-  -webkit-appearance: none;
-  border-radius: 0;
-  outline: none;
 }
 
 /**************** content styles ****************/
@@ -415,18 +364,6 @@ form {
   background-color: #FF0;
 }
 
-.<span class="fbi">FBI</span> {
-  color: #F0<span class="FBI">FBI</span> background-color: #FFC;
-  font-weight: bold;
-}
-
-.<span class="cia">CIA</span> {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: #03C;
-  background-color: #FFC;
-}
-
 .main {
   font-family: "微軟正黑體";
   font-weight: normal;
@@ -447,29 +384,6 @@ form {
   color: #039;
   background-color: #FFF;
   font-weight: bold;
-  font-size: 14px;
-}
-
-.<span class="FBI">FBI</span> {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: #F00;
-  background-color: #FFC;
-}
-
-.CIA {
-  font-family: "微軟正黑體";
-  font-weight: bold;
-  color: #03C;
-  background-color: #FFFFDF;
-  font-size: 14px;
-}
-
-.FBI {
-  font-family: "微軟正黑體";
-  font-weight: bold;
-  color: #C03;
-  background-color: #FFFFE1;
   font-size: 14px;
 }
 
@@ -646,10 +560,6 @@ CollapsiblePanelContent table {
   border: 1px solid #333;
 }
 
-character1 {
-  border: thin solid #06C;
-}
-
 .character1 {
   border: thin solid #06C;
 }
@@ -657,11 +567,6 @@ character1 {
 #container #container2 .image02 {
   padding: 6px;
   border: 1.5px dashed #06C;
-}
-
-image03 {
-  padding: 6px;
-  border: 1px dashed #06C;
 }
 
 #container #container2 ul li #CollapsiblePanel1200 {

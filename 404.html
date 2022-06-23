@@ -33,9 +33,20 @@
 			<div align="center">
 				<p>&nbsp;</p>
 				<p class="indexlist">
-					<span class="tpye2">此頁面尚未創建喔!!👍<br><br>---請稍待---</span>
+					<span id="timer" class="tpye2"></span>
 				</p>
-				<img src="https://www.tsailun.tk/character/404.png" width="340 "
+				<script type="text/javascript">
+					var timer = document.querySelector("#timer");
+					var number = 10;
+					timer.innerText = "此頁面尚未創建喔!!👍," + number + "秒後返回上一頁"
+					setInterval(function() {
+						number--;
+						if (number <= 0)
+							number = 0;
+						timer.innerText = "此頁面尚未創建喔!!👍," + number + "秒後返回上一頁"
+					}, 1000);
+				</script>
+				<img src="https://www.tsailun.tk/character/404.png" width="340">
 				<p>&nbsp;</p>
 			</div>
 		</div>

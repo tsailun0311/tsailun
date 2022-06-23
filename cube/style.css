@@ -303,6 +303,7 @@
 .roofpig-button-enabled:hover {
   background-color: #2e649e !important
 }
+
 a:link {
   color: #000;
   text-decoration: none;
@@ -333,7 +334,7 @@ body {
   background-repeat: repeat;
   margin-top: 0px;
   margin-bottom: 30px;
-  background-color: RGB(212,245,236);
+  background-color: RGB(212, 245, 236);
 }
 
 #container {
@@ -502,38 +503,15 @@ input {
   padding: 0;
 }
 
-#tabs10 span { /*原本a*/
+#tabs10 a {
   float: left;
   background: url("tableft10.gif") no-repeat left top;
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;
 }
-#tabs10 span input { /*自己加的*/
-  float: left;
-  display: block;
-  color: #06C;
-  background-repeat: no-repeat;
-  background-position: right top;
-  border-top-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: none;
-  border-left-style: solid;
-  border-top-color: #06F;
-  border-right-color: #06F;
-  border-bottom-color: #06F;
-  border-left-color: #06F;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-right: 6px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-}
-#tabs10 span a { /*原本 a span*/
+
+#tabs10 a span {
   float: left;
   display: block;
   color: #06C;
@@ -558,28 +536,21 @@ input {
   padding-left: 6px;
 }
 
-#tabs10  span a{/*原本 a span*/
+#tabs10 a span {
   float: none;
 }
-#tabs10  span input{/*自己加的*/
-  float: none;
-}
-#tabs10 span:hover {/*原本 a */
+
+#tabs10 a:hover {
   background-position: 0% -42px;
 }
 
-#tabs10 span:hover a {/*原本 a span*/
+#tabs10 a:hover span {
   background-position: 100% -42px;
   background-color: #06C;
   text-align: center;
   color: #FFF;
 }
-#tabs10 span:hover input {/*自己加的*/
-  background-position: 100% -42px;
-  background-color: #06C;
-  text-align: center;
-  color: #FFF;
-}
+
 /**************** content styles ****************/
 #content {
   width: 400px;

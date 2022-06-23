@@ -2,10 +2,10 @@ document.write(
   '<img src="headimg.jpg" width="730"  style="border-style:double;border-width:10px;border-color:rgb(229, 229, 105);">'+
   '<div id="tabs10">' +
   '<ul>' +
-  '<li><span class="indexlist"><a href="https://www.tsailun.tk/index.html" title="首頁">首頁</a></span></li>' +
-  '<li><span class="indexlist"><a href="https://www.tsailun.tk/cube/f2l.html" title="F2L">F2L</a></span></li>' +
-  '<li><span class="indexlist"><a href="https://www.tsailun.tk/cube/oll.html" title="OLL">OLL</a></span></li>' +
-  '<li><span class="indexlist"><a href="https://www.tsailun.tk/cube/pll.html" title="PLL">PLL</a></span></li>'
+  '<li><a href="https://www.tsailun.tk/index.html" title="首頁"><span class="indexlist">首頁</span></a></li>' +
+  '<li><a href="https://www.tsailun.tk/cube/f2l.html" title="F2L"><span class="indexlist">F2L</span></a></li>' +
+  '<li><a href="https://www.tsailun.tk/cube/oll.html" title="OLL"><span class="indexlist">OLL</span></a></li>' +
+  '<li><a href="https://www.tsailun.tk/cube/pll.html" title="PLL"><span class="indexlist">PLL</span></a></li>'
 );
 document.write(
   '</ul></div>'+
