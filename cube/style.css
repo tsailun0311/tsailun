@@ -1,7 +1,6 @@
 .roofpig {
   display: inline-block;
   border: none !important;
-  margin: 0 2px;
   height: 235px !important;
   width: 170px;
   margin-left: 12px !important;
@@ -17,7 +16,7 @@
 
 .roofpig-algtext {
   background-color: transparent !important;
-  height: 38px !important;
+  height: auto !important;
   font-size: 15px !important;
   line-height: 19px;
   text-align: left;
@@ -501,7 +500,7 @@ input {
 
 #tabs10 a {
   float: left;
-  background: url("tableft10.gif") no-repeat left top;
+  /*background: url("tableft10.gif") no-repeat left top;*/
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;

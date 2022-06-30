@@ -205,7 +205,7 @@ input {
 
 #tabs10 a {
   float: left;
-  background: url("tableft10.gif") no-repeat left top;
+  /*background: url("tableft10.gif") no-repeat left top;*/
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;
