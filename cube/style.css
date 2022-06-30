@@ -479,7 +479,7 @@ input {
   border-bottom-style: solid;
   border-top-color: #3999FD;
   border-right-color: #3999FD;
-  border-bottom-color: #039;
+  border-bottom-color: #90F;
   border-left-color: #3999FD;
 }
 
@@ -520,15 +520,17 @@ input {
   border-right-style: solid;
   border-bottom-style: none;
   border-left-style: solid;
-  border-top-color: #06F;
-  border-right-color: #06F;
-  border-bottom-color: #06F;
-  border-left-color: #06F;
+  border-color: #06F;
   font-size: 16px;
   padding-top: 5px;
   padding-right: 6px;
   padding-bottom: 4px;
   padding-left: 6px;
+}
+
+#tabs10 .yello a span {
+  color: #C60;
+  border-color: #F90;
 }
 
 #tabs10 a span {
@@ -544,6 +546,10 @@ input {
   background-color: #06C;
   text-align: center;
   color: #FFF;
+}
+
+#tabs10 .yello a:hover span {
+  background-color: #C60;
 }
 
 /**************** content styles ****************/

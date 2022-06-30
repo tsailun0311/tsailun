@@ -23,7 +23,8 @@ document.write( /* image map by http://www.image-map.net/ */
 document.write(
   '<div id="tabs10">' +
   '<ul>' +
-  '<li><a href="https://www.tsailun.tk/index.html" title="首頁"><span class="indexlist">首頁</span></a></li>' +
+  '<li class="yello"><a href="https://www.tsailun.tk/index.html" title="首頁"><span class="indexlist">首頁</span></a></li>' +
+  '<li class="yello"><a href="https://www.tsailun.tk/cube/f2l.html" title="魔術方塊"><span class="indexlist">魔術方塊</span></a></li>' +
   '<li><a href="https://www.tsailun.tk/man.html" title="角色介紹"><span class="indexlist">角色介紹</span></a></li>' +
   '<li><a href="https://www.tsailun.tk/no1.html" title="第一季"><span class="indexlist">第一季</span></a></li>' +
   '<li><a href="https://www.tsailun.tk/train.html" title="無限列車"><span class="indexlist">無限列車</span></a></li>' +
