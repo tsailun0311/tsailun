@@ -2,16 +2,12 @@
   display: inline-block;
   border: none !important;
   margin: 0 2px;
+  height: 235px !important;
   width: 170px;
-  margin-bottom: 60px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 0px;
-  padding: 0px;
+  margin-left: 12px !important;
 }
 
 .roofpig>div {
-  height: auto !important;
   border: none !important;
 }
 
@@ -21,7 +17,7 @@
 
 .roofpig-algtext {
   background-color: transparent !important;
-  height: auto !important;
+  height: 38px !important;
   font-size: 15px !important;
   line-height: 19px;
   text-align: left;
