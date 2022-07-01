@@ -340,8 +340,9 @@ input {
 }
 
 .title2 {
+  -webkit-appearance: none;
   font-family: "微軟正黑體";
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: bolder;
   color: #000;
   background-color: #FFF;
