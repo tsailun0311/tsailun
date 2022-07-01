@@ -233,7 +233,7 @@ input {
   padding-left: 6px;
 }
 
-#tabs10 .yello a span{
+#tabs10 .yello a span {
   color: #C60;
   border-color: #F90;
 }
@@ -253,7 +253,7 @@ input {
   color: #FFF;
 }
 
-#tabs10 .yello a:hover span{
+#tabs10 .yello a:hover span {
   background-color: #C60;
 }
 
@@ -340,9 +340,9 @@ input {
 }
 
 .title2 {
-  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
   font-family: "微軟正黑體";
-  font-size: 14px !important;
+  font-size: 14px;
   font-weight: bolder;
   color: #000;
   background-color: #FFF;
