@@ -521,22 +521,6 @@ h5 {
   color: #000;
 }
 
-.stars {
-  font-family: "微軟正黑體";
-  font-size: 14px;
-  font-weight: bolder;
-  color: #C00;
-  background-color: #FFF;
-}
-
-#starss {
-  font-family: "微軟正黑體";
-  font-size: 18px;
-  font-weight: normal;
-  color: #002400;
-  background-color: #FFF;
-}
-
 CollapsiblePanelContent table {
   font-family: "微軟正黑體";
   font-size: 12px;
