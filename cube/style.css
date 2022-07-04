@@ -470,26 +470,16 @@ input {
   float: left;
   width: 750px;
   font-size: 93%;
-  padding-bottom: 1px;
   line-height: normal;
-  border-top-width: 4px;
-  border-right-width: 4px;
   border-bottom-width: 4px;
-  border-left-width: 4px;
   border-bottom-style: solid;
-  border-top-color: #3999FD;
-  border-right-color: #3999FD;
-  border-bottom-color: #90F;
-  border-left-color: #3999FD;
+  border-bottom-color: #F7B2B7;
 }
 
 #tabs10 ul {
   margin: 0;
   list-style: none;
-  border-left-width: 1px;
-  border-left-color: #86B0FF;
   padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 #tabs10 li {
@@ -500,7 +490,6 @@ input {
 
 #tabs10 a {
   float: left;
-  /*background: url("tableft10.gif") no-repeat left top;*/
   margin: 0;
   padding: 0 0 0 4px;
   text-decoration: none;
@@ -509,47 +498,50 @@ input {
 #tabs10 a span {
   float: left;
   display: block;
-  color: #06C;
-  background-repeat: no-repeat;
-  background-position: right top;
   border-top-width: 2px;
   border-right-width: 2px;
-  border-bottom-width: 2px;
   border-left-width: 2px;
   border-top-style: solid;
   border-right-style: solid;
   border-bottom-style: none;
   border-left-style: solid;
-  border-color: #06F;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 5px;
   padding-right: 6px;
   padding-bottom: 4px;
   padding-left: 6px;
 }
 
-#tabs10 .yello a span {
-  color: #C60;
-  border-color: #F90;
+#tabs10 .g1 a span {
+  color: #7F2982;
+  border-color: #7F2982;
 }
 
-#tabs10 a span {
-  float: none;
+#tabs10 .g2 a span {
+  color: #DE639A;
+  border-color: #DE639A;
 }
 
-#tabs10 a:hover {
-  background-position: 0% -42px;
+#tabs10 .g3 a span {
+  color: #F7717D;
+  border-color: #F7717D;
 }
 
 #tabs10 a:hover span {
-  background-position: 100% -42px;
-  background-color: #06C;
   text-align: center;
   color: #FFF;
 }
 
-#tabs10 .yello a:hover span {
-  background-color: #C60;
+#tabs10 .g1 a:hover span {
+  background-color: #7F2982;
+}
+
+#tabs10 .g2 a:hover span {
+  background-color: #DE639A;
+}
+
+#tabs10 .g3 a:hover span {
+  background-color: #F7717D;
 }
 
 /**************** content styles ****************/
