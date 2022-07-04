@@ -23,12 +23,12 @@ document.write( /* image map by http://www.image-map.net/ */
 document.write(
   '<div id="tabs10">' +
   '<ul>' +
-  '<li class="g1"><a href="index.html" ><span class="indexlist">首頁</span></a></li>' +
-  '<li class="g1"><a href="cube/f2l.html" ><span class="indexlist">魔術方塊</span></a></li>' +
-  '<li class="g2"><a href="man.html" title="角色介紹"><span class="indexlist">角色介紹</span></a></li>' +
-  '<li class="g2"><a href="no1.html" title="第一季"><span class="indexlist">第一季</span></a></li>' +
-  '<li class="g2"><a href="train.html" title="無限列車"><span class="indexlist">無限列車</span></a></li>' +
-  '<li class="g2"><a href="no2.html" title="第二季"><span class="indexlist">第二季</span></a></li>'
+  '<li class="g1"><a href="index.html"><span class="indexlist">首頁</span></a></li>' +
+  '<li class="g1"><a href="cube/f2l.html"><span class="indexlist">魔術方塊</span></a></li>' +
+  '<li class="g2"><a href="man.html"><span class="indexlist">角色介紹</span></a></li>' +
+  '<li class="g2"><a href="no1.html"><span class="indexlist">第一季</span></a></li>' +
+  '<li class="g2"><a href="train.html"><span class="indexlist">無限列車</span></a></li>' +
+  '<li class="g2"><a href="no2.html"><span class="indexlist">第二季</span></a></li>'
 );
 document.write(
   '</ul></div>' +
