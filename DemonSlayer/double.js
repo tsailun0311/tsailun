@@ -8,7 +8,7 @@ if (url.indexOf('?') != -1) {
 }
 document.write('<hr width="700" class="index1" /><div align="center"><p>&nbsp;</p><p class="indexlist">')
 if (id == "map") {
-  document.write('<a href="https://www.tsailun.tk"><span class="tpye2">回首頁</span></a>');
+  document.write('<a href="index.html"><span class="tpye2">回首頁</span></a>');
 } else {
   document.write('<a href="' + oldURL + '#' + id + '"><span class="tpye2">回上一頁</span></a>');
 }

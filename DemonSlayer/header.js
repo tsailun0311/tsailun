@@ -24,7 +24,7 @@ document.write(
   '<div id="tabs10">' +
   '<ul>' +
   '<li class="g1"><a href="index.html"><span class="indexlist">首頁</span></a></li>' +
-  '<li class="g1"><a href="cube/f2l.html"><span class="indexlist">魔術方塊</span></a></li>' +
+  '<li class="g1"><a href="cube/cross.html"><span class="indexlist">魔術方塊</span></a></li>' +
   '<li class="g2"><a href="man.html"><span class="indexlist">角色介紹</span></a></li>' +
   '<li class="g2"><a href="no1.html"><span class="indexlist">第一季</span></a></li>' +
   '<li class="g2"><a href="train.html"><span class="indexlist">無限列車</span></a></li>' +
