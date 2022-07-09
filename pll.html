@@ -1,12 +1,17 @@
-<!DOCTYPE html >
-<html >
+<!DOCTYPE html>
+<html>
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="cube/icon.ico" type="image/x-icon" />
 	<title>魔術方塊PLL</title>
-	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="DemonSlayer/style.css" rel="stylesheet" type="text/css">
 	<style>
+		body {
+			background-image: url(cube/backgroundimg.jpg);
+			background-color: RGB(212, 245, 236);
+		}
+
 		#container2 li {
 			font-family: arial;
 			display: inline-block;
@@ -31,22 +36,12 @@
 		.blue {
 			color: blue;
 		}
-		.roofpig {
-			display: inline-block;
-			margin: 0 2px;
-			width: 170px;
-			margin-bottom: 60px;
-			margin-top: 10px;
-			margin-left: 10px;
-			margin-right: 0px;
-			padding: 0px;
-		}
 	</style>
 </head>
 
 <body>
 	<div id="container">
-		<script src="cfopheader.js"></script>
+		<script src="cube/cfopheader.js"></script>
 		<div id="container2">
 			<p>&nbsp;</p>
 			<p class="indexlist">
@@ -224,16 +219,16 @@
 			<div class="roofpig" data-config="base=F5|alg=R U R' y' R2 u' R U' R' U R' u R2">
 			</div>
 			<div class="underline"><span id="c07"></span>將21種PLL的轉法一口氣轉完，可以拿來作練習，如下：</div>
-			<img src="pll.png" width="700" style="margin: 20px;border-style:ridge;border-width:5px;border-color:RGB(238,176,169);">
+			<img src="cube/pll.png" width="700" style="margin: 20px;border-style:ridge;border-width:5px;border-color:RGB(238,176,169);">
 			<p>&nbsp;</p>
 		</div>
 	</div>
-	<script src="jquery.min.js"></script><br>
-	<script src="roofpig_and_three.min.js"></script>
+	<script src="cube/jquery.min.js"></script><br>
+	<script src="cube/roofpig_and_three.min.js"></script>
 	<script>
 		ROOFPIG_CONF_F5 = "speed=800|pov=Ulf|flags=showalg"
 	</script>
-	<script src="updown.js"></script>
+	<script src="DemonSlayer/updown.js"></script>
 </body>
 
 </html>
