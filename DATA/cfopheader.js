@@ -1,5 +1,5 @@
 document.write(
-  '<img src="cube/headimg.jpg" width="736"  style="border-style:double;border-width:7px;border-color:rgb(229, 229, 105);">'+
+  '<img src="DATA/cubeheadimg.jpg" width="736"  style="border-style:double;border-width:7px;border-color:rgb(229, 229, 105);">'+
   '<div id="tabs10">' +
   '<ul>' +
   '<li class="g1"><a href="index.html" ><span class="indexlist">首頁</span></a></li>' +
@@ -13,5 +13,5 @@ document.write(
 );
 document.write(
   '</ul></div>'+
-  '<script src="DemonSlayer/mouselove.js"></script>'
+  '<script src="DATA/mouselove.js"></script>'
 );

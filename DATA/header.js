@@ -4,7 +4,7 @@ if (url.indexOf('#') != -1) {
   var now = ary1[0];
 }
 document.write( /* image map by http://www.image-map.net/ */
-  '<img src="./DemonSlayer/headimg.jfif" usemap="#image-map" >' +
+  '<img src="./DATA/headimg.jfif" usemap="#image-map" >' +
   '<map name="image-map">' +
   '<area target="" alt="嘴平伊之助" title="嘴平伊之助" href="04Inosuke.html?id=map"' +
   'coords="76,8,113,13,140,27,125,30" shape="poly">' +
@@ -32,6 +32,6 @@ document.write(
 );
 document.write(
   '</ul></div>' +
-  '<script src="DemonSlayer/mouselove.js"></script>'+
-  '<script src="DemonSlayer/updown.js"></script>'
+  '<script src="DATA/mouselove.js"></script>'+
+  '<script src="DATA/updown.js"></script>'
 );

@@ -45,7 +45,7 @@
   line-height: 22px !important;
   height: 27px !important;
   margin-right: 6px !important;
-  background: url(../cube/sprite.png) no-repeat -20px 0px #d5d7d8 !important;
+  background: url(sprite.png) no-repeat -20px 0px #d5d7d8 !important;
   text-indent: -117px !important;
   font-size: 10px !important;
   overflow: hidden !important;
@@ -293,7 +293,7 @@
 }
 
 .roofpig-button-enabled {
-  background: url(../cube/sprite.png) no-repeat -20px 0px #4287d2 !important
+  background: url(sprite.png) no-repeat -20px 0px #4287d2 !important
 }
 
 .roofpig-button-enabled:hover {
