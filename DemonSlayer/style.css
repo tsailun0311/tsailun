@@ -2,7 +2,7 @@
   display: inline-block;
   border: none !important;
   height: 235px !important;
-  width: 170px;
+  width: 170px !important;
   margin-left: 13px !important;
   margin-bottom: 60px;
 }
