@@ -19,6 +19,7 @@
 		function fun() {
 			if (i == 0) {
 				clearInterval(intervalid);
+				history.go(-1);
 			}
 			i--;
 		}
@@ -39,16 +40,13 @@
 			<div align="center">
 				<p>&nbsp;</p>
 				<p class="indexlist">
-					<span id="timer" class="tpye2"></span>
+					<span id="timer" class="tpye2">此頁面尚未創建喔!!👍,10秒後返回上一頁</span>
 				</p>
 				<script type="text/javascript">
 					var timer = document.querySelector("#timer");
-					var number = 10;
-					timer.innerText = "此頁面尚未創建喔!!👍," + number + "秒後返回上一頁"
+					var number = 11;
 					setInterval(function() {
 						number--;
-						if (number <= 10)
-							number = 0;
 						timer.innerText = "此頁面尚未創建喔!!👍," + number + "秒後返回上一頁"
 					}, 1000);
 				</script>
