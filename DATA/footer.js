@@ -2,7 +2,7 @@ if (!i2yesCounter) {
   var i2yesCounter = {
     render: function Get(g) {
       var width = (g.s) ? 'width=' + g.s : '';
-      var f = '<img ' + width + ' border=0 src="http://' + g.y + '.i2yes.com/' + g.y + '.php?p=' + g.v + '_' + g.p + '&v=' + g.v + '&d=' + g.d + '&r=' + g.r + '&t=' + g.t + '&n=' + g.n + '" title="FREE Counter / i2yes.com" alt="FREE Counter / i2yes.com">';
+      var f = '<img ' + width + ' border=0 src="http://' + g.y + '.i2yes.com/' + g.y + '.php?p=' + g.v + '_' + g.p + '&v=' + g.v + '&d=' + g.d + '&r=' + g.r + '&t=' + g.t + '&n=' + g.n + '">';
       return f;
     }//https://counter.i2yes.com/counter.php?p=www.tsailun.tk_tsailuncounter&v=www.tsailun.tk&d=4&r=0&t=font148&n=345
   };
