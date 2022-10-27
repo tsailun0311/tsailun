@@ -1,4 +1,4 @@
-(function() {
+(function () {
   $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
   var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
     locatioin = 1 / 2, // 按鈕出現在螢幕的高度
@@ -10,19 +10,19 @@
     $win = $(window);
   $button.attr("src", img);
   $button.on({
-    mouseover: function() {
+    mouseover: function () {
       $button.css("opacity", 1);
     },
-    mouseout: function() {
+    mouseout: function () {
       $button.css("opacity", opacity);
     },
-    click: function() {
+    click: function () {
       $("html, body").animate({
         scrollTop: 0
       }, speed);
     }
   });
-  window.goTopMove = function() {
+  window.goTopMove = function () {
     var scrollH = $body.scrollTop(),
       winH = $win.height(),
       css = {
@@ -39,10 +39,10 @@
     }
   };
   $win.on({
-    scroll: function() {
+    scroll: function () {
       goTopMove();
     },
-    resize: function() {
+    resize: function () {
       goTopMove();
     }
   });
