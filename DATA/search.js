@@ -1,4 +1,4 @@
-$('input#search').on('change paste keyup', function() {
+$('input#search').on('change paste keyup', function () {
   var value = $(this).val().toLowerCase();
   if (!value) {
     $('.list-search-style').html('');

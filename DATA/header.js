@@ -32,6 +32,6 @@ document.write(
 );
 document.write(
   '</ul></div>' +
-  '<script src="DATA/mouselove.js"></script>'+
+  '<script src="DATA/mouselove.js"></script>' +
   '<script src="DATA/updown.js"></script>'
 );
