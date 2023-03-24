@@ -317,7 +317,7 @@ a:active {
 
 /**************** body and tag styles ****************/
 body {
-  background-color: #54c09c;
+  background-color:RGB(35,163,128);
   background-image: url(background.jpg);
   background-repeat: repeat;
   margin-top: 0px;
