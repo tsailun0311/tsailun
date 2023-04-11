@@ -9,7 +9,8 @@ document.write(
   '<li class="g3"><a href="f2l.html"><span class="indexlist">F2L</span></a></li>' +
   '<li class="g3"><a href="bestf2l.html"><span class="indexlist">F2L非標</span></a></li>' +
   '<li class="g3"><a href="oll.html"><span class="indexlist">OLL</span></a></li>' +
-  '<li class="g3"><a href="pll.html"><span class="indexlist">PLL</span></a></li>'
+  '<li class="g3"><a href="pll.html"><span class="indexlist">PLL</span></a></li>'+
+  '<li class="g3"><a href="pll2.html"><span class="indexlist">六格觀察法</span></a></li>'
 );
 document.write(
   '</ul></div>' +
