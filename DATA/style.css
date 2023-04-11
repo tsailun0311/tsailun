@@ -439,6 +439,10 @@ input {
   border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: #7F2982;
+  background-color: white;
+	position: sticky;
+	top: 0;
+  z-index: 9999;
 }
 
 #tabs10 ul {
