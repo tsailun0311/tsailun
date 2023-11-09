@@ -1,7 +1,7 @@
 .roofpig {
   display: inline-block;
   border: none !important;
-  height: 235px !important;
+  height: 220px !important;
   width: 170px !important;
   margin-left: 13px !important;
   margin-bottom: 60px;
@@ -481,20 +481,6 @@ img.right {
 form {
   float: right;
   font-size: 9px;
-}
-
-input {
-  -webkit-appearance: none;
-  outline-style: none;
-  border-radius: 0;
-  width: 130px;
-  height: 15px;
-  background-color: #FFFFFF;
-  color: #000;
-  border: 1px solid #FFF;
-  border-bottom-color: #000;
-  font-size: 16px;
-  padding: 3px;
 }
 
 .button {
