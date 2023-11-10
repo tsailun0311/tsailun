@@ -167,7 +167,7 @@
 				</tr>
 			</table>
 			<p>&nbsp;</p>
-			<div class="underline">六格觀察法定義</div>
+			<div class="underline">定義</div>
 			<li class="title2">
 				<font color="red">條</font>
 			</li>
@@ -180,13 +180,13 @@
 			<li class="title2">
 				<font color="blue">Pair</font>
 			</li>
-			<div class=roofpig data-config="pov=Urf|colored= u uL ULf ULb">
+			<div class=roofpig data-config="pov=Urf|colored= u uL ULf ULb" style="height: 140px !important;">
 			</div>
-			<div class=roofpig data-config="pov=Urf|colored= u uL ULF UF">
+			<div class=roofpig data-config="pov=Urf|colored= u uL ULF UF" style="height: 140px !important;">
 			</div>
-			<div class=roofpig data-config="pov=Urf|colored= u ULf ULb">
+			<div class=roofpig data-config="pov=Urf|colored= u ULf ULb" style="height: 140px !important;">
 			</div>
-			<div class=roofpig data-config="pov=Urf|colored= u uL ULF">
+			<div class=roofpig data-config="pov=Urf|colored= u uL ULF" style="height: 140px !important;">
 			</div>
 			<div class="underline"><span id="c01"></span>剩邊型</div>
 			<li class="title2">Ua-perm: <a href="pll2.html?id=p02"><u class="green">2眼</u></a></li>
@@ -408,6 +408,19 @@
 	<script>
 		ROOFPIG_CONF_F4 = "speed=800|pov=Urf|flags=showalg"
 		ROOFPIG_CONF_A4 = "speed=400|pov=Urf"
+		var scrollLinks = document.querySelectorAll('.eeeee');
+		scrollLinks.forEach(function (link) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				var targetId = link.getAttribute('href').substring(1);
+				var targetSection = document.getElementById(targetId);
+				var targetOffset = targetSection.offsetTop;
+				window.scrollTo({
+					top: targetOffset - 50,
+					behavior: 'smooth'
+				});
+			});
+		});
 	</script>
 	<script src="DATA/updown.js"></script>
 </body>
