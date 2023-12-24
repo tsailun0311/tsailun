@@ -392,7 +392,7 @@ a:active {
 
 /**************** body and tag styles ****************/
 body {
-  background-image: url(DATA/cubebackground.jpg);
+  background-image: url(cubebackground.jpg);
   background-color: RGB(212, 245, 236);
   background-repeat: repeat;
   margin-top: 0px;
