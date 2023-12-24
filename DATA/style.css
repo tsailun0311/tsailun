@@ -392,8 +392,8 @@ a:active {
 
 /**************** body and tag styles ****************/
 body {
-  background-color:RGB(35,163,128);
-  background-image: url(background.jpg);
+  background-image: url(DATA/cubebackground.jpg);
+  background-color: RGB(212, 245, 236);
   background-repeat: repeat;
   margin-top: 0px;
   margin-bottom: 30px;
@@ -679,16 +679,6 @@ form {
   background-color: #FFF;
 }
 
-.index1 {
-  font-family: "微軟正黑體";
-  font-size: 18px;
-  font-weight: bolder;
-  color: #CCC;
-  border-left-width: 1px;
-  border-left-style: dotted;
-  border-left-color: #12359B;
-}
-
 #container2 table tr td .title2 {
   font-family: "微軟正黑體";
   font-size: 13px;
@@ -708,12 +698,26 @@ form {
   border-bottom-color: #333;
   background-color: #FFF;
 }
-
-.image01 {
-  padding: 3px;
-  border: 1px solid #333;
+#container2 li {
+  font-family: arial;
+  display: inline-block;
+  vertical-align: text-top;
+  height: 30px;
+  width: 170px;
+  margin-left: 13px;
+}
+.red {
+  color: red;
 }
 
-#container #container2 ul li #CollapsiblePanel1200 {
-  width: 500px;
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
 }
