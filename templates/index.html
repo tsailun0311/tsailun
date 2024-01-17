@@ -1,0 +1,291 @@
+{% extends "base.html" %} {% block content %}
+{% set god = ["1", "18", "243", "3240", "43,239", "574,908", "7,618,438", "100,803,036", "1,332,343,288",
+"17,596,479,795", "232,248,063,316", "3,063,288,809,012", "40,374,425,656,248", "531,653,418,284,628",
+"6,989,320,578,825,358", "91,365,146,187,124,313", "約1,100,000,000,000,000,000", "約12,000,000,000,000,000,000",
+"約29,000,000,000,000,000,000", "約1,500,000,000,000,000,000", "約490,000,000"] %}
+{% set cross =
+[["1","15","158","1,394","9,809","46,381","97,254","34,966","102"],["0.00052609","0.00789141","0.08312290","0.73337542","5.16045875","24.40077862","51.16477273","18.39541246","0.05366162"]]
+%}
+{% macro msup(x,y) -%}
+<msup>
+    <mrow>
+        <mn> {{x}} </mn>
+    </mrow>
+    <mrow>
+        <mn> {{y}} </mn>
+    </mrow>
+</msup>
+{%- endmacro %}
+{% macro mfrac(x,y) -%}
+<mfrac>
+    <mrow>
+        <mn> {{x}} </mn>
+    </mrow>
+    <mrow>
+        <mn> {{y}} </mn>
+    </mrow>
+</mfrac>
+{%- endmacro %}
+<div id="tabs10">
+    <ul>
+        <a href="/">
+            <li class="g4">首頁</li>
+        </a>
+        <a href="/lbl">
+            <li>LBL</li>
+        </a>
+        <a href="/cross">
+            <li>CFOP</li>
+        </a>
+    </ul>
+</div>
+<div id="container2">
+    <div align="center">
+        <p>&nbsp;</p>
+        <p style="font-size: 20px;">
+            超經典打亂👇　　　高技巧解法👇
+        </p>
+        <div class="roofpig"
+            data-config="speed=800|colors=R:r L:o F:g B:b U:w D:y|alg=U B2 U' F' R' F D2 R' F R2 F D' L2 F2 R D2 L' F R2 U> R>>|flags=startsolved"
+            style="height: 180px !important;">
+        </div>
+        <div class="roofpig"
+            data-config="speed=800|alg=B' U B2 F2 U' F U' F2 U F D U F U' F' D' U2 F R U' R' U' R U R' F'"
+            style="height: 180px !important;">
+        </div>
+    </div>
+    <p><span class="big">初學者</span></p>
+    <ul>
+        <li>LBL第一步驟 :<a href="/lbl#c01"> 白色邊塊</a></li>
+        <li>LBL第二步驟 :<a href="/lbl#c02"> 白色角塊</a></li>
+        <li>LBL第三步驟 :<a href="/lbl#c03"> 第二層</a></li>
+        <li>LBL第四步驟 :<a href="/lbl#c04"> 黃色邊塊</a></li>
+        <li>LBL第五步驟 :<a href="/lbl#c05"> 黃色角塊</a></li>
+        <li>LBL第六步驟 :<a href="/lbl#c06"> 頂層角塊</a></li>
+        <li>LBL第七步驟 :<a href="/lbl#c07"> 頂層邊塊</a></li>
+    </ul>
+    <p><span class="big">高階玩家</span></p>
+    <ul>
+        <li>CFOP第一步驟(白色十字) :<a href="/cross"> CROSS</a></li>
+        <li>CFOP第二步驟(下面兩層) :<a href="/f2l"> F2L</a></li>
+        <li>CFOP第三步驟(黃色朝上) :<a href="/oll"> OLL</a></li>
+        <li>CFOP第四步驟(頂層歸位) :<a href="/pll"> PLL</a></li>
+    </ul>
+    <p><span class="big">資料來源</span></p>
+    <ul>
+        <li>網域名稱 :<a href="https://www.freenom.com/zu/index.html?lang=zu"> freenom</a></li>
+        <li>網頁加速 :<a href="https://www.cloudflare.com/zh-tw/"> cloudflare</a></li>
+        <li>網站伺服 :<a href="https://linuxone.cloud.marist.edu/"> LinuxONE 社群雲</a></li>
+        <li>魔方資料 :<a href="https://cube-tutorial.pinpincuber.com/"> 1.魔方小天地</a>
+            　<a href="https://maru.tw/">2.小丸號魔術方塊</a>
+            　<a href="https://1hrbld.tw/">3.一小時學盲解</a>
+            　<a href="https://slowercuber.net/">4.SlowerCuber</a>
+            　<a href="https://chiacube.tw/">5.ChiaCube</a></li>
+        <li>魔方動畫 :<a href="https://github.com/larspetrus/Roofpig">
+                larspetrus/Roofpig: Rubik's Cube animation</a></li>
+    </ul>
+    <p><span class="big">訪客人數</span></p>
+    <ul>
+        <li>您是第&nbsp;<strong>{{people}}</strong>&nbsp;位蒞臨本網站的訪客</li>
+    </ul>
+    <p><span class="big">魔方知識</span></p>
+    <details onclick="handleDetailsClick('details1')">
+        <summary>三階魔方狀態數</summary>
+        <div class="answer">
+            <p>
+                <math>
+                    <mn> 8 </mn>
+                    <mo> ! ×</mo>
+                    {{ msup(3,8) }}
+                    <mo>×</mo>
+                    <mn> 12 </mn>
+                    <mo> ! ×</mo>
+                    {{ msup(2,12) }}
+                    <mo> ×</mo>
+                    {{ mfrac(1,3) }}
+                    <mo> ×</mo>
+                    {{ mfrac(1,2) }}
+                    <mo> ×</mo>
+                    {{ mfrac(1,2) }}
+                    <mo>=</mo>
+                    <mn> 4325,2003,2744,8985,6000 </mn>
+                </math><br>
+                <math>
+                    <mn> 8 </mn>
+                    <mo> ! ×</mo>
+                    {{ msup(3,8) }}
+                    <mo>=</mo>
+                </math>
+                角塊的排列×角塊的方向，邊塊依此類推<br>
+                <math>
+                    {{ mfrac(1,3) }}
+                    <mo> ×</mo>
+                    {{ mfrac(1,2) }}
+                    <mo> ×</mo>
+                    {{ mfrac(1,2) }}
+                    <mo>=</mo>
+                </math>
+                單角塊翻轉×單邊塊翻轉×雙邊塊互換
+            </p>
+        </div>
+    </details>
+    <details onclick="handleDetailsClick('details2')">
+        <summary>上帝之數</summary>
+        <div class="answer">
+            <p>將任意三階魔方打亂後，最小還原步數究竟是多少？</p>
+            <table style="width: auto;">
+                <tr>
+                    <th>步數</th>
+                    <th>需要此步數的狀態總數</th>
+                </tr>
+                {% for i in range(21) %}
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{god[i]}}</td>
+                </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </details>
+    <details onclick="handleDetailsClick('details3')">
+        <summary>七步十字</summary>
+        <div class="answer">
+            <p>
+                <math>
+                    <msubsup>
+                        <mrow>
+                            <mi> P </mi>
+                        </mrow>
+                        <mrow>
+                            <mn> 4 </mn>
+                        </mrow>
+                        <mrow>
+                            <mn> 12 </mn>
+                        </mrow>
+                    </msubsup>
+                    <mo> ×</mo>
+                    {{ msup(2,4) }}
+                    <mo>=</mo>
+                    <mn> 190,080 </mn>
+                </math>
+            </p>
+            <table style="width: auto;">
+                <tr>
+                    <th>最少幾步</th>
+                    <th>需要此步數的狀態總數</th>
+                    <th>發生機率(%)</th>
+                </tr>
+                {% for i in range(9) %}
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{cross[0][i]}}</td>
+                    <td>{{cross[1][i]}}</td>
+                </tr>
+                {% endfor%}
+                <tr>
+                    <td>共</td>
+                    <td>190,080</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+    </details>
+    <details onclick="handleDetailsClick('details4')">
+        <summary>魔方英文</summary>
+        <div class="answer">
+            <p>
+                二階魔方：2階魔方的英文官方名字叫做Pocket Rubic，中文直譯叫做“口袋魔方”<br>
+                三階魔方：3階魔方的英文官方名字叫做Rubik Cube，也就是用鲁比克教授的名字命名的<br>
+                四階魔方：4階魔方的英文官方名字叫做Revenge Cube，中文直譯叫做“復仇魔方”<br>
+                五階魔方：5階魔方的英文官方名字叫做Professional Cube，中文直譯叫做“職業魔方”
+            </p>
+        </div>
+    </details>
+    <details onclick="handleDetailsClick('details5')">
+        <summary>魔方顏色</summary>
+        <div class="answer">
+            <p>
+                目前魔方流行的配色方案有兩種，一種就是世界標準配色，即BOY Color Scheme；另一種是日本配色，即BYO Color
+                Scheme。兩種配色方案用的顏色都是一樣的，不同之處是藍黃顏色互換，用日本配色做CFOP的时候，一般以藍色為底做十字，而標準配色下則以白色為底做十字。<br>魔方六面的顏色是基於
+                CMYK 的減色模式，在任一面中加入/減去黄色，就能得到它相對的顏色。Daisy colors(白色+黄色=黄色) Hot colors(红色+黄色=橘色) Cold
+                colors(藍色+黄色=綠色)
+            </p>
+        </div>
+    </details>
+    <details onclick="handleDetailsClick('details6')">
+        <summary>製造極限</summary>
+        <div class="answer">
+            <p>假設魔方一個塊的邊長為1，魔方的階數為n，對角線的長度是√2n。我們能轉動的極限是45度，此時角塊距離中心塊最遠。</p>
+            <math>
+                <msqrt>
+                    <mn> 2 </mn>
+                </msqrt>
+                <mi> n </mi>
+                <mo> - </mo>
+                <mn> 2 </mn>
+                <msqrt>
+                    <mn> 2 </mn>
+                </msqrt>
+                <mo> &lt; </mo>
+                <mi> n </mi>
+                <mo> , </mo>
+                <mi> n </mi>
+                <mo> = </mo>
+                <mn> 6.828 </mn>
+            </math>
+            <img src="./static/make.png" width="620">
+            <p>所以我們就得到了七階以上的魔方是不能保證每個方塊大小都一样的。因此，解決辦法有<strong>不等寬設計</strong>或<strong>弧形設計</strong>。</p>
+            <img src="./static/make1.png" width="305" style="display:inline;">
+            <img src="./static/make2.png" width="305" style="display:inline;">
+    </details>
+    <details onclick="handleDetailsClick('details7')">
+        <summary>菲神語錄</summary>
+        <div class="answer">
+            <p>
+                <a href="https://www.cubeskills.com/blog/cubing-practice-tips">原文在這邊</a><br>
+                <strong>當你想練習時才練習</strong><br>
+                大多數魔方愛好者都是出於樂趣和享受的心情來解魔方的。世界上許多最快的魔方玩家之所以練習，是因為這讓他們感到快樂，或者他們喜歡保持高度的競爭性，這就需要相應的練習量。
+                解魔方絕不應該成為一種苦差事，我認為強迫自己練習不是正確的心態。你需要自我激勵，享受你所做的事情。如果你在閱讀一個有關魔方的部落格，那可能是你喜歡魔方的一個好徵兆！在你不想練習的時候練習只會導致對糟糕的解法感到沮喪，並把速解魔方的樂趣全都消耗掉。這並不是說這樣的練習可能不會有成效，但如果你不專心和有動力，它就不會很有效。
+                就個人而言，我發現我練習的時間可能會有很大的變化 - 有些日子我可能因為其他事情太忙而無法練習魔方，而在其他日子，我可能會坐下來魔方數小時。我認為練習的量確實會有所不同 -
+                在一些情況下，你可能會不碰魔方一周後達到個人最佳平均值。我不知道為什麼會發生這種情況，但暫時停止解魔方確實可能是有益的。有一些文獻表明，有意識地離開一個任務並回歸實際上會引起你的大腦在無意識中對這個任務進行處理。
+                在大多數情況下，解魔方是一種累積的活動，即很難退步並變得更慢，因為你已經建立了一定水平的技能。重返你之前的速度不需要太多努力 - 不過我從來沒有不解魔方那麼久。<br>
+                <strong>有意識（刻意）練習和無意識（重複）練習</strong><br>
+                我將有意識（刻意）練習定義為改善你整體速解魔方知識的任何事情。這些事情的例子包括：<br>
+                1.學習和練習新的算法<br>
+                2.學習新的方法<br>
+                3.以不同的方式解魔方，進行實驗<br>
+                4.觀看範例解法，找出自己的低效之處<br>
+                5.專注於提高解法的某一方面<br>
+                6.任何不完整解法的演練或練習<br>
+                7.學習新的手指技巧<br>
+                我認為將有意識（刻意）練習與無意識（重複）練習的比例掌握得當非常重要。如果你對你的技巧和整體方法感到滿意並自在，那麼你應該花至少50%的時間只是無意識地練習。許多研究練習和技能獲得的人普遍得出結論，即刻意（有意識）練習對於提高任何技能最為重要。我同意，但我也認為要精通速解魔方的特定方面需要很長時間（算法執行，預視，效率），而需要很多磨練和無意識練習。根據我的經驗，正是無意識的練習使我進步最多，但也可能只是因為我很幸運地做出了關於我學到什麼以及沒有形成太多不良習慣的正確決定。
+                如果你想從根本上改進你的解法並更有效地解魔方，那麼你應該花更多的時間進行有意識的練習。如果你對解法的某一方面感到不舒服或不滿意，那麼進行相應的練習是完全合理的。我在練習視頻模塊中討論了這些的例子。<br>
+                我會說我練習的至少50%是無意識的練習，隨著你變得越來越快，越來越多的練習應該變成無意識的練習。<br>
+                <strong>練習計劃？</strong><br>
+                就我個人而言，我從未遵循過嚴格的練習計劃。這與第一點有關，也就是說，有時候你可能不想在某些時候練習特定的項目。如果你在一個對3x3很在狀態並且喜歡那個時候，安排5x5的練習這是不划算的。除非你真的喜歡例行公事並且喜歡計劃練習，否則最好避免這樣做。如果你非常喜歡量化，並喜歡追踪和觀察自己的進步，那也許值得一試！
+                對我來說，寬鬆的計劃效果更好。我所做的最接近計劃練習的事情是計劃在一定的時間內應該練習哪些項目，這樣我就不會忽略任何事情。如果你參加許多項目，像這樣的事情在準備大型比賽時可能是有用的。對於較小的比賽，我建議在比賽前幾周僅練習該比賽舉行的特定項目。<br>
+                <strong>不要被進展緩慢所打擊</strong><br>
+                只要你練習了正確的東西，所有的練習都是好練習。如果你的時間在幾個月內保持不變，一點都不要擔心。總的來說，解魔方的進步是非常漸進的，但往往以你的時間相對較大的跳躍為特徵。顯然，在開始時，你的進步速度很快，但你變得越來越快，要提高就變得越來越難。
+                通常，你會有一個長時間內你的時間停滯不前的階段，這很容易讓人感到沮喪。只要記住你所做的練習最終會取得成果，你的時間可能會在幾天內下降1-2秒是非常常見的。我記得有一段時間我一直在17-18秒左右，然後在一個周末內，我神奇地平均16秒。停滯，或在某些情況下，變得稍微慢，是完全自然且每個人都會經歷的。<br>
+                <br>
+                快樂解魔方！<br>
+                <br>
+                Feliks
+            </p>
+        </div>
+    </details>
+</div>
+<script>
+    function handleDetailsClick(clickedId) {
+        const detailsElements = document.querySelectorAll('details');
+        detailsElements.forEach(detailsElement => {
+            const detailsId = detailsElement.getAttribute('id');
+            if (detailsId === clickedId) {
+                detailsElement.open = true;
+            } else {
+                detailsElement.open = false;
+            }
+        });
+    }
+</script>
+{% endblock %}

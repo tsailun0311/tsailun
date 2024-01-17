@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+{% set menu = [["", "", "", "", "g4", "", "",],
+["/", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
+["首頁", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
+] %}
+<div id="tabs10">
+    <ul>
+        {% for i in range(7) %}
+        <a href="{{ menu[1][i] }}">
+            <li class="{{ menu[0][i] }}">{{ menu[2][i] }}</li>
+        </a>
+        {% endfor%}
+    </ul>
+</div>
+<div id="container2">
+    <p>&nbsp;</p>
+    <table>
+        <tr>
+            <td>
+                <a href="#c01" class="click">01</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">02</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">03</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">04</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">05</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">06</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">07</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">08</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">09</a>
+            </td>
+            <td>
+                <a href="#c01" class="click">10</a>
+            </td>
+        </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><span class="big" id="c01">一點型</span></p>
+    <li class="title2">01</li>
+    <li class="title2">02</li>
+    <li class="title2">03</li>
+    <li class="title2">04</li>
+    <div class="roofpig" data-config="base=F3|alg=R U2 R2 F R F' U2 R' F R F'">
+    </div>
+    <div class="roofpig" data-config="base=F3|alg=F R U R' U' S R U R' U' f'">
+    </div>
+    <div class="roofpig" data-config="base=F3|alg=R' U' F' U F R F R U R' U' F'">
+    </div>
+    <div class="roofpig" data-config="base=F3|alg=F U R U' R' F' R' F' U' F U R">
+    </div>
+    <p>&nbsp;</p>
+</div>
+<script>
+    ROOFPIG_CONF_F3 = "speed=800|pov=Urf|flags=showalg|colored= U- */m u"
+</script>
+{% endblock %}
