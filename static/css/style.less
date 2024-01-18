@@ -5,12 +5,18 @@
 
 body {
     background-color: @g1;
-    margin-top: 0px;
+    margin-top: 30px;
     margin-bottom: 30px;
+    background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 #container {
-    width: 750px;
+    width: 900px;
     background-color: @g2;
     font-size: 15px;
     font-family: "微軟正黑體", sans-serif;
@@ -35,7 +41,7 @@ body {
         li {
             vertical-align: text-top;
             height: auto;
-            width: 650px;
+            width: 800px;
             margin-left: 13px;
         }
     }
@@ -44,7 +50,7 @@ body {
         text-align: center;
         margin: 0 auto 0 auto;
         border-collapse: collapse;
-        width: 680px;
+        width: 800px;
 
         th {
             color: @g3;
@@ -57,8 +63,8 @@ body {
             display: table-cell;
 
             img {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
 
             }
 
@@ -73,45 +79,9 @@ body {
     }
 }
 
-/**************** pic styles ***********************************************************************************************/
-.pic {
-    width: 750px;
-    position: relative;
-    text-align: center;
-    background-color: @g1;
-    margin: 0 auto 0 auto;
-
-    img {
-        width: 690px;
-        border: @g1 30px solid;
-    }
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        transform: rotate(-35deg);
-        width: 80px;
-        height: 30px;
-        background-color: #888;
-        border: 1px dashed #000;
-        opacity: 50%
-    }
-
-    &::before {
-        top: 30px;
-        left: 5px;
-    }
-
-    &::after {
-        bottom: 30px;
-        right: 5px;
-    }
-}
-
 /**************** top styles ***********************************************************************************************/
 .box {
-    width: 750px;
+    width: 900px;
     height: 50px;
     background-color: @g2;
     position: sticky;
@@ -133,15 +103,16 @@ body {
         width: 400px;
         height: 20px;
         bottom: 5px;
-        right: 165.4px;
+        right: 242px;
     }
 
     &::before {
-        width: 710px;
+        width: 900px;
+        height: 40px;
         background-color: #FFF;
-        border: 20px solid #FFF;
+        border-top: 20px solid #FFF;
         border-radius: 20px;
-        top: 30px;
+        top: 32px;
     }
 
     &::after {
@@ -149,7 +120,7 @@ body {
         border: 8px solid #CCC;
         border-radius: 8px;
         top: 7px;
-        left: 140.4px;
+        left: 217px;
     }
 }
 
@@ -157,7 +128,7 @@ body {
 
 #tabs10 {
     float: left;
-    width: 750px;
+    width: 900px;
     border-bottom: @g3 5px solid;
     background-color: #FFF;
     position: sticky;
@@ -185,10 +156,45 @@ body {
     }
 }
 
+/**************** pic styles ***********************************************************************************************/
+.pic {
+    width: 800px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto 0 auto;
+
+    img {
+        width: 740px;
+        border: #FFF 30px solid;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        transform: rotate(-35deg);
+        width: 80px;
+        height: 30px;
+        background-color: #888;
+        border: 1px dashed #000;
+        opacity: 50%
+    }
+
+    &::before {
+        top: 30px;
+        left: 5px;
+    }
+
+    &::after {
+        bottom: 30px;
+        right: 5px;
+    }
+}
+
 /**************** Q&A styles ***********************************************************************************************/
 details {
     margin: 0 auto 10px;
-    width: 650px;
+    width: 800px;
 }
 
 summary {
@@ -229,6 +235,7 @@ details[open] {
     padding: 0px 15px;
     line-height: 1.6;
 }
+
 /**************** other styles ***********************************************************************************************/
 a {
     text-decoration: none;
@@ -260,7 +267,7 @@ a {
     display: inline-block;
     vertical-align: text-top;
     height: 30px;
-    width: 170px;
+    width: 205px;
     margin-left: 13px;
 }
 
@@ -281,7 +288,7 @@ strong {
 .roofpig {
     display: inline-block;
     height: 220px !important;
-    width: 170px !important;
+    width: 205px !important;
     margin-left: 13px !important;
     margin-bottom: 60px;
 }
@@ -309,14 +316,14 @@ strong {
     background: url(../sprite.png) no-repeat -20px 0px #d5d7d8 !important;
     text-indent: -117px !important;
     overflow: hidden !important;
-    width: 34px !important
+    width: 45px !important
 }
 
 .loopreset(@counter) when (@counter > 0) {
     .loopreset((@counter - 1));
 
     #reset-@{counter} {
-        background-position: 6px -234px !important
+        background-position: 12px -234px !important
     }
 }
 
@@ -326,7 +333,7 @@ strong {
     .loopplay((@counter - 1));
 
     #play-@{counter} {
-        background-position: 6px -324px !important
+        background-position: 12px -324px !important
     }
 }
 
@@ -336,7 +343,7 @@ strong {
     .loopprev((@counter - 1));
 
     #prev-@{counter} {
-        background-position: 6px -264px !important
+        background-position: 12px -264px !important
     }
 }
 
@@ -346,7 +353,7 @@ strong {
     .loopnext((@counter - 1));
 
     #next-@{counter} {
-        background-position: 6px -294px !important
+        background-position: 12px -294px !important
     }
 }
 
@@ -356,7 +363,7 @@ strong {
     .looppause((@counter - 1));
 
     #pause-@{counter} {
-        background-position: 7px -353px !important
+        background-position: 12px -353px !important
     }
 }
 
