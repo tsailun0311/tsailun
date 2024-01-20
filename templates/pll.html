@@ -1,8 +1,5 @@
 {% extends "base.html" %} {% block content %}
-{% set menu = [["", "", "", "", "", "g4", "",],
-["/", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
-["首頁", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
-] %}
+{% set menuclass = ["","", "", "", "", "","g4", "",] %}
 {% set pllmenu = [["c02", "c02", "c02", "c04", "c07", "c07", "c07",
 "c07", "c01", "c03", "c03", "c03", "c03", "c06",
 "c06", "c04", "c01", "c01", "c05", "c05", "c01",
@@ -14,9 +11,9 @@
 ] %}
 <div id="tabs10">
 	<ul>
-		{% for i in range(7) %}
-		<a href="{{ menu[1][i] }}">
-			<li class="{{ menu[0][i] }}">{{ menu[2][i] }}</li>
+		{% for i in range(8) %}
+		<a href="{{ menu[0][i] }}">
+			<li class="{{ menuclass[i] }}">{{ menu[1][i] }}</li>
 		</a>
 		{% endfor%}
 	</ul>
@@ -118,60 +115,60 @@
 	</div>
 	<p><span class="big" id="a01">練習1</span></p>
 	<p align="left">　
-		<a href="#c01" class="click"><img src="static/pll/2.png" loading="lazy" width="100" height="100" /></a>
-		<a><img src="static/pll/u2.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c01" class="click"><img src="static/pll/1.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c01" class="click"><img src="static/pll/5.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c01" class="click"><img src="static/PLL/2.png" loading="lazy" width="120" height="120" /></a>
+		<a><img src="static/PLL/u2.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c01" class="click"><img src="static/PLL/1.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c01" class="click"><img src="static/PLL/5.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig"
 		data-config="base=A4|alg=z' U L' U L U L U L' U' L' U2 z U2 z U' R U' R' U' R' U' R U R U2' z' R' U' R U' R U R U' R' U R U R2 U' R'">
 	</div>
 	<p><span class="big" id="a02">練習2</span></p>
 	<p align="left">　
-		<a href="#c02" class="click"><img src="static/pll/3.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c02" class="click"><img src="static/pll/4.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c02" class="click"><img src="static/PLL/3.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c02" class="click"><img src="static/PLL/4.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig" data-config="base=A4|alg=x' R U' R D2 R' U R D2 R2 z L' U L' D2 L U' L' D2 L2' x U<">
 	</div>
 	<p><span class="big" id="a03">練習3</span></p>
 	<p align="left">　
-		<a href="#c05" class="click"><img src="static/pll/15.png" loading="lazy" width="100" height="100" /></a>
-		<a><img src="static/pll/u2.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c05" class="click"><img src="static/pll/9.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c01" class="click"><img src="static/pll/6.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c05" class="click"><img src="static/PLL/15.png" loading="lazy" width="120" height="120" /></a>
+		<a><img src="static/PLL/u2.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c05" class="click"><img src="static/PLL/9.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c01" class="click"><img src="static/PLL/6.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig"
 		data-config="base=A4|alg=F R U' R' U' R U R' F' R U R' U' R' F R F' U2 L' U R U' L U L' U R' U' L U2 R U2 R' M2' U M2' U2 M2' U M2'">
 	</div>
 	<p><span class="big" id="a04">練習4</span></p>
 	<p align="left">　
-		<a href="#c03" class="click"><img src="static/pll/21.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c03" class="click"><img src="static/pll/20.png" loading="lazy" width="100" height="100" /></a>
-		<a><img src="static/pll/u2.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c04" class="click"><img src="static/pll/10.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c04" class="click"><img src="static/pll/8.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c03" class="click"><img src="static/PLL/21.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c03" class="click"><img src="static/PLL/20.png" loading="lazy" width="120" height="120" /></a>
+		<a><img src="static/PLL/u2.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c04" class="click"><img src="static/PLL/10.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c04" class="click"><img src="static/PLL/8.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig"
 		data-config="base=A4|alg=R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R' R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R U2 R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R R U R' U' R' F R2 U' R' U' R U R' F'">
 	</div>
 	<p><span class="big" id="a05">練習5</span></p>
 	<p align="left">　
-		<a href="#c06" class="click"><img src="static/pll/11.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c06" class="click"><img src="static/pll/12.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c03" class="click"><img src="static/pll/14.png" loading="lazy" width="100" height="100" /></a>
-		<a><img src="static/pll/u2.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c03" class="click"><img src="static/pll/13.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c02" class="click"><img src="static/pll/7.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c06" class="click"><img src="static/PLL/11.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c06" class="click"><img src="static/PLL/12.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c03" class="click"><img src="static/PLL/14.png" loading="lazy" width="120" height="120" /></a>
+		<a><img src="static/PLL/u2.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c03" class="click"><img src="static/PLL/13.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c02" class="click"><img src="static/PLL/7.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig"
 		data-config="base=A4|alg=R' U2 R U2 R' F R U R' U' R' F' R2 R U' R' U' R U R D R' U' R D' R' U2 R' R' U2 R U R' U2' L U' R U L' U2 R U2 R' U' R U2 L' U R' U' L x' R U' R' D R U R' D' R U R' D R U' R' D' x">
 	</div>
 	<p><span class="big" id="a06">練習6</span></p>
 	<p align="left">　
-		<a href="#c07" class="click"><img src="static/pll/19.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c07" class="click"><img src="static/pll/18.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c07" class="click"><img src="static/pll/17.png" loading="lazy" width="100" height="100" /></a>
-		<a href="#c07" class="click"><img src="static/pll/16.png" loading="lazy" width="100" height="100" /></a>
+		<a href="#c07" class="click"><img src="static/PLL/19.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c07" class="click"><img src="static/PLL/18.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c07" class="click"><img src="static/PLL/17.png" loading="lazy" width="120" height="120" /></a>
+		<a href="#c07" class="click"><img src="static/PLL/16.png" loading="lazy" width="120" height="120" /></a>
 	</p>
 	<div class="roofpig" data-config="base=A4|alg=R2 u  R' U R' U' R u' R2 y' R' U R R' U' R y R2 u R' U R U' R u' R2">
 	</div>

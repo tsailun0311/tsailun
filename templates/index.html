@@ -31,6 +31,9 @@
         <a href="/">
             <li class="g4">首頁</li>
         </a>
+        <a href="/special">
+            <li>花式</li>
+        </a>
         <a href="/lbl">
             <li>LBL</li>
         </a>
@@ -40,7 +43,7 @@
     </ul>
 </div>
 <div id="container2">
-    <div align="center">
+    <div align="center" style="height: 320px;">
         <p>&nbsp;</p>
         <p style="font-size: 20px;">
             超經典打亂👇　　　高技巧解法👇
@@ -61,6 +64,18 @@
     <div class="pic">
         <img src="static/cubeheadimg.png">
     </div>
+    <p><span class="big">魔方代號</span></p>
+    <ul>
+        <li>代號以英文字母來表示(Right,Up,Front,Left,Down,Back,Middle,Equator,Side)</li>
+        <li>大寫表示該面面對自己順時針轉90度，加一點(')則是逆時針</li>
+        <li>加一個2表示轉180度，小寫則表示一次轉兩層</li>
+        <li>本網站全部視角皆使用UFR視角</li>
+        <img src="static/solve.gif" style="display: block;margin-left: 30px;">
+        <img src="static/solve1.png" width="800px" style="display: block;margin-left: 10px;">
+        <p>&nbsp;</p>
+        <li>代號x、y、z代表要整顆翻轉</li>
+        <img src="static/solve2.png" width="800px" style="display: block;margin-left: 10px;">
+    </ul>
     <p><span class="big">初學者</span></p>
     <ul>
         <li>LBL第一步驟 :<a href="/lbl#c01"> 白色邊塊</a></li>
@@ -99,6 +114,33 @@
         <li>您是第&nbsp;<strong>{{people}}</strong>&nbsp;位蒞臨本網站的訪客</li>
     </ul>
     <p><span class="big">魔方知識</span></p>
+    <details onclick="handleDetailsClick('details8')">
+        <summary>公式概率</summary>
+        <div class="answer">
+            <p>OLL總狀態數(前3個角塊隨機排列，第四塊將被確定，邊塊依此類推)</p>
+            <math>
+                {{ msup(3,3) }}
+                <mo>×</mo>
+                {{ msup(2,3) }}
+                <mo>=</mo>
+                <mn>216</mn>
+            </math>
+            <img src="./static/OLL.png" width="760">
+            <p>PLL總狀態數(無法對邊互換，且重複計算4次)</p>
+            <math>
+                <mn> 4 </mn>
+                <mo> ! ×</mo>
+                <mn> 4 </mn>
+                <mo> ! ×</mo>
+                {{ mfrac(1,2) }}
+                <mo>×</mo>
+                {{ mfrac(1,4) }}
+                <mo>=</mo>
+                <mn>72</mn>
+            </math>
+            <img src="./static/PLL.png" width="760" style="padding-top: 5px;">
+        </div>
+    </details>
     <details onclick="handleDetailsClick('details1')">
         <summary>三階魔方狀態數</summary>
         <div class="answer">

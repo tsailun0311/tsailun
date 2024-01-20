@@ -1,13 +1,10 @@
 {% extends "base.html" %} {% block content %}
-{% set menu = [["", "", "", "", "", "", "g4",],
-["/", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
-["首頁", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
-] %}
+{% set menuclass = ["","", "", "", "", "", "","g4",] %}
 <div id="tabs10">
 	<ul>
-		{% for i in range(7) %}
-		<a href="{{ menu[1][i] }}">
-			<li class="{{ menu[0][i] }}">{{ menu[2][i] }}</li>
+		{% for i in range(8) %}
+		<a href="{{ menu[0][i] }}">
+			<li class="{{ menuclass[i] }}">{{ menu[1][i] }}</li>
 		</a>
 		{% endfor%}
 	</ul>

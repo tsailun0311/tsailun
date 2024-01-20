@@ -23,6 +23,13 @@
     </style>
     <style class="list-search-style"></style>
     {% endif %}
+    <script>
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    </script>
 </head>
 
 <body>
@@ -30,6 +37,9 @@
         <div class="box">
             <div></div>
         </div>
+        {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
+        ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
+        ] %}
         {% block content %}{% endblock %}
     </div>
     <script>
