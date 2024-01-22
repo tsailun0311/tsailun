@@ -57,6 +57,12 @@
             style="height: 180px !important;">
         </div>
     </div>
+    <p><span class="big">網站介紹</span></p>
+    <ul>
+        <li>這個網站包含我的魔方整理和紀錄，無任何營收，主要練習架站。所有資料皆來自魔方小天地、小丸號魔術方塊、一小時學盲解、SlowerCuber、ChiaCube、烏杰魔方、魔方弟、愛魔方...等網站，如果有任何侵權或問題，皆可以跟我說，我會立馬做更改，此外，如果想取用這個網站的東西也歡迎取用。
+        </li>
+        <li>信箱:<strong>admin@tsailun.tk</strong></li>
+    </ul>
     <p><span class="big">網頁配色</span></p>
     <ul>
         <li>採用沉著冷靜放鬆心靈的<strong>四種冷色</strong>配色</li>
@@ -64,18 +70,6 @@
     <div class="pic">
         <img src="static/cubeheadimg.png">
     </div>
-    <p><span class="big">魔方代號</span></p>
-    <ul>
-        <li>代號以英文字母來表示(Right,Up,Front,Left,Down,Back,Middle,Equator,Side)</li>
-        <li>大寫表示該面面對自己順時針轉90度，加一點(')則是逆時針</li>
-        <li>加一個2表示轉180度，小寫則表示一次轉兩層</li>
-        <li>本網站全部視角皆使用UFR視角</li>
-        <img src="static/solve.gif" style="display: block;margin-left: 30px;">
-        <img src="static/solve1.png" width="800px" style="display: block;margin-left: 10px;">
-        <p>&nbsp;</p>
-        <li>代號x、y、z代表要整顆翻轉</li>
-        <img src="static/solve2.png" width="800px" style="display: block;margin-left: 10px;">
-    </ul>
     <p><span class="big">初學者</span></p>
     <ul>
         <li>LBL第一步驟 :<a href="/lbl#c01"> 白色邊塊</a></li>
@@ -114,6 +108,19 @@
         <li>您是第&nbsp;<strong>{{people}}</strong>&nbsp;位蒞臨本網站的訪客</li>
     </ul>
     <p><span class="big">魔方知識</span></p>
+    <details onclick="handleDetailsClick('details9')">
+        <summary>魔方代號</summary>
+        <div class="answer">
+            代號以英文字母來表示(Right,Up,Front,Left,Down,Back,Middle,Equator,Side)<br>
+            大寫表示該面面對自己順時針轉90度，加一點(')則是逆時針<br>
+            加一個2表示轉180度，小寫則表示一次轉兩層<br>
+            本網站全部視角皆使用UFR視角
+            <img src="static/solve.gif" style="display: block;margin-left: 30px;">
+            <img src="static/solve1.png" width="760" style="padding-top: 5px;">
+            代號x、y、z代表要整顆翻轉
+            <img src="static/solve2.png" width="760" style="padding-top: 5px;">
+        </div>
+    </details>
     <details onclick="handleDetailsClick('details8')">
         <summary>公式概率</summary>
         <div class="answer">
