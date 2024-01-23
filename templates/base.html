@@ -59,6 +59,17 @@
     <script>
         $(document).ready(function () {
             $(".loading-wrapper").fadeOut(1000);
+            setTimeout(function () {
+                var targetId = window.location.hash.substring(1);
+                if (targetId) {
+                    var targetSection = document.getElementById(targetId);
+                    var targetOffset = targetSection.offsetTop;
+                    window.scrollTo({
+                        top: targetOffset - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 1000);
         });
     </script>
     <script>
