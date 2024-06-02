@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
-    <title>{{title}}：這個魔方網站幫助你更了解魔方</title>
+    <title>{{title}}</title>
     <meta name="description" content="這個網站包含我的魔方整理和紀錄，無任何營收，主要練習架站。所有資料皆來自魔方小天地、小丸號魔術方塊、一小時學盲解...等網站。">
     <meta property="og:site_name" content="{{title}}" />
     <meta property="og:image" content="static/cubeheadimg.png">
@@ -13,11 +14,11 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
     {% if title=="CFOP 六格觀察法" %}
     <style>
-        #container2 li {
+        #container li {
             display: inline-block;
         }
 
-        #container2 tr td {
+        #container tr td {
             border: none;
 
         }
@@ -47,10 +48,28 @@
             <div></div>
         </div>
     </div>
+    <div class="top">
+        <section class="top-nav">
+            <div>
+                <a href="/">蔡倫魔方</a>
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li><a href="/">首頁</a></li>
+                <li><a href="/special">花式</a></li>
+                <li><a href="/lbl">LBL</a></li>
+                <li><a href="/cross">CFOP CROSS</a></li>
+                <li><a href="/f2l">CFOP F2L</a></li>
+                <li><a href="/oll">CFOP OLL</a></li>
+                <li><a href="/pll">CFOP PLL</a></li>
+                <li><a href="/pll2">六格觀察法</a></li>
+            </ul>
+        </section>
+    </div>
     <div id="container">
-        <div class="box">
-            <div></div>
-        </div>
         {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
         ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
         ] %}
@@ -84,9 +103,9 @@
             $('.list-search-style').html('');
         } else {
             $('.list-search-style').html(
-                '#container2 .b:not([data-title*="' + id + '"]) {display: none;}' +
-                '#container2 .b2:not([data-title*="' + id + '"]) {display: none;}' +
-                '#container2 .big:not([data-title*="' + id + '"]) {display: none;}'
+                '#container .b:not([data-title*="' + id + '"]) {display: none;}' +
+                '#container .b2:not([data-title*="' + id + '"]) {display: none;}' +
+                '#container .big:not([data-title*="' + id + '"]) {display: none;}'
             );
         }
     </script>

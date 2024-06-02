@@ -1,66 +1,54 @@
 {% extends "base.html" %} {% block content %}
 {% set menuclass = ["","", "", "", "","g4", "", "",] %}
-<div id="tabs10">
-    <ul>
-        {% for i in range(8) %}
-        <a href="{{ menu[0][i] }}">
-            <li class="{{ menuclass[i] }}">{{ menu[1][i] }}</li>
-        </a>
-        {% endfor%}
-    </ul>
+<table>
+    <tr>
+        <td>
+            <a href="#c01" class="click">01</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">02</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">03</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">04</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">05</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">06</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">07</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">08</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">09</a>
+        </td>
+        <td>
+            <a href="#c01" class="click">10</a>
+        </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<p><span class="big" id="c01">一點型</span></p>
+<li class="title2">01</li>
+<li class="title2">02</li>
+<li class="title2">03</li>
+<li class="title2">04</li>
+<div class="roofpig" data-config="base=F3|alg=R U2 R2 F R F' U2 R' F R F'">
 </div>
-<div id="container2">
-    <p>&nbsp;</p>
-    <table>
-        <tr>
-            <td>
-                <a href="#c01" class="click">01</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">02</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">03</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">04</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">05</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">06</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">07</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">08</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">09</a>
-            </td>
-            <td>
-                <a href="#c01" class="click">10</a>
-            </td>
-        </tr>
-    </table>
-    <p>&nbsp;</p>
-    <p><span class="big" id="c01">一點型</span></p>
-    <li class="title2">01</li>
-    <li class="title2">02</li>
-    <li class="title2">03</li>
-    <li class="title2">04</li>
-    <div class="roofpig" data-config="base=F3|alg=R U2 R2 F R F' U2 R' F R F'">
-    </div>
-    <div class="roofpig" data-config="base=F3|alg=F R U R' U' S R U R' U' f'">
-    </div>
-    <div class="roofpig" data-config="base=F3|alg=R' U' F' U F R F R U R' U' F'">
-    </div>
-    <div class="roofpig" data-config="base=F3|alg=F U R U' R' F' R' F' U' F U R">
-    </div>
-    <p>&nbsp;</p>
+<div class="roofpig" data-config="base=F3|alg=F R U R' U' S R U R' U' f'">
 </div>
+<div class="roofpig" data-config="base=F3|alg=R' U' F' U F R F R U R' U' F'">
+</div>
+<div class="roofpig" data-config="base=F3|alg=F U R U' R' F' R' F' U' F U R">
+</div>
+<p>&nbsp;</p>
 <script>
     ROOFPIG_CONF_F3 = "speed=800|pov=Urf|flags=showalg|colored= U- */m u"
 </script>

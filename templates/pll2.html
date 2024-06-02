@@ -1,316 +1,301 @@
 {% extends "base.html" %} {% block content %}
-{% set menuclass = ["","", "", "", "", "", "","g4",] %}
-<div id="tabs10">
-	<ul>
-		{% for i in range(8) %}
-		<a href="{{ menu[0][i] }}">
-			<li class="{{ menuclass[i] }}">{{ menu[1][i] }}</li>
-		</a>
+<p><span class="big">PLL_四方向圖案</span></p>
+<table>
+	<colgroup>
+		{% for i in range(5) %}
+		<col width="20%">
 		{% endfor%}
-	</ul>
-</div>
-<div id="container2">
-	<p>&nbsp;</p>
-	<p><span class="big">PLL_四方向圖案</span></p>
-	<table>
-		<colgroup>
-			{% for i in range(5) %}
-			<col width="20%">
-			{% endfor%}
-		</colgroup>
-		<tr>
-			{% set menuhead = ["PLL","一般方向","y'方向","y2方向","y方向"] %}
-			{% for i in range(5) %}
-			<th>{{menuhead[i]}}</th>
-			{% endfor%}
-		</tr>
-		{% set menuabc = ["a","b","c","d"] %}
-		{% set menuname =
-		["Ub","Ua","Ab","Aa","Z","H","E","T","V","F","Rb","Ra","Jb","Ja","Y","Gd","Gc","Gb","Ga","Nb","Na"] %}
-		{% for i in range(9) %}
-		<tr class="b" data-title="p0{{i+1}}">
-			<td><img src="./static/PLL/{{i+1}}.png"><br>{{menuname[i]}}</td>
-			{% for j in range(4) %}
-			{% if i*10+j==42 or i*10+j==43 or i*10+j==51 or i*10+j==52 or i*10+j==53 or i*10+j==62 or i*10+j==63 %}
-			<td></td>
-			{% else %}
-			<td><img src="./static/PLL/{{i+1}}{{menuabc[j]}}.gif"></td>
-			{% endif %}
-			{% endfor %}
-		</tr>
+	</colgroup>
+	<tr>
+		{% set menuhead = ["PLL","一般方向","y'方向","y2方向","y方向"] %}
+		{% for i in range(5) %}
+		<th>{{menuhead[i]}}</th>
 		{% endfor%}
-		{% for i in range(12) %}
-		<tr class="b" data-title="p{{i+10}}">
-			<td><img src="./static/PLL/{{i+10}}.png"><br>{{menuname[i+9]}}</td>
-			{% for j in range(4) %}
-			{% if i*10+j==101 or i*10+j==102 or i*10+j==103 or i*10+j==111 or i*10+j==112 or i*10+j==113 %}
-			<td></td>
-			{% else %}
-			<td><img src="./static/PLL/{{i+10}}{{menuabc[j]}}.gif"></td>
-			{% endif %}
-			{% endfor %}
-		</tr>
+	</tr>
+	{% set menuabc = ["a","b","c","d"] %}
+	{% set menuname =
+	["Ub","Ua","Ab","Aa","Z","H","E","T","V","F","Rb","Ra","Jb","Ja","Y","Gd","Gc","Gb","Ga","Nb","Na"] %}
+	{% for i in range(9) %}
+	<tr class="b" data-title="p0{{i+1}}">
+		<td><img src="./static/PLL/{{i+1}}.png"><br>{{menuname[i]}}</td>
+		{% for j in range(4) %}
+		{% if i*10+j==42 or i*10+j==43 or i*10+j==51 or i*10+j==52 or i*10+j==53 or i*10+j==62 or i*10+j==63 %}
+		<td></td>
+		{% else %}
+		<td><img src="./static/PLL/{{i+1}}{{menuabc[j]}}.gif"></td>
+		{% endif %}
 		{% endfor %}
+	</tr>
+	{% endfor%}
+	{% for i in range(12) %}
+	<tr class="b" data-title="p{{i+10}}">
+		<td><img src="./static/PLL/{{i+10}}.png"><br>{{menuname[i+9]}}</td>
+		{% for j in range(4) %}
+		{% if i*10+j==101 or i*10+j==102 or i*10+j==103 or i*10+j==111 or i*10+j==112 or i*10+j==113 %}
+		<td></td>
+		{% else %}
+		<td><img src="./static/PLL/{{i+10}}{{menuabc[j]}}.gif"></td>
+		{% endif %}
+		{% endfor %}
+	</tr>
+	{% endfor %}
 
-	</table>
+</table>
+<span class="big">PLL_依照特徵分類</span>
+<div align="center" class="b">
 	<p>&nbsp;</p>
-	<span class="big">PLL_依照特徵分類</span>
-	<div align="center" class="b">
-		<p>&nbsp;</p>
-		<p><span>定義👇</span></p>
-		<p align="center"><img src="./static/PLL/intro.gif" width="200" align="absmiddle"></p>
-		<p>&nbsp;</p>
-	</div>
-	<span class="big" data-title="p01p02p05p06">第一類_邊交換</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p01p02">
-			<td><img src="./static/PLL/1c.gif"><br>Ub</td>
-			<td><img src="./static/PLL/2c.gif"><br>Ua</td>
-			<td><img src="./static/PLL/2d.gif"><br>Ua</td>
-			<td><img src="./static/PLL/1d.gif"><br>Ub</td>
-		</tr>
-		<tr class="b2" data-title="p01p02">
-			<td colspan="2">眼睛對色與否</td>
-			<td colspan="2">眼睛對色與否</td>
-		</tr>
-		<tr class="b" data-title="p01p02p05">
-			<td><img src="./static/PLL/1b.gif"><br>Ub</td>
-			<td><img src="./static/PLL/2a.gif"><br>Ua</td>
-			<td colspan="2"><img src="./static/PLL/5a.gif"><br>Z</td>
-		</tr>
-		<tr class="b2" data-title="p01p02p05">
-			<td colspan="2">對色眼在左還在右</td>
-			<td colspan="2">只有兩種顏色</td>
-		</tr>
-		<tr class="b" data-title="p01p02p05p06">
-			<td><img src="./static/PLL/1a.gif"><br>Ub</td>
-			<td><img src="./static/PLL/2b.gif"><br>Ua</td>
-			<td><img src="./static/PLL/5b.gif"><br>Z</td>
-			<td><img src="./static/PLL/6a.gif"><br>H</td>
-		</tr>
-		<tr class="b2" data-title="p01p02p05p06">
-			<td colspan="2">只有三種顏色，再來看35同色與否</td>
-			<td colspan="2">可以看到四種顏色，再來看眼睛對色與否
-			</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p14p13p10">第二類_一條</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p13p14p10">
-			<td><img src="./static/PLL/13b.gif"><br>Jb</td>
-			<td><img src="./static/PLL/14b.gif"><br>Ja</td>
-			<td><img src="./static/PLL/10b.gif"><br>F</td>
-		</tr>
-		<tr class="b2" data-title="p13p14p10">
-			<td colspan="3">蠻好判斷的</td>
-		</tr>
-		<tr class="b" data-title="p14p13p10">
-			<td><img src="./static/PLL/14c.gif"><br>Ja</td>
-			<td><img src="./static/PLL/13c.gif"><br>Jb</td>
-			<td><img src="./static/PLL/10c.gif"><br>F</td>
-		</tr>
-		<tr class="b2" data-title="p14p13p10">
-			<td colspan="3">也蠻好判斷的</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p13p14p20p21p03p04p09p15">第三類_兩對</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p15">
-			<td colspan="3"><img src="./static/PLL/15a.gif"><br>Y</td>
-		</tr>
-		<tr class="b2" data-title="p15">
-			<td colspan="3">兩對分離</td>
-		</tr>
-		<tr class="b" data-title="p03p04p09">
-			<td><img src="./static/PLL/3c.gif"><br>Ab</td>
-			<td><img src="./static/PLL/4c.gif"><br>Aa</td>
-			<td><img src="./static/PLL/9b.gif"><br>V</td>
-		</tr>
-		<tr class="b2" data-title="p03p04p09">
-			<td colspan="3">V形</td>
-		</tr>
-		<tr class="b2" data-title="p03p04p09">
-			<td colspan="2">16同色，再看12對色與否</td>
-			<td>16異色</td>
-		</tr>
-		<tr class="b" data-title="p13p21">
-			<td><img src="./static/PLL/13a.gif"><br>Jb</td>
-			<td><img src="./static/PLL/13d.gif"><br>Jb</td>
-			<td><img src="./static/PLL/21a.gif"><br>Na</td>
-		</tr>
-		<tr class="b2" data-title="p13p21">
-			<td colspan="3">兩對都靠右</td>
-		</tr>
-		<tr class="b2" data-title="p13p21">
-			<td colspan="2">16同色，兩對的顏色對色與否去判斷</td>
-			<td>16不同色</td>
-		</tr>
-		<tr class="b" data-title="p14p20">
-			<td><img src="./static/PLL/14a.gif"><br>Ja</td>
-			<td><img src="./static/PLL/14d.gif"><br>Ja</td>
-			<td><img src="./static/PLL/20a.gif"><br>Nb</td>
-		</tr>
-		<tr class="b2" data-title="p14p20">
-			<td colspan="3">兩對都靠左</td>
-		</tr>
-		<tr class="b2" data-title="p14p20">
-			<td colspan="2">16同色，兩對的顏色對色與否去判斷</td>
-			<td>16不同色</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p03p04p17p19">第四類_一眼加上一對</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p04p19p03p17">
-			<td><img src="./static/PLL/4d.gif"><br>Aa</td>
-			<td><img src="./static/PLL/19b.gif"><br>Ga</td>
-			<td><img src="./static/PLL/3b.gif"><br>Ab</td>
-			<td><img src="./static/PLL/17c.gif"><br>Gc</td>
-		</tr>
-		<tr class="b2" data-title="p03p04p17p19">
-			<td colspan="2">看24同色與否</td>
-			<td colspan="2">看35同色與否</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p08p11p12">第五類_長一點的眼</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p08p11p12">
-			<td><img src="./static/PLL/8b.gif"><br>T</td>
-			<td><img src="./static/PLL/12c.gif"><br>Ra</td>
-			<td><img src="./static/PLL/8c.gif"><br>T</td>
-			<td><img src="./static/PLL/11b.gif"><br>Rb</td>
-		</tr>
-		<tr class="b2" data-title="p08p11p12">
-			<td colspan="2">看眼睛對色與否</td>
-			<td colspan="2">看眼睛對色與否</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p03p04p11p12p16p17p18p19">第六類_只有一眼</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p16p18">
-			<td><img src="./static/PLL/16b.gif"><br>Gd</td>
-			<td><img src="./static/PLL/18b.gif"><br>Gb</td>
-			<td><img src="./static/PLL/16c.gif"><br>Gd</td>
-			<td><img src="./static/PLL/18c.gif"><br>Gb</td>
-		</tr>
-		<tr class="b2" data-title="p16p18">
-			<td colspan="4">眼睛對色</td>
-		</tr>
-		<tr class="b2" data-title="p16p18">
-			<td colspan="2">35同色與否</td>
-			<td colspan="2">24同色與否</td>
-		</tr>
-		<tr class="b" data-title="p03p11p17">
-			<td><img src="./static/PLL/11a.gif"><br>Rb</td>
-			<td><img src="./static/PLL/17b.gif"><br>Gc</td>
-			<td colspan="2"><img src="./static/PLL/3a.gif"><br>Ab</td>
-		</tr>
-		<tr class="b2" data-title="p03p11p17">
-			<td colspan="2">1234兩種顏色，再來看35同色與否</td>
-			<td colspan="2">1234三種顏色</td>
-		</tr>
-		<tr class="b" data-title="p04p12p19">
-			<td><img src="./static/PLL/12d.gif"><br>Ra</td>
-			<td><img src="./static/PLL/19c.gif"><br>Ga</td>
-			<td colspan="2"><img src="./static/PLL/4a.gif"><br>Aa</td>
-		</tr>
-		<tr class="b2" data-title="p04p12p19">
-			<td colspan="2">3456兩種顏色，再來看24同色與否</td>
-			<td colspan="2">3456三種顏色</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p03p04p08p09p11p12p16p18">第七類_只有一對靠外</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p09">
-			<td colspan="2"><img src="./static/PLL/9a.gif"><br>V</td>
-			<td colspan="2"><img src="./static/PLL/9c.gif"><br>V</td>
-		</tr>
-		<tr class="b2" data-title="p09">
-			<td colspan="4">16不同色</td>
-		</tr>
-		<tr class="b" data-title="p04p08p12p16">
-			<td><img src="./static/PLL/4b.gif"><br>Aa</td>
-			<td><img src="./static/PLL/16d.gif"><br>Gd</td>
-			<td><img src="./static/PLL/8a.gif"><br>T</td>
-			<td><img src="./static/PLL/12b.gif"><br>Ra</td>
-		</tr>
-		<tr class="b2" data-title="p04p08p12p16">
-			<td colspan="2">23對色，再來看45對色與否</td>
-			<td colspan="2">23不對色，再來看35同色與否</td>
-		</tr>
-		<tr class="b" data-title="p03p08p11p18">
-			<td><img src="./static/PLL/3d.gif"><br>Ab</td>
-			<td><img src="./static/PLL/18a.gif"><br>Gb</td>
-			<td><img src="./static/PLL/8d.gif"><br>T</td>
-			<td><img src="./static/PLL/11c.gif"><br>Rb</td>
-		</tr>
-		<tr class="b2" data-title="p03p08p11p18">
-			<td colspan="2">45對色，再來看23對色與否</td>
-			<td colspan="2">45不對色，再來看24同色與否</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p15p17p19p16p18">第八類_只有一對靠內</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p15">
-			<td colspan="2"><img src="./static/PLL/15d.gif"><br>Y</td>
-			<td colspan="2"><img src="./static/PLL/15b.gif"><br>Y</td>
-		</tr>
-		<tr class="b2" data-title="p15">
-			<td colspan="4">16不同色</td>
-		</tr>
-		<tr class="b" data-title="p17p19p16p18">
-			<td><img src="./static/PLL/18d.gif"><br>Gb</td>
-			<td><img src="./static/PLL/19a.gif"><br>Ga</td>
-			<td><img src="./static/PLL/17d.gif"><br>Gc</td>
-			<td><img src="./static/PLL/16a.gif"><br>Gd</td>
-		</tr>
-		<tr class="b2" data-title="p17p19p16p18">
-			<td colspan="4">16同色</td>
-		</tr>
-		<tr class="b2" data-title="p17p19p16p18">
-			<td colspan="2">12對色與否</td>
-			<td colspan="2">56對色與否</td>
-		</tr>
-	</table>
-	<span class="big" data-title="p07p09p10p11p12p15p17p19">第九類_雜</span>
-	<table style="width: auto;">
-		<tr class="b" data-title="p11p12">
-			<td colspan="2"><img src="./static/PLL/11d.gif"><br>Rb</td>
-			<td colspan="2"><img src="./static/PLL/12a.gif"><br>Ra</td>
-		</tr>
-		<tr class="b2" data-title="p11p12">
-			<td colspan="4">25對色，再來看23對色與否</td>
-		</tr>
-		<tr class="b" data-title="p10p17p19">
-			<td><img src="./static/PLL/10d.gif"><br>F</td>
-			<td><img src="./static/PLL/10a.gif"><br>F</td>
-			<td><img src="./static/PLL/19d.gif"><br>Ga</td>
-			<td><img src="./static/PLL/17a.gif"><br>Gc</td>
-		</tr>
-		<tr class="b2" data-title="p10p17p19">
-			<td colspan="4">16同色</td>
-		</tr>
-		<tr class="b2" data-title="p10p17p19">
-			<td colspan="2">2345兩種顏色，再來看13同色與否
-			</td>
-			<td colspan="2">2345三種顏色，再來看13同色與否
-			</td>
-		</tr>
-		<tr class="b" data-title="p07p09p15">
-			<td><img src="./static/PLL/9d.gif"><br>V</td>
-			<td><img src="./static/PLL/15c.gif"><br>Y</td>
-			<td><img src="./static/PLL/7a.gif"><br>E</td>
-			<td><img src="./static/PLL/7b.gif"><br>E</td>
-		</tr>
-		<tr class="b2" data-title="p07p09p15">
-			<td colspan="4">16不同色</td>
-		</tr>
-		<tr class="b2" data-title="p07p09p15">
-			<td colspan="1">2345只有兩種顏色</td>
-			<td colspan="1">2345四種顏色</td>
-			<td colspan="2">2345只有三種顏色，再來看24同色與否
-			</td>
-		</tr>
-	</table>
+	<p><span>定義👇</span></p>
+	<p align="center"><img src="./static/PLL/intro.gif" align="absmiddle" style="width: 30vw;max-width: 300px;"></p>
 	<p>&nbsp;</p>
 </div>
+<span class="big" data-title="p01p02p05p06">第一類_邊交換</span>
+<table>
+	<tr class="b" data-title="p01p02">
+		<td><img src="./static/PLL/1c.gif"><br>Ub</td>
+		<td><img src="./static/PLL/2c.gif"><br>Ua</td>
+		<td><img src="./static/PLL/2d.gif"><br>Ua</td>
+		<td><img src="./static/PLL/1d.gif"><br>Ub</td>
+	</tr>
+	<tr class="b2" data-title="p01p02">
+		<td colspan="2">眼睛對色與否</td>
+		<td colspan="2">眼睛對色與否</td>
+	</tr>
+	<tr class="b" data-title="p01p02p05">
+		<td><img src="./static/PLL/1b.gif"><br>Ub</td>
+		<td><img src="./static/PLL/2a.gif"><br>Ua</td>
+		<td colspan="2"><img src="./static/PLL/5a.gif"><br>Z</td>
+	</tr>
+	<tr class="b2" data-title="p01p02p05">
+		<td colspan="2">對色眼在左還在右</td>
+		<td colspan="2">只有兩種顏色</td>
+	</tr>
+	<tr class="b" data-title="p01p02p05p06">
+		<td><img src="./static/PLL/1a.gif"><br>Ub</td>
+		<td><img src="./static/PLL/2b.gif"><br>Ua</td>
+		<td><img src="./static/PLL/5b.gif"><br>Z</td>
+		<td><img src="./static/PLL/6a.gif"><br>H</td>
+	</tr>
+	<tr class="b2" data-title="p01p02p05p06">
+		<td colspan="2">只有三種顏色，再來看35同色與否</td>
+		<td colspan="2">可以看到四種顏色，再來看眼睛對色與否
+		</td>
+	</tr>
+</table>
+<span class="big" data-title="p14p13p10">第二類_一條</span>
+<table>
+	<tr class="b" data-title="p13p14p10">
+		<td><img src="./static/PLL/13b.gif"><br>Jb</td>
+		<td><img src="./static/PLL/14b.gif"><br>Ja</td>
+		<td><img src="./static/PLL/10b.gif"><br>F</td>
+	</tr>
+	<tr class="b2" data-title="p13p14p10">
+		<td colspan="3">蠻好判斷的</td>
+	</tr>
+	<tr class="b" data-title="p14p13p10">
+		<td><img src="./static/PLL/14c.gif"><br>Ja</td>
+		<td><img src="./static/PLL/13c.gif"><br>Jb</td>
+		<td><img src="./static/PLL/10c.gif"><br>F</td>
+	</tr>
+	<tr class="b2" data-title="p14p13p10">
+		<td colspan="3">也蠻好判斷的</td>
+	</tr>
+</table>
+<span class="big" data-title="p13p14p20p21p03p04p09p15">第三類_兩對</span>
+<table>
+	<tr class="b" data-title="p15">
+		<td colspan="3"><img src="./static/PLL/15a.gif"><br>Y</td>
+	</tr>
+	<tr class="b2" data-title="p15">
+		<td colspan="3">兩對分離</td>
+	</tr>
+	<tr class="b" data-title="p03p04p09">
+		<td><img src="./static/PLL/3c.gif"><br>Ab</td>
+		<td><img src="./static/PLL/4c.gif"><br>Aa</td>
+		<td><img src="./static/PLL/9b.gif"><br>V</td>
+	</tr>
+	<tr class="b2" data-title="p03p04p09">
+		<td colspan="3">V形</td>
+	</tr>
+	<tr class="b2" data-title="p03p04p09">
+		<td colspan="2">16同色，再看12對色與否</td>
+		<td>16異色</td>
+	</tr>
+	<tr class="b" data-title="p13p21">
+		<td><img src="./static/PLL/13a.gif"><br>Jb</td>
+		<td><img src="./static/PLL/13d.gif"><br>Jb</td>
+		<td><img src="./static/PLL/21a.gif"><br>Na</td>
+	</tr>
+	<tr class="b2" data-title="p13p21">
+		<td colspan="3">兩對都靠右</td>
+	</tr>
+	<tr class="b2" data-title="p13p21">
+		<td colspan="2">16同色，兩對的顏色對色與否去判斷</td>
+		<td>16不同色</td>
+	</tr>
+	<tr class="b" data-title="p14p20">
+		<td><img src="./static/PLL/14a.gif"><br>Ja</td>
+		<td><img src="./static/PLL/14d.gif"><br>Ja</td>
+		<td><img src="./static/PLL/20a.gif"><br>Nb</td>
+	</tr>
+	<tr class="b2" data-title="p14p20">
+		<td colspan="3">兩對都靠左</td>
+	</tr>
+	<tr class="b2" data-title="p14p20">
+		<td colspan="2">16同色，兩對的顏色對色與否去判斷</td>
+		<td>16不同色</td>
+	</tr>
+</table>
+<span class="big" data-title="p03p04p17p19">第四類_一眼加上一對</span>
+<table>
+	<tr class="b" data-title="p04p19p03p17">
+		<td><img src="./static/PLL/4d.gif"><br>Aa</td>
+		<td><img src="./static/PLL/19b.gif"><br>Ga</td>
+		<td><img src="./static/PLL/3b.gif"><br>Ab</td>
+		<td><img src="./static/PLL/17c.gif"><br>Gc</td>
+	</tr>
+	<tr class="b2" data-title="p03p04p17p19">
+		<td colspan="2">看24同色與否</td>
+		<td colspan="2">看35同色與否</td>
+	</tr>
+</table>
+<span class="big" data-title="p08p11p12">第五類_長一點的眼</span>
+<table>
+	<tr class="b" data-title="p08p11p12">
+		<td><img src="./static/PLL/8b.gif"><br>T</td>
+		<td><img src="./static/PLL/12c.gif"><br>Ra</td>
+		<td><img src="./static/PLL/8c.gif"><br>T</td>
+		<td><img src="./static/PLL/11b.gif"><br>Rb</td>
+	</tr>
+	<tr class="b2" data-title="p08p11p12">
+		<td colspan="2">看眼睛對色與否</td>
+		<td colspan="2">看眼睛對色與否</td>
+	</tr>
+</table>
+<span class="big" data-title="p03p04p11p12p16p17p18p19">第六類_只有一眼</span>
+<table>
+	<tr class="b" data-title="p16p18">
+		<td><img src="./static/PLL/16b.gif"><br>Gd</td>
+		<td><img src="./static/PLL/18b.gif"><br>Gb</td>
+		<td><img src="./static/PLL/16c.gif"><br>Gd</td>
+		<td><img src="./static/PLL/18c.gif"><br>Gb</td>
+	</tr>
+	<tr class="b2" data-title="p16p18">
+		<td colspan="4">眼睛對色</td>
+	</tr>
+	<tr class="b2" data-title="p16p18">
+		<td colspan="2">35同色與否</td>
+		<td colspan="2">24同色與否</td>
+	</tr>
+	<tr class="b" data-title="p03p11p17">
+		<td><img src="./static/PLL/11a.gif"><br>Rb</td>
+		<td><img src="./static/PLL/17b.gif"><br>Gc</td>
+		<td colspan="2"><img src="./static/PLL/3a.gif"><br>Ab</td>
+	</tr>
+	<tr class="b2" data-title="p03p11p17">
+		<td colspan="2">1234兩種顏色，再來看35同色與否</td>
+		<td colspan="2">1234三種顏色</td>
+	</tr>
+	<tr class="b" data-title="p04p12p19">
+		<td><img src="./static/PLL/12d.gif"><br>Ra</td>
+		<td><img src="./static/PLL/19c.gif"><br>Ga</td>
+		<td colspan="2"><img src="./static/PLL/4a.gif"><br>Aa</td>
+	</tr>
+	<tr class="b2" data-title="p04p12p19">
+		<td colspan="2">3456兩種顏色，再來看24同色與否</td>
+		<td colspan="2">3456三種顏色</td>
+	</tr>
+</table>
+<span class="big" data-title="p03p04p08p09p11p12p16p18">第七類_只有一對靠外</span>
+<table>
+	<tr class="b" data-title="p09">
+		<td colspan="2"><img src="./static/PLL/9a.gif"><br>V</td>
+		<td colspan="2"><img src="./static/PLL/9c.gif"><br>V</td>
+	</tr>
+	<tr class="b2" data-title="p09">
+		<td colspan="4">16不同色</td>
+	</tr>
+	<tr class="b" data-title="p04p08p12p16">
+		<td><img src="./static/PLL/4b.gif"><br>Aa</td>
+		<td><img src="./static/PLL/16d.gif"><br>Gd</td>
+		<td><img src="./static/PLL/8a.gif"><br>T</td>
+		<td><img src="./static/PLL/12b.gif"><br>Ra</td>
+	</tr>
+	<tr class="b2" data-title="p04p08p12p16">
+		<td colspan="2">23對色，再來看45對色與否</td>
+		<td colspan="2">23不對色，再來看35同色與否</td>
+	</tr>
+	<tr class="b" data-title="p03p08p11p18">
+		<td><img src="./static/PLL/3d.gif"><br>Ab</td>
+		<td><img src="./static/PLL/18a.gif"><br>Gb</td>
+		<td><img src="./static/PLL/8d.gif"><br>T</td>
+		<td><img src="./static/PLL/11c.gif"><br>Rb</td>
+	</tr>
+	<tr class="b2" data-title="p03p08p11p18">
+		<td colspan="2">45對色，再來看23對色與否</td>
+		<td colspan="2">45不對色，再來看24同色與否</td>
+	</tr>
+</table>
+<span class="big" data-title="p15p17p19p16p18">第八類_只有一對靠內</span>
+<table>
+	<tr class="b" data-title="p15">
+		<td colspan="2"><img src="./static/PLL/15d.gif"><br>Y</td>
+		<td colspan="2"><img src="./static/PLL/15b.gif"><br>Y</td>
+	</tr>
+	<tr class="b2" data-title="p15">
+		<td colspan="4">16不同色</td>
+	</tr>
+	<tr class="b" data-title="p17p19p16p18">
+		<td><img src="./static/PLL/18d.gif"><br>Gb</td>
+		<td><img src="./static/PLL/19a.gif"><br>Ga</td>
+		<td><img src="./static/PLL/17d.gif"><br>Gc</td>
+		<td><img src="./static/PLL/16a.gif"><br>Gd</td>
+	</tr>
+	<tr class="b2" data-title="p17p19p16p18">
+		<td colspan="4">16同色</td>
+	</tr>
+	<tr class="b2" data-title="p17p19p16p18">
+		<td colspan="2">12對色與否</td>
+		<td colspan="2">56對色與否</td>
+	</tr>
+</table>
+<span class="big" data-title="p07p09p10p11p12p15p17p19">第九類_雜</span>
+<table>
+	<tr class="b" data-title="p11p12">
+		<td colspan="2"><img src="./static/PLL/11d.gif"><br>Rb</td>
+		<td colspan="2"><img src="./static/PLL/12a.gif"><br>Ra</td>
+	</tr>
+	<tr class="b2" data-title="p11p12">
+		<td colspan="4">25對色，再來看23對色與否</td>
+	</tr>
+	<tr class="b" data-title="p10p17p19">
+		<td><img src="./static/PLL/10d.gif"><br>F</td>
+		<td><img src="./static/PLL/10a.gif"><br>F</td>
+		<td><img src="./static/PLL/19d.gif"><br>Ga</td>
+		<td><img src="./static/PLL/17a.gif"><br>Gc</td>
+	</tr>
+	<tr class="b2" data-title="p10p17p19">
+		<td colspan="4">16同色</td>
+	</tr>
+	<tr class="b2" data-title="p10p17p19">
+		<td colspan="2">2345兩種顏色，再來看13同色與否
+		</td>
+		<td colspan="2">2345三種顏色，再來看13同色與否
+		</td>
+	</tr>
+	<tr class="b" data-title="p07p09p15">
+		<td><img src="./static/PLL/9d.gif"><br>V</td>
+		<td><img src="./static/PLL/15c.gif"><br>Y</td>
+		<td><img src="./static/PLL/7a.gif"><br>E</td>
+		<td><img src="./static/PLL/7b.gif"><br>E</td>
+	</tr>
+	<tr class="b2" data-title="p07p09p15">
+		<td colspan="4">16不同色</td>
+	</tr>
+	<tr class="b2" data-title="p07p09p15">
+		<td colspan="1">2345只有兩種顏色</td>
+		<td colspan="1">2345四種顏色</td>
+		<td colspan="2">2345只有三種顏色，再來看24同色與否
+		</td>
+	</tr>
+</table>
 {% endblock %}

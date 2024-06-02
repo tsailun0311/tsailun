@@ -1,106 +1,94 @@
 {% extends "base.html" %} {% block content %}
-{% set menuclass = ["","", "", "g4", "", "", "", "",] %}
-<div id="tabs10">
-	<ul>
-		{% for i in range(8) %}
-		<a href="{{ menu[0][i] }}">
-			<li class="{{ menuclass[i] }}">{{ menu[1][i] }}</li>
-		</a>
-		{% endfor%}
-	</ul>
+<table>
+	<tr>
+		<td>
+			<a href="#c01" class="click">3缺1</a>
+		</td>
+		<td>
+			<a href="#c02" class="click">2缺2</a>
+		</td>
+		<td>
+			<a href="#c03" class="click">1缺3</a>
+		</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<p><span class="big" id="c01">3缺1</span></p>
+<div class="roofpig" data-config="base=F1|alg=R' u R' u'">
 </div>
-<div id="container2">
-	<p>&nbsp;</p>
-	<table>
-		<tr>
-			<td>
-				<a href="#c01" class="click">3缺1</a>
-			</td>
-			<td>
-				<a href="#c02" class="click">2缺2</a>
-			</td>
-			<td>
-				<a href="#c03" class="click">1缺3</a>
-			</td>
-		</tr>
-	</table>
-	<p>&nbsp;</p>
-	<p><span class="big" id="c01">3缺1</span></p>
-	<div class="roofpig" data-config="base=F1|alg=R' u R' u'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R u R' u'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F R">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R2 F R2">
-	</div>
-	<p><span class="big" id="c02">2缺2</span></p>
-	<div class="roofpig" data-config="base=F1|alg=R' F">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R2 F">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R F">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R2 F R">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R F R">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F R">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R F R2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F R2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F R2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F2 R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F' R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F2 R' F'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F' R' F'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F' R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=U2 B2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=U2 B2 F">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R F R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' U R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=U R F R">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' U R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R F' R' F2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' U2 F R'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=F2 D' R2">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=R' F R r' U r">
-	</div>
-	<p><span class="big" id="c03">1缺3</span></p>
-	<div class="roofpig" data-config="base=F1|alg=D R' F L">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=D R' F B'">
-	</div>
-	<div class="roofpig" data-config="base=F1|alg=U F M'+R<">
-	</div>
+<div class="roofpig" data-config="base=F1|alg=R u R' u'">
 </div>
+<div class="roofpig" data-config="base=F1|alg=R' F R">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R2 F R2">
+</div>
+<p><span class="big" id="c02">2缺2</span></p>
+<div class="roofpig" data-config="base=F1|alg=R' F">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R2 F">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R F">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R2 F R">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R F R">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F R">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R F R2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F R2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' F R2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F2 R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F' R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F2 R' F'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F' R' F'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' F'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F' R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=U2 B2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=U2 B2 F">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' F R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R F R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' U R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=U R F R">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' U R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R F' R' F2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' U2 F R'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=F2 D' R2">
+</div>
+<div class="roofpig" data-config="base=F1|alg=R' F R r' U r">
+</div>
+<p><span class="big" id="c03">1缺3</span></p>
+<div class="roofpig" data-config="base=F1|alg=D R' F L">
+</div>
+<div class="roofpig" data-config="base=F1|alg=D R' F B'">
+</div>
+<div class="roofpig" data-config="base=F1|alg=U F M'+R<">
+</div>
+
 <script type="text/javascript">
 	ROOFPIG_CONF_F1 = "speed=800|flags=showalg|colored=*/m D*/e"
 </script>
