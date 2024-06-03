@@ -9,11 +9,11 @@
 		{% for j in range(10) %}
 		{% if i==0 and j!=9 %}
 		<td>
-			<a href="#c{{f2lmenu[i*10+j]}}" class="click">F2L0{{j+1}}</a>
+			<a href="#c{{f2lmenu[i*10+j]}}" class="click">0{{j+1}}</a>
 		</td>
 		{% else %}
 		<td>
-			<a href="#c{{f2lmenu[i*10+j]}}" class="click">F2L{{i*10+j+1}}</a>
+			<a href="#c{{f2lmenu[i*10+j]}}" class="click">{{i*10+j+1}}</a>
 		</td>
 		{% endif %}
 		{% endfor %}
@@ -21,15 +21,15 @@
 	{% endfor %}
 	<tr>
 		<td>
-			<a href="#c11" class="click">F2L41</a>
+			<a href="#c11" class="click">41</a>
 		</td>
-		<td colspan="2">
-			<a href="#c12" class="click">魔方101非標</a>
+		<td colspan="3">
+			<a href="#c12" class="click">101非標</a>
 		</td>
-		<td colspan="2">
+		<td colspan="3">
 			<a href="#c13" class="click">中島非標1st</a>
 		</td>
-		<td colspan="2">
+		<td colspan="3">
 			<a href="#c14" class="click">中島非標2nd</a>
 		</td>
 	</tr>

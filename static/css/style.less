@@ -19,7 +19,7 @@ body {
 
 /**************** main styles ***********************************************************************************************/
 #container {
-    font-size: clamp(9px, 2.5vw, 100%);
+    font-size: clamp(9px, 4vw, 100%);
     background-color: #fff;
     padding: 50px 0;
 
@@ -178,9 +178,11 @@ strong {
 /**************** roofpig styles ***********************************************************************************************/
 
 .roofpig {
+    border: none !important;
     display: inline-grid;
     width: 44vw;
     max-width: 210px !important;
+    min-width: 186px !important;
     margin-left: 1vw !important;
 }
 
@@ -190,7 +192,7 @@ strong {
 
 .roofpig-algtext {
     height: 40px !important;
-    font-size: 0.9em !important;
+    font-size: 1em !important;
     line-height: 19px;
 }
 
@@ -214,7 +216,7 @@ strong {
     .loopreset((@counter - 1));
 
     #reset-@{counter} {
-        background-position: 12px -234px !important
+        background-position: 10px -234px !important
     }
 }
 
@@ -224,7 +226,7 @@ strong {
     .loopplay((@counter - 1));
 
     #play-@{counter} {
-        background-position: 12px -324px !important
+        background-position: 10px -324px !important
     }
 }
 
@@ -234,7 +236,7 @@ strong {
     .loopprev((@counter - 1));
 
     #prev-@{counter} {
-        background-position: 12px -264px !important
+        background-position: 10px -264px !important
     }
 }
 
@@ -244,7 +246,7 @@ strong {
     .loopnext((@counter - 1));
 
     #next-@{counter} {
-        background-position: 12px -294px !important
+        background-position: 10px -294px !important
     }
 }
 
@@ -254,7 +256,7 @@ strong {
     .looppause((@counter - 1));
 
     #pause-@{counter} {
-        background-position: 12px -353px !important
+        background-position: 10px -353px !important
     }
 }
 

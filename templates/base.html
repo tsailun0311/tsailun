@@ -12,6 +12,13 @@
     <link href="{{ url_for('static', filename='css/style.less') }}" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    {% if title=="花式魔方" %}
+    <style>
+        .roofpig-algtext {
+            font-size: 0.9em !important;
+        }
+    </style>
+    {% endif %}
     {% if title=="CFOP 六格觀察法" %}
     <style>
         #container li {
