@@ -43,7 +43,7 @@
 </ul>
 <p><span class="big">網頁配色</span></p>
 <ul>
-    <li>採用沉著冷靜放鬆心靈的<strong>四種冷色</strong>配色</li>
+    <li>雙魚座出生的人會在他們的能量色<strong>海泡石綠</strong>中找到恢復的能量。<strong>珊瑚色</strong>為這個飄逸的海洋風配色帶來了創意、能量和美感。</li>
 </ul>
 <img src="static/cubeheadimg.png">
 <p><span class="big">初學者</span></p>
@@ -123,7 +123,7 @@
         <img src="./static/PLL.png" width="760" style="padding-top: 5px;">
     </div>
 </details>
-<details onclick="handleDetailsClick('details1')">
+<details>
     <summary>三階魔方狀態數</summary>
     <div class="answer">
         <p>
@@ -163,7 +163,7 @@
         </p>
     </div>
 </details>
-<details onclick="handleDetailsClick('details2')">
+<details>
     <summary>上帝之數</summary>
     <div class="answer">
         <p>將任意三階魔方打亂後，最小還原步數究竟是多少？</p>
@@ -181,7 +181,7 @@
         </table>
     </div>
 </details>
-<details onclick="handleDetailsClick('details3')">
+<details>
     <summary>七步十字</summary>
     <div class="answer">
         <p>
@@ -224,7 +224,7 @@
         </table>
     </div>
 </details>
-<details onclick="handleDetailsClick('details4')">
+<details>
     <summary>魔方英文</summary>
     <div class="answer">
         <p>
@@ -235,7 +235,7 @@
         </p>
     </div>
 </details>
-<details onclick="handleDetailsClick('details5')">
+<details>
     <summary>魔方顏色</summary>
     <div class="answer">
         <p>
@@ -246,7 +246,7 @@
         </p>
     </div>
 </details>
-<details onclick="handleDetailsClick('details6')">
+<details>
     <summary>製造極限</summary>
     <div class="answer">
         <p>假設魔方一個塊的邊長為1，魔方的階數為n，對角線的長度是√2n。我們能轉動的極限是45度，此時角塊距離中心塊最遠。</p>
@@ -271,7 +271,7 @@
         <p>所以我們就得到了七階以上的魔方是不能保證每個方塊大小都一样的。因此，解決辦法有<strong>不等寬設計</strong>或<strong>弧形設計</strong>。</p>
         <img src="./static/make1.png">
 </details>
-<details onclick="handleDetailsClick('details7')">
+<details>
     <summary>菲神語錄</summary>
     <div class="answer">
         <p>
@@ -307,17 +307,4 @@
         </p>
     </div>
 </details>
-<script>
-    function handleDetailsClick(clickedId) {
-        const detailsElements = document.querySelectorAll('details');
-        detailsElements.forEach(detailsElement => {
-            const detailsId = detailsElement.getAttribute('id');
-            if (detailsId === clickedId) {
-                detailsElement.open = true;
-            } else {
-                detailsElement.open = false;
-            }
-        });
-    }
-</script>
 {% endblock %}

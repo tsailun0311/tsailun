@@ -2,7 +2,7 @@
 <div align="center">
 	<p>&nbsp;</p>
 	<p>
-		<span id="timer" style="font-size: 28px;">此頁面尚未創建喔!!👍,10秒後返回上一頁</span>
+		<span id="timer">此頁面尚未創建喔!!👍,10秒後返回上一頁</span>
 	</p>
 	<script type="text/javascript">
 		var timer = document.querySelector("#timer");
@@ -15,17 +15,4 @@
 	<img src="./static/404.png" width="340">
 	<p>&nbsp;</p>
 </div>
-
-<script type="text/javascript" language="javascript">
-	var i = 10;
-	intervalid = setInterval("fun()", 1000);
-
-	function fun() {
-		if (i == 0) {
-			clearInterval(intervalid);
-			history.go(-1);
-		}
-		i--;
-	}
-</script>
 {% endblock %}

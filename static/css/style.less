@@ -1,7 +1,7 @@
-@g1: #bed3d4;
-@g2: #e8caa4;
-@g3: #a1b872;
-@g4: #e5d67b;
+@g1: #f9bcae;
+@g2: #aae0be;
+@g3: #598f88;
+@g4: #fe5853;
 
 html,
 body {
@@ -85,7 +85,7 @@ summary {
     justify-content: space-between;
     align-items: center;
     padding: 0.5vh 2vw;
-    background-color: @g3;
+    background-color: @g2;
     border-radius: 10px;
     cursor: pointer;
 
@@ -106,7 +106,7 @@ summary {
 
 details[open] {
     summary {
-        background-color: @g4;
+        background-color: @g1;
     }
 
     summary::after {
@@ -135,34 +135,19 @@ a {
     }
 }
 
-.g4 {
-    color: #FFF !important;
-    background-color: @g3;
-    border-color: @g3  !important;
-}
-
 .big {
     font-size: 1.2em;
     background: linear-gradient(-135deg,
             transparent 15px,
-            @g4 15px,
+            @g3 15px,
             @g2 100%) top right,
         linear-gradient(-45deg,
             transparent 15px,
-            @g4 15px,
+            @g3 15px,
             @g2 100%) bottom right;
     background-size: 100% 50%;
     background-repeat: no-repeat;
     padding: 0 20px;
-}
-
-.title2 {
-    display: inline-grid;
-    vertical-align: text-top;
-    height: 30px;
-    width: 44vw;
-    max-width: 210px;
-    margin-left: 1vw;
 }
 
 .b2 {
@@ -172,7 +157,13 @@ a {
 }
 
 strong {
-    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, @g4 70%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, @g1 70%);
+}
+
+.pllimg {
+    width: 14vw !important;
+    max-width: 150px !important;
+    display: inline-block !important;
 }
 
 /**************** roofpig styles ***********************************************************************************************/
@@ -198,18 +189,18 @@ strong {
 
 .roofpig-past-algtext {
     background-color: @g1  !important;
-    border-radius: 0.5vw
+    border-radius: 5px
 }
 
 .roofpig-button {
     border-radius: 5px !important;
     border: none !important;
     height: 27px !important;
-    margin-right: 2% !important;
-    background: url(../sprite.png) no-repeat -20px 0px #d5d7d8 !important;
+    margin-right: 4% !important;
+    background: url(../sprite.png) no-repeat -20px 0px @g2  !important;
     text-indent: -117px !important;
     overflow: hidden !important;
-    width: 23% !important
+    width: 21% !important
 }
 
 .loopreset(@counter) when (@counter > 0) {
@@ -278,7 +269,7 @@ strong {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: @g1;
+    background-color: @g2;
 }
 
 .loading {
@@ -288,7 +279,7 @@ strong {
     top: 50%;
     left: 50%;
     margin: -40px 0 0 -40px;
-    color: @g3  !important;
+    color: @g4  !important;
 }
 
 /*!
@@ -628,7 +619,7 @@ strong {
     }
 
     #menu-toggle:checked~.menu li {
-        border: 1px solid #333;
+        border: 1px solid @g2;
         height: 2.5em;
         padding: 0.5em;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -641,7 +632,7 @@ strong {
         padding: 0.5em 0;
         width: 100%;
         color: white;
-        background-color: #222;
+        background-color: @g1;
     }
 
     .menu>li:not(:last-child) {

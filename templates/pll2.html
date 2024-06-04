@@ -17,24 +17,24 @@
 	["Ub","Ua","Ab","Aa","Z","H","E","T","V","F","Rb","Ra","Jb","Ja","Y","Gd","Gc","Gb","Ga","Nb","Na"] %}
 	{% for i in range(9) %}
 	<tr class="b" data-title="p0{{i+1}}">
-		<td><img src="./static/PLL/{{i+1}}.png"><br>{{menuname[i]}}</td>
+		<td>{{menuname[i]}}<br><img src="./static/PLL/{{i+1}}.png"></td>
 		{% for j in range(4) %}
 		{% if i*10+j==42 or i*10+j==43 or i*10+j==51 or i*10+j==52 or i*10+j==53 or i*10+j==62 or i*10+j==63 %}
 		<td></td>
 		{% else %}
-		<td><img src="./static/PLL/{{i+1}}{{menuabc[j]}}.gif"></td>
+		<td><br>&nbsp;<img src="./static/PLL/{{i+1}}{{menuabc[j]}}.gif"></td>
 		{% endif %}
 		{% endfor %}
 	</tr>
 	{% endfor%}
 	{% for i in range(12) %}
 	<tr class="b" data-title="p{{i+10}}">
-		<td><img src="./static/PLL/{{i+10}}.png"><br>{{menuname[i+9]}}</td>
+		<td>{{menuname[i+9]}}<br><img src="./static/PLL/{{i+10}}.png"></td>
 		{% for j in range(4) %}
 		{% if i*10+j==101 or i*10+j==102 or i*10+j==103 or i*10+j==111 or i*10+j==112 or i*10+j==113 %}
 		<td></td>
 		{% else %}
-		<td><img src="./static/PLL/{{i+10}}{{menuabc[j]}}.gif"></td>
+		<td><br>&nbsp;<img src="./static/PLL/{{i+10}}{{menuabc[j]}}.gif"></td>
 		{% endif %}
 		{% endfor %}
 	</tr>

@@ -27,10 +27,25 @@
 
         #container tr td {
             border: none;
-
+            font-size: 0.8em;
         }
     </style>
     <style class="list-search-style"></style>
+    {% endif %}
+    {% if title=="找不到頁面!!" %}
+    <script type="text/javascript">
+        let i = 10;
+        const intervalid = setInterval(fun, 1000);
+
+        function fun() {
+            if (i === 0) {
+                clearInterval(intervalid);
+                history.go(-1);
+            } else {
+                i--;
+            }
+        }
+    </script>
     {% endif %}
     <script>
         window.onpageshow = function (event) {
@@ -91,7 +106,7 @@
                     var targetSection = document.getElementById(targetId);
                     var targetOffset = targetSection.offsetTop;
                     window.scrollTo({
-                        top: targetOffset - 90,
+                        top: targetOffset - 50,
                         behavior: 'smooth'
                     });
                 }
@@ -125,7 +140,7 @@
                 var targetSection = document.getElementById(targetId);
                 var targetOffset = targetSection.offsetTop;
                 window.scrollTo({
-                    top: targetOffset - 90,
+                    top: targetOffset - 50,
                     behavior: 'smooth'
                 });
             });
