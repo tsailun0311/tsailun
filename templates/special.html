@@ -1,4 +1,12 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block head %}
+<style>
+    .roofpig-algtext {
+        font-size: 0.9em !important;
+    }
+</style>
+{% endblock %}
+{% block content %}
 <div class="roofpig" data-config="base=C1|alg=M E' M' E|colors=R:y L:w F:g B:b U:r D:o">六面回字
 </div>
 <div class="roofpig" data-config="base=C1|alg=B2 F' L2 R2 D2 B2 F2 L2 R2 U2 F'">六面十字

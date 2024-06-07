@@ -12,41 +12,7 @@
     <link href="{{ url_for('static', filename='css/style.less') }}" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
-    {% if title=="花式魔方" %}
-    <style>
-        .roofpig-algtext {
-            font-size: 0.9em !important;
-        }
-    </style>
-    {% endif %}
-    {% if title=="CFOP 六格觀察法" %}
-    <style>
-        #container li {
-            display: inline-block;
-        }
-
-        #container tr td {
-            border: none;
-            font-size: 0.8em;
-        }
-    </style>
-    <style class="list-search-style"></style>
-    {% endif %}
-    {% if title=="找不到頁面!!" %}
-    <script type="text/javascript">
-        let i = 10;
-        const intervalid = setInterval(fun, 1000);
-
-        function fun() {
-            if (i === 0) {
-                clearInterval(intervalid);
-                history.go(-1);
-            } else {
-                i--;
-            }
-        }
-    </script>
-    {% endif %}
+    {% block head %}{% endblock %}
     <script>
         window.onpageshow = function (event) {
             if (event.persisted) {
@@ -79,22 +45,17 @@
             <label class='menu-button-container' for="menu-toggle">
                 <div class='menu-button'></div>
             </label>
+            {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
+            ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
+            ] %}
             <ul class="menu">
-                <li><a href="/">首頁</a></li>
-                <li><a href="/special">花式</a></li>
-                <li><a href="/lbl">LBL</a></li>
-                <li><a href="/cross">CFOP CROSS</a></li>
-                <li><a href="/f2l">CFOP F2L</a></li>
-                <li><a href="/oll">CFOP OLL</a></li>
-                <li><a href="/pll">CFOP PLL</a></li>
-                <li><a href="/pll2">六格觀察法</a></li>
+                {% for i in range(8) %}
+                <li><a href="{{menu[0][i]}}">{{menu[1][i]}}</a></li>
+                {% endfor %}
             </ul>
         </section>
     </div>
     <div id="container">
-        {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
-        ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
-        ] %}
         {% block content %}{% endblock %}
     </div>
     <script>
@@ -112,24 +73,6 @@
                 }
             }, 1000);
         });
-    </script>
-    <script>
-        var url = location.href;
-        if (url.indexOf('?') != -1) {
-            var ary1 = url.split('?');
-            var ary2 = ary1[1].split('&');
-            var ary3 = ary2[0].split('=');
-            var id = ary3[1];
-        }
-        if (!id) {
-            $('.list-search-style').html('');
-        } else {
-            $('.list-search-style').html(
-                '#container .b:not([data-title*="' + id + '"]) {display: none;}' +
-                '#container .b2:not([data-title*="' + id + '"]) {display: none;}' +
-                '#container .big:not([data-title*="' + id + '"]) {display: none;}'
-            );
-        }
     </script>
     <script>
         var scrollLinks = document.querySelectorAll('.click');
