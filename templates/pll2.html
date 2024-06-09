@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block head %}
 <style>
-	#container li {
+	#mainer li {
 		display: inline-block;
 	}
 
-	#container tr td {
+	#mainer tr td {
 		border: none;
 		font-size: 0.8em;
 	}
@@ -324,9 +324,9 @@
 		$('.list-search-style').html('');
 	} else {
 		$('.list-search-style').html(
-			'#container .b:not([data-title*="' + id + '"]) {display: none;}' +
-			'#container .b2:not([data-title*="' + id + '"]) {display: none;}' +
-			'#container .big:not([data-title*="' + id + '"]) {display: none;}'
+			'#mainer .b:not([data-title*="' + id + '"]) {display: none;}' +
+			'#mainer .b2:not([data-title*="' + id + '"]) {display: none;}' +
+			'#mainer .big:not([data-title*="' + id + '"]) {display: none;}'
 		);
 	}
 </script>

@@ -1,99 +1,185 @@
 {% extends "base.html" %}
-{% block head %}
-<style>
-    .roofpig-algtext {
-        font-size: 0.9em !important;
-    }
-</style>
-{% endblock %}
 {% block content %}
-<div class="roofpig" data-config="base=C1|alg=M E' M' E|colors=R:y L:w F:g B:b U:r D:o">六面回字
-</div>
-<div class="roofpig" data-config="base=C1|alg=B2 F' L2 R2 D2 B2 F2 L2 R2 U2 F'">六面十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=R2 B2 U2 L2 B2 U2 F2 L2 D L' R F L2 F' U' D L">六面皇后
-</div>
-<div class="roofpig" data-config="base=C1|alg=U B2 L2 B F' U F' D2 L D2 F D R2 F2 R' B' U' R'">六面五色
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 U2 L2 B R2 D' L2 R2 D2 B2 F2 U' R2 B' R2">六面六色
-</div>
-<div class="roofpig" data-config="base=C1|alg=F2 U2 F2 B2 U2 F B">六面彩條
-</div>
-<div class="roofpig" data-config="base=C1|alg=U2 L2 U2 L2 U2 L2 U2 R2 U2 R2 U2 R2 U D L2 R2">六面三條
-</div>
-<div class="roofpig" data-config="base=C1|alg=F2 L' R B2 U2 L R' D2">六面凹字(1)
-</div>
-<div class="roofpig" data-config="base=C1|alg=U D L2 F2 U D' B2 R2 D2">六面凹字(2)
-</div>
-<div class="roofpig" data-config="base=C1|alg=F2 R F2 R' U2 F2 L U2 B2 U2 F' U2 R D' B2 D F' D2 R F">六面凸字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 M F2 B2 M D2|colors=R:g L:b F:o B:r U:w D:y">六面I字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D F2 U' B F' L R' D L2 U' B R2 B' U L2 U'">六面Q字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 L2 D R2 U B2 U2 B R' B' D B2 R' F R2 F' U R'">六面J字
-</div>
-<div class="roofpig" data-config="base=C1|alg=L R U D F' B' L R">六面L字
-</div>
-<div class="roofpig" data-config="base=C1|alg=F2 R2 F2 U' R' B2 F L R' U L' R U B U2 F2 D' U'">六面E字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D' U B D' L' R F D' B' D' U L">六面U字
-</div>
-<div class="roofpig" data-config="base=C1|alg=U2 F2 R2 D U' L2 B2 D U">六面T字(1)
-</div>
-<div class="roofpig" data-config="base=C1|alg=B2 D2 L R' D2 B2 L R'">六面T字(2)
-</div>
-<div class="roofpig" data-config="base=C1|alg=B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'">六面斜線
-</div>
-<div class="roofpig" data-config="base=C1|alg=B R L' D' R2 D R' L B' R2 U B2 U' D B2 R L U2 R' L' B2 D'">六面雙環
-</div>
-<div class="roofpig" data-config="base=C1|alg=B R L' D' R2 D R' L B' R2 U B2 U' D R2 D'">六面蛇形
-</div>
-<div class="roofpig" data-config="base=C1|alg=L2 D B2 U R2 B2 D L' B2 F' D' U R' D2 R' B2 F' U' F'">六面魚形
-</div>
-<div class="roofpig" data-config="base=C1|alg=L2 D' F2 D B D L F R' U' R' D' F L2 B F2 L">五彩十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=B2 L R B L2 B F D U' B F R2 F' L R">四色回字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D F2 R2 F2 D' U R2 F2 R2 U'">四面十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2">四色十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=F B R L F B R L F B R L U D' U D' ">四面Z字
-</div>
-<div class="roofpig" data-config="base=C1|alg=R2 F2 R2 L2 F2 L2">四面I字
-</div>
-<div class="roofpig" data-config="base=C1|alg=B F D U L2 D U' B F'">四面L字
-</div>
-<div class="roofpig" data-config="base=C1|alg=U R2 L2 U D' F2 B2 D'">四面O字
-</div>
-<div class="roofpig" data-config="base=C1|alg=R2 U2 F2 R2 U2 R2 F2 U2">四面E字
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 R L U2 R2 L2 U2 R L">四面V字
-</div>
-<div class="roofpig" data-config="base=C1|alg=R2 F2 B2 L2 U F2 R2 L2 B2 D'">四面U字
-</div>
-<div class="roofpig" data-config="base=C1|alg=F B L R F B L R F B L R">四面斜線
-</div>
-<div class="roofpig" data-config="base=C1|alg=B F' L2 R2 U D'">三色十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=R F2 L' D2 F2 L' R2 B' L' B' F' D' U R F' D R' B R'">三色斜線
-</div>
-<div class="roofpig" data-config="base=C1|alg=U' D F' B L R' U' D L2 R2 F2 B2 U2 D2">雙色十字
-</div>
-<div class="roofpig" data-config="base=C1|alg=L2 R2 F2 B2 U2 D2">對稱棋盤
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 F2 U' B2 F2 L2 R2 D R' B F D' U L R D2 U2 F' U2">循環棋盤
-</div>
-<div class="roofpig" data-config="base=C1|alg=D2 L' U2 F L2 D2 U R2 D L2 B' L2 U L D' R2 U'">彩带魔方
-</div>
-<div class="roofpig" data-config="base=C1|alg=F D2 L2 B D B' F2 U' F U F2 U2 F' L D F' U">大中小魔方
-</div>
-<div class="roofpig" data-config="base=C1|alg=U2 L2 F2 U' B2 D R F' R F' R F' D' B2 U'">大小魔方
-</div>
-<div class="roofpig" data-config="base=C1|alg=B2 R2 D2 U2 F2 L R' U2 L' R'">C T V(1)
-</div>
-<div class="roofpig" data-config="base=C1|alg=L2 B2 R2 D2 R2 F2 U2 F2 R2 U2 R2">C T V(2)
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=M E' M' E|colors=R:y L:w F:g B:b U:r D:o">六面回字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B2 F' L2 R2 D2 B2 F2 L2 R2 U2 F'">六面十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=R2 B2 U2 L2 B2 U2 F2 L2 D L' R F L2 F' U' D L">六面皇后
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U B2 L2 B F' U F' D2 L D2 F D R2 F2 R' B' U' R'">六面五色
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 U2 L2 B R2 D' L2 R2 D2 B2 F2 U' R2 B' R2">六面六色
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F2 U2 F2 B2 U2 F B">六面彩條
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U2 L2 U2 L2 U2 L2 U2 R2 U2 R2 U2 R2 U D L2 R2">六面三條
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F2 L' R B2 U2 L R' D2">六面凹字(1)
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U D L2 F2 U D' B2 R2 D2">六面凹字(2)
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F2 R F2 R' U2 F2 L U2 B2 U2 F' U2 R D' B2 D F' D2 R F">六面凸字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 M F2 B2 M D2|colors=R:g L:b F:o B:r U:w D:y">六面I字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D F2 U' B F' L R' D L2 U' B R2 B' U L2 U'">六面Q字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 L2 D R2 U B2 U2 B R' B' D B2 R' F R2 F' U R'">六面J字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=L R U D F' B' L R">六面L字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F2 R2 F2 U' R' B2 F L R' U L' R U B U2 F2 D' U'">六面E字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D' U B D' L' R F D' B' D' U L">六面U字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U2 F2 R2 D U' L2 B2 D U">六面T字(1)
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B2 D2 L R' D2 B2 L R'">六面T字(2)
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'">六面斜線
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B R L' D' R2 D R' L B' R2 U B2 U' D B2 R L U2 R' L' B2 D'">
+                六面雙環
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B R L' D' R2 D R' L B' R2 U B2 U' D R2 D'">六面蛇形
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=L2 D B2 U R2 B2 D L' B2 F' D' U R' D2 R' B2 F' U' F'">六面魚形
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=L2 D' F2 D B D L F R' U' R' D' F L2 B F2 L">五彩十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B2 L R B L2 B F D U' B F R2 F' L R">四色回字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D F2 R2 F2 D' U R2 F2 R2 U'">四面十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2">四色十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F B R L F B R L F B R L U D' U D' ">四面Z字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=R2 F2 R2 L2 F2 L2">四面I字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B F D U L2 D U' B F'">四面L字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U R2 L2 U D' F2 B2 D'">四面O字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=R2 U2 F2 R2 U2 R2 F2 U2">四面E字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 R L U2 R2 L2 U2 R L">四面V字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=R2 F2 B2 L2 U F2 R2 L2 B2 D'">四面U字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F B L R F B L R F B L R">四面斜線
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B F' L2 R2 U D'">三色十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=R F2 L' D2 F2 L' R2 B' L' B' F' D' U R F' D R' B R'">三色斜線
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U' D F' B L R' U' D L2 R2 F2 B2 U2 D2">雙色十字
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=L2 R2 F2 B2 U2 D2">對稱棋盤
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 F2 U' B2 F2 L2 R2 D R' B F D' U L R D2 U2 F' U2">循環棋盤
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=D2 L' U2 F L2 D2 U R2 D L2 B' L2 U L D' R2 U'">彩带魔方
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=F D2 L2 B D B' F2 U' F U F2 U2 F' L D F' U">大中小魔方
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=U2 L2 F2 U' B2 D R F' R F' R F' D' B2 U'">大小魔方
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=B2 R2 D2 U2 F2 L R' U2 L' R'">C T V(1)
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=C1|alg=L2 B2 R2 D2 R2 F2 U2 F2 R2 U2 R2">C T V(2)
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     ROOFPIG_CONF_C1 = "speed=400|flags=showalg startsolved"
