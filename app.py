@@ -1,6 +1,5 @@
 from __future__ import division, print_function
-from flask import Flask, render_template, request
-from json import loads, dumps
+from flask import Flask, render_template
 
 app = Flask(__name__)
 title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
@@ -9,20 +8,7 @@ title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
 
 @app.route('/', methods=['GET'])
 def index():
-    ip = request.remote_addr
-    with open('./static/people.json') as f:
-        people = loads(f.read())
-    if ip != people[0]:
-        people[1] = people[1] + 1
-        people[0] = ip
-        with open('./static/people.json', 'w') as f:
-            f.write(dumps(people, indent=2))
-        with open('./static/document.json') as f:
-            document = loads(f.read())
-        document.append(people[0]+", "+str(people[1]))
-        with open('./static/document.json', 'w') as f:
-            f.write(dumps(document, indent=2))
-    return render_template('index.html', title=title[0], people=str(people[1]))
+    return render_template('index.html', title=title[0])
 
 
 @app.route('/special', methods=['GET'])

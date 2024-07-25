@@ -9,10 +9,10 @@
     <meta name="description" content="這個網站包含我的魔方整理和紀錄，無任何營收，主要練習架站。所有資料皆來自魔方小天地、小丸號魔術方塊、一小時學盲解...等網站。">
     <meta property="og:site_name" content="{{title}}" />
     <meta property="og:image" content="static/cubeheadimg.png">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.less') }}" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     {% block head %}{% endblock %}
     <script>
         window.onpageshow = function (event) {
@@ -20,17 +20,6 @@
                 window.location.reload()
             }
         };
-    </script>
-    <script>
-        (function () {
-            let resizeTimeout;
-            window.addEventListener('resize', function () {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(function () {
-                    location.reload();
-                }, 500);
-            });
-        })();
     </script>
 </head>
 
@@ -102,7 +91,6 @@
     </script>
     <script src="{{ url_for('static', filename='js/roofpig_and_three.min.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static', filename='js/updown.js') }}" type="text/javascript"></script>
-    <script src="//cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 <!--  d8'                    888888888888                    88     88
