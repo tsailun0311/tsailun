@@ -1,60 +1,88 @@
 {% extends "base.html" %} {% block content %}
+{% set ollmenu = ["01", "01", "01", "01", "01", "01", "01", "02", "02", "02",
+"02", "03", "04", "04", "04", "04", "05", "05", "05", "05",
+"06", "06", "06", "06", "07", "07", "07", "07", "07", "07",
+"06", "06", "06", "06", "07", "07", "07", "07", "07", "07",
+"06", "06", "06", "06", "07", "07", "07", "07", "07", "07",
+"08", "08", "08", "09", "09", "09", "10"] %}
 <table>
+    {% for i in range(5) %}
     <tr>
+        {% for j in range(10) %}
+        {% if i==0 and j!=9 %}
         <td>
-            <a href="#c01" class="click">01</a>
+            <a href="#c{{ollmenu[j]}}" class="click">0{{j+1}}</a>
         </td>
+        {% else %}
         <td>
-            <a href="#c01" class="click">02</a>
+            <a href="#c{{ollmenu[i*10+j]}}" class="click">{{i*10+j+1}}</a>
         </td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr>
+        {% for i in range(7) %}
         <td>
-            <a href="#c01" class="click">03</a>
+            <a href="#c{{ollmenu[50+i]}}" class="click">{{51+i}}</a>
         </td>
-        <td>
-            <a href="#c01" class="click">04</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">05</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">06</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">07</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">08</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">09</a>
-        </td>
-        <td>
-            <a href="#c01" class="click">10</a>
-        </td>
+        {% endfor %}
     </tr>
 </table>
-<p><span class="big" id="c01">一點型</span></p>
+<p><span class="big" id="c01">十字型</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">
-            <div class="roofpig" data-config="base=F3|alg=R U2 R2 F R F' U2 R' F R F'">01
+            <div class="roofpig" data-config="base=F3|alg=R U' L' U R' U' L">01
             </div>
         </div>
         <div class="col">
-            <div class="roofpig" data-config="base=F3|alg=F R U R' U' S R U R' U' f'">02
+            <div class="roofpig" data-config="base=F3|alg=L' U R U' L U R'">02
             </div>
         </div>
         <div class="col">
-            <div class="roofpig" data-config="base=F3|alg=R' U' F' U F R F R U R' U' F'">03
+            <div class="roofpig" data-config="base=F3|alg=R U2 R' U' R U R' U' R U' R'">03
             </div>
         </div>
         <div class="col">
-            <div class="roofpig" data-config="base=F3|alg=F U R U' R' F' R' F' U' F U R">04
+            <div class="roofpig" data-config="base=F3|alg=R U2' R2' U' R2 U' R2' U2' R">04
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=r U R' U' L' U l F'">05
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=F' r U R' U' L' U l">06
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=R' U2' R F U' R' U' R U F'">07
             </div>
         </div>
     </div>
 </div>
-<p>&nbsp;</p>
+<p><span class="big" id="c02">T字型&Y-perm衍生</span></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=F R U R' U' F'">08
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=R U R' U' l' U l F'">09
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=F R U' R' U' R U R' F'">10
+            </div>
+        </div>
+        <div class="col">
+            <div class="roofpig" data-config="base=F3|alg=R U2 l' R' U R U' l U2' R'">11
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     ROOFPIG_CONF_F3 = "speed=800|pov=Urf|flags=showalg|colored= U- */m u"
 </script>
