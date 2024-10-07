@@ -1,40 +1,18 @@
 {% extends "base.html" %} {% block content %}
-{% set f2lmenu = ["01", "01", "01", "01", "02", "02", "02", "02", "03", "03",
-"03", "03", "04", "04", "04", "04", "05", "05", "05", "05",
-"06", "06", "06", "06", "07", "07", "07", "07", "07", "07",
-"08", "08", "08", "09", "09", "09", "10", "10", "10", "11"] %}
+{% set f2lmenu = ["簡單型", "白側同色型", "白側異色型", "白側結合型", "白上分離型", "白上結合型",
+"角內型", "邊內型", "都內型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
 <table>
 	{% for i in range(4) %}
 	<tr>
-		{% for j in range(10) %}
-		{% if i==0 and j!=9 %}
+		{% for j in range(3) %}
 		<td>
-			<a href="#c{{f2lmenu[j]}}" class="click">0{{j+1}}</a>
+			<a href="#c{{i*3+j+1}}" class="click">{{f2lmenu[i*3+j]}}</a>
 		</td>
-		{% else %}
-		<td>
-			<a href="#c{{f2lmenu[i*10+j]}}" class="click">{{i*10+j+1}}</a>
-		</td>
-		{% endif %}
 		{% endfor %}
 	</tr>
 	{% endfor %}
-	<tr>
-		<td>
-			<a href="#c11" class="click">41</a>
-		</td>
-		<td colspan="3">
-			<a href="#c12" class="click">101非標</a>
-		</td>
-		<td colspan="3">
-			<a href="#c13" class="click">中島非標1st</a>
-		</td>
-		<td colspan="3">
-			<a href="#c14" class="click">中島非標2nd</a>
-		</td>
-	</tr>
 </table>
-<p><span class="big" id="c01">簡單型F2L01~F2L04</span></p>
+<p><span class="big" id="c1">簡單型F2L01~F2L04</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -55,7 +33,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c02">白側同色型F2L05~F2L08&nbsp;&nbsp;&nbsp;&nbsp;※藏角set up</span></p>
+<p><span class="big" id="c2">白側同色型F2L05~F2L08&nbsp;&nbsp;<strong>藏角</strong></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -76,7 +54,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c03">白側異色型F2L09~F2L12&nbsp;&nbsp;&nbsp;&nbsp;※藏角set up</span></p>
+<p><span class="big" id="c3">白側異色型F2L09~F2L12&nbsp;&nbsp;<strong>藏角</strong></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -97,7 +75,8 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c04">白側複雜型F2L13~F2L16&nbsp;&nbsp;※異色藏角set up&nbsp;&nbsp;同色藏邊set up</span></p>
+<p><span class="big" id="c4">白側結合型F2L13~F2L16&nbsp;&nbsp;<strong>異色藏角</strong>&nbsp;&nbsp;<strong>同色藏邊</strong></span>
+</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -118,7 +97,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c05">白上分離型F2L17~F2L20&nbsp;&nbsp;&nbsp;&nbsp;※藏邊set up</span></p>
+<p><span class="big" id="c5">白上分離型F2L17~F2L20&nbsp;&nbsp;<strong>藏邊</strong></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -139,7 +118,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c06">白上結合型F2L21~F2L24&nbsp;&nbsp;&nbsp;&nbsp;※善用F2L25&nbsp;F2L27</span></p>
+<p><span class="big" id="c6">白上結合型F2L21~F2L24&nbsp;&nbsp;<strong>善用F2L25&nbsp;F2L27</strong></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -160,7 +139,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c07">角內型F2L25~F2L30</span></p>
+<p><span class="big" id="c7">角內型F2L25~F2L30</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -189,7 +168,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c08">邊內對型F2L31~F2L33</span></p>
+<p><span class="big" id="c8">邊內型F2L31~F2L36</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -204,11 +183,6 @@
 			<div class="roofpig" data-config="base=F0|alg=F' U' F U2 F' U' F">F2L33
 			</div>
 		</div>
-	</div>
-</div>
-<p><span class="big" id="c09">邊內反型F2L34~F2L36</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
 			<div class="roofpig" data-config="base=F0|alg=R U' R' U2 F R' F' R">F2L34
 			</div>
@@ -223,7 +197,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c10">角內邊內反型F2L37~F2L39</span></p>
+<p><span class="big" id="c9">都內型F2L37~F2L41</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -238,11 +212,6 @@
 			<div class="roofpig" data-config="base=F0|alg=R U' R' U F' U2 F U2 F' U F">F2L39
 			</div>
 		</div>
-	</div>
-</div>
-<p><span class="big" id="c11">角內邊內對型F2L40~F2L41</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
 			<div class="roofpig" data-config="base=F0|alg=R U R' U' R U2 R' U' R U R'">F2L40
 			</div>
@@ -253,7 +222,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c12"><a
+<p><span class="big" id="c10"><a
 			href="https://www.youtube.com/watch?v=rG7p2l2vifM&ab_channel=%E9%AD%94%E6%96%B9101">魔方101非標</a></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
@@ -273,7 +242,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="C13">中島非標1st</span></p>
+<p><span class="big" id="c11">中島非標1st</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
@@ -290,7 +259,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c14">中島非標2nd</span></p>
+<p><span class="big" id="c12">中島非標2nd</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
