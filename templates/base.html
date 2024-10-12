@@ -46,10 +46,10 @@
                 <div class='menu-button'></div>
             </label>
             {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/pll2",],
-            ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL", "六格觀察法",]
+            ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL"]
             ] %}
             <ul class="menu">
-                {% for i in range(8) %}
+                {% for i in range(7) %}
                 <li><a href="{{menu[0][i]}}">{{menu[1][i]}}</a></li>
                 {% endfor %}
             </ul>

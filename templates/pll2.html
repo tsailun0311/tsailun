@@ -5,10 +5,9 @@
 		border: none;
 	}
 </style>
-<style class="list-search-style"></style>
 {% endblock %}
 {% block content %}
-<p><span class="big">PLL_四方向圖案</span></p>
+<p><span class="big">PLL四方向圖案</span></p>
 <table>
 	<colgroup>
 		{% for i in range(5) %}
@@ -49,20 +48,4 @@
 	</tr>
 	{% endfor%}
 </table>
-<script>
-	var url = location.href;
-	if (url.indexOf('?') != -1) {
-		var ary1 = url.split('?');
-		var ary2 = ary1[1].split('&');
-		var ary3 = ary2[0].split('=');
-		var id = ary3[1];
-	}
-	if (!id) {
-		$('.list-search-style').html('');
-	} else {
-		$('.list-search-style').html(
-			'#mainer .b:not([data-title*="' + id + '"]) {display: none;}'
-		);
-	}
-</script>
 {% endblock %}
