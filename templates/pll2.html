@@ -9,11 +9,6 @@
 {% block content %}
 <p><span class="big">PLL四方向圖案</span></p>
 <table>
-	<colgroup>
-		{% for i in range(5) %}
-		<col width="20%">
-		{% endfor%}
-	</colgroup>
 	{% set menuname =
 	["Ub","Ua","Ab","Aa","T","V","F","Rb","Ra","Jb","Ja","Y","Gd","Gc","Gb","Ga","Z","E","H","Nb","Na"] %}
 	{% set svg=["rbrgrg","rorgrg","rrrgbg","rbrggg","rgrgbg","rgrgog","rrrgog","rorggg",
@@ -25,26 +20,18 @@
 	"borggb","bgbrbg","ogbror","rrobor","gbobrg","gogorb","rrgobo","obrggo",
 	"gbobgg","gbgorb","rogoro","orrgbo","brrgob","bobrgg","ogbrbr","rgobor",
 	"rgrgrg","rbrgog","grbrgo","brgogr","rorgbg","rrobbg","orrgbb"]%}
-	{% for i in range(16) %}
-	<tr class="b" data-title="p{% if i>=9 %}{% else %}0{% endif %}{{i+1}}">
+	{% for i in range(21) %}
+	<tr class="b">
 		<td>{{menuname[i]}}</td>
-		{% for j in range(4) %}
-		<td><img src="./{{svg[i*4+j]}}.svg"></td>
-		{% endfor %}
-	</tr>
-	{% endfor%}
-	{% for i in range(2) %}
-	<tr class="b" data-title="p{{i+17}}">
-		<td>{{menuname[i+16]}}</td>
-		{% for j in range(2) %}
-		<td><img src="./{{svg[64+i*2+j]}}.svg"></td>
-		{% endfor %}
-	</tr>
-	{% endfor%}
-	{% for i in range(3) %}
-	<tr class="b" data-title="p{{i+19}}">
-		<td>{{menuname[i+18]}}</td>
-		<td><img src="./{{svg[68+i]}}.svg"></td>
+		{% if i < 16 %} {% for j in range(4) %} <td><img src="./{{svg[i*4+j]}}.svg" loading="lazy"></td>
+			{% endfor %}
+			{% elif i>17 %}
+			<td><img src="./{{svg[50+i]}}.svg" loading="lazy"></td>
+			{% else %}
+			{% for j in range(2) %}
+			<td><img src="./{{svg[64+(i-16)*2+j]}}.svg" loading="lazy"></td>
+			{% endfor %}
+			{% endif %}
 	</tr>
 	{% endfor%}
 </table>

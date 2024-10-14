@@ -16,22 +16,22 @@ def generate_rubiks_cube_svg(cube_colors):
     colors = [color_mapping.get(
         cube_colors[i], 'white') for i in range(6)]
     svg_content = f'''
-    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
-        <polygon points="0,50 20,40 40,50 20,60" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="20,40 40,30 60,40 40,50" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="20,60 40,50 60,60 40,70" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="40,30 60,20 80,30 60,40" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="40,50 60,40 80,50 60,60" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="40,70 60,60 80,70 60,80" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="60,40 80,30 100,40 80,50" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="60,60 80,50 100,60 80,70" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="80,50 100,40 120,50 100,60" fill="yellow" stroke="black" stroke-width="1"/>
-        <polygon points="0,50 20,60 20,80 0,70" fill="{colors[0]}" stroke="black" stroke-width="1"/>
-        <polygon points="20,60 40,70 40,90 20,80" fill="{colors[1]}" stroke="black" stroke-width="1"/>
-        <polygon points="40,70 60,80 60,100 40,90" fill="{colors[2]}" stroke="black" stroke-width="1"/>
-        <polygon points="60,80 80,70 80,90 60,100" fill="{colors[3]}" stroke="black" stroke-width="1"/>
-        <polygon points="80,70 100,60 100,80 80,90" fill="{colors[4]}" stroke="black" stroke-width="1"/>
-        <polygon points="100,60 120,50 120,70 100,80" fill="{colors[5]}" stroke="black" stroke-width="1"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="-1 -1  122 122">
+        <polygon points="0,50 20,40 40,50 20,60" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="20,40 40,30 60,40 40,50" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="20,60 40,50 60,60 40,70" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="40,30 60,20 80,30 60,40" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="40,50 60,40 80,50 60,60" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="40,70 60,60 80,70 60,80" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="60,40 80,30 100,40 80,50" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="60,60 80,50 100,60 80,70" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="80,50 100,40 120,50 100,60" fill="yellow" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="0,50 20,60 20,80 0,70" fill="{colors[0]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="20,60 40,70 40,90 20,80" fill="{colors[1]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="40,70 60,80 60,100 40,90" fill="{colors[2]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="60,80 80,70 80,90 60,100" fill="{colors[3]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="80,70 100,60 100,80 80,90" fill="{colors[4]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="100,60 120,50 120,70 100,80" fill="{colors[5]}" stroke="black" stroke-width="2" stroke-linejoin="round"/>
     </svg>
     '''
     return svg_content
@@ -40,6 +40,11 @@ def generate_rubiks_cube_svg(cube_colors):
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', title=title[0])
+
+
+@app.route('/1', methods=['GET'])
+def index1():
+    return render_template('1.html', title=title[0])
 
 
 @app.route('/special', methods=['GET'])
