@@ -3,7 +3,7 @@ from flask import Flask, Response, render_template
 
 app = Flask(__name__)
 title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
-         "CFOP OLL", "CFOP PLL", "CFOP 六格觀察法", "找不到頁面!!"]
+         "CFOP OLL", "CFOP PLL", "找不到頁面!!"]
 color_mapping = {
     'b': '#07f',
     'o': 'orange',
@@ -42,9 +42,9 @@ def index():
     return render_template('index.html', title=title[0])
 
 
-@app.route('/1', methods=['GET'])
-def index1():
-    return render_template('1.html', title=title[0])
+@app.route('/other', methods=['GET'])
+def other():
+    return render_template('other.html', title=title[0])
 
 
 @app.route('/special', methods=['GET'])
@@ -90,7 +90,7 @@ def cube_svg(cube_colors):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html', title=title[8]), 404
+    return render_template('404.html', title=title[7]), 404
 
 
 if __name__ == '__main__':
