@@ -29,181 +29,197 @@
 <p><span class="big">LBL</p>
 <ul>
 	<li>1.層解法(Layer By Layer)：一層一層解，魔方沒辦法一面一面解</li>
-	<li>2.底層：所有白色角塊和邊塊</li>
-	<li>3.中間層：紅藍.藍橘.橘綠.綠紅</li>
-	<li>4.頂層：所有黃色角塊和邊塊</li>
-	<li>5.任何情況下，頂層皆可自由旋轉</li>
-	<li>6.本網站全部視角皆使用UFR視角</li>
-	<img src="static/solve.gif" style="display: block;margin-left: 2vw;width: 100px;">
+	<li>2.角塊：方塊的所有角落，有<strong>8</strong>個，一塊有<strong>三個顏色</strong></li>
+	<li>2.邊塊：角塊之間的塊，有<strong>12</strong>個，一塊有<strong>兩個顏色</strong></li>
+	<li>4.底層：所有白色角塊和邊塊</li>
+	<li>5.中間層：紅藍.藍橘.橘綠.綠紅</li>
+	<li>6.頂層：所有黃色角塊和邊塊</li>
+	<li>7.任何情況下，頂層皆可自由旋轉</li>
+	<li>8.本網站全部視角皆使用UFR視角</li>
+	<img src="static/solve.gif" style="display: block;margin-left: 2vw;width: 200px;">
 </ul>
 <p><span class="big" id="c01">STEP1.底層邊塊</span></p>
-<p style="margin-left: 2vw;">以<strong>白綠</strong>做示範，須完成<strong>白紅.白藍.白橘.白綠</strong>。無須公式，靠空間概念。</p>
+<p style="margin-left: 2vw;"><strong>無須公式</strong>，靠空間概念。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="base=C1">STEP1目標
+			<div class="roofpig" data-config="colored=D*/e">只需觀察
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C1|alg=u R' u'">最後一組較特殊狀況(1)
-			</div>
-		</div>
-		<div class="col">
-			<div class="roofpig" data-config="base=C1|alg=R' u R' u'">最後一組較特殊狀況(2)
-			</div>
-		</div>
-		<div class="col">
-			<div class="roofpig" data-config="base=C1|alg=F R' F'">最後一組較特殊狀況(3)
+			<div class="roofpig" data-config="colored=D*/e */m">目標狀態
 			</div>
 		</div>
 	</div>
 </div>
 <p style="margin-left: 2vw;">如果真的沒想法，可以參考<a href="/cross">CFOP CROSS</a>。</p>
 <p><span class="big" id="c02">STEP2.底層角塊</span></p>
-<p style="margin-left: 2vw;">以<strong>白紅綠</strong>做示範，須完成<strong>四個白色角塊</strong>。文字為暴力解法，動畫為加速解法。</p>
+<p style="margin-left: 2vw;">以<strong>白紅綠</strong>做示範。<strong>從這步開始白色面固定朝下</strong>。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="colored= D* */m">STEP2目標<br>&nbsp;
+			<div class="roofpig" data-config="colored= D*/c">只需觀察<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C2|alg=R U R'">基本型1:上左下右一次<br>&nbsp;
+			<div class="roofpig" data-config="colored= D* */m">目標狀態<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C2|alg=R U2 R' U' R U R'">基本型2:上左下右三次<br>&nbsp;
+			<div class="roofpig" data-config="base=C2|alg=R U R'">白朝右<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C2|alg=U R U' R'">基本型3:上左下右五次<br>&nbsp;
+			<div class="roofpig" data-config="base=C2|alg=R U2 R' U' R U R'">白朝上<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="speed=800|flags=showalg|colored= D*/e */m|alg=R U R'|solved=ULF">
-				想要使用的角塊在底層:<br>做基本型就會被換出來
+			<div class="roofpig" data-config="base=C2|alg=U R U' R'">白朝自己<br>&nbsp;
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="speed=2000|flags=showalg|colored= D*/e */m|alg=R U R'|solved=ULF">
+				想用的角塊在底層：<br>做<strong>白朝右</strong>就會被換出來
 			</div>
 		</div>
 	</div>
 </div>
 <p><span class="big" id="c03">STEP3.中間層</span></p>
-<p style="margin-left: 2vw;">以<strong>紅綠</strong>邊塊為代表，須完成<strong>紅藍.藍橘.橘綠.綠紅</strong>。</p>
+<p style="margin-left: 2vw;">以<strong>紅綠</strong>做示範。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="colored= U- */m">STEP3目標<br>&nbsp;
+			<div class="roofpig" data-config="colored=FR RB BL LF">只需觀察<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C3|alg=U R U' R' U' F' U F">基本型1: <br>左上右下換面右上左下
+			<div class="roofpig" data-config="colored=U- */m">目標狀態<br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C3|alg=U' F' U F U R U' R'">基本型2: <br>右上左下換面左上右下
+			<div class="roofpig" data-config="base=C3|alg=U R U' R' U' F' U F">往右倒 <br>&nbsp;
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="base=C3|alg=U' F' U F U R U' R'">往左倒 <br>&nbsp;
 			</div>
 		</div>
 		<div class="col">
 			<div class="roofpig"
-				data-config="speed=800|flags=showalg|colored= D* */m|alg=U R U' R' U' F' U F|solved=UB">
-				想要使用的邊塊在中間層:<br>做基本型就會被換出來
+				data-config="speed=2000|flags=showalg|colored= D* */m|alg=U R U' R' U' F' U F|solved=UB">
+				想用的邊塊在中間層：<br>做<strong>往右倒</strong>就會被換出來
 			</div>
 		</div>
 	</div>
 </div>
 <p><span class="big" id="c04">STEP4.黃色邊塊</span></p>
-<p style="margin-left: 2vw;">所有<strong>黃色邊塊朝上</strong>就行，使用六步法。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="base=C4">STEP4目標
+			<div class="roofpig" data-config="colored= u/e">只需觀察
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C4|alg=F R U R' U' F'">一型: 小撇(上左下右)回
+			<div class="roofpig" data-config="colored= U- */m u/e">目標狀態
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C4|alg=f R U R' U' f'">L型: 大撇(上左下右)回
+			<div class="roofpig" data-config="base=C4|alg=F R U R' U' F'">一型
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C4|alg=F R U R' U' F'|setupmoves=F R U R' U' F' U2">點型:做一型就會變L型
+			<div class="roofpig" data-config="base=C4|alg=f R U R' U' f'">L型
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="base=C4|alg=F R U R' U' F'|setupmoves=F R U R' U' F' U2">點型：做一型就L型
 			</div>
 		</div>
 	</div>
 </div>
 <p><span class="big" id="c05">STEP5.黃色角塊</span></p>
 <p style="margin-left: 2vw;">
-	所有<strong>黃色角塊朝上</strong>就行，總共有七種樣式，持續試公式直到完成目標。找不到小魚(角塊一好三壞)就將<strong>壞的角塊擺左上</strong>。
+	利用<strong>小魚</strong>持續試公式直到完成目標。
 </p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="base=C5">STEP5目標<br>&nbsp;
+			<div class="roofpig" data-config="colored=u/c">只需觀察
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C5|alg=R' U' R U' R' U2' R|setupmoves=U2">小魚型:<br>下右上右下右右上
+			<div class="roofpig" data-config="colored=U- u">目標狀態
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="base=C5|alg=R' U' R U' R' U2' R">小魚(角塊一好三壞)
 			</div>
 		</div>
 		<div class="col">
 			<div class="roofpig" data-config="base=C5|alg=R' U' R U' R' U2' R|setupmoves=R' U' R U' R' U2 R U2">
-				非小魚範例<br>&nbsp;
+				非小魚範例
 			</div>
 		</div>
 	</div>
 </div>
 <p><span class="big" id="c06">STEP6.頂層角塊</span></p>
-<p style="margin-left: 2vw;">只有兩種樣式:<strong>有眼</strong>和<strong>無眼</strong>。</p>
+<p style="margin-left: 2vw;">只有兩種樣式：<strong>有眼</strong>和<strong>無眼</strong>。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="base=C6">STEP6目標<br>&nbsp;
+			<div class="roofpig" data-config="colored=FRu RBu BLu LFu">只需觀察
 			</div>
 		</div>
 		<div class="col">
-			<div class=roofpig data-config="colored= u ULf ULb">眼:將眼擺在左邊<br>&nbsp;
+			<div class="roofpig" data-config="colored= U- u U*/c">目標狀態
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C6|alg=R U2 R' U' R U2 L' U R' U' L">基本型:<br>&nbsp;
+			<div class=roofpig data-config="colored= u ULf ULb">眼長這樣
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="base=C6|alg=R U2 R' U' R U2 L' U R' U' L">有眼
 			</div>
 		</div>
 		<div class="col">
 			<div class="roofpig"
 				data-config="base=C6|alg=R U2 R' U' R U2 L' U R' U' L|setupmoves=U R U2 R' U' R U2 L' U R' U' L U2">
-				找不到眼:<br>做基本型就會變基本型
+				無眼：做<strong>有眼</strong>就有眼
 			</div>
 		</div>
 	</div>
 </div>
 <p><span class="big" id="c07">STEP7.頂層邊塊</span></p>
-<p style="margin-left: 2vw;">總共有四種樣式，持續試公式直到完成目標。</p>
+<p style="margin-left: 2vw;">利用<strong>換三邊</strong>持續試公式直到完成目標。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">
-			<div class="roofpig" data-config="base=C7">STEP7目標
+			<div class="roofpig" data-config="colored=Fu Ru Bu Lu">只需觀察
 			</div>
 		</div>
 		<div class="col">
-			<div class="roofpig" data-config="base=C7|alg=z U' R U' R' U' R' U' R U R U2' z'">基本型(好的擺對面):
+			<div class="roofpig">目標狀態
+			</div>
+		</div>
+		<div class="col">
+			<div class="roofpig" data-config="base=C7|alg=z U' R U' R' U' R' U' R U R U2' z'">換三邊(好的邊擺對面)
 			</div>
 		</div>
 		<div class="col">
 			<div class="roofpig"
 				data-config="base=C7|alg=z U' R U' R' U' R' U' R U R U2' z'|setupmoves=U2 z U' R U' R' U' R' U' R U R U2' z' U2">
-				非基本型範例
+				非換三邊範例
 			</div>
 		</div>
 	</div>
 </div>
 <script>
-	ROOFPIG_CONF_C1 = "speed=800|flags=showalg|colored= D*/e */m"
-	ROOFPIG_CONF_C2 = "speed=800|flags=showalg|colored= D*/e */m FRD"
-	ROOFPIG_CONF_C3 = "speed=800|flags=showalg|colored= D* */m FR"
-	ROOFPIG_CONF_C4 = "speed=800|flags=showalg|colored= U- */m u/e"
-	ROOFPIG_CONF_C5 = "speed=800|flags=showalg|colored= U- u"
-	ROOFPIG_CONF_C6 = "speed=800|flags=showalg|colored= U- u U*/c"
-	ROOFPIG_CONF_C7 = "speed=800|flags=showalg|"
+	ROOFPIG_CONF_C2 = "speed=2000|flags=showalg|colored= D*/e */m FRD"
+	ROOFPIG_CONF_C3 = "speed=2000|flags=showalg|colored= D* */m FR"
+	ROOFPIG_CONF_C4 = "speed=2000|flags=showalg|colored= U- */m u/e"
+	ROOFPIG_CONF_C5 = "speed=2000|flags=showalg|colored= U- u"
+	ROOFPIG_CONF_C6 = "speed=2000|flags=showalg|colored= U- u U*/c"
+	ROOFPIG_CONF_C7 = "speed=2000|flags=showalg|"
 </script>
 {% endblock %}
