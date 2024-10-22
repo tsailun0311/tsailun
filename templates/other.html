@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% macro cube(name="",id="",alg="",stick="") -%}
+{% macro cube2(name="",id="",alg="",stick="") -%}
 <div class="col">
     <div class="name">{{name}}</div>
     <twisty-player alg="{{alg}}" background="none" puzzle="2x2x2" visualization="2D" control-panel="none"
@@ -11,38 +11,59 @@
         experimental-setup-anchor="end" id="{{id}}" class="full" experimental-stickering="{{stick}}"></twisty-player>
 </div>
 {%- endmacro %}
+{% macro cube4(name="",id="",alg="",stick="") -%}
+<div class="col">
+    <div class="name">{{name}}</div>
+    <twisty-player alg="{{alg}}" background="none" viewer-link="none" experimental-drag-input="none" puzzle="4x4x4"
+        experimental-setup-anchor="end" id="{{id}}" experimental-stickering="{{stick}}"></twisty-player>
+    <twisty-alg-viewer for="{{id}}"></twisty-alg-viewer>
+</div>
+{%- endmacro %}
 {% block content %}
 <script src="https://cdn.cubing.net/v0/js/cubing/twisty" type="module"></script>
 <p><span class="big">二階速解Ortega</span></p>
 <p style="margin-left: 2vw;"><strong>STEP1.底面</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-lg-4 row-cols-xxl-6">
-        {{cube(name="01",id="14",alg="U R2 U' R2'",stick="F2L")}}
-        {{cube(name="02",id="15",alg="R U R U' R2'",stick="F2L")}}
-        {{cube(name="03",id="16",alg="F R U' R'",stick="F2L")}}
+        {{cube2(name="01",id="14",alg="U R2 U' R2'",stick="F2L")}}
+        {{cube2(name="02",id="15",alg="R U R U' R2'",stick="F2L")}}
+        {{cube2(name="03",id="16",alg="F R U' R'",stick="F2L")}}
     </div>
 </div>
 <p style="margin-left: 2vw;"><strong>STEP2.OLL</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-lg-4 row-cols-xxl-6">
-        {{cube(name="01",id="1",alg="R U' L' U R' U' L",stick="OLL")}}
-        {{cube(name="02",id="2",alg="L' U R U' L U R'",stick="OLL")}}
-        {{cube(name="03 Ortega獨有",id="3",alg="R2 U2 R U2 R2",stick="OLL")}}
-        {{cube(name="04",id="4",alg="F (R U R' U')2 F'",stick="OLL")}}
-        {{cube(name="05",id="5",alg="R U R' U' R' F R F'",stick="OLL")}}
-        {{cube(name="06",id="6",alg="F R U' R' U' R U R' F'",stick="OLL")}}
-        {{cube(name="07",id="7",alg="F R U R' U' F'",stick="OLL")}}
+        {{cube2(name="01",id="1",alg="R U' L' U R' U' L",stick="OLL")}}
+        {{cube2(name="02",id="2",alg="L' U R U' L U R'",stick="OLL")}}
+        {{cube2(name="03 Ortega獨有",id="3",alg="R2 U2 R U2 R2",stick="OLL")}}
+        {{cube2(name="04",id="4",alg="F (R U R' U')2 F'",stick="OLL")}}
+        {{cube2(name="05",id="5",alg="R U R' U' R' F R F'",stick="OLL")}}
+        {{cube2(name="06",id="6",alg="F R U' R' U' R U R' F'",stick="OLL")}}
+        {{cube2(name="07",id="7",alg="F R U R' U' F'",stick="OLL")}}
     </div>
 </div>
 <p style="margin-left: 2vw;"><strong>STEP3.PBL</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-lg-4 row-cols-xxl-6">
-        {{cube(name="對角",id="8",alg="R U2 R' U' R U2 L' U R' U' L",stick="PBL")}}
-        {{cube(name="斜角",id="9",alg="F R U' R' U' R U R' F' R U R' U' R' F R F'",stick="PBL")}}
-        {{cube(name="斜角/斜角",id="10",alg="R2 F2 R2",stick="PBL")}}
-        {{cube(name="斜角/對角",id="11",alg="R2 U R2 U' R2 U R2 U' R2",stick="PBL")}}
-        {{cube(name="對角/斜角",id="12",alg="R' F R' F2 R U' R",stick="PBL")}}
-        {{cube(name="對角/對角",id="13",alg="R2 U' B2 U2 R2 U' R2",stick="PBL")}}
+        {{cube2(name="對角",id="8",alg="R U2 R' U' R U2 L' U R' U' L",stick="PBL")}}
+        {{cube2(name="斜角",id="9",alg="F R U' R' U' R U R' F' R U R' U' R' F R F'",stick="PBL")}}
+        {{cube2(name="斜角/斜角",id="10",alg="R2 F2 R2",stick="PBL")}}
+        {{cube2(name="斜角/對角",id="11",alg="R2 U R2 U' R2 U R2 U' R2",stick="PBL")}}
+        {{cube2(name="對角/斜角",id="12",alg="R' F R' F2 R U' R",stick="PBL")}}
+        {{cube2(name="對角/對角",id="13",alg="R2 U' B2 U2 R2 U' R2",stick="PBL")}}
+    </div>
+</div>
+<p><span class="big">四階速解Yau</span></p>
+<p style="margin-left: 2vw;"><strong>STEP1.白黃中心</strong></p>
+<p style="margin-left: 2vw;"><strong>STEP2.三條白邊</strong></p>
+<p style="margin-left: 2vw;"><strong>STEP3.剩餘中心</strong></p>
+<p style="margin-left: 2vw;"><strong>STEP4.剩餘白邊</strong></p>
+<p style="margin-left: 2vw;"><strong>STEP5.323組邊</strong></p>
+<p style="margin-left: 2vw;"><strong>STEP6.特殊情況</strong></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-lg-4 row-cols-xxl-6">
+        {{cube4(name="OLL",id="17",alg="r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2",stick="OLL")}}
+        {{cube4(name="PLL",id="18",alg="2R2 U2 2R2 u2 2R2 2U2",stick="PLL")}}
     </div>
 </div>
 {% endblock %}

@@ -50,12 +50,6 @@ body {
             border: 1px dashed @g3;
             display: table-cell;
 
-            img {
-                width: 14vw;
-                height: 14vw;
-                max-height: 120px;
-            }
-
             a {
                 color: @g1;
 
@@ -153,10 +147,6 @@ strong {
     background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, @g5 70%);
 }
 
-.pllimg {
-    width: 70% !important;
-}
-
 /**************** twisty styles ***********************************************************************************************/
 twisty-player {
     width: 100%;
@@ -171,6 +161,7 @@ twisty-player {
 .name {
     height: 10%;
     display: grid;
+    align-items: end;
 }
 
 twisty-alg-viewer {
@@ -181,35 +172,19 @@ twisty-alg-viewer {
 
 .roofpig {
     border: none !important;
-    width: 100%;
     max-width: 190px !important;
     margin: auto !important;
-}
-
-.roofpig-help-button {
-    display: none
 }
 
 .roofpig-algtext {
     height: 60px !important;
     font-size: 1em !important;
-    line-height: 19px;
-}
-
-.roofpig-past-algtext {
-    background-color: @g5  !important;
-    border-radius: 5px
 }
 
 .roofpig-button {
-    border-radius: 5px !important;
-    border: none !important;
-    height: 27px !important;
-    margin-right: 1% !important;
     background: url(../sprite.png) no-repeat -20px 0px @g4  !important;
-    text-indent: -117px !important;
-    overflow: hidden !important;
-    width: 24% !important
+    height: 27px !important;
+    width: 24% !important;
 }
 
 .loopreset(@counter) when (@counter > 0) {
