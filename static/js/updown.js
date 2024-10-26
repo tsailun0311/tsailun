@@ -2,7 +2,8 @@
   $("body").append(
     "<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;width: 15vw;max-width:100px' title='回到頂端'/>"
   );
-  var img = "/static/up.png",
+  var img =
+      "https://cube.rider.biz/visualcube.php?fmt=svg&size=100&cc=grey&pzl=5&bg=t&r=y45x-15&fc=wwwwwwwwwwwwwwwwwwwwwwwwwgbbbggbgbggbbbggbggggbgggrororrororrororrororrooor",
     right = 10, // 距離右邊 px 值
     opacity = 0.3, // 透明度
     speed = 500, // 捲動速度
