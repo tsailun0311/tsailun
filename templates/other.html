@@ -3,8 +3,8 @@
 <div class="col">
     <div class="name">{{name}}</div>
     <twisty-player alg="{{alg}}" background="none" puzzle="2x2x2" visualization="2D" control-panel="none"
-        experimental-stickering="{{stick}}"></twisty-player>
-    <twisty-alg-viewer for="{{id}}"></twisty-alg-viewer>
+        experimental-stickering="{{stick}}" experimental-setup-anchor="end"></twisty-player>
+    <twisty-alg-viewer for="{{id}}" style="height: 20%;"></twisty-alg-viewer>
 </div>
 <div class="col">
     <twisty-player alg="{{alg}}" background="none" viewer-link="none" experimental-drag-input="none" puzzle="2x2x2"
@@ -53,17 +53,11 @@
         {{cube2(name="對角/對角",id="13",alg="R2 U' B2 U2 R2 U' R2",stick="PBL")}}
     </div>
 </div>
-<p><span class="big">四階速解Yau</span></p>
-<p style="margin-left: 2vw;"><strong>STEP1.白黃中心</strong></p>
-<p style="margin-left: 2vw;"><strong>STEP2.三條白邊</strong></p>
-<p style="margin-left: 2vw;"><strong>STEP3.剩餘中心</strong></p>
-<p style="margin-left: 2vw;"><strong>STEP4.剩餘白邊</strong></p>
-<p style="margin-left: 2vw;"><strong>STEP5.323組邊</strong></p>
-<p style="margin-left: 2vw;"><strong>STEP6.特殊情況</strong></p>
+<p><span class="big">四階特殊狀況</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-lg-4 row-cols-xxl-6">
-        {{cube4(name="OLL",id="17",alg="r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2",stick="OLL")}}
-        {{cube4(name="PLL",id="18",alg="2R2 U2 2R2 u2 2R2 2U2",stick="PLL")}}
+        {{cube4(name="單邊翻轉",id="17",alg="r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2",stick="OLL")}}
+        {{cube4(name="對邊互換",id="18",alg="2R2 U2 2R2 u2 2R2 2U2",stick="PLL")}}
     </div>
 </div>
 {% endblock %}
