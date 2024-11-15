@@ -51,5 +51,10 @@ def page_not_found(error):
     return render_template('404.html', title=title[7]), 404
 
 
+@app.route('/my', methods=['GET'])
+def my():
+    return render_template('my.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
