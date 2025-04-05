@@ -19,6 +19,12 @@ def favicon1():
                                'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
 
 
+@app.route('/AnimCube.txt')
+def favicon2():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'AnimCube.txt')
+
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', title=title[0])
@@ -62,11 +68,6 @@ def pll():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html', title=title[7]), 404
-
-
-@app.route('/my', methods=['GET'])
-def my():
-    return render_template('my.html')
 
 
 if __name__ == '__main__':
