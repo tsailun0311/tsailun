@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 {% set god = ["1", "18", "243", "3240", "43,239", "574,908", "7,618,438", "100,803,036", "1,332,343,288",
-"17,596,479,795", "232,248,063,316", "約3兆", "約40兆", "約531兆",
-"約6989兆", "約9京1365兆", "約110京", "約1200京","約2900京", "約150京", "約4.9億"] %}
+"17,596,479,795", "232,248,063,316", "3,063,288,809,012", "40,374,425,656,248", "531,653,418,284,628",
+"6,989,320,578,825,358", "91,365,146,187,124,313", "約110京", "約1200京","約2900京", "約150京", "約4.9億"] %}
 {% set cross =
 [["1","15","158","1,394","9,809","46,381","97,254","34,966","102"],["0.0005","0.0079","0.0831","0.7334","5.1604","24.4008","51.1648","18.3954","0.0537"]]
 %}
@@ -25,14 +25,8 @@
     </mrow>
 </mfrac>
 {%- endmacro %}
-<div class="container-fluid">
-    <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">
-            <div class="roofpig"
-                data-config="speed=500|colors=R:r U:w F:g L:o D:y B:b|alg=R2 U' F2 U' F2 U' B2 D L2 D' B R2 U2 L2 F U|flags=startsolved showalg|hover=none">
-            </div>
-        </div>
-    </div>
+<div class="cube">
+    <script>AnimCube3("config=AnimCube.txt&initrevmove=&hint=&speed=4&colorscheme=wygbor&move=R2 U' F2 U' F2 U' B2 D L2 D' B R2 U2 L2 F U")</script>
 </div>
 <p><span class="big">網站介紹</span></p>
 <ul>
@@ -90,7 +84,7 @@
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
-                            <div style="text-align:center;height:13%">UFR視角
+                            <div style="text-align:center">UFR視角
                             </div>
                             <img src="static/solve.png">
                         </div>
@@ -100,63 +94,63 @@
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>R</strong>ight
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=F8U2R0-i40-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>U</strong>p
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=R2F0U8-i50-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>F</strong>ront
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=U6R6F2-i45-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>L</strong>eft
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=U0F6L2-i9-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>D</strong>own
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=F6R8D2-i9-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>B</strong>ack
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=R8U0B0-i9-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>M</strong>iddle
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=U1F7L2-i5-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>E</strong>quator
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=F3R5D2-i5-red&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>S</strong>ide
                             </div>
                             <img
@@ -168,19 +162,19 @@
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
-                            <div style="text-align:center;height:13%">R<strong>'</strong>
+                            <div style="text-align:center">R<strong>'</strong>
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=U2F8R0-i40-yellow&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">U<strong>2</strong>
+                            <div style="text-align:center">U<strong>2</strong>
                             </div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=R2F0U8-i45-red,L2B0U0-i10-yellow&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">
+                            <div style="text-align:center">
                                 <strong>f</strong>
                             </div>
                             <img
@@ -192,17 +186,17 @@
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
-                            <div style="text-align:center;height:13%">x</div>
+                            <div style="text-align:center">x</div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=F6F0,F7F1,F8F2&ac=green&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">y</div>
+                            <div style="text-align:center">y</div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=F8F6,F5F3,F2F0&ac=green&sch=llllll">
                         </div>
                         <div class="col">
-                            <div style="text-align:center;height:13%">z</div>
+                            <div style="text-align:center">z</div>
                             <img
                                 src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&arw=U0U2,U3U5,U6U8&ac=green&sch=llllll">
                         </div>

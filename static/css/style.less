@@ -48,7 +48,8 @@ body {
     }
 
     img {
-        width: 100%;
+        width: 90%;
+        max-width: 150px;
         display: block;
         margin: auto;
     }
@@ -127,87 +128,14 @@ strong {
 
 /**************** AnimCube *****************************************************************************************************/
 .cube {
-    width: 190px;
-    height: 215px;
+    width: 181px;
+    height: 205px;
     max-width: 100%;
-    max-height: 100%;
+    margin: 0 auto 5px auto;
 }
 
-/**************** roofpig styles ***********************************************************************************************/
-.roofpig {
-    border: none !important;
-    max-width: 190px !important;
-    margin: auto !important;
-}
-
-.roofpig-algtext {
-    height: 60px !important;
-    font-size: 1em !important;
-    text-align: justify;
-}
-
-.roofpig-button {
-    background: url(../sprite.png) no-repeat -20px 0px @b2  !important;
-    height: 27px !important;
-    width: 24% !important;
-}
-
-.loopreset(@counter) when (@counter > 0) {
-    .loopreset((@counter - 1));
-
-    #reset-@{counter} {
-        background-position: 10px -234px !important
-    }
-}
-
-.loopreset(60);
-
-.loopplay(@counter) when (@counter > 0) {
-    .loopplay((@counter - 1));
-
-    #play-@{counter} {
-        background-position: 10px -324px !important
-    }
-}
-
-.loopplay(60);
-
-.loopprev(@counter) when (@counter > 0) {
-    .loopprev((@counter - 1));
-
-    #prev-@{counter} {
-        background-position: 10px -264px !important
-    }
-}
-
-.loopprev(60);
-
-.loopnext(@counter) when (@counter > 0) {
-    .loopnext((@counter - 1));
-
-    #next-@{counter} {
-        background-position: 10px -294px !important
-    }
-}
-
-.loopnext(60);
-
-.looppause(@counter) when (@counter > 0) {
-    .looppause((@counter - 1));
-
-    #pause-@{counter} {
-        background-position: 10px -353px !important
-    }
-}
-
-.looppause(60);
-
-.roofpig-button-enabled {
-    background-color: @b1  !important;
-
-    &:hover {
-        background-color: @b2  !important
-    }
+.col {
+    text-align: center;
 }
 
 /**************** load styles ***********************************************************************************************/

@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+<p><span class="big">特殊造型旋轉中心</span></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">單一面中心旋轉180度
+            <div class="cube">
+                <script>AnimCube3("config=AnimCube.txt&hint=0&supercube=1&move=Ra U2 Ra' U Ra U2 Ra' U")</script>
+            </div>
+        </div>
+        <div class="col">相鄰兩面中心旋轉90度
+            <div class="cube">
+                <script>AnimCube3("config=AnimCube.txt&hint=0&supercube=1&move=Us' Rs Fs' U' Fs Rs' Us F")</script>
+            </div>
+        </div>
+    </div>
+</div>
 <p><span class="big">二階速解Ortega</span></p>
 <p style="margin-left: 2vw;"><strong>STEP1.底面</strong></p>
 <div class="container-fluid">
@@ -24,37 +39,37 @@
 <p style="margin-left: 2vw;"><strong>STEP2.OLL</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">　
+        <div class="col">01
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=R U' L' U R' U' L&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">　
+        <div class="col">02
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=L' U R U' L U R'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">Ortega獨有
+        <div class="col">03：Ortega獨有
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=R2 U2 R U2 R2&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">　
+        <div class="col">04
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=F R U R' U' R U R' U' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">　
+        <div class="col">05
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=R U R' U' R' F R F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">　
+        <div class="col">06
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=F R U' R' U' R U R' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">　
+        <div class="col">07
             <div class="cube">
                 <script>AnimCube2("config=AnimCube.txt&move=F R U R' U' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
@@ -96,16 +111,16 @@
         </div>
     </div>
 </div>
-<p><span class="big">四階特殊狀況</span></p>
+<p><span class="big">四階以上特殊狀況</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">
-            <div class="cube">單邊翻轉
+        <div class="col">單邊翻轉
+            <div class="cube">
                 <script>AnimCube4("config=AnimCube.txt&move=r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2&facelets=yyyyyyyyyyyyyyyywwwwwwwwwwwwwwww4rrr4rrr4rrr4rrr4ooo4ooo4ooo4ooo4444bbbbbbbbbbbb4ggg4ggg4ggg4ggg")</script>
             </div>
         </div>
-        <div class="col">
-            <div class="cube">對邊互換
+        <div class="col">對邊互換
+            <div class="cube">
                 <script>AnimCube4("config=AnimCube.txt&move=2R2 U2 2R2 u2 2R2 2U2")</script>
             </div>
         </div>
