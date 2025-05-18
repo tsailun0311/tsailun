@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 {% block head %}
-<style>
-	#mainer {
-		width: 100%;
-		height: 100%;
-	}
-</style>
 <script type="text/javascript">
 	let i = 10;
 	const intervalid = setInterval(fun, 1000);
@@ -24,7 +18,7 @@
 <div align="center">
 	<p>&nbsp;</p>
 	<p>
-		<span id="timer">此頁面尚未創建喔!!👍,10秒後返回上一頁</span>
+		<span id="timer">此頁面尚未創建喔!!，10秒後返回上一頁</span>
 	</p>
 	<p>&nbsp;</p>
 	<script type="text/javascript">
@@ -32,10 +26,10 @@
 		var number = 11;
 		setInterval(function () {
 			number--;
-			timer.innerText = "此頁面尚未創建喔!!👍," + number + "秒後返回上一頁"
+			timer.innerText = "此頁面尚未創建喔!!，" + number + "秒後返回上一頁"
 		}, 1000);
 	</script>
-	<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&pzl=9&cc=fce38a&r=z-45x-105&sch=yyyyyy&fc=yyyyyyyyyyoywwwyoyyywyyywyyyywyyywyyyyyywwyyyyyyywyyyyyyyyyyyyyyoyywyyoyyyyyyyyyyyyyyyyyyyyoyyyyyoyyyyyywwyyyyyyyyywyywywwyywyyyyywyywyyyyyywwyyyoyyyyyo"
-		style="width: 360px;">
+	<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=300&pzl=9&cc=fce38a&r=z-45x-105&sch=yyyyyy&fc=yyyyyyyyyyoywwwyoyyywyyywyyyywyyywyyyyyywwyyyyyyywyyyyyyyyyyyyyyoyywyyoyyyyyyyyyyyyyyyyyyyyoyyyyyoyyyyyywwyyyyyyyyywyywywwyywyyyyywyywyyyyyywwyyyoyyyyyo"
+		style="max-width: 300px;">
 </div>
 {% endblock %}
