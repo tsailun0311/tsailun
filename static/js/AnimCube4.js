@@ -104,8 +104,8 @@ function AnimCube4(params) {
     metric,
     infoText = [],
     curInfoText,
-    buttonBar,
-    buttonHeight,
+    buttonBar = 1,
+    buttonHeight = 18,
     drawButtons = !0,
     pushed,
     buttonPressed = -1,
@@ -123,7 +123,7 @@ function AnimCube4(params) {
     scramble = 0,
     randMoveCount = 0,
     scw = 0,
-    borderWidth = 0,
+    borderWidth = 8,
     rotateAllowed = 1,
     posFaceTransform = [3, 2, 0, 5, 1, 4],
     posFaceletTransform = [
@@ -189,10 +189,10 @@ function AnimCube4(params) {
     var e = getParameter("bgcolor");
     if (
       ((bgColor =
-        null != e && 6 == e.length && validateColor(e) ? "#" + e : "gray"),
+        null != e && 6 == e.length && validateColor(e) ? "#" + e : "#e7e5e3"),
       (e = getParameter("butbgcolor")),
       (buttonBgColor =
-        null != e && 6 == e.length && validateColor(e) ? "#" + e : bgColor),
+        null != e && 6 == e.length && validateColor(e) ? "#" + e : "#b7ccdd"),
       null != (e = getParameter("colors")))
     )
       for (var r = 0, t = 0; r < 10 && t < e.length; r++, t += 6) {
@@ -232,9 +232,10 @@ function AnimCube4(params) {
         borderWidth <= 20 &&
         setBorderWidth(borderWidth / 100);
     }
+    setBorderWidth(borderWidth / 100);
     if (superCube)
       for (r = 0; r < 6; r++) for (t = 0; t < 16; t++) scube[r][t] = 0;
-    var a = "lluu";
+    var a = "lluuu";
     if (null != (e = getParameter("colorscheme")) && 6 == e.length)
       for (r = 0; r < 6; r++) {
         var i = 23;
@@ -245,6 +246,12 @@ function AnimCube4(params) {
           }
         for (t = 0; t < 16; t++) cube[r][t] = i;
       }
+    cube[0] = [11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11];
+    cube[1] = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+    cube[2] = [13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13];
+    cube[3] = [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12];
+    cube[4] = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15];
+    cube[5] = [14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14];
     if (
       ("1" == (e = getParameter("scramble"))
         ? (scramble = 1)
@@ -294,12 +301,12 @@ function AnimCube4(params) {
     }
     if (
       ((moveText = 0),
-      (yzAlt = !1),
+      (yzAlt = !0),
       (signNotation = !1),
       null != (e = getParameter("sign")) &&
         "1" == e &&
         ((signNotation = !0), (moveText = 5), (yzAlt = !0)),
-      (wcaNotation = !1),
+      (wcaNotation = !0),
       null != (e = getParameter("wca")) &&
         "1" == e &&
         ((wcaNotation = !0), (moveText = 6), (yzAlt = !0)),
@@ -319,6 +326,7 @@ function AnimCube4(params) {
       (move = null == e ? [] : getMove(e, !0)),
       (movePos = 0),
       (curInfoText = -1),
+      (initialReversedMove = move),
       0 == scramble &&
         (null != (e = getParameter("initmove")) &&
           ("random" == e && (e = randMoves(4, randMoveCount)),
@@ -382,7 +390,7 @@ function AnimCube4(params) {
           e.charAt(r) <= "9" &&
           (persp = 10 * persp + parseInt(e[r]));
     var g,
-      h = 0;
+      h = 1;
     if (null != (e = getParameter("scale")))
       for (r = 0; r < e.length; r++)
         e.charAt(r) >= "0" &&
@@ -390,7 +398,7 @@ function AnimCube4(params) {
           (h = 10 * h + parseInt(e[r]));
     if (
       ((scale = 1 / (1 + h / 10)),
-      (hint = !1),
+      (hint = !0),
       null != (e = getParameter("hint")))
     ) {
       (hint = !0), (faceShift = 0);
@@ -400,6 +408,7 @@ function AnimCube4(params) {
           (faceShift = 10 * faceShift + parseInt(e[r]));
       faceShift < 1 ? (hint = !1) : (faceShift /= 10);
     }
+    faceShift = 0.3;
     ((hintHoriz = 3.7), null != (e = getParameter("hinthoriz"))) &&
       (g = parseFloat(e)) > 0 &&
       (hintHoriz = g);
@@ -408,7 +417,6 @@ function AnimCube4(params) {
       (hintVert = g);
     ((hintBorder = 0),
     null != (e = getParameter("hintborder")) && "1" == e && (hintBorder = 1),
-    (buttonHeight = 13),
     null != (e = getParameter("buttonheight"))) &&
       ((g = parseInt(e)) >= 9) & (g <= 25) &&
       (buttonHeight = g);
@@ -433,13 +441,16 @@ function AnimCube4(params) {
       : "5" == e
       ? (moveText = 5)
       : "6" == e && (moveText = 6),
+    (moveText = 5),
     (moveTextSpace = 1),
     "0" == (e = getParameter("movetextspace")) && (moveTextSpace = 0),
+    (textHeight = 15),
     null != (e = getParameter("textsize"))) &&
       ((g = parseInt(e)) >= 5) & (g <= 40) &&
       (textHeight = g);
     ((e = getParameter("fonttype")),
     (outlined = null == e || "1" == e),
+    (outlined = false),
     (metric = 0),
     null != (e = getParameter("metric")) &&
       ("1" == e
@@ -447,7 +458,7 @@ function AnimCube4(params) {
         : "2" == e
         ? (metric = 2)
         : "3" == e && (metric = 3)),
-    (align = 1),
+    (align = 0),
     null != (e = getParameter("align"))) &&
       (((g = parseInt(e)) >= 0) & (g <= 3) && (align = g),
       (g >= 3) & (g <= 99) && (align = g / 100));
@@ -475,16 +486,12 @@ function AnimCube4(params) {
       : ((textColor = "black"), (hlColor = darker(bgColor))),
       (buttonBorderColor =
         colorAverage(buttonBgColor) < 128 ? "white" : "black"),
-      (sliderColor = textColor),
+      (sliderColor = "#526d98"),
       null != (e = getParameter("slidercolor")) &&
         6 == e.length &&
         validateColor(e) &&
         (sliderColor = "#" + e),
-      (sliderBgColor = darker(bgColor)),
-      null != (e = getParameter("sliderbgcolor")) &&
-        6 == e.length &&
-        validateColor(e) &&
-        (sliderBgColor = "#" + e),
+      (sliderBgColor = "#b7ccdd"),
       null != (e = getParameter("troughcolor")) &&
         6 == e.length &&
         validateColor(e) &&

@@ -145,3 +145,24 @@ function darker(s) {
 ```js
 graphics.font = textHeight + "px helvetica";
 ```
+
+## 8.更改 基本參數
+
+buttonbar=1
+buttonheight=18
+borderwidth=8
+bgcolor=e7e5e3
+butbgcolor=b7ccdd
+slidercolor=526d98
+troughcolor=b7ccdd
+scale=1
+wca=1
+hint=3
+movetext=5
+fonttype=0
+colorscheme=ywrobg
+initrevmove=#
+position=lluuu
+align=0
+textsize=15
+yz=1

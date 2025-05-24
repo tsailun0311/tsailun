@@ -127,8 +127,8 @@ function AnimCube3(params) {
   var infoText = [];
   var curInfoText;
   // state of buttons
-  var buttonBar; // button bar mode
-  var buttonHeight;
+  var buttonBar = 1;
+  var buttonHeight = 18;
   var drawButtons = true;
   var pushed;
   var buttonPressed = -1;
@@ -146,7 +146,7 @@ function AnimCube3(params) {
   var scramble = 0;
   var randMoveCount = 0;
   var scw = 0;
-  var borderWidth = 0;
+  var borderWidth = 8;
   var rotateAllowed = 1;
   // transformation tables for compatibility with Lars's applet
   // pos layout:
@@ -234,14 +234,14 @@ function AnimCube3(params) {
     var param = getParameter("bgcolor");
     if (param != null && param.length == 6) {
       if (validateColor(param)) bgColor = "#" + param;
-      else bgColor = "gray";
-    } else bgColor = "gray";
+      else bgColor = "#e7e5e3";
+    } else bgColor = "#e7e5e3";
     // setup button bar background color
     param = getParameter("butbgcolor");
     if (param != null && param.length == 6) {
       if (validateColor(param)) buttonBgColor = "#" + param;
-      else buttonBgColor = bgColor;
-    } else buttonBgColor = bgColor;
+      else buttonBgColor = "#b7ccdd";
+    } else buttonBgColor = "#b7ccdd";
     // custom colors
     param = getParameter("colors");
     if (param != null) {
@@ -292,11 +292,12 @@ function AnimCube3(params) {
       if (borderWidth >= 0 && borderWidth <= 20)
         setBorderWidth(borderWidth / 100);
     }
+    setBorderWidth(borderWidth / 100);
     // clean the supercube
     if (superCube) {
       for (var i = 0; i < 6; i++) for (var j = 0; j < 9; j++) scube[i][j] = 0;
     }
-    var initialPosition = "lluu";
+    var initialPosition = "lluuu";
     // setup color configuration of the solved cube
     param = getParameter("colorscheme");
     if (param != null && param.length == 6) {
@@ -312,6 +313,12 @@ function AnimCube3(params) {
         for (var j = 0; j < 9; j++) cube[i][j] = color;
       }
     }
+    cube[0] = [11, 11, 11, 11, 11, 11, 11, 11, 11];
+    cube[1] = [10, 10, 10, 10, 10, 10, 10, 10, 10];
+    cube[2] = [13, 13, 13, 13, 13, 13, 13, 13, 13];
+    cube[3] = [12, 12, 12, 12, 12, 12, 12, 12, 12];
+    cube[4] = [15, 15, 15, 15, 15, 15, 15, 15, 15];
+    cube[5] = [14, 14, 14, 14, 14, 14, 14, 14, 14];
     param = getParameter("scramble");
     if ("1" == param) scramble = 1;
     else if ("2" == param) scramble = 2;
@@ -379,7 +386,7 @@ function AnimCube3(params) {
         moveText = 5;
         yzAlt = true;
       }
-    wcaNotation = false;
+    wcaNotation = true;
     param = getParameter("wca");
     if (param != null)
       if ("1" == param) {
@@ -387,6 +394,7 @@ function AnimCube3(params) {
         moveText = 6;
         yzAlt = true;
       }
+    yzAlt = true;
     param = getParameter("yz");
     if (param != null)
       if ("0" == param) yzAlt = false;
@@ -413,6 +421,7 @@ function AnimCube3(params) {
         initialMove = param == "#" ? move : getMove(param, false);
       }
       // setup initial reversed move sequence
+      initialReversedMove = move;
       param = getParameter("initrevmove");
       if (param != null) {
         if ("random" == param) param = randMoves(3, randMoveCount);
@@ -479,7 +488,7 @@ function AnimCube3(params) {
         if (param.charAt(i) >= "0" && param.charAt(i) <= "9")
           persp = persp * 10 + parseInt(param[i]);
     // cube scale
-    var varscale = 0;
+    var varscale = 1;
     param = getParameter("scale");
     if (param != null)
       for (var i = 0; i < param.length; i++)
@@ -487,7 +496,7 @@ function AnimCube3(params) {
           varscale = varscale * 10 + parseInt(param[i]);
     scale = 1.0 / (1.0 + varscale / 10.0);
     // hint displaying
-    hint = false;
+    hint = true;
     param = getParameter("hint");
     if (param != null) {
       hint = true;
@@ -498,6 +507,7 @@ function AnimCube3(params) {
       if (faceShift < 1.0) hint = false;
       else faceShift /= 10.0;
     }
+    faceShift = 0.3;
     hintHoriz = 3.7;
     param = getParameter("hinthoriz");
     if (param != null) {
@@ -514,7 +524,6 @@ function AnimCube3(params) {
     param = getParameter("hintborder");
     if (param != null) if (param == "1") hintBorder = 1;
     // appearance and configuration of the button bar
-    buttonHeight = 13;
     param = getParameter("buttonheight");
     if (param != null) {
       var n = parseInt(param);
@@ -547,10 +556,12 @@ function AnimCube3(params) {
     // displaying the textual representation of the move
     param = getParameter("movetext");
     if (param >= 0 && param <= 6) moveText = parseInt(param);
+    moveText = 5;
     moveTextSpace = 1;
     param = getParameter("movetextspace");
     if ("0" == param) moveTextSpace = 0;
     // how texts are displayed
+    textHeight = 15;
     param = getParameter("textsize");
     if (param != null) {
       var n = parseInt(param);
@@ -559,6 +570,7 @@ function AnimCube3(params) {
     param = getParameter("fonttype");
     if (param == null || "1" == param) outlined = true;
     else outlined = false;
+    outlined = false;
     // metric
     metric = 0;
     param = getParameter("metric");
@@ -573,7 +585,7 @@ function AnimCube3(params) {
         // slice-turn
         metric = 3;
     }
-    align = 1;
+    align = 0;
     param = getParameter("align");
     if (param != null) {
       // 0 = top, 1 = center, 2 = bottom
@@ -615,16 +627,12 @@ function AnimCube3(params) {
     }
     if (colorAverage(buttonBgColor) < 128) buttonBorderColor = "white";
     else buttonBorderColor = "black";
-    sliderColor = textColor;
+    sliderColor = "#526d98";
     param = getParameter("slidercolor");
     if (param != null && param.length == 6) {
       if (validateColor(param)) sliderColor = "#" + param;
     }
-    sliderBgColor = darker(bgColor);
-    param = getParameter("sliderbgcolor");
-    if (param != null && param.length == 6) {
-      if (validateColor(param)) sliderBgColor = "#" + param;
-    }
+    sliderBgColor = "#b7ccdd";
     param = getParameter("troughcolor");
     if (param != null && param.length == 6) {
       if (validateColor(param)) sliderBgColor = "#" + param;

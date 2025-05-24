@@ -19,12 +19,6 @@ def favicon1():
                                'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
 
 
-@app.route('/AnimCube.txt')
-def favicon2():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'AnimCube.txt')
-
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', title=title[0])
