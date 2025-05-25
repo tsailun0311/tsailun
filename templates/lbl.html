@@ -28,15 +28,54 @@
 </table>
 <p><span class="big">LBL</p>
 <ul>
-	<li>1.層解法(Layer By Layer)：一層一層解，魔方沒辦法一面一面解</li>
-	<li>2.角塊：方塊的所有角落，有<strong>8</strong>個，一塊有<strong>三個顏色</strong></li>
-	<li>2.邊塊：角塊之間的塊，有<strong>12</strong>個，一塊有<strong>兩個顏色</strong></li>
-	<li>4.底層：所有白色角塊和邊塊</li>
-	<li>5.中間層：紅藍.藍橘.橘綠.綠紅</li>
-	<li>6.頂層：所有黃色角塊和邊塊</li>
-	<li>7.任何情況下，頂層皆可自由旋轉</li>
-	<li>8.本網站全部視角皆使用UFR視角</li>
-	<img src="static/solve.png" style="display: block;margin-left: 2vw;width: 200px;">
+	<li>1.層解法(Layer By Layer)：一層一層解，魔方沒辦法一面一面解。想像成解26塊方塊，而不是解54個顏色。</li>
+	<li>2.角塊：魔方的所有角落，有<strong>8</strong>塊，一塊角塊有<strong>三個顏色</strong></li>
+	<li>3.邊塊：角塊之間的塊，有<strong>12</strong>塊，一塊邊塊有<strong>兩個顏色</strong></li>
+	<li>4.中心塊：魔方每面中心，有<strong>6</strong>塊，一塊中心塊有<strong>一個顏色</strong></li>
+	<li>5.底層：所有白色角塊和邊塊</li>
+	<li>6.中間層：紅藍.藍橘.橘綠.綠紅</li>
+	<li>7.頂層：所有黃色角塊和邊塊</li>
+	<li>8.怎麼轉中心塊都不會亂，所以其實只要解20塊方塊！旋轉頂層不會打亂底層和中間層。</li>
+	<div class="container-fluid">
+		<div class="row row-cols-3 row-cols-md-6">
+			<div class="col">
+				<div style="text-align:center">
+					角塊
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=ylylllylyglglllglgrlrlllrlr">
+			</div>
+			<div class="col">
+				<div style="text-align:center">
+					邊塊
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=lylylylyllglglglgllrlrlrlrl">
+			</div>
+			<div class="col">
+				<div style="text-align:center">
+					中心塊
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=llllyllllllllgllllllllrllll">
+			</div>
+			<div class="col">
+				<div style="text-align:center">
+					底層
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=lllllllllllllllgggllllllrrr">
+			</div>
+			<div class="col">
+				<div style="text-align:center">
+					中間層
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=llllllllllllgggllllllrrrlll">
+			</div>
+			<div class="col">
+				<div style="text-align:center">
+					頂層
+				</div>
+				<img src="https://cube.rider.biz/visualcube.php?fmt=svg&size=200&bg=t&fc=yyyyyyyyygggllllllrrrllllll">
+			</div>
+		</div>
+	</div>
 </ul>
 <p><span class="big" id="c01">STEP1.底層邊塊</span></p>
 <p style="margin-left: 2vw;"><strong>無須公式</strong>，靠空間概念。</p>
@@ -164,7 +203,7 @@
 </div>
 <p><span class="big" id="c05">STEP5.黃色角塊</span></p>
 <p style="margin-left: 2vw;">
-	利用<strong>小魚</strong>持續試公式直到完成目標。
+	利用<strong>換三角</strong>持續試公式直到完成目標。
 </p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
@@ -178,12 +217,12 @@
 				<script>AnimCube3("facelets=yyyyyyyyywwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&buttonbar=0")</script>
 			</div>
 		</div>
-		<div class="col">小魚(角塊一好三壞)
+		<div class="col">換三角(好的角擺左上)
 			<div class="cube">
 				<script>AnimCube3("facelets=yyyyyyyyywwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=R' U' R U' R' U2' R")</script>
 			</div>
 		</div>
-		<div class="col">非小魚範例
+		<div class="col">非換三角範例
 			<div class="cube">
 				<script>AnimCube3("facelets=yyyyyyyyywwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=R' U' R U' R' U2' R&initmove=R' U' R U' R' U2 R U2")</script>
 			</div>
