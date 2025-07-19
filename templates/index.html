@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-{% set god = ["1", "18", "243", "3240", "43,239", "574,908", "7,618,438", "100,803,036", "1,332,343,288",
+{% set god = ["1", "18", "243", "3,240", "43,239", "574,908", "7,618,438", "100,803,036", "1,332,343,288",
 "17,596,479,795", "232,248,063,316", "3,063,288,809,012", "40,374,425,656,248", "531,653,418,284,628",
 "6,989,320,578,825,358", "91,365,146,187,124,313", "約110京", "約1200京","約2900京", "約150京", "約4.9億"] %}
 {% set cross =
@@ -208,7 +208,7 @@
         </button>
         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                OLL總狀態數(前3個角塊隨機排列，第4塊將被確定，邊塊依此類推)
+                OLL總狀態數(前3個角塊隨機排列，第4塊將被確定，邊塊依此類推)<br>
                 <math>
                     {{ msup(3,3) }}
                     <mo>×</mo>
@@ -256,7 +256,7 @@
                         <td><math>{{ mfrac(1,54) }}</math></td>
                     </tr>
                 </table>
-                PLL總狀態數(無法對邊互換，且重複計算4次)
+                PLL總狀態數(無法對邊互換，且重複計算4次)<br>
                 <math>
                     <mn> 4 </mn>
                     <mo> ! ×</mo>
@@ -381,7 +381,7 @@
         </button>
         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                CROSS總狀態數(12個邊塊取4個，且每塊有2個方向)
+                CROSS總狀態數(12個邊塊取4個，且每塊有2個方向)<br>
                 <math>
                     <msubsup>
                         <mrow>
@@ -444,7 +444,7 @@
             <div class="accordion-body">
                 目前魔方流行的配色方案有兩種，一種就是世界標準配色，即BOY Color Scheme；另一種是日本配色，即BYO Color
                 Scheme。兩種配色方案用的顏色都是一樣的，不同之處是藍黃顏色互換，用日本配色做CFOP的时候，一般以藍色為底做十字，而標準配色下則以白色為底做十字。<br>魔方六面的顏色是基於
-                CMYK 的減色模式，在任一面中加入/減去黄色，就能得到它相對的顏色。Daisy colors(白色+黄色=黄色) Hot colors(红色+黄色=橘色) Cold
+                CMYK 的減色模式，在任一面中加入/減去黄色，就能得到它相對的顏色。Daisy colors(白色+黄色=黄色) Hot colors(紅色+黃色=橘色) Cold
                 colors(藍色+黄色=綠色)。
             </div>
         </div>
@@ -456,25 +456,25 @@
         </button>
         <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                假設魔方一個塊的邊長為1，魔方的階數為n。我們能轉動的極限是45度，此時角塊距離中心塊最遠，n-2的斜邊長必須＜n。
+                假設魔方一個塊的邊長為1，魔方的階數為n。我們能轉動的極限是45度，此時角塊距離中心塊最遠，n-2的斜邊長必須&#60;n。<br>
                 <math>
                     <msqrt>
                         <mn>2</mn>
                     </msqrt>
-                    <mo>×（</mo>
+                    <mo>x&#40;</mo>
                     <mn>n</mn>
                     <mo>-</mo>
                     <mn>2</mn>
-                    <mo>）＜</mo>
+                    <mo>&#41;&#60;</mo>
                     <mn>n</mn>
                 </math>，
                 <math>
                     <mn>n</mn>
-                    <mo>＜</mo>
+                    <mo>&#60;</mo>
                     <mn>6.828</mn>
                 </math>
                 <div class="container">
-                    <div class="row row-cols-3 row-cols-md-4">
+                    <div class="row row-cols-3">
                         <div class="col">
                             <img src="static/6.png">
                         </div>
@@ -486,8 +486,8 @@
                         </div>
                     </div>
                 </div>
-                我們得到了七階以上的魔方不能保證每個方塊大小都一样，解決方法有<strong>不等寬設計</strong>或<strong>弧形設計</strong>。
-                <img src="./static/make.png" style="width: 88vw;max-width: 500px;">
+                所以七階以上的魔方不能保證每個方塊大小都一样，解決方法有<strong>不等寬設計</strong>或<strong>弧形設計</strong>。
+                <img src="static/make.png" style="width: 88vw;max-width: 500px;">
             </div>
         </div>
     </div>

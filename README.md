@@ -146,8 +146,9 @@ function darker(s) {
 graphics.font = textHeight + "px helvetica";
 ```
 
-## 8.更改 基本參數
+## 9.更改 基本參數
 
+```js
 buttonbar=1
 buttonheight=18
 borderwidth=8
@@ -166,3 +167,4 @@ position=lluuu
 align=0
 textsize=15
 yz=1
+```
