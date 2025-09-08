@@ -1396,21 +1396,22 @@ function AnimCube4(params) {
                 dph,
                 height - progressHeight - dph,
                 width - dpr,
-                progressHeight
+                progressHeight - dpr
               ),
               (graphics.fillStyle = sliderColor),
               graphics.fillRect(
                 dph,
                 height - progressHeight - dph,
                 h,
-                progressHeight
+                progressHeight - dpr
               ),
               graphics.beginPath(),
-              graphics.rect(
+              graphics.roundRect(
                 dph,
                 height - progressHeight - dph,
                 width - dpr,
-                progressHeight
+                progressHeight - dpr,
+                2 * dpr
               ),
               graphics.stroke();
           }
@@ -1770,18 +1771,21 @@ function AnimCube4(params) {
         (e.strokeStyle = "black"),
         e.beginPath(),
         utextHeight <= 14
-          ? e.fillRect(
+          ? e.roundRect(
               c + n - 1,
               height - progressHeight - textHeight - Math.floor(4 * dpr),
               s + 2,
-              textHeight + Math.floor(3 * dpr)
+              textHeight + Math.floor(3 * dpr),
+              dpr * 3
             )
-          : e.fillRect(
+          : e.roundRect(
               c + n - 1,
               height - progressHeight - textHeight - Math.floor(2 * dpr),
               s + 2,
-              textHeight + Math.floor(dpr)
-            )),
+              textHeight + Math.floor(dpr),
+              dpr * 3
+            ),
+        e.fill()),
       n > 0 && drawString(e, o, c, r),
       s > 0 && drawString(e, a, c + n, r),
       l > 0 && drawString(e, i, c + n + s, r);
@@ -1924,13 +1928,25 @@ function AnimCube4(params) {
         var a = Math.floor((width - t) / (4 - o));
         (e.fillStyle =
           buttonPressed == o ? darker(buttonBgColor) : buttonBgColor),
-          e.fillRect(t, height, a, buttonHeight),
           (e.lineWidth = lineWidth),
           (e.strokeStyle = buttonBorderColor),
           e.beginPath(),
           0 == o
-            ? e.rect(t + dph, height - dph, a - dpr, buttonHeight)
-            : e.rect(t - dph, height - dph, a, buttonHeight),
+            ? e.roundRect(
+                t + dph * 3,
+                height + dph,
+                a - dpr * 3,
+                buttonHeight - dpr,
+                dpr * 5
+              )
+            : e.roundRect(
+                t + dph,
+                height + dph,
+                a - dpr * 2,
+                buttonHeight - dpr,
+                dpr * 5
+              ),
+          e.fill(),
           e.stroke(),
           (e.strokeStyle = "black"),
           drawButton(e, o, t + a / 2, height + buttonHeight / 2 - r),
@@ -1940,100 +1956,51 @@ function AnimCube4(params) {
     }
   }
   var ds = [];
-  function drawButton(e, r, t, o) {
-    switch (((t = Math.floor(t)), (o = Math.floor(o)), r)) {
+  function drawButton(e, t, r, o) {
+    switch (((r = Math.floor(r)), (o = Math.floor(o)), t)) {
       case 0:
-        drawRect(e, t - ds[4], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t + ds[4], o, -1);
+        drawArrow2(e, r - ds[1], o + ds[1], -1);
+        drawArrow2(e, r + ds[5], o + ds[1], -1);
         break;
       case 1:
-        drawRect(e, t + ds[1], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t - ds[1], o, -1);
+        drawArrow2(e, r + ds[2], o + ds[1], -1);
         break;
       case 2:
-        drawRect(e, t - ds[4], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t, o, 1);
+        drawArrow2(e, r - ds[3], o + ds[1], 1);
         break;
       case 3:
         animating
-          ? drawRect(e, t - ds[4], o - ds[3], ds[7], ds[7])
-          : drawArrow(e, t - ds[2], o, 1);
+          ? drawRect(e, r - ds[4], o - ds[3], ds[7], ds[7])
+          : drawArrow1(e, r - ds[2], o + ds[1], 1);
         break;
-      case 4:
-        drawArrow(e, t - ds[2], o, 1);
-        break;
-      case 5:
-        drawRect(e, t - ds[4], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t, o, 1);
-        break;
-      case 6:
-        drawRect(e, t + ds[1], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t - ds[4], o, 1);
-        break;
-      case 7:
-        var a = 7 == buttonPressed ? darker(buttonBgColor) : buttonBgColor;
-        drawRect2(e, t - 2 * dpr, o + dpr, buttonHeight, o + buttonHeight, a),
-          drawArrow(
-            e,
-            t + 2 * dpr + buttonHeight / 2 - 3 * dpr,
-            o + buttonHeight / 2 + dph,
-            -1
-          );
-        break;
-      case 8:
-        a = 8 == buttonPressed ? darker(buttonBgColor) : buttonBgColor;
-        drawRect2(e, t - 2 * dpr, o + dpr, buttonHeight, o + buttonHeight, a),
-          drawArrow(
-            e,
-            t - dpr + buttonHeight / 2 - 3 * dpr,
-            o + buttonHeight / 2 + dph,
-            1
-          );
     }
   }
-  function drawArrow(e, r, t, o) {
-    var a = 3 * dpr,
+  function drawArrow(e, t, r, o) {
+    var a = 5 * dpr,
       i = [],
       n = [];
-    (i[0] = r),
-      (i[1] = r + o),
-      (i[2] = r + 4 * dpr * o),
-      (i[3] = r + o),
-      (i[4] = r),
-      (n[0] = t - a),
-      (n[1] = t - a),
-      (n[2] = t),
-      (n[3] = t + a),
-      (n[4] = t + a),
-      drawArrow2(e, i, n);
+    (i[0] = t),
+      (i[1] = t + 6 * dpr * o),
+      (i[2] = t),
+      (n[0] = r - a),
+      (n[1] = r),
+      (n[2] = r + a),
+      e.beginPath(),
+      e.moveTo(i[0] + dph, n[0] + dph);
+    for (var o = 1; o < 3; o++) e.lineTo(i[o] + dph, n[o] + dph);
   }
-  function drawArrow2(e, r, t) {
-    e.beginPath(), e.moveTo(r[0] + dph, t[0] + dph);
-    for (var o = 1; o < 5; o++) e.lineTo(r[o] + dph, t[o] + dph);
-    e.closePath(),
-      (e.fillStyle = "white"),
-      (e.strokeStyle = "black"),
-      e.fill(),
-      (e.lineWidth = lineWidth),
-      e.stroke();
+  function drawArrow1(e, t, r, o) {
+    drawArrow(e, t, r, o), e.closePath(), (e.fillStyle = "black"), e.fill();
   }
-  function drawRect(e, r, t, o, a) {
+  function drawArrow2(e, t, r, o) {
+    drawArrow(e, t, r, o), (e.strokeStyle = "black"), e.stroke();
+  }
+  function drawRect(e, t, r, o, a) {
     (e.lineWidth = lineWidth),
       e.beginPath(),
-      e.rect(r + dph, t + dph, o - 1, a - 1),
-      (e.fillStyle = "white"),
-      e.fill(),
-      (e.strokeStyle = "black"),
-      e.stroke();
-  }
-  function drawRect2(e, r, t, o, a, i) {
-    (e.lineWidth = lineWidth),
-      e.beginPath(),
-      e.rect(r + dph, t + dph, o - 1, a - 1),
-      (e.fillStyle = i),
-      e.fill(),
-      (e.strokeStyle = "black"),
-      e.stroke();
+      e.rect(t + dph, r + dph, o, a),
+      (e.fillStyle = "black"),
+      e.fill();
   }
   function drawPolygon(e, r, t, o) {
     e.beginPath(),

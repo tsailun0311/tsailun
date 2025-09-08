@@ -39,33 +39,99 @@ for (var r = 0, o = 0; o < 4; o++) {
 }
 ```
 
-## 3.drawButtonsFunc 7 個按鈕變 4 個
+## 3.paint 改變 slider 造型
 
 更改
 
 ```js
-else {
-      for (var r = 0, o = 0; o < 4; o++) {
-        var a = Math.floor((width - r) / (4 - o));
-        (e.fillStyle =
-          buttonPressed == o ? darker(buttonBgColor) : buttonBgColor),
-          e.fillRect(r, height, a, buttonHeight),
-          (e.lineWidth = lineWidth),
-          (e.strokeStyle = buttonBorderColor),
-          e.beginPath(),
-          0 == o
-            ? e.rect(r + dph, height - dph, a - dpr, buttonHeight)
-            : e.rect(r - dph, height - dph, a, buttonHeight),
-          e.stroke(),
-          (e.strokeStyle = "black"),
-          drawButton(e, o, r + a / 2, height + buttonHeight / 2 - t),
-          (r += a);
-      }
-      drawButtons = !1;
-    }
+// draw progress bar
+if (progressHeight > 0) {
+  graphics.lineWidth = lineWidth;
+  graphics.strokeStyle = buttonBorderColor;
+
+  var progress =
+    ((width - 2) * realMovePos(move[curMove], movePos)) /
+    realMoveLength(move[curMove]);
+
+  // trough
+  graphics.fillStyle = sliderBgColor;
+  graphics.fillRect(
+    dph,
+    height - progressHeight - dph,
+    width - dpr,
+    progressHeight - dpr
+  );
+
+  // slider
+  graphics.fillStyle = sliderColor;
+  graphics.fillRect(
+    dph,
+    height - progressHeight - dph,
+    progress,
+    progressHeight - dpr
+  );
+
+  // border
+  graphics.beginPath();
+  graphics.roundRect(
+    dph,
+    height - progressHeight - dph,
+    width - dpr,
+    progressHeight - dpr,
+    2 * dpr
+  );
+  graphics.stroke();
+}
 ```
 
-## 4.button 更改鏡像動作為播放
+## 4.drawButtonsFunc 7 個按鈕變 4 個並且改造型
+
+更改
+
+```js
+if (buttonBar == 1) {
+  // full buttonbar
+  var buttonX = 0;
+  for (var i = 0; i < 4; i++) {
+    var buttonWidth = Math.floor((width - buttonX) / (4 - i));
+    if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
+    else g.fillStyle = buttonBgColor;
+    g.lineWidth = lineWidth;
+    g.strokeStyle = buttonBorderColor;
+    g.beginPath();
+    if (i == 0)
+      g.roundRect(
+        buttonX + dph * 3,
+        height + dph,
+        buttonWidth - dpr * 3,
+        buttonHeight - dpr,
+        dpr * 5
+      );
+    else
+      g.roundRect(
+        buttonX + dph,
+        height + dph,
+        buttonWidth - dpr * 2,
+        buttonHeight - dpr,
+        dpr * 5
+      );
+    g.fill();
+    g.stroke();
+    g.strokeStyle = "black";
+    drawButton(
+      g,
+      i,
+      buttonX + buttonWidth / 2,
+      height + buttonHeight / 2 - adj
+    );
+    buttonX += buttonWidth;
+  }
+  drawButtons = false;
+  return;
+}
+```
+
+## 5.button 更改鏡像動作為播放
 
 更改
 
@@ -76,7 +142,7 @@ else {
 : startAnimation(0)
 ```
 
-## 5.buttonAction 更改動作定義
+## 6.buttonAction 更改動作定義
 
 更改
 
@@ -84,31 +150,69 @@ else {
 var buttonAction = [-1, 3, 2, -1, 0, 2, 4, -1];
 ```
 
-## 6.drawButton 更改按鈕造型
+## 7.drawButton 更改按鈕造型
 
 更改
 
 ```js
-      case 0:
-        drawRect(e, t - ds[4], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t + ds[4], o, -1);
-        break;
-      case 1:
-        drawRect(e, t + ds[1], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t - ds[1], o, -1);
-        break;
-      case 2:
-        drawRect(e, t - ds[4], o - ds[3], ds[3], ds[6] + 1),
-          drawArrow(e, t, o, 1);
-        break;
-      case 3:
-        animating
-          ? drawRect(e, t - ds[4], o - ds[3], ds[7], ds[7])
-          : drawArrow(e, t - ds[2], o, 1);
-        break;
+function drawButton(g, i, x, y) {
+  x = Math.floor(x);
+  y = Math.floor(y);
+  switch (i) {
+    case 0: // rewind
+      drawArrow2(g, x - ds[1], y + ds[1], -1);
+      drawArrow2(g, x + ds[5], y + ds[1], -1);
+      break;
+    case 1: // reverse step
+      drawArrow2(g, x + ds[2], y + ds[1], -1);
+      break;
+    case 2: // reverse play
+      drawArrow2(g, x - ds[3], y + ds[1], 1);
+      break;
+    case 3: // stop / mirror
+      if (animating) drawRect(g, x - ds[4], y - ds[3], ds[7], ds[7]);
+      else {
+        drawArrow1(g, x - ds[2], y + ds[1], 1);
+      }
+      break;
+  }
+}
+function drawArrow(g, x, y, dir) {
+  var d5 = 5 * dpr;
+  var fillX = [];
+  var fillY = [];
+  fillX[0] = x;
+  fillX[1] = x + 6 * dpr * dir;
+  fillX[2] = x;
+  fillY[0] = y - d5;
+  fillY[1] = y;
+  fillY[2] = y + d5;
+  g.beginPath();
+  g.moveTo(fillX[0] + dph, fillY[0] + dph);
+  for (var i = 1; i < 3; i++) g.lineTo(fillX[i] + dph, fillY[i] + dph);
+}
+function drawArrow1(g, x, y, dir) {
+  drawArrow(g, x, y, dir);
+  g.closePath();
+  g.fillStyle = "black";
+  g.fill();
+}
+function drawArrow2(g, x, y, dir) {
+  drawArrow(g, x, y, dir);
+  g.strokeStyle = "black";
+  g.lineWidth = lineWidth;
+  g.stroke();
+}
+function drawRect(g, x, y, width, height) {
+  g.lineWidth = lineWidth;
+  g.beginPath();
+  g.rect(x + dph, y + dph, width, height);
+  g.fillStyle = "black";
+  g.fill();
+}
 ```
 
-## 6.init 更改顏色
+## 8.init 更改顏色
 
 更改
 
@@ -121,7 +225,7 @@ colors[14] = "#0d0"; // G - green
 colors[15] = "#07f"; // B - blue
 ```
 
-## 7.darker 更改 highlight
+## 9.darker 更改 highlight
 
 更改
 
@@ -138,7 +242,7 @@ function darker(s) {
 }
 ```
 
-## 8.paint 更改 公式粗體
+## 10.paint 更改公式粗體
 
 更改
 
@@ -146,7 +250,7 @@ function darker(s) {
 graphics.font = textHeight + "px helvetica";
 ```
 
-## 9.更改 基本參數
+## 11.更改基本參數
 
 ```js
 buttonbar=1
@@ -167,4 +271,33 @@ position=lluuu
 align=0
 textsize=15
 yz=1
+```
+
+## 12.drawMoveTextFunc 更改當前步驟圓角
+
+```js
+if (w2 > 0) {
+  g.fillStyle = hlColor;
+  g.lineWidth = 2;
+  g.strokeStyle = "black";
+  g.beginPath();
+  if (utextHeight <= 14)
+    // make rectangle taller for smaller fonts
+    g.roundRect(
+      x + w1 - 1,
+      height - progressHeight - textHeight - Math.floor(dpr * 4),
+      w2 + 2,
+      textHeight + Math.floor(dpr * 3),
+      dpr * 3
+    );
+  else
+    g.roundRect(
+      x + w1 - 1,
+      height - progressHeight - textHeight - Math.floor(dpr * 2),
+      w2 + 2,
+      textHeight + Math.floor(dpr),
+      dpr * 3
+    );
+  g.fill();
+}
 ```

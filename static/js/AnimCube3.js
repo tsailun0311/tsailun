@@ -1257,13 +1257,6 @@ function AnimCube3(params) {
     }
   }
 
-  /* each superTwistArr element [a, b, c] is used to access a row or column
-     of 3 facelets in the cube layout (shown above) where:
-     a = starting facelet number
-     b = increment
-     c = layer (0=U, 1=D, 2=F, 3=B, 4=L, 5=R)
-  */
-
   var superTwistArr = [
     // mode layer
     [
@@ -1309,13 +1302,6 @@ function AnimCube3(params) {
       [3, 1, 1],
     ], //  1     5
   ];
-
-  /* for F & B moves, rotate all arrows in the slice in the same direction
-     as the slice is rotated
-
-     for R & L moves, half-twist slice arrows on the back face and on the
-     face where the slice arrows from the back face moved to
-  */
 
   function twistSuperLayer(layer, num, mode) {
     if (mode == 0) {
@@ -1646,7 +1632,7 @@ function AnimCube3(params) {
               dph,
               height - progressHeight - dph,
               width - dpr,
-              progressHeight
+              progressHeight - dpr
             );
 
             // slider
@@ -1655,16 +1641,17 @@ function AnimCube3(params) {
               dph,
               height - progressHeight - dph,
               progress,
-              progressHeight
+              progressHeight - dpr
             );
 
             // border
             graphics.beginPath();
-            graphics.rect(
+            graphics.roundRect(
               dph,
               height - progressHeight - dph,
               width - dpr,
-              progressHeight
+              progressHeight - dpr,
+              2 * dpr
             );
             graphics.stroke();
           }
@@ -1709,8 +1696,6 @@ function AnimCube3(params) {
           w,
           textHeight
         );
-        // drawString(graphics, infoText[curInfoText], (width-w)/2+dpr, adjTextHeight());
-        // drawString(graphics, infoText[curInfoText], outlined ? dpr : 0, adjTextHeight());
       }
     }
     graphics.restore();
@@ -2111,19 +2096,22 @@ function AnimCube3(params) {
       g.beginPath();
       if (utextHeight <= 14)
         // make rectangle taller for smaller fonts
-        g.fillRect(
+        g.roundRect(
           x + w1 - 1,
           height - progressHeight - textHeight - Math.floor(dpr * 4),
           w2 + 2,
-          textHeight + Math.floor(dpr * 3)
+          textHeight + Math.floor(dpr * 3),
+          dpr * 3
         );
       else
-        g.fillRect(
+        g.roundRect(
           x + w1 - 1,
           height - progressHeight - textHeight - Math.floor(dpr * 2),
           w2 + 2,
-          textHeight + Math.floor(dpr)
+          textHeight + Math.floor(dpr),
+          dpr * 3
         );
+      g.fill();
     }
     if (w1 > 0) drawString(g, s1, x, y);
     if (w2 > 0) drawString(g, s2, x + w1, y);
@@ -2315,13 +2303,26 @@ function AnimCube3(params) {
         var buttonWidth = Math.floor((width - buttonX) / (4 - i));
         if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
         else g.fillStyle = buttonBgColor;
-        g.fillRect(buttonX, height, buttonWidth, buttonHeight);
         g.lineWidth = lineWidth;
         g.strokeStyle = buttonBorderColor;
         g.beginPath();
         if (i == 0)
-          g.rect(buttonX + dph, height - dph, buttonWidth - dpr, buttonHeight);
-        else g.rect(buttonX - dph, height - dph, buttonWidth, buttonHeight);
+          g.roundRect(
+            buttonX + dph * 3,
+            height + dph,
+            buttonWidth - dpr * 3,
+            buttonHeight - dpr,
+            dpr * 5
+          );
+        else
+          g.roundRect(
+            buttonX + dph,
+            height + dph,
+            buttonWidth - dpr * 2,
+            buttonHeight - dpr,
+            dpr * 5
+          );
+        g.fill();
         g.stroke();
         g.strokeStyle = "black";
         drawButton(
@@ -2344,104 +2345,55 @@ function AnimCube3(params) {
     y = Math.floor(y);
     switch (i) {
       case 0: // rewind
-        drawRect(g, x - ds[4], y - ds[3], ds[3], ds[6] + 1);
-        drawArrow(g, x + ds[4], y, -1); // left
+        drawArrow2(g, x - ds[1], y + ds[1], -1);
+        drawArrow2(g, x + ds[5], y + ds[1], -1);
         break;
       case 1: // reverse step
-        drawRect(g, x + ds[1], y - ds[3], ds[3], ds[6] + 1);
-        drawArrow(g, x - ds[1], y, -1); // left
+        drawArrow2(g, x + ds[2], y + ds[1], -1);
         break;
       case 2: // reverse play
-        drawRect(g, x - ds[4], y - ds[3], ds[3], ds[6] + 1);
-        drawArrow(g, x, y, 1); // right
+        drawArrow2(g, x - ds[3], y + ds[1], 1);
         break;
       case 3: // stop / mirror
         if (animating) drawRect(g, x - ds[4], y - ds[3], ds[7], ds[7]);
         else {
-          drawArrow(g, x - ds[2], y, 1);
+          drawArrow1(g, x - ds[2], y + ds[1], 1);
         }
-        break;
-      case 4: // play
-        drawArrow(g, x - ds[2], y, 1); // right
-        break;
-      case 5: // step
-        drawRect(g, x - ds[4], y - ds[3], ds[3], ds[6] + 1);
-        drawArrow(g, x, y, 1); // right
-        break;
-      case 6: // fast forward
-        drawRect(g, x + ds[1], y - ds[3], ds[3], ds[6] + 1);
-        drawArrow(g, x - ds[4], y, 1); // right
-        break;
-      case 7: // prev sequence
-        var c = buttonPressed == 7 ? darker(buttonBgColor) : buttonBgColor;
-        drawRect2(g, x - dpr * 2, y + dpr, buttonHeight, y + buttonHeight, c);
-        drawArrow(
-          g,
-          x + dpr * 2 + buttonHeight / 2 - dpr * 3,
-          y + buttonHeight / 2 + dph,
-          -1
-        );
-        break;
-      case 8: // next sequence
-        var c = buttonPressed == 8 ? darker(buttonBgColor) : buttonBgColor;
-        drawRect2(g, x - dpr * 2, y + dpr, buttonHeight, y + buttonHeight, c);
-        drawArrow(
-          g,
-          x - dpr + buttonHeight / 2 - dpr * 3,
-          y + buttonHeight / 2 + dph,
-          1
-        );
         break;
     }
   }
-
   function drawArrow(g, x, y, dir) {
-    var d3 = 3 * dpr;
+    var d5 = 5 * dpr;
     var fillX = [];
     var fillY = [];
     fillX[0] = x;
-    fillX[1] = x + dir;
-    fillX[2] = x + 4 * dpr * dir;
-    fillX[3] = x + dir;
-    fillX[4] = x;
-    fillY[0] = y - d3;
-    fillY[1] = y - d3;
-    fillY[2] = y;
-    fillY[3] = y + d3;
-    fillY[4] = y + d3;
-    drawArrow2(g, fillX, fillY);
-  }
-
-  function drawArrow2(g, x, y) {
+    fillX[1] = x + 6 * dpr * dir;
+    fillX[2] = x;
+    fillY[0] = y - d5;
+    fillY[1] = y;
+    fillY[2] = y + d5;
     g.beginPath();
-    g.moveTo(x[0] + dph, y[0] + dph);
-    for (var i = 1; i < 5; i++) g.lineTo(x[i] + dph, y[i] + dph);
+    g.moveTo(fillX[0] + dph, fillY[0] + dph);
+    for (var i = 1; i < 3; i++) g.lineTo(fillX[i] + dph, fillY[i] + dph);
+  }
+  function drawArrow1(g, x, y, dir) {
+    drawArrow(g, x, y, dir);
     g.closePath();
-    g.fillStyle = "white";
-    g.strokeStyle = "black";
+    g.fillStyle = "black";
     g.fill();
+  }
+  function drawArrow2(g, x, y, dir) {
+    drawArrow(g, x, y, dir);
+    g.strokeStyle = "black";
     g.lineWidth = lineWidth;
     g.stroke();
   }
-
   function drawRect(g, x, y, width, height) {
     g.lineWidth = lineWidth;
     g.beginPath();
-    g.rect(x + dph, y + dph, width - 1, height - 1);
-    g.fillStyle = "white";
+    g.rect(x + dph, y + dph, width, height);
+    g.fillStyle = "black";
     g.fill();
-    g.strokeStyle = "black";
-    g.stroke();
-  }
-
-  function drawRect2(g, x, y, width, height, color) {
-    g.lineWidth = lineWidth;
-    g.beginPath();
-    g.rect(x + dph, y + dph, width - 1, height - 1);
-    g.fillStyle = color;
-    g.fill();
-    g.strokeStyle = "black";
-    g.stroke();
   }
 
   function drawPolygon(g, x, y, color) {
