@@ -128,7 +128,7 @@ function AnimCube3(params) {
   var curInfoText;
   // state of buttons
   var buttonBar = 1;
-  var buttonHeight = 18;
+  var buttonHeight = 22;
   var drawButtons = true;
   var pushed;
   var buttonPressed = -1;
@@ -2306,22 +2306,13 @@ function AnimCube3(params) {
         g.lineWidth = lineWidth;
         g.strokeStyle = buttonBorderColor;
         g.beginPath();
-        if (i == 0)
-          g.roundRect(
-            buttonX + dph * 3,
-            height + dph,
-            buttonWidth - dpr * 3,
-            buttonHeight - dpr,
-            dpr * 5
-          );
-        else
-          g.roundRect(
-            buttonX + dph,
-            height + dph,
-            buttonWidth - dpr * 2,
-            buttonHeight - dpr,
-            dpr * 5
-          );
+        g.roundRect(
+          buttonX + dph * (1 + i),
+          height + dpr,
+          buttonWidth - dph * 5,
+          buttonHeight - dph * 3,
+          dpr * 5
+        );
         g.fill();
         g.stroke();
         g.strokeStyle = "black";

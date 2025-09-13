@@ -99,22 +99,13 @@ if (buttonBar == 1) {
     g.lineWidth = lineWidth;
     g.strokeStyle = buttonBorderColor;
     g.beginPath();
-    if (i == 0)
-      g.roundRect(
-        buttonX + dph * 3,
-        height + dph,
-        buttonWidth - dpr * 3,
-        buttonHeight - dpr,
-        dpr * 5
-      );
-    else
-      g.roundRect(
-        buttonX + dph,
-        height + dph,
-        buttonWidth - dpr * 2,
-        buttonHeight - dpr,
-        dpr * 5
-      );
+    g.roundRect(
+      buttonX + dph * (1 + i),
+      height + dpr,
+      buttonWidth - dph * 5,
+      buttonHeight - dph * 3,
+      dpr * 5
+    );
     g.fill();
     g.stroke();
     g.strokeStyle = "black";
@@ -254,7 +245,7 @@ graphics.font = textHeight + "px helvetica";
 
 ```js
 buttonbar=1
-buttonheight=18
+buttonheight=22
 borderwidth=8
 bgcolor=e7e5e3
 butbgcolor=b7ccdd

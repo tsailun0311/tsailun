@@ -105,7 +105,7 @@ function AnimCube4(params) {
     infoText = [],
     curInfoText,
     buttonBar = 1,
-    buttonHeight = 18,
+    buttonHeight = 22,
     drawButtons = !0,
     pushed,
     buttonPressed = -1,
@@ -1931,21 +1931,13 @@ function AnimCube4(params) {
           (e.lineWidth = lineWidth),
           (e.strokeStyle = buttonBorderColor),
           e.beginPath(),
-          0 == o
-            ? e.roundRect(
-                t + dph * 3,
-                height + dph,
-                a - dpr * 3,
-                buttonHeight - dpr,
-                dpr * 5
-              )
-            : e.roundRect(
-                t + dph,
-                height + dph,
-                a - dpr * 2,
-                buttonHeight - dpr,
-                dpr * 5
-              ),
+          e.roundRect(
+            t + dph * (1 + o),
+            height + dpr,
+            a - dph * 5,
+            buttonHeight - dph * 3,
+            dpr * 5
+          ),
           e.fill(),
           e.stroke(),
           (e.strokeStyle = "black"),
