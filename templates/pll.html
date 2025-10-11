@@ -1,15 +1,30 @@
 {% extends "base.html" %} {% block content %}
-{% set pllmenu = ["剩邊型","剩角型","2 Pairs型","鄰角對邊型","對角鄰邊型","鄰角鄰邊型","雙環型","練習","總複習"]%}
 <table>
-	{% for i in range(3) %}
 	<tr>
-		{% for j in range(3) %}
 		<td>
-			<a href="#c{{i*3+j+1}}" class="click">{{pllmenu[i*3+j]}}</a>
+			<a href="#c1" class="click">剩邊型</a>
 		</td>
-		{% endfor %}
+		<td>
+			<a href="#c2" class="click">剩角型</a>
+		</td>
+		<td>
+			<a href="#c3" class="click">2 Pairs型</a>
+		</td>
+		<td>
+			<a href="#c4" class="click">鄰角對邊型</a>
+		</td>
 	</tr>
-	{% endfor %}
+	<tr>
+		<td>
+			<a href="#c5" class="click">對角鄰邊型</a>
+		</td>
+		<td>
+			<a href="#c6" class="click">鄰角鄰邊型</a>
+		</td>
+		<td>
+			<a href="#c7" class="click">雙環型</a>
+		</td>
+	</tr>
 </table>
 <p><span class="big" id="c1">剩邊型</span></p>
 <div class="container-fluid">
@@ -150,136 +165,5 @@
 			</div>
 		</div>
 	</div>
-</div>
-<p><span class="big" id="c8">練習1</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Ua
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=z U' R U' R' U' R' U' R U R U2' z'">
-		</div>
-		<div class="col" style="text-align: center;">U2
-			<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=U2">
-		</div>
-		<div class="col" style="text-align: center;">Ub
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=z' U L' U L U L U L' U' L' U2 z">
-		</div>
-		<div class="col" style="text-align: center;">Z
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=U2 R' U' R U' R U R U' R' U R U R2 U' R'">
-		</div>
-	</div>
-</div>
-<p><span class="big">練習2</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Ab
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=x' L' U L' D2 L U' L' D2 L2' x y'">
-		</div>
-		<div class="col" style="text-align: center;">Aa
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=x' R U' R D2 R' U R D2 R2 x">
-		</div>
-	</div>
-</div>
-<p><span class="big">練習3</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Y
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=F R U' R' U' R U R' F' R U R' U' R' F R F'">
-		</div>
-		<div class="col" style="text-align: center;">U2
-			<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=U2">
-		</div>
-		<div class="col" style="text-align: center;">V
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=L' U R U' L U L' U R' U' L U2 R U2 R'">
-		</div>
-		<div class="col" style="text-align: center;">H
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=M2' U M2' U2 M2' U M2'">
-		</div>
-	</div>
-</div>
-<p><span class="big">練習4</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Na
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R'">
-		</div>
-		<div class="col" style="text-align: center;">Nb
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R">
-		</div>
-		<div class="col" style="text-align: center;">U2
-			<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=U2">
-		</div>
-		<div class="col" style="text-align: center;">F
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R">
-		</div>
-		<div class="col" style="text-align: center;">T
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R U R' U' R' F R2 U' R' U' R U R' F'">
-		</div>
-	</div>
-</div>
-<p><span class="big">練習5</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Rb
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=y' R' U2 R U2 R' F R U R' U' R' F' R2 U' y">
-		</div>
-		<div class="col" style="text-align: center;">Ra
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R U' R' U' R U R D R' U' R D' R' U2 R' U'">
-		</div>
-		<div class="col" style="text-align: center;">Ja
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R' U2 R U R' U2' L U' R U L'">
-		</div>
-		<div class="col" style="text-align: center;">U2
-			<img src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=U2">
-		</div>
-		<div class="col" style="text-align: center;">Jb
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R U2 R' U' R U2 L' U R' U' L">
-		</div>
-		<div class="col" style="text-align: center;">E
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=x' R U' R' D R U R' D' R U R' D R U' R' D' x">
-		</div>
-	</div>
-</div>
-<p><span class="big">練習6</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-3 row-cols-sm-4 row-cols-md-6">
-		<div class="col" style="text-align: center;">Ga
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R2 u  R' U R' U' R u' R2 y' R' U R y">
-		</div>
-		<div class="col" style="text-align: center;">Gb
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R' U' R y R2 u R' U R U' R u' R2 y'">
-		</div>
-		<div class="col" style="text-align: center;">Gc
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R2 u' R U' R U R' u R2 y R U' R' y'">
-		</div>
-		<div class="col" style="text-align: center;">Gd
-			<img
-				src="https://cube.rider.biz/visualcube.php?bg=t&fmt=svg&size=200&sch=ygrwbo&alg=R U R' y' R2 u' R U' R' U R' u R2 y">
-		</div>
-	</div>
-</div>
-</p>
-<p><span class="big" id="c9">總複習</span></p>
-<div class="cube">
-	<script>AnimCube3("speed=3&move=z' U L' U L U L U L' U' L' U2 z U2 z U' R U' R' U' R' U' R U R U2' z' R' U' R U' R U R U' R' U R U R2 U' R' x' R U' R D2 R' U R D2 R2 z L' U L' D2 L U' L' D2 L2' x F R U' R' U' R U R' F' R U R' U' R' F R F' U2 L' U R U' L U L' U R' U' L U2 R U2 R' M2' U M2' U2 M2' U M2' R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R' R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R U2 R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R R U R' U' R' F R2 U' R' U' R U R' F' R' U2 R U2 R' F R U R' U' R' F' R2 R U' R' U' R U R D R' U' R D' R' U2 R' R' U2 R U R' U2' L U' R U L' U2 R U2 R' U' R U2 L' U R' U' L x' R U' R' D R U R' D' R U R' D R U' R' D' x R2 u  R' U R' U' R u' R2 y' R' U R R' U' R y R2 u R' U R U' R u' R2 R2 u' R U' R U R' u R2 y R U' R' R U R' y' R2 u' R U' R' U R' u R2 y'")</script>
 </div>
 {% endblock %}
