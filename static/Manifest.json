@@ -1,0 +1,14 @@
+{
+    "name": "蔡倫魔方",
+    "short_name": "蔡倫魔方",
+    "description": "這個網站包含我的魔方整理和紀錄，無任何營收，主要練習架站。",
+    "start_url": "/",
+    "theme_color": "#526d98",
+    "background_color": "#e7e5e3",
+    "display": "fullscreen",
+    "icons": [
+        {   "src": "./apple-touch-icon.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }]
+  }
