@@ -28,21 +28,29 @@ body {
 
     table {
         text-align: center;
-        margin: 1vw auto;
-        width: 98vw;
-
-        th {
-            color: @b1;
-            border: @b1 solid 1px;
-        }
+        margin: 2vw auto;
+        width: 96vw;
+        border-collapse: separate;
+        -webkit-border-vertical-spacing: 3px;
+        -webkit-border-horizontal-spacing: 3px;
 
         td {
-            border: 1px dashed @b1;
+            border: 1px solid @b1;
+            background-color: @b2;
+            border-radius: 5px;
 
             img {
                 width: 50px;
                 display: inline-block;
                 height: 50px;
+            }
+        }
+
+        a {
+
+            &:hover,
+            &:active {
+                color: @b1;
             }
         }
     }
