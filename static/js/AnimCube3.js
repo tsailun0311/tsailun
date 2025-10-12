@@ -1620,7 +1620,7 @@ function AnimCube3(params) {
           // draw progress bar
           if (progressHeight > 0) {
             graphics.lineWidth = lineWidth;
-            graphics.strokeStyle = buttonBorderColor;
+            graphics.strokeStyle = "#526d98";
 
             var progress =
               ((width - 2) * realMovePos(move[curMove], movePos)) /
@@ -2304,7 +2304,7 @@ function AnimCube3(params) {
         if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
         else g.fillStyle = buttonBgColor;
         g.lineWidth = lineWidth;
-        g.strokeStyle = buttonBorderColor;
+        g.strokeStyle = "#526d98";
         g.beginPath();
         g.roundRect(
           buttonX + dph * (1 + i),

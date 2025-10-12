@@ -1387,7 +1387,7 @@ function AnimCube4(params) {
         if (move[curMove].length > 0) {
           if (progressHeight > 0) {
             (graphics.lineWidth = lineWidth),
-              (graphics.strokeStyle = buttonBorderColor);
+              (graphics.strokeStyle = "#526d98");
             var h =
               ((width - 2) * realMovePos(move[curMove], movePos)) /
               realMoveLength(move[curMove]);
@@ -1929,7 +1929,7 @@ function AnimCube4(params) {
         (e.fillStyle =
           buttonPressed == o ? darker(buttonBgColor) : buttonBgColor),
           (e.lineWidth = lineWidth),
-          (e.strokeStyle = buttonBorderColor),
+          (e.strokeStyle = "#526d98"),
           e.beginPath(),
           e.roundRect(
             t + dph * (1 + o),

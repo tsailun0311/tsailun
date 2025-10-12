@@ -47,7 +47,7 @@ for (var r = 0, o = 0; o < 4; o++) {
 // draw progress bar
 if (progressHeight > 0) {
   graphics.lineWidth = lineWidth;
-  graphics.strokeStyle = buttonBorderColor;
+  graphics.strokeStyle = "#526d98";
 
   var progress =
     ((width - 2) * realMovePos(move[curMove], movePos)) /
@@ -97,7 +97,7 @@ if (buttonBar == 1) {
     if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
     else g.fillStyle = buttonBgColor;
     g.lineWidth = lineWidth;
-    g.strokeStyle = buttonBorderColor;
+    g.strokeStyle = "#526d98";
     g.beginPath();
     g.roundRect(
       buttonX + dph * (1 + i),
