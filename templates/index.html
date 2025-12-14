@@ -75,7 +75,7 @@
         </button>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                大寫表示該面面對自己順時針轉90度
+                大寫表示該面面對自己順時針轉90&#176;
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                加<strong>(')</strong>是逆時針，加<strong>2</strong>是轉180度，<strong>小寫</strong>是轉兩層
+                加'是逆時針，加2是轉180&#176;，小寫是轉兩層
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-                x　y　z是整顆翻轉
+                x、y、z是整顆翻轉
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                根據能看到的面命名視角，本站使用UFR視角，眼睛從箭頭方向看去。
+                根據能看到的面命名視角，通常使用UFR視角，眼睛從箭頭方向看去。
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
@@ -208,7 +208,7 @@
         </button>
         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                OLL總狀態數(前3個角塊隨機排列，第4塊將被確定，邊塊依此類推)<br>
+                OLL總狀態數(最後的角塊邊塊將被確定，其餘隨機排列)<br>
                 <math>
                     {{ msup(3,3) }}
                     <mo>×</mo>
@@ -381,7 +381,7 @@
         </button>
         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                CROSS總狀態數(12個邊塊取4個，且每塊有2個方向)<br>
+                CROSS總狀態數(12個邊塊取4個，每塊2個方向)<br>
                 <math>
                     <msubsup>
                         <mrow>
@@ -442,10 +442,26 @@
         </button>
         <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                目前魔方流行的配色方案有兩種，一種就是世界標準配色，即BOY Color Scheme；另一種是日本配色，即BYO Color
-                Scheme。兩種配色方案用的顏色都是一樣的，不同之處是藍黃顏色互換，用日本配色做CFOP的时候，一般以藍色為底做十字，而標準配色下則以白色為底做十字。<br>魔方六面的顏色是基於
-                CMYK 的減色模式，在任一面中加入/減去黄色，就能得到它相對的顏色。Daisy colors(白色+黄色=黄色) Hot colors(紅色+黃色=橘色) Cold
-                colors(藍色+黄色=綠色)。
+                魔方流行的配色方案有兩種，世界標準配色(BOY Color Scheme)和日本配色(BYO Color
+                Scheme)。不同之處是<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍</strong><strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄</strong>顏色互換，日本配色通常以<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍色</strong>為底，而標準配色則以<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #fff 60%);">白色</strong>為底。
+                <br>魔方的顏色是基於CMYK的減色模式，在任一面中加入/減去<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>，就能得到它相對的顏色。
+                <br>Daisy colors(<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #fff 60%);">白色</strong>+<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>)
+                <br>Hot colors(<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, red 60%);">紅色</strong>+<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, orange 60%);">橘色</strong>)
+                <br>Cold colors(<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍色</strong>+<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #0d0 60%);">綠色</strong>)
             </div>
         </div>
     </div>
@@ -456,10 +472,10 @@
         </button>
         <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                假設魔方一個塊的邊長為1，魔方的階數為n。我們能轉動的極限是45度，此時角塊距離中心塊最遠，n-2的斜邊長必須&#60;n。<br>
+                假設魔方一個塊的邊長為1，魔方的階數為n。能轉動的極限是45&#176;，此時角塊距離中心塊最遠，n-2的斜邊長必須&#60;n。<br>
                 <math>
                     <msqrt>
-                        <mn>2</mn>
+                        <mi>2</mi>
                     </msqrt>
                     <mo>x&#40;</mo>
                     <mn>n</mn>

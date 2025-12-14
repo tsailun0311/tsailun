@@ -17,7 +17,6 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
-    <script>window.onpageshow = function (event) { if (event.persisted) { window.location.reload() } };</script>
     {% block head %}{% endblock %}
 </head>
 
@@ -32,22 +31,28 @@
     <div class="top">
         <section class="top-nav">
             <div>
-                <a href="/">蔡倫魔方</a>
+                <a href="#mainer">蔡倫魔方</a>
             </div>
             <input id="menu-toggle" type="checkbox" />
             <label class='menu-button-container' for="menu-toggle">
                 <div class='menu-button'></div>
             </label>
-            {% set menu = [["/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/other",],
-            ["花式", "LBL", "CROSS", "F2L", "OLL", "PLL","其它"]
+            {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/other",],
+            ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL","其它"]
             ] %}
             <ul class="menu">
-                {% for i in range(7) %}
+                {% for i in range(8) %}
                 <li><a href="{{menu[0][i]}}">{{menu[1][i]}}</a></li>
                 {% endfor %}
             </ul>
         </section>
     </div>
+    <a style="display:scroll;position:fixed;bottom:0px;right:5px;" href="#" title="" onFocus="if(this.blur)this.blur()">
+        <img alt='' border='0' onmouseover="this.src='./conan/topafter.jpg'" src="./conan/topbefore.jpg"
+            onmouseout="this.src='./conan/topbefore.jpg'" />
+        <img alt='' border='0' onmouseover="this.src='./conan/Topafter.jpg'" src="./conan/Topbefore.jpg"
+            onmouseout="this.src='./conan/Topbefore.jpg'" />
+    </a>
     <div id="mainer">
         {% block content %}{% endblock %}
     </div>
@@ -67,6 +72,14 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        window.addEventListener("pageshow", function (event) {
+            if (event.persisted) {
+                const menuToggle = document.getElementById("menu-toggle");
+                if (menuToggle) {
+                    menuToggle.checked = false;
+                }
+            }
         });
     </script>
 </body>
