@@ -6,16 +6,31 @@
 "06", "06", "06", "06", "07", "07", "07", "07", "07", "07",
 "08", "08", "08", "09", "09", "09", "10"] %}
 <table>
+    <tr>
+        <td style="width: 25%">
+            <a href="/cross">CROSS</a>
+        </td>
+        <td style="width: 25%">
+            <a href="/f2l">F2L</a>
+        </td>
+        <td style="width: 25%;background-color: #526d98;color: #e7e5e3;">OLL
+        </td>
+        <td style="width: 25%">
+            <a href="/pll">PLL</a>
+        </td>
+    </tr>
+</table>
+<table>
     {% for i in range(5) %}
     <tr>
         {% for j in range(10) %}
         {% if i==0 and j!=9 %}
         <td>
-            <a href="#c{{ollmenu[j]}}" class="click">0{{j+1}}</a>
+            <a href="#c{{ollmenu[j]}}">0{{j+1}}</a>
         </td>
         {% else %}
         <td>
-            <a href="#c{{ollmenu[i*10+j]}}" class="click">{{i*10+j+1}}</a>
+            <a href="#c{{ollmenu[i*10+j]}}">{{i*10+j+1}}</a>
         </td>
         {% endif %}
         {% endfor %}
@@ -24,7 +39,7 @@
     <tr>
         {% for i in range(7) %}
         <td>
-            <a href="#c{{ollmenu[50+i]}}" class="click">{{51+i}}</a>
+            <a href="#c{{ollmenu[50+i]}}">{{51+i}}</a>
         </td>
         {% endfor %}
     </tr>

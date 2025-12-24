@@ -29,57 +29,21 @@
         </div>
     </div>
     <div class="top">
-        <section class="top-nav">
-            <div>
-                <a href="#mainer">蔡倫魔方</a>
-            </div>
-            <input id="menu-toggle" type="checkbox" />
-            <label class='menu-button-container' for="menu-toggle">
-                <div class='menu-button'></div>
-            </label>
-            {% set menu = [["/","/special", "/lbl", "/cross", "/f2l", "/oll", "/pll", "/other",],
-            ["首頁","花式", "LBL", "CROSS", "F2L", "OLL", "PLL","其它"]
-            ] %}
-            <ul class="menu">
-                {% for i in range(8) %}
-                <li><a href="{{menu[0][i]}}">{{menu[1][i]}}</a></li>
-                {% endfor %}
-            </ul>
-        </section>
+        {% set menu = [["/special", "/lbl","/", "/cross", "/other"],
+        ["花式", "LBL","首頁", "CFOP","其它"]
+        ] %}
+        <ul class="menu">
+            {% for i in range(5) %}
+            <li><a href="{{menu[0][i]}}">{{menu[1][i]}}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-    <a style="display:scroll;position:fixed;bottom:0px;right:5px;" href="#" title="" onFocus="if(this.blur)this.blur()">
-        <img alt='' border='0' onmouseover="this.src='./conan/topafter.jpg'" src="./conan/topbefore.jpg"
-            onmouseout="this.src='./conan/topbefore.jpg'" />
-        <img alt='' border='0' onmouseover="this.src='./conan/Topafter.jpg'" src="./conan/Topbefore.jpg"
-            onmouseout="this.src='./conan/Topbefore.jpg'" />
-    </a>
     <div id="mainer">
         {% block content %}{% endblock %}
     </div>
     <script>
         $(document).ready(function () {
             $(".loading-wrapper").fadeOut(500);
-        });
-        var scrollLinks = document.querySelectorAll('.click');
-        scrollLinks.forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                var targetId = link.getAttribute('href').substring(1);
-                var targetSection = document.getElementById(targetId);
-                var targetOffset = targetSection.offsetTop;
-                window.scrollTo({
-                    top: targetOffset - 50,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        window.addEventListener("pageshow", function (event) {
-            if (event.persisted) {
-                const menuToggle = document.getElementById("menu-toggle");
-                if (menuToggle) {
-                    menuToggle.checked = false;
-                }
-            }
         });
     </script>
 </body>

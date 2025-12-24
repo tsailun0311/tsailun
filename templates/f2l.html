@@ -2,11 +2,26 @@
 {% set f2lmenu = ["簡單型", "白側同色型", "白側異色型", "白側結合型", "白上分離型", "白上結合型",
 "角內型", "邊內型", "都內型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
 <table>
+	<tr>
+		<td style="width: 25%">
+			<a href="/cross">CROSS</a>
+		</td>
+		<td style="width: 25%;background-color: #526d98;color: #e7e5e3;">F2L
+		</td>
+		<td style="width: 25%">
+			<a href="/oll">OLL</a>
+		</td>
+		<td style="width: 25%">
+			<a href="/pll">PLL</a>
+		</td>
+	</tr>
+</table>
+<table>
 	{% for i in range(4) %}
 	<tr>
 		{% for j in range(3) %}
 		<td>
-			<a href="#c{{i*3+j+1}}" class="click">{{f2lmenu[i*3+j]}}</a>
+			<a href="#c{{i*3+j+1}}">{{f2lmenu[i*3+j]}}</a>
 		</td>
 		{% endfor %}
 	</tr>
