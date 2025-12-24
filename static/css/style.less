@@ -171,6 +171,8 @@ strong {
     width: 100%;
     z-index: 9999;
     background-color: @b1;
+    bottom: 0;
+    border-top: @b3 solid 1px;
 }
 
 .menu {
@@ -190,19 +192,5 @@ strong {
         &>a {
             color: @b2;
         }
-    }
-}
-
-@media (min-width: 1024px) {
-    .top {
-        top: 0;
-        border-bottom: @b3 solid 1px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .top {
-        bottom: 0;
-        border-top: @b3 solid 1px;
     }
 }
