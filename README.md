@@ -293,9 +293,9 @@ if (w2 > 0) {
 }
 ```
 
-## 12.drawFlorian 新增容錯角畫面
+## 13.drawFlorian 新增容錯角畫面
 
-[照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/florian.html) #####在 getCorners 函數上面新增 3 參數 2 函數
+[照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/florian.html) 在 getCorners 函數上面新增 3 參數 2 函數，及更改 3 處地方(搜尋 supercube)
 
 # Animcubejs_special
 
