@@ -292,3 +292,27 @@ if (w2 > 0) {
   g.fill();
 }
 ```
+
+## 12.drawFlorian 新增容錯角畫面
+
+[照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/florian.html) #####在 getCorners 函數上面新增 3 參數 2 函數
+
+# Animcubejs_special
+
+## 1.init 增加
+
+```js
+startAnimation(buttonAction[6]);
+```
+
+## 2.button 更改
+
+```js
+if (buttonPressed == 3) {
+  if (movePos == move[curMove].length) clear();
+  if (!animating)
+    // special feature
+    startAnimation(0);
+  else stopAnimation();
+}
+```

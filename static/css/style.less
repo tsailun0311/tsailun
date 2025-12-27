@@ -136,6 +136,24 @@ strong {
     background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, @b2 60%);
 }
 
+.menutable {
+    border: 1px solid @b1;
+    background-color: @b2;
+    border-radius: 5px;
+    margin: 2px;
+
+    a {
+        color: #000;
+        width: 100%;
+        display: block;
+
+        &:hover,
+        &:active {
+            color: @b1;
+        }
+    }
+}
+
 /**************** AnimCube *****************************************************************************************************/
 .cube {
     width: 181px;
@@ -155,7 +173,7 @@ strong {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9998;
+    z-index: 9999;
     background-color: @b3;
 }
 
@@ -168,21 +186,23 @@ strong {
 /**************** menu ***********************************************************************************************/
 .top {
     position: fixed;
-    width: 100%;
-    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9998;
     background-color: @b1;
-    bottom: 0;
-    border-top: @b3 solid 1px;
+    bottom: 10px;
+    border-radius: 999em;
+    padding: 0 8px;
 }
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3vw;
+    gap: 2vw;
     margin: 0;
     padding: 0;
-    height: 39px;
+    height: 40px;
 
     &>li {
         overflow: hidden;
@@ -191,6 +211,27 @@ strong {
 
         &>a {
             color: @b2;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        &.active {
+            background-color: @b2;
+            border-radius: 999em;
+
+            &>a {
+                color: @b1;
+            }
+        }
+
+        &:hover:not(.active) {
+            background-color: @b3;
+            border-radius: 999em;
+
+            &>a {
+                color: @b1;
+            }
         }
     }
 }

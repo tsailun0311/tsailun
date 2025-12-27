@@ -647,6 +647,7 @@ function AnimCube3(params) {
     if ("0" == param) moveCounter = 0;
     curInfoText = move.length > 0 && move[0][0] >= 1000 ? 0 : -1;
     init2();
+    startAnimation(buttonAction[6]);
     if (demo) startAnimation(-1);
   } // init()
   function getParameter(s) {
@@ -2881,6 +2882,7 @@ function AnimCube3(params) {
   function button() {
     pushed = true;
     if (buttonPressed == 3) {
+      if (movePos == move[curMove].length) clear();
       if (!animating)
         // special feature
         startAnimation(0);

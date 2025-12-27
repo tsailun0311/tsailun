@@ -1,31 +1,20 @@
-{% extends "base.html" %} {% block content %}
-<table>
-	<tr>
-		<td style="width: 25%">
-			<a href="#c01">底層邊塊</a>
-		</td>
-		<td style="width: 25%">
-			<a href="#c02">底層角塊</a>
-		</td>
-		<td style="width: 25%">
-			<a href="#c03">中間層</a>
-		</td>
-		<td style="width: 25%">
-			<a href="#c04">黃色邊塊</a>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="#c05">黃色角塊</a>
-		</td>
-		<td>
-			<a href="#c06">頂層角塊</a>
-		</td>
-		<td>
-			<a href="#c07">頂層邊塊</a>
-		</td>
-	</tr>
-</table>
+{% extends "base.html" %}
+{% block head %}
+<script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+{% set lblmenu = ["底層邊塊", "底層角塊", "中間層", "黃色邊塊", "黃色角塊", "頂層角塊","頂層邊塊"] %}
+<div class="container" style="margin-top:1rem">
+	<div class="row">
+		{% for i in range(7) %}
+		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-1">
+			<div class="menutable">
+				<a href="#c0{{i+1}}">{{lblmenu[i]}}</a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
 <p><span class="big">LBL</p>
 <ul>
 	<li>1.層解法(Layer By Layer)：一層一層解，魔方沒辦法一面一面解。想像成解26塊方塊，而不是解54個顏色。</li>

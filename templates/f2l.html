@@ -1,32 +1,21 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 {% set f2lmenu = ["簡單型", "白側同色型", "白側異色型", "白側結合型", "白上分離型", "白上結合型",
 "角內型", "邊內型", "都內型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
-<table>
-	<tr>
-		<td style="width: 25%">
-			<a href="/cross">CROSS</a>
-		</td>
-		<td style="width: 25%;background-color: #526d98;color: #e7e5e3;">F2L
-		</td>
-		<td style="width: 25%">
-			<a href="/oll">OLL</a>
-		</td>
-		<td style="width: 25%">
-			<a href="/pll">PLL</a>
-		</td>
-	</tr>
-</table>
-<table>
-	{% for i in range(4) %}
-	<tr>
-		{% for j in range(3) %}
-		<td>
-			<a href="#c{{i*3+j+1}}">{{f2lmenu[i*3+j]}}</a>
-		</td>
+{% block head %}
+<script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-top:1rem">
+	<div class="row">
+		{% for i in range(12) %}
+		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
+			<div class="menutable">
+				<a href="#c{{i+1}}">{{f2lmenu[i]}}</a>
+			</div>
+		</div>
 		{% endfor %}
-	</tr>
-	{% endfor %}
-</table>
+	</div>
+</div>
 <p><span class="big" id="c1">簡單型F2L01~F2L04</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
