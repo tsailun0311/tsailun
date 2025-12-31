@@ -1333,20 +1333,15 @@ function AnimCube2(params) {
                       scube[i][2 * v + m],
                       colors[cube[i][2 * v + m]]
                     )
-                  : (fillPolygon(
+                  : drawFlorian(
                       graphics,
                       fillX,
                       fillY,
-                      colors[cube[i][2 * v + m]]
-                    ),
-                    drawPolygon(
-                      graphics,
-                      fillX,
-                      fillY,
-                      hintBorder
-                        ? darker(colors[cube[i][2 * v + m]])
-                        : colors[cube[i][2 * v + m]]
-                    ));
+                      colors[cube[i][v * 2 + m]],
+                      v,
+                      m,
+                      1
+                    );
               }
         }
     for (i = 0; i < 6; i++) {
@@ -1397,8 +1392,7 @@ function AnimCube2(params) {
                   mirrored
                 );
               1 == superCube
-                ? (drawPolygon(graphics, fillX, fillY, "#fdfdfd"),
-                  fillPolygon(graphics, fillX, fillY, "#fdfdfd"),
+                ? (drawFlorian(graphics, fillX, fillY, "#fdfdfd", v, m, 0),
                   drawSuperArrow(
                     graphics,
                     fillX,
@@ -1407,18 +1401,15 @@ function AnimCube2(params) {
                     scube[i][2 * v + m],
                     colors[cube[i][2 * v + m]]
                   ))
-                : (drawPolygon(
+                : drawFlorian(
                     graphics,
                     fillX,
                     fillY,
-                    colors[cube[i][2 * v + m]]
-                  ),
-                  fillPolygon(
-                    graphics,
-                    fillX,
-                    fillY,
-                    colors[cube[i][2 * v + m]]
-                  ));
+                    colors[cube[i][v * 2 + m]],
+                    v,
+                    m,
+                    0
+                  );
             }
         if (!editable || animating) continue;
         var b = (cooX[i][1] - cooX[i][0] + cooX[i][2] - cooX[i][3]) / 6,
@@ -1473,6 +1464,57 @@ function AnimCube2(params) {
             dragAreas++;
         }
       }
+  }
+  var florianSize = 0.25;
+  var curvePoints = 10;
+  var florianLayout = [
+    [
+      [0, 0, 1, 0],
+      [0, 0, 0, 1],
+    ],
+    [
+      [0, 1, 0, 0],
+      [1, 0, 0, 0],
+    ],
+  ];
+
+  function drawFlorian(g, x, y, color, p, q, h) {
+    g.beginPath();
+    for (var i = 0; i < 4; i++) {
+      if (florianLayout[p][q][i]) {
+        var pts = getRoundedPath(x, y, i, florianSize);
+        if (i == 0) g.moveTo(pts[0][0], pts[0][1]);
+        else g.lineTo(pts[0][0], pts[0][1]);
+        for (var j = 1; j < pts.length; j++) g.lineTo(pts[j][0], pts[j][1]);
+      } else {
+        if (i == 0) g.moveTo(x[i], y[i]);
+        else g.lineTo(x[i], y[i]);
+      }
+    }
+    g.closePath();
+    g.fillStyle = color;
+    if (h && hintBorder) g.strokeStyle = darker(color);
+    else g.strokeStyle = color;
+    g.fill();
+    g.stroke();
+  }
+
+  function getRoundedPath(x, y, i, roundness) {
+    const prev = [3, 0, 1, 2],
+      next = [1, 2, 3, 0];
+    let newPoints = [];
+    let xp = x[i] + (x[prev[i]] - x[i]) * roundness;
+    let yp = y[i] + (y[prev[i]] - y[i]) * roundness;
+    let xn = x[i] + (x[next[i]] - x[i]) * roundness;
+    let yn = y[i] + (y[next[i]] - y[i]) * roundness;
+    for (let j = 0; j <= curvePoints; j++) {
+      let t = j / curvePoints;
+      newPoints.push([
+        xp * (1 - t) ** 2 + x[i] * 2 * t * (1 - t) + xn * t ** 2,
+        yp * (1 - t) ** 2 + y[i] * 2 * t * (1 - t) + yn * t ** 2,
+      ]);
+    }
+    return newPoints;
   }
   function getCorners(e, t, r, o, a, i, n) {
     (a /= 2), (i /= 2);

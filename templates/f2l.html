@@ -1,22 +1,22 @@
 {% extends "base.html" %}
-{% set f2lmenu = ["簡單型", "白側同色型", "白側異色型", "白側結合型", "白上分離型", "白上結合型",
-"角內型", "邊內型", "都內型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
+{% set menu2 = ["基本型", "雙頂藏角型", "雙頂藏邊型", "雙頂複雜型",
+"邊頂型", "角頂型", "無頂型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
-<div class="container" style="margin-top:1rem">
+<div class="container">
 	<div class="row">
-		{% for i in range(12) %}
+		{% for i in range(menu2|length) %}
 		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
 			<div class="menutable">
-				<a href="#c{{i+1}}">{{f2lmenu[i]}}</a>
+				<a href="#c{{loop.index}}">{{menu2[i]}}</a>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
 </div>
-<p><span class="big" id="c1">簡單型F2L01~F2L04</span></p>
+<p><span class="big" id="c1">基本型F2L01~F2L04</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L01
@@ -41,7 +41,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c2">白側同色型F2L05~F2L08&nbsp;&nbsp;<strong>藏角</strong></span></p>
+<p><span class="big" id="c2">雙頂藏角型F2L05~F2L14</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L05
@@ -64,11 +64,6 @@
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=F' U2 F U2 F' U F")</script>
 			</div>
 		</div>
-	</div>
-</div>
-<p><span class="big" id="c3">白側異色型F2L09~F2L12&nbsp;&nbsp;<strong>藏角</strong></span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L09
 			<div class="cube">
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=R U' R' U F' U' F")</script>
@@ -89,12 +84,6 @@
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=F' U2 F U' R U R'")</script>
 			</div>
 		</div>
-	</div>
-</div>
-<p><span class="big" id="c4">白側結合型F2L13~F2L16&nbsp;&nbsp;<strong>異色藏角</strong>&nbsp;&nbsp;<strong>同色藏邊</strong></span>
-</p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L13
 			<div class="cube">
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=U F' U F U' F' U' F")</script>
@@ -105,6 +94,11 @@
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=U' R U' R' U R U R'")</script>
 			</div>
 		</div>
+	</div>
+</div>
+<p><span class="big" id="c3">雙頂藏邊型F2L15~F2L20</span></p>
+<div class="container-fluid">
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L15
 			<div class="cube">
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=F' U F U2 R U R'")</script>
@@ -115,11 +109,6 @@
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=R U' R' U2 F' U' F")</script>
 			</div>
 		</div>
-	</div>
-</div>
-<p><span class="big" id="c5">白上分離型F2L17~F2L20&nbsp;&nbsp;<strong>藏邊</strong></span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L17
 			<div class="cube">
 				<script>AnimCube3("facelets=4444y4444wwwwwwwww4rr4rr4rr4oo4oo4oo444bbbbbb4gg4gg4gg&move=R U2 R' U R U' R'")</script>
@@ -142,7 +131,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c6">白上結合型F2L21~F2L24&nbsp;&nbsp;<strong>善用F2L25&nbsp;F2L27</strong></span></p>
+<p><span class="big" id="c4">雙頂複雜型F2L21~F2L24&nbsp;&nbsp;<strong>善用F2L25&nbsp;F2L27</strong></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L21
@@ -167,7 +156,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c7">角內型F2L25~F2L30</span></p>
+<p><span class="big" id="c5">邊頂型F2L25~F2L30</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L25
@@ -202,7 +191,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c8">邊內型F2L31~F2L36</span></p>
+<p><span class="big" id="c6">角頂型F2L31~F2L36</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L31
@@ -237,7 +226,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c9">都內型F2L37~F2L41</span></p>
+<p><span class="big" id="c7">無頂型F2L37~F2L41</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">F2L37
@@ -267,7 +256,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c10"><a
+<p><span class="big" id="c8"><a
 			href="https://www.youtube.com/watch?v=rG7p2l2vifM&ab_channel=%E9%AD%94%E6%96%B9101">魔方101非標</a></span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
@@ -283,7 +272,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c11">中島非標1st</span></p>
+<p><span class="big" id="c9">中島非標1st</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">Class1：RF空槽
@@ -303,7 +292,7 @@
 		</div>
 	</div>
 </div>
-<p><span class="big" id="c12">中島非標2nd</span></p>
+<p><span class="big" id="c10">中島非標2nd</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">Class1

@@ -1562,20 +1562,15 @@ function AnimCube4(params) {
                       scube[s][4 * m + b],
                       colors[cube[s][4 * m + b]]
                     )
-                  : (fillPolygon(
+                  : drawFlorian(
                       graphics,
                       fillX,
                       fillY,
-                      colors[cube[s][4 * m + b]]
-                    ),
-                    drawPolygon(
-                      graphics,
-                      fillX,
-                      fillY,
-                      hintBorder
-                        ? darker(colors[cube[s][4 * m + b]])
-                        : colors[cube[s][4 * m + b]]
-                    ));
+                      colors[cube[s][m * 4 + b]],
+                      m,
+                      b,
+                      1
+                    );
               }
         }
     } else {
@@ -1628,8 +1623,7 @@ function AnimCube4(params) {
                     mirrored
                   );
                 1 == superCube
-                  ? (drawPolygon(graphics, fillX, fillY, "#fdfdfd"),
-                    fillPolygon(graphics, fillX, fillY, "#fdfdfd"),
+                  ? (drawFlorian(graphics, fillX, fillY, "#fdfdfd", m, b, 0),
                     drawSuperArrow(
                       graphics,
                       fillX,
@@ -1638,18 +1632,15 @@ function AnimCube4(params) {
                       scube[s][4 * m + b],
                       colors[cube[s][4 * m + b]]
                     ))
-                  : (drawPolygon(
+                  : drawFlorian(
                       graphics,
                       fillX,
                       fillY,
-                      colors[cube[s][4 * m + b]]
-                    ),
-                    fillPolygon(
-                      graphics,
-                      fillX,
-                      fillY,
-                      colors[cube[s][4 * m + b]]
-                    ));
+                      colors[cube[s][m * 4 + b]],
+                      m,
+                      b,
+                      0
+                    );
               }
           if (!editable || animating) continue;
           var M = (cooX[s][1] - cooX[s][0] + cooX[s][2] - cooX[s][3]) / 6,
@@ -1728,6 +1719,73 @@ function AnimCube4(params) {
           }
         }
     }
+  }
+  var florianSize = 0.25;
+  var curvePoints = 10;
+  var florianLayout = [
+    [
+      [0, 0, 1, 0],
+      [0, 0, 1, 1],
+      [0, 0, 1, 1],
+      [0, 0, 0, 1],
+    ],
+    [
+      [0, 1, 1, 0],
+      [1, 1, 1, 1],
+      [1, 1, 1, 1],
+      [1, 0, 0, 1],
+    ],
+    [
+      [0, 1, 1, 0],
+      [1, 1, 1, 1],
+      [1, 1, 1, 1],
+      [1, 0, 0, 1],
+    ],
+    [
+      [0, 1, 0, 0],
+      [1, 1, 0, 0],
+      [1, 1, 0, 0],
+      [1, 0, 0, 0],
+    ],
+  ];
+
+  function drawFlorian(g, x, y, color, p, q, h) {
+    g.beginPath();
+    for (var i = 0; i < 4; i++) {
+      if (florianLayout[p][q][i]) {
+        var pts = getRoundedPath(x, y, i, florianSize);
+        if (i == 0) g.moveTo(pts[0][0], pts[0][1]);
+        else g.lineTo(pts[0][0], pts[0][1]);
+        for (var j = 1; j < pts.length; j++) g.lineTo(pts[j][0], pts[j][1]);
+      } else {
+        if (i == 0) g.moveTo(x[i], y[i]);
+        else g.lineTo(x[i], y[i]);
+      }
+    }
+    g.closePath();
+    g.fillStyle = color;
+    if (h && hintBorder) g.strokeStyle = darker(color);
+    else g.strokeStyle = color;
+    g.fill();
+    g.stroke();
+  }
+
+  function getRoundedPath(x, y, i, roundness) {
+    const prev = [3, 0, 1, 2],
+      next = [1, 2, 3, 0];
+    let newPoints = [];
+    let xp = x[i] + (x[prev[i]] - x[i]) * roundness;
+    let yp = y[i] + (y[prev[i]] - y[i]) * roundness;
+    let xn = x[i] + (x[next[i]] - x[i]) * roundness;
+    let yn = y[i] + (y[next[i]] - y[i]) * roundness;
+    for (let j = 0; j <= curvePoints; j++) {
+      let t = j / curvePoints;
+      newPoints.push([
+        xp * (1 - t) ** 2 + x[i] * 2 * t * (1 - t) + xn * t ** 2,
+        yp * (1 - t) ** 2 + y[i] * 2 * t * (1 - t) + yn * t ** 2,
+      ]);
+    }
+    return newPoints;
   }
   function getCorners(e, r, t, o, a, i, n) {
     (a /= 4), (i /= 4);

@@ -1,230 +1,63 @@
 {% extends "base.html" %}
+{% set demo = [
+["六面回字", "M E' M' E" ],
+["六面十字", "B2 F' L2 R2 D2 B2 F2 L2 R2 U2 F'" ],
+["六面皇后", "R2 B2 U2 L2 B2 U2 F2 L2 D L' R F L2 F' U' D L" ],
+["六面五色", "U B2 L2 B F' U F' D2 L D2 F D R2 F2 R' B' U' R'" ],
+["六面六色", "D2 U2 L2 B R2 D' L2 R2 D2 B2 F2 U' R2 B' R2" ],
+["六面彩條", "F2 U2 F2 B2 U2 F B" ],
+["六面三條", "U2 L2 U2 L2 U2 L2 U2 R2 U2 R2 U2 R2 U D L2 R2" ],
+["六面凹字(1)", "F2 L' R B2 U2 L R' D2" ],
+["六面凹字(2)", "U D L2 F2 U D' B2 R2 D2" ],
+["六面凸字", "F2 R F2 R' U2 F2 L U2 B2 U2 F' U2 R D' B2 D F' D2 R F" ],
+["六面I字", "D2 M F2 B2 M D2 x2" ],
+["六面Q字", "D F2 U' B F' L R' D L2 U' B R2 B' U L2 U'" ],
+["六面J字", "D2 L2 D R2 U B2 U2 B R' B' D B2 R' F R2 F' U R'" ],
+["六面L字", "L R U D F' B' L R" ],
+["六面E字", "F2 R2 F2 U' R' B2 F L R' U L' R U B U2 F2 D' U'" ],
+["六面U字", "D' U B D' L' R F D' B' D' U L" ],
+["六面T字(1)", "U2 F2 R2 D U' L2 B2 D U" ],
+["六面T字(2)", "B2 D2 L R' D2 B2 L R'" ],
+["六面斜線", "B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'" ],
+["六面雙環", "B R L' D' R2 D R' L B' R2 U B2 U' D B2 R L U2 R' L' B2 D'" ],
+["六面蛇形", "B R L' D' R2 D R' L B' R2 U B2 U' D R2 D'" ],
+["六面魚形", "L2 D B2 U R2 B2 D L' B2 F' D' U R' D2 R' B2 F' U' F'" ],
+["五彩十字", "L2 D' F2 D B D L F R' U' R' D' F L2 B F2 L" ],
+["四色回字", "B2 L R B L2 B F D U' B F R2 F' L R" ],
+["四面十字", "D F2 R2 F2 D' U R2 F2 R2 U'" ],
+["四色十字", "U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2" ],
+["四面Z字", "F B R L F B R L F B R L U D' U D'" ],
+["四面I字", "R2 F2 R2 L2 F2 L2" ],
+["四面L字", "B F D U L2 D U' B F'" ],
+["四面O字", "U R2 L2 U D' F2 B2 D'" ],
+["四面E字", "R2 U2 F2 R2 U2 R2 F2 U2" ],
+["四面V字", "D2 R L U2 R2 L2 U2 R L" ],
+["四面U字", "R2 F2 B2 L2 U F2 R2 L2 B2 D'" ],
+["四面斜線", "F B L R F B L R F B L R" ],
+["三色十字","B F' L2 R2 U D'"],
+["三色斜線", "R F2 L' D2 F2 L' R2 B' L' B' F' D' U R F' D R' B R'" ],
+["雙色十字", "U' D F' B L R' U' D L2 R2 F2 B2 U2 D2"],
+["對稱棋盤", "L2 R2 F2 B2 U2 D2"],
+["循環棋盤", "D2 F2 U' B2 F2 L2 R2 D R' B F D' U L R D2 U2 F' U2"],
+["彩带魔方", "D2 L' U2 F L2 D2 U R2 D L2 B' L2 U L D' R2 U'"],
+["大中小魔方", "F D2 L2 B D B' F2 U' F U F2 U2 F' L D F' U"],
+["大小魔方", "U2 L2 F2 U' B2 D R F' R F' R F' D' B2 U'"],
+["C T V(1)","B2 R2 D2 U2 F2 L R' U2 L' R'"],
+["C T V(2)","L2 B2 R2 D2 R2 F2 U2 F2 R2 U2 R2"]
+] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3_special.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">六面回字
+        {% for i in range(demo|length) %}
+        <div class="col">{{demo[i][0]}}
             <div class="cube">
-                <script>AnimCube3("initrevmove=&move=M E' M' E")</script>
+                <script>AnimCube3("initrevmove=&move={{demo[i][1]|safe}}")</script>
             </div>
         </div>
-        <div class="col">六面十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B2 F' L2 R2 D2 B2 F2 L2 R2 U2 F'")</script>
-            </div>
-        </div>
-        <div class="col">六面皇后
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=R2 B2 U2 L2 B2 U2 F2 L2 D L' R F L2 F' U' D L")</script>
-            </div>
-        </div>
-        <div class="col">六面五色
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U B2 L2 B F' U F' D2 L D2 F D R2 F2 R' B' U' R'")</script>
-            </div>
-        </div>
-        <div class="col">六面六色
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 U2 L2 B R2 D' L2 R2 D2 B2 F2 U' R2 B' R2")</script>
-            </div>
-        </div>
-        <div class="col">六面彩條
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F2 U2 F2 B2 U2 F B")</script>
-            </div>
-        </div>
-        <div class="col">六面三條
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U2 L2 U2 L2 U2 L2 U2 R2 U2 R2 U2 R2 U D L2 R2")</script>
-            </div>
-        </div>
-        <div class="col">六面凹字(1)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F2 L' R B2 U2 L R' D2")</script>
-            </div>
-        </div>
-        <div class="col">六面凹字(2)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U D L2 F2 U D' B2 R2 D2")</script>
-            </div>
-        </div>
-        <div class="col">六面凸字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F2 R F2 R' U2 F2 L U2 B2 U2 F' U2 R D' B2 D F' D2 R F")</script>
-            </div>
-        </div>
-        <div class="col">六面I字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 M F2 B2 M D2 x2")</script>
-            </div>
-        </div>
-        <div class="col">六面Q字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D F2 U' B F' L R' D L2 U' B R2 B' U L2 U'")</script>
-            </div>
-        </div>
-        <div class="col">六面J字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 L2 D R2 U B2 U2 B R' B' D B2 R' F R2 F' U R'")</script>
-            </div>
-        </div>
-        <div class="col">六面L字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=L R U D F' B' L R")</script>
-            </div>
-        </div>
-        <div class="col">六面E字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F2 R2 F2 U' R' B2 F L R' U L' R U B U2 F2 D' U'")</script>
-            </div>
-        </div>
-        <div class="col">六面U字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D' U B D' L' R F D' B' D' U L")</script>
-            </div>
-        </div>
-        <div class="col">六面T字(1)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U2 F2 R2 D U' L2 B2 D U")</script>
-            </div>
-        </div>
-        <div class="col">六面T字(2)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B2 D2 L R' D2 B2 L R'")</script>
-            </div>
-        </div>
-        <div class="col">六面斜線
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'")</script>
-            </div>
-        </div>
-        <div class="col">六面雙環
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B R L' D' R2 D R' L B' R2 U B2 U' D B2 R L U2 R' L' B2 D'")</script>
-            </div>
-        </div>
-        <div class="col">六面蛇形
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B R L' D' R2 D R' L B' R2 U B2 U' D R2 D'")</script>
-            </div>
-        </div>
-        <div class="col">六面魚形
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=L2 D B2 U R2 B2 D L' B2 F' D' U R' D2 R' B2 F' U' F'")</script>
-            </div>
-        </div>
-        <div class="col">五彩十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=L2 D' F2 D B D L F R' U' R' D' F L2 B F2 L")</script>
-            </div>
-        </div>
-        <div class="col">四色回字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B2 L R B L2 B F D U' B F R2 F' L R")</script>
-            </div>
-        </div>
-        <div class="col">四面十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D F2 R2 F2 D' U R2 F2 R2 U'")</script>
-            </div>
-        </div>
-        <div class="col">四色十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2")</script>
-            </div>
-        </div>
-        <div class="col">四面Z字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F B R L F B R L F B R L U D' U D'")</script>
-            </div>
-        </div>
-        <div class="col">四面I字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=R2 F2 R2 L2 F2 L2")</script>
-            </div>
-        </div>
-        <div class="col">四面L字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B F D U L2 D U' B F'")</script>
-            </div>
-        </div>
-        <div class="col">四面O字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U R2 L2 U D' F2 B2 D'")</script>
-            </div>
-        </div>
-        <div class="col">四面E字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=R2 U2 F2 R2 U2 R2 F2 U2")</script>
-            </div>
-        </div>
-        <div class="col">四面V字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 R L U2 R2 L2 U2 R L")</script>
-            </div>
-        </div>
-        <div class="col">四面U字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=R2 F2 B2 L2 U F2 R2 L2 B2 D'")</script>
-            </div>
-        </div>
-        <div class="col">四面斜線
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F B L R F B L R F B L R")</script>
-            </div>
-        </div>
-        <div class="col">三色十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B F' L2 R2 U D'")</script>
-            </div>
-        </div>
-        <div class="col">三色斜線
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=R F2 L' D2 F2 L' R2 B' L' B' F' D' U R F' D R' B R'")</script>
-            </div>
-        </div>
-        <div class="col">雙色十字
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U' D F' B L R' U' D L2 R2 F2 B2 U2 D2")</script>
-            </div>
-        </div>
-        <div class="col">對稱棋盤
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=L2 R2 F2 B2 U2 D2")</script>
-            </div>
-        </div>
-        <div class="col">循環棋盤
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 F2 U' B2 F2 L2 R2 D R' B F D' U L R D2 U2 F' U2")</script>
-            </div>
-        </div>
-        <div class="col">彩带魔方
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=D2 L' U2 F L2 D2 U R2 D L2 B' L2 U L D' R2 U'")</script>
-            </div>
-        </div>
-        <div class="col">大中小魔方
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=F D2 L2 B D B' F2 U' F U F2 U2 F' L D F' U")</script>
-            </div>
-        </div>
-        <div class="col">大小魔方
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=U2 L2 F2 U' B2 D R F' R F' R F' D' B2 U'")</script>
-            </div>
-        </div>
-        <div class="col">C T V(1)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=B2 R2 D2 U2 F2 L R' U2 L' R'")</script>
-            </div>
-        </div>
-        <div class="col">C T V(2)
-            <div class="cube">
-                <script>AnimCube3("initrevmove=&move=L2 B2 R2 D2 R2 F2 U2 F2 R2 U2 R2")</script>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

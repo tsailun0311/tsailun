@@ -18,7 +18,7 @@ body {
 #mainer {
     font-size: clamp(9px, 4vw, 15px);
     background-color: @b3;
-    padding: 0 0 50px 0;
+    padding: 1rem 0 50px 0;
 
     ul {
         list-style-type: none;
@@ -173,7 +173,7 @@ strong {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 9998;
     background-color: @b3;
 }
 
@@ -188,11 +188,11 @@ strong {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9998;
+    z-index: 9999;
     background-color: @b1;
     bottom: 10px;
     border-radius: 999em;
-    padding: 0 8px;
+    padding: 0 4px;
 }
 
 .menu {
@@ -208,12 +208,15 @@ strong {
         overflow: hidden;
         width: 60px;
         text-align: center;
+        height: 32px;
 
         &>a {
             color: @b2;
             width: 100%;
             height: 100%;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &.active {
@@ -233,5 +236,11 @@ strong {
                 color: @b1;
             }
         }
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .top {
+        width: 330px;
     }
 }

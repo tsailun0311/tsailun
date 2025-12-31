@@ -1,220 +1,37 @@
 {% extends "base.html" %}
+{% set menu2 = ["3缺1", "2缺2", "1缺3"] %}
+{% set demo = [["R' u R' u'", "R u R' u'", "R' F R","R2 F R2"],
+["R' F","R2 F","R F","R2 F R","R F R","F R","R F R2","F R2","R' F R2","F R'"
+,"F2 R'","F' R'","F2 R' F'","F' R' F'","R' F'","F' R' F2","R' F2","F R' F2","U2 B2","U2 B2 F"
+,"R' F R'","R F R'","R' U R' F2","U R F R","R' U R' F2","R F' R' F2","R' U2 F R'","F2 D' R2","R' F R r' U r"],
+["D R' F L","D R' Fs","U F Rs'"]] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
-<div class="container" style="margin-top:1rem">
+<div class="container">
 	<div class="row">
+		{% for i in range(menu2|length) %}
 		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
 			<div class="menutable">
-				<a href="#c01">3缺1</a>
+				<a href="#c{{loop.index}}">{{menu2[i]}}</a>
 			</div>
 		</div>
-		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
-			<div class="menutable">
-				<a href="#c02">2缺2</a>
-			</div>
-		</div>
-		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
-			<div class="menutable">
-				<a href="#c03">1缺3</a>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </div>
-<p><span class="big" id="c01">3缺1</span></p>
+{% for i in range(menu2|length) %}
+<p><span class="big" id="c{{loop.index}}">{{menu2[i]}}</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+		{% for j in range(demo[i]|length) %}
 		<div class="col">
 			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' u R' u'")</script>
+				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move={{demo[i][j]|safe}}")</script>
 			</div>
 		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R u R' u'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F R")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R2 F R2")</script>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </div>
-<p><span class="big" id="c02">2缺2</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R2 F")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R F")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R2 F R")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R F R")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F R")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R F R2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F R2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F R2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F2 R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F' R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F2 R' F'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F' R' F'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F' R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=U2 B2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=U2 B2 F")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R F R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' U R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=U R F R")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' U R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R F' R' F2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' U2 F R'")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=F2 D' R2")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=R' F R r' U r")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c03">1缺3</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=D R' F L")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=D R' Fs")</script>
-			</div>
-		</div>
-		<div class="col">
-			<div class="cube">
-				<script>AnimCube3("facelets=4444y44444w4www4w44444rr4444444oo4444444b44b44444gg444&move=U F Rs'")</script>
-			</div>
-		</div>
-	</div>
-</div>
+{% endfor %}
 {% endblock %}
