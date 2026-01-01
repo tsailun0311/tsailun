@@ -61,6 +61,40 @@
             updateHomeBehavior();
             $(window).on('scroll', updateHomeBehavior);
         });
+        (function () {
+            const topEl = document.querySelector('.top');
+            if (!topEl) return;
+            let rafId = null;
+            function updateCanvasPointerEvents() {
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => {
+                    const topRect = topEl.getBoundingClientRect();
+                    const canvases = document.querySelectorAll('.cube canvas');
+                    canvases.forEach(c => {
+                        const r = c.getBoundingClientRect();
+                        const overlap = !(r.right < topRect.left || r.left > topRect.right || r.bottom < topRect.top || r.top > topRect.bottom);
+                        c.style.pointerEvents = overlap ? 'none' : 'auto';
+                    });
+                });
+            }
+            ['scroll', 'resize', 'orientationchange', 'touchstart', 'touchmove', 'pointerdown', 'pointermove'].forEach(evt => {
+                window.addEventListener(evt, updateCanvasPointerEvents, { passive: true });
+            });
+            document.addEventListener('DOMContentLoaded', updateCanvasPointerEvents);
+            setTimeout(updateCanvasPointerEvents, 500);
+            new MutationObserver(updateCanvasPointerEvents).observe(document.body, { childList: true, subtree: true });
+        })();
+        function stopCubeHandlersOnTop(e) {
+            try {
+                if (e.target && e.target.closest && e.target.closest('.top')) {
+                    e.stopPropagation();
+                }
+            } catch (err) {
+            }
+        }
+        ['touchstart', 'touchend', 'mousedown', 'mouseup', 'pointerdown', 'pointerup', 'click'].forEach(evt => {
+            document.addEventListener(evt, stopCubeHandlersOnTop, { capture: true, passive: false });
+        });
     </script>
 </body>
 <!--  d8'                    888888888888                    88     88

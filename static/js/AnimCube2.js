@@ -428,6 +428,7 @@ function AnimCube2(params) {
     (editable = "0" != e),
     (e = getParameter("repeat")),
     (repeatable = "0" != e),
+    (repeatable = false),
     (e = getParameter("clickprogress")),
     (clickProgress = "0" != e),
     "0" == (e = getParameter("movetext"))

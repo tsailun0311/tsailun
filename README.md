@@ -252,7 +252,6 @@ butbgcolor=b7ccdd
 slidercolor=526d98
 troughcolor=b7ccdd
 scale=1
-wca=1
 hint=3
 movetext=5
 fonttype=0
@@ -262,6 +261,7 @@ position=lluuu
 align=0
 textsize=15
 yz=1
+repeat=0;
 ```
 
 ## 12.drawMoveTextFunc 更改當前步驟圓角

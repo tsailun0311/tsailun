@@ -386,7 +386,6 @@ function AnimCube3(params) {
         moveText = 5;
         yzAlt = true;
       }
-    wcaNotation = true;
     param = getParameter("wca");
     if (param != null)
       if ("1" == param) {
@@ -547,9 +546,7 @@ function AnimCube3(params) {
     else editable = true;
     // whether the sequence can be repeated
     param = getParameter("repeat");
-    if ("0" == param) repeatable = false;
-    else repeatable = true;
-    // whether clicking on the progress bar advances through the sequence
+    repeatable = false;
     param = getParameter("clickprogress");
     if ("0" == param) clickProgress = false;
     else clickProgress = true;
