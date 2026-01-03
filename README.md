@@ -207,14 +207,20 @@ function drawRect(g, x, y, width, height) {
 
 更改
 
-```js
+````js
+colors[4] = rgbToHex(196, 196, 196); // 4 - white grey
+colors[5] = rgbToHex(196, 196, 0); // 5 - yellow grey
+colors[6] = rgbToHex(196, 127, 0); // 6 - orange grey
+colors[7] = rgbToHex(196, 0, 0); // 7 - red grey
+colors[8] = rgbToHex(0, 170, 0); // 8 - green grey
+colors[9] = rgbToHex(0, 92, 196); // 9 - blue grey
 colors[10] = rgbToHex(255, 255, 255); // W - white
 colors[11] = "yellow"; // Y - yellow
 colors[12] = "orange"; // O - orange
 colors[13] = "red"; // R - red
 colors[14] = "#0d0"; // G - green
 colors[15] = "#07f"; // B - blue
-```
+colors[16] = rgbToHex(138, 138, 138); // L - light gray
 
 ## 9.darker 更改 highlight
 
@@ -231,7 +237,7 @@ function darker(s) {
   b = Math.floor(b * 0.8);
   return rgbToHex(r, g, b);
 }
-```
+````
 
 ## 10.paint 更改公式粗體
 

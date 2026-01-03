@@ -3,6 +3,8 @@
 <script src="{{ url_for('static', filename='js/AnimCube2.js') }}" type="text/javascript"></script>
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 <script src="{{ url_for('static', filename='js/AnimCube4.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/AnimCube5.js') }}" type="text/javascript"></script>
+
 {% endblock %}
 {% block content %}
 <p><span class="big">特殊造型旋轉中心</span></p>
@@ -21,6 +23,22 @@
     </div>
 </div>
 <p><span class="big">二階速解Ortega</span></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div style="text-align:center">
+                二階就是三階角塊
+            </div>
+            <img
+                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=ysysssysygsgsssgsgrsrsssrsr">
+        </div>
+        <div class="col">
+            <div style="text-align:center">　
+            </div>
+            <img src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y135x-30&pzl=2">
+        </div>
+    </div>
+</div>
 <p style="margin-left: 2vw;"><strong>STEP1.底面</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
@@ -44,37 +62,37 @@
 <p style="margin-left: 2vw;"><strong>STEP2.OLL</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">01
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=R U' L' U R' U' L&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">02
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=L' U R U' L U R'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">03：Ortega獨有
+        <div class="col">Ortega獨有
             <div class="cube">
                 <script>AnimCube2("move=R2 U2 R U2 R2&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">04
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=F R U R' U' R U R' U' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">05
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=R U R' U' R' F R F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">06
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=F R U' R' U' R U R' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
         </div>
-        <div class="col">07
+        <div class="col">　
             <div class="cube">
                 <script>AnimCube2("move=F R U R' U' F'&facelets=yyyywwww4r4r4o4o44bb4g4g")</script>
             </div>
@@ -116,17 +134,92 @@
         </div>
     </div>
 </div>
-<p><span class="big">四階以上特殊狀況</span></p>
+<p><span class="big">四階</span></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div style="text-align:center">
+                四階降階就是三階
+            </div>
+            <img
+                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&pzl=4&fc=sllslddllddlsllssllslddllddlsllssllslddllddlslls">
+        </div>
+        <div class="col">
+            <div style="text-align:center">　
+            </div>
+            <img
+                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=slsldlslsslsldlslsslsldlsls">
+        </div>
+    </div>
+</div>
+<p style="margin-left: 2vw;"><strong>STEP1.照顏色相對位置組中心(最後2組)</strong></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div class="cube">
+                <script>AnimCube4("move=r U' r'&facelets=lllllyyllyyllllllllll44ll44llllllllll77ll77llllllllll66ll66llllllllll99ll99llllllllll88ll88lllll")</script>
+            </div>
+        </div>
+        <div class="col">
+            <div class="cube">
+                <script>AnimCube4("move=r U2 r'&facelets=lllllyyllyyllllllllll44ll44llllllllll77ll77llllllllll66ll66llllllllll99ll99llllllllll88ll88lllll")</script>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="margin-left: 2vw;"><strong>STEP2.組邊塊(最後2組)</strong></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">斜角
+            <div class="cube">
+                <script>AnimCube4("initmove=2D R U R' F R' F' R 2D'&move=R U R' F R' F' R&facelets=lddld55dd55dlddllddld44d4dd4lddllrrld77dd77dlrrllddld66dd66dlddllddlb99db99dlddllggld88dd88dlddl")</script>
+            </div>
+        </div>
+        <div class="col">對角
+            <div class="cube">
+                <script>AnimCube4("move=2D R U R' F R' F' R 2D'&facelets=lddld55dd55dlddllddld44d4dd4lddllrrld77dd77dlrrllddld66dd66dlddllddlb99db99dlddllggld88dd88dlddl")</script>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="margin-left: 2vw;"><strong>STEP3.特殊狀況</strong></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">單邊翻轉
             <div class="cube">
-                <script>AnimCube4("move=r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2&facelets=yyyyyyyyyyyyyyyywwwwwwwwwwwwwwww4rrr4rrr4rrr4rrr4ooo4ooo4ooo4ooo4444bbbbbbbbbbbb4ggg4ggg4ggg4ggg")</script>
+                <script>AnimCube4("move=r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2&facelets=yyyyyyyyyyyyyyyywwwwwwwwwwwwwwwwlrrrlrrrlrrrlrrrlooolooolooolooollllbbbbbbbbbbbblggglggglggglggg")</script>
             </div>
         </div>
         <div class="col">對邊互換
             <div class="cube">
                 <script>AnimCube4("move=2R2 U2 2R2 u2 2R2 2U2")</script>
+            </div>
+        </div>
+    </div>
+</div>
+<p><span class="big">五階以上</span></p>
+<p style="margin-left: 2vw;"><strong>組中心(最後2組)：通用公式</strong></p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div style="text-align:center">Commutator</strong>
+            </div>
+            <img
+                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&pzl=5&size=50&arw=F8U8-s9,U8F6-s7,F6F8-s8&ac=0cf&r=y45x-30&fc=llllllyyrllyyyllyyyllllllllllllgggllgggllgggllllllllllllrryllrrrllrrrllllll">
+        </div>
+        <div class="col">公式：ABA'B'
+            <div class="cube">
+                <script>AnimCube5("move=r U' l' U r' U' l U&facelets=llllll555ll555ll55yllllllllllll444ll444ll444llllllllllllr77ll777llr77llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
+            </div>
+        </div>
+        <div class="col">AB自造一條bar藏起來
+            <div class="cube">
+                <script>AnimCube5("initrevmove=r' F' l F r F' l' U&move=r U' l' U&facelets=llllll55yll55yll55yllllllllllll444ll444ll444llllllllllll777ll777ll777llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
+            </div>
+        </div>
+        <div class="col">動亂AB回A'B'
+            <div class="cube">
+                <script>AnimCube5("move=r' U' l U&facelets=llllll555ll555ll555llllllllllllwwwll444llwwwllllllllllll777ll777ll777llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
             </div>
         </div>
     </div>
