@@ -7,7 +7,7 @@
     "background_color": "#e7e5e3",
     "display": "standalone",
     "icons": [
-        {   "src": "./apple-touch-icon.png",
+        {   "src": "https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=png&size=256&case=U%27F%27L2U2R2B%27DL2D%27B2UF2UF2UR2x2",
             "sizes": "256x256",
             "type": "image/png"
         }]

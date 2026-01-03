@@ -1,7 +1,5 @@
 from __future__ import division, print_function
-from flask import Flask, render_template, send_from_directory
-import os
-
+from flask import Flask, render_template
 app = Flask(__name__)
 title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
          "CFOP OLL", "CFOP PLL", "找不到頁面!!", "其它"]
@@ -11,19 +9,6 @@ menu = [["/special", "/lbl","/", "/cross", "/other"],
 cfopmenu = [["/cross", "/f2l","/", "/oll", "/pll"],
         ["CROSS", "F2L","", "OLL","PLL"]
         ]
-
-@app.route('/favicon.png')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.png', mimetype='image/vnd.microsoft.icon')
-
-
-@app.route('/apple-touch-icon.png')
-def favicon1():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
-
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html', title=title[0], menu=menu)
