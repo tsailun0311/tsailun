@@ -1,10 +1,31 @@
 from __future__ import division, print_function
-from flask import Flask, render_template,request
+from flask import Flask, render_template, send_from_directory, request
+import os
 import csv
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import *
 
 app = Flask(__name__)
+
+@app.route('/favicon.png')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.png', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/apple-touch-icon.png')
+def favicon1():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/1.jpg')
+def jpg1():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               '1.jpg', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/2.jpg')
+def jpg2():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               '2.jpg', mimetype='image/vnd.microsoft.icon')
 
 title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
          "CFOP OLL", "CFOP PLL", "找不到頁面!!", "其它"]
@@ -79,8 +100,22 @@ def handle_text_message(event):
                     QuickReplyButton(action=MessageAction(label="🚗", text="汽車")),
                     QuickReplyButton(action=MessageAction(label="🚂", text="火車")),
                     QuickReplyButton(action=MessageAction(label="✈️", text="外島")),
+                    QuickReplyButton(action=MessageAction(label="❌", text="不支援"))
                 ])
             )
+        )
+    elif msg == "照片":
+        line_bot_api.reply_message(
+            event.reply_token,
+            [TextSendMessage(text='畫質盡力了'),
+            ImageSendMessage(
+                original_content_url='https://tsailun.pythonanywhere.com/1.jpg',
+                preview_image_url='https://tsailun.pythonanywhere.com/1.jpg'
+            ),
+            ImageSendMessage(
+                original_content_url='https://tsailun.pythonanywhere.com/2.jpg',
+                preview_image_url='https://tsailun.pythonanywhere.com/2.jpg'
+            )]
         )
     else:
         reply = search_csv("static/tueng.csv", msg)
