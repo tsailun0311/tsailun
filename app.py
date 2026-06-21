@@ -17,16 +17,6 @@ def favicon1():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/1.jpg')
-def jpg1():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               '1.jpg', mimetype='image/vnd.microsoft.icon')
-
-@app.route('/2.jpg')
-def jpg2():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               '2.jpg', mimetype='image/vnd.microsoft.icon')
-
 title = ["蔡倫魔方", "花式魔方", "LBL", "CFOP CROSS", "CFOP F2L",
          "CFOP OLL", "CFOP PLL", "找不到頁面!!", "其它"]
 
@@ -104,19 +94,8 @@ def handle_text_message(event):
                 ])
             )
         )
-    elif msg == "照片":
-        line_bot_api.reply_message(
-            event.reply_token,
-            [TextSendMessage(text='畫質盡力了'),
-            ImageSendMessage(
-                original_content_url='https://tsailun.pythonanywhere.com/1.jpg',
-                preview_image_url='https://tsailun.pythonanywhere.com/1.jpg'
-            ),
-            ImageSendMessage(
-                original_content_url='https://tsailun.pythonanywhere.com/2.jpg',
-                preview_image_url='https://tsailun.pythonanywhere.com/2.jpg'
-            )]
-        )
+    elif msg == "魔方":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='https://tsailun.pythonanywhere.com'))
     else:
         reply = search_csv("static/tueng.csv", msg)
         if reply == "找不到相關資料":

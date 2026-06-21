@@ -143,7 +143,7 @@ function AnimCube2(params) {
   }
   function loadConfigFile(e) {
     var t = new XMLHttpRequest();
-    (t.onreadystatechange = function () {
+    ((t.onreadystatechange = function () {
       4 == t.readyState &&
         (200 == t.status
           ? parseConfigFile(t.responseText)
@@ -151,7 +151,7 @@ function AnimCube2(params) {
         init());
     }),
       t.open("GET", e, !0),
-      t.send();
+      t.send());
   }
   function parseConfigFile(e) {
     for (var t = e.split("\n"), r = 0; r < t.length; r++) {
@@ -160,11 +160,11 @@ function AnimCube2(params) {
     }
   }
   function init() {
-    (colors[0] = rgbToHex(255, 128, 64)),
+    ((colors[0] = rgbToHex(255, 128, 64)),
       (colors[1] = rgbToHex(255, 0, 0)),
       (colors[2] = rgbToHex(0, 255, 0)),
       (colors[3] = rgbToHex(0, 0, 255)),
-      (colors[4] = rgbToHex(153, 153, 153)),
+      (colors[4] = rgbToHex(196, 196, 196)),
       (colors[5] = rgbToHex(170, 170, 68)),
       (colors[6] = rgbToHex(187, 119, 68)),
       (colors[7] = rgbToHex(153, 68, 68)),
@@ -176,14 +176,14 @@ function AnimCube2(params) {
       (colors[13] = "red"),
       (colors[14] = "#0d0"),
       (colors[15] = "#07f"),
-      (colors[16] = rgbToHex(176, 176, 176)),
+      (colors[16] = rgbToHex(138, 138, 138)),
       (colors[17] = rgbToHex(80, 80, 80)),
       (colors[18] = rgbToHex(255, 0, 255)),
       (colors[19] = rgbToHex(0, 255, 255)),
       (colors[20] = rgbToHex(255, 160, 192)),
       (colors[21] = rgbToHex(32, 255, 16)),
       (colors[22] = rgbToHex(0, 0, 0)),
-      (colors[23] = rgbToHex(128, 128, 128));
+      (colors[23] = rgbToHex(128, 128, 128)));
     var e = getParameter("bgcolor");
     if (
       ((bgColor =
@@ -199,11 +199,11 @@ function AnimCube2(params) {
       }
     for (t = 0; t < 6; t++) for (r = 0; r < 4; r++) cube[t][r] = t + 10;
     if (null != (e = getParameter("supercube")) && "1" == e) {
-      (superCube = !0), setBorderWidth(0.06);
+      ((superCube = !0), setBorderWidth(0.06));
       for (t = 0; t < 4; t++) cube[0][t] = 22;
-      null != (e = getParameter("scw")) &&
+      (null != (e = getParameter("scw")) &&
         ("1" == e ? (scw = 1) : "2" == e && (scw = 2)),
-        1 == scw && (colors[10] = "#000000");
+        1 == scw && (colors[10] = "#000000"));
     }
     if (
       (null != (e = getParameter("gabbacolors")) &&
@@ -258,10 +258,11 @@ function AnimCube2(params) {
     )
       for (t = 0; t < 6; t++)
         for (r = 0; r < 4; r++)
-          (initialCube[t][r] = cube[t][r]), (initialSCube[t][r] = scube[t][r]);
+          ((initialCube[t][r] = cube[t][r]),
+            (initialSCube[t][r] = scube[t][r]));
     if (0 == scramble) {
       if (null != (e = getParameter("pos")) && 24 == e.length) {
-        (a = "uuuuff"), "gray" == bgColor && (bgColor = "white");
+        ((a = "uuuuff"), "gray" == bgColor && (bgColor = "white"));
         for (t = 0; t < 6; t++) {
           var n = posFaceTransform[t];
           for (r = 0; r < 4; r++) {
@@ -317,7 +318,7 @@ function AnimCube2(params) {
           (c = 10 * c + parseInt(e[t]));
       c > 0 && (randMoveCount = c);
     }
-    ("random" == (e = getParameter("move")) || scramble > 0) &&
+    (("random" == (e = getParameter("move")) || scramble > 0) &&
       (e = randMoves(2, randMoveCount)),
       (move = null == e ? [] : getMove(e, !0)),
       (movePos = 0),
@@ -337,7 +338,7 @@ function AnimCube2(params) {
             (demo = !0))),
       (e = getParameter("position")),
       vNorm(vMul(eyeY, eye, eyeX)),
-      null == e && (e = a);
+      null == e && (e = a));
     var d = Math.PI / 12;
     for (t = 0; t < e.length; t++) {
       var u = d;
@@ -345,17 +346,17 @@ function AnimCube2(params) {
         case "d":
           u = -u;
         case "u":
-          vRotY(eye, u), vRotY(eyeX, u);
+          (vRotY(eye, u), vRotY(eyeX, u));
           break;
         case "f":
           u = -u;
         case "b":
-          vRotZ(eye, u), vRotZ(eyeX, u);
+          (vRotZ(eye, u), vRotZ(eyeX, u));
           break;
         case "l":
           u = -u;
         case "r":
-          vRotX(eye, u), vRotX(eyeX, u);
+          (vRotX(eye, u), vRotX(eyeX, u));
       }
     }
     if (
@@ -397,7 +398,7 @@ function AnimCube2(params) {
       (hint = !0),
       null != (e = getParameter("hint")))
     ) {
-      (hint = !0), (faceShift = 0);
+      ((hint = !0), (faceShift = 0));
       for (t = 0; t < e.length; t++)
         e.charAt(t) >= "0" &&
           e.charAt(t) <= "9" &&
@@ -421,9 +422,9 @@ function AnimCube2(params) {
     "0" == (e = getParameter("buttonbar"))
       ? ((buttonBar = 0), (buttonHeight = 0), (progressHeight = 0))
       : "1" == e
-      ? (buttonBar = 1)
-      : ("2" != e && 0 != move.length) ||
-        ((buttonBar = 2), (progressHeight = 0)),
+        ? (buttonBar = 1)
+        : ("2" != e && 0 != move.length) ||
+          ((buttonBar = 2), (progressHeight = 0)),
     (e = getParameter("edit")),
     (editable = "0" != e),
     (e = getParameter("repeat")),
@@ -434,8 +435,8 @@ function AnimCube2(params) {
     "0" == (e = getParameter("movetext"))
       ? (moveText = 0)
       : "1" == e
-      ? (moveText = 1)
-      : ("5" == e || "6" == e) && (moveText = 5),
+        ? (moveText = 1)
+        : ("5" == e || "6" == e) && (moveText = 5),
     (moveText = 5),
     (moveTextSpace = 1),
     "0" == (e = getParameter("movetextspace")) && (moveTextSpace = 0),
@@ -451,8 +452,8 @@ function AnimCube2(params) {
       ("1" == e
         ? (metric = 1)
         : "2" == e
-        ? (metric = 2)
-        : "3" == e && (metric = 3)),
+          ? (metric = 2)
+          : "3" == e && (metric = 3)),
     (align = 0),
     null != (e = getParameter("align"))) &&
       (((g = parseInt(e)) >= 0) & (g <= 3) && (align = g),
@@ -460,8 +461,8 @@ function AnimCube2(params) {
     null != (e = getParameter("snap")) && "1" == e && (snap = !0);
     for (t = 0; t < 6; t++)
       for (r = 0; r < 4; r++)
-        (initialCube[t][r] = cube[t][r]), (initialSCube[t][r] = scube[t][r]);
-    initialMove.length > 0 &&
+        ((initialCube[t][r] = cube[t][r]), (initialSCube[t][r] = scube[t][r]));
+    (initialMove.length > 0 &&
       doMove(cube, initialMove[0], 0, initialMove[0].length, !1),
       initialReversedMove.length > 0 &&
         doMove(
@@ -469,14 +470,14 @@ function AnimCube2(params) {
           initialReversedMove[0],
           0,
           initialReversedMove[0].length,
-          !0
+          !0,
         ),
-      2 == scramble && doMove(cube, move[0], 0, move[0].length, !0);
+      2 == scramble && doMove(cube, move[0], 0, move[0].length, !0));
     for (t = 0; t < 3; t++)
-      (initialEye[t] = eye[t]),
+      ((initialEye[t] = eye[t]),
         (initialEyeX[t] = eyeX[t]),
-        (initialEyeY[t] = eyeY[t]);
-    colorAverage(bgColor) < 128
+        (initialEyeY[t] = eyeY[t]));
+    (colorAverage(bgColor) < 128
       ? ((textColor = "white"), (hlColor = brighter(bgColor)))
       : ((textColor = "black"), (hlColor = darker(bgColor))),
       (buttonBorderColor =
@@ -500,15 +501,15 @@ function AnimCube2(params) {
       "0" == (e = getParameter("counter")) && (moveCounter = 0),
       (curInfoText = move.length > 0 && move[0][0] >= 1e3 ? 0 : -1),
       init2(),
-      demo && startAnimation(-1);
+      demo && startAnimation(-1));
   }
   function getParameter(e) {
     var t = searchParams[e];
     return void 0 === t ? config[e] : t;
   }
   function setBorderWidth(e) {
-    (border[0][0] = border[0][1] = border[1][1] = border[3][0] = e),
-      (border[1][0] = border[2][0] = border[2][1] = border[3][1] = 1 - e);
+    ((border[0][0] = border[0][1] = border[1][1] = border[3][0] = e),
+      (border[1][0] = border[2][0] = border[2][1] = border[3][1] = 1 - e));
   }
   var moveModes = [
       0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2,
@@ -517,21 +518,21 @@ function AnimCube2(params) {
   function getMove(e, t) {
     if (t) {
       for (var r = e.indexOf("{"); -1 != r; ) r = e.indexOf("{", r + 1);
-      if (null == infoText) (curInfoText = 0), (infoText = []);
+      if (null == infoText) ((curInfoText = 0), (infoText = []));
       else {
         for (var o = [], a = 0; a < infoText.length; a++) o[a] = infoText[a];
-        (curInfoText = infoText.length), (infoText = o);
+        ((curInfoText = infoText.length), (infoText = o));
       }
     }
     var i = 1;
-    for (r = e.indexOf(";"); -1 != r; ) i++, (r = e.indexOf(";", r + 1));
+    for (r = e.indexOf(";"); -1 != r; ) (i++, (r = e.indexOf(";", r + 1)));
     var n = [],
       s = 0;
     for (r = e.indexOf(";"), i = 0; -1 != r; )
-      (n[i] = getMovePart(e.substring(s, r), t, i++)),
+      ((n[i] = getMovePart(e.substring(s, r), t, i++)),
         (s = r + 1),
-        (r = e.indexOf(";", s));
-    return (n[i] = getMovePart(e.substring(s), t, i)), n;
+        (r = e.indexOf(";", s)));
+    return ((n[i] = getMovePart(e.substring(s), t, i)), n);
   }
   var modeChar = ["m", "t", "c", "s", "a"];
   function getMovePart(e, t, r) {
@@ -541,11 +542,11 @@ function AnimCube2(params) {
       i = "UDFBLRESMXYZxyzudfblr";
     1 == yzAlt && (i = "UDFBLRESMXZYxzyudfblr");
     for (var n = 0; n < e.length; n++)
-      if ("." == e.charAt(n)) (a[o] = -1), o++;
+      if ("." == e.charAt(n)) ((a[o] = -1), o++);
       else if ("{" == e.charAt(n)) {
         n++;
         for (var s = ""; n < e.length && "}" != e.charAt(n); )
-          t && (s += e.charAt(n)), n++;
+          (t && (s += e.charAt(n)), n++);
         t &&
           ((infoText[curInfoText] = s),
           (a[o] = 1e3 + curInfoText),
@@ -561,21 +562,21 @@ function AnimCube2(params) {
             if (((a[o] = 24 * moveCodes[l]), n < e.length && 0 == moveModes[l]))
               for (var u = 0; u < modeChar.length; u++)
                 if (e.charAt(n) == modeChar[u]) {
-                  (d = u + 1), n++;
+                  ((d = u + 1), n++);
                   break;
                 }
-            (a[o] += 4 * d),
+            ((a[o] += 4 * d),
               n < e.length &&
                 ("1" == e.charAt(n)
                   ? n++
                   : "'" == e.charAt(n) || "3" == e.charAt(n)
-                  ? ((a[o] += 2), n++)
-                  : "2" == e.charAt(n) &&
-                    (++n < e.length && "'" == e.charAt(n)
-                      ? ((a[o] += 3), n++)
-                      : (a[o] += 1))),
+                    ? ((a[o] += 2), n++)
+                    : "2" == e.charAt(n) &&
+                      (++n < e.length && "'" == e.charAt(n)
+                        ? ((a[o] += 3), n++)
+                        : (a[o] += 1))),
               o++,
-              n--;
+              n--);
             break;
           }
     return a;
@@ -674,7 +675,7 @@ function AnimCube2(params) {
       case 2:
         (1 != r && 4 != r && 5 != r) || (o *= 2);
       case 3:
-        3 == r && (o = 0), 3 != metric || (4 != r && 5 != r) || (o *= 2);
+        (3 == r && (o = 0), 3 != metric || (4 != r && 5 != r) || (o *= 2));
     }
     return o;
   }
@@ -691,9 +692,9 @@ function AnimCube2(params) {
       else if (t[i] >= 0) {
         var n = (t[i] % 4) + 1,
           s = Math.floor(t[i] / 4) % 6;
-        4 == n && (n = 2),
+        (4 == n && (n = 2),
           a && (n = 4 - n),
-          twistLayers(e, Math.floor(t[i] / 24), n, s);
+          twistLayers(e, Math.floor(t[i] / 24), n, s));
       }
       if (!a && ++i >= r + o) break;
     }
@@ -716,7 +717,7 @@ function AnimCube2(params) {
           moveOne = !0;
           break;
         case 3:
-          (moveDir = -1), (moveOne = !0);
+          ((moveDir = -1), (moveOne = !0));
           break;
         case 4:
           moveAnimated = !1;
@@ -728,11 +729,11 @@ function AnimCube2(params) {
     1 == animating && (restarted = !0);
   }
   function clear() {
-    (movePos = 0), (natural = !0), (mirrored = !1);
+    ((movePos = 0), (natural = !0), (mirrored = !1));
     for (var e = 0; e < 6; e++)
       for (var t = 0; t < 4; t++)
-        (cube[e][t] = initialCube[e][t]), (scube[e][t] = initialSCube[e][t]);
-    initialMove.length > 0 &&
+        ((cube[e][t] = initialCube[e][t]), (scube[e][t] = initialSCube[e][t]));
+    (initialMove.length > 0 &&
       void 0 !== initialMove[curMove] &&
       doMove(cube, initialMove[curMove], 0, initialMove[curMove].length, !1),
       initialReversedMove.length > 0 &&
@@ -742,15 +743,15 @@ function AnimCube2(params) {
           initialReversedMove[curMove],
           0,
           initialReversedMove[curMove].length,
-          !0
+          !0,
         ),
       move.length > 0 && initInfoText(move[curMove]),
       scramble > 0 && (move = getMove(randMoves(2, randMoveCount), !1)),
-      2 == scramble && doMove(cube, move[0], 0, move[0].length, !0);
+      2 == scramble && doMove(cube, move[0], 0, move[0].length, !0));
     for (e = 0; e < 3; e++)
-      (eye[e] = initialEye[e]),
+      ((eye[e] = initialEye[e]),
         (eyeX[e] = initialEyeX[e]),
-        (eyeY[e] = initialEyeY[e]);
+        (eyeY[e] = initialEyeY[e]));
     setTimeout(paint, 0);
   }
   var cubeBlocks = [
@@ -825,15 +826,15 @@ function AnimCube2(params) {
     ];
   function splitCube(e) {
     for (var t = 0; t < 6; t++)
-      (topBlocks[t] = topBlockTable[topBlockFaceDim[e][t]]),
-        (botBlocks[t] = topBlockTable[botBlockFaceDim[e][t]]);
+      ((topBlocks[t] = topBlockTable[topBlockFaceDim[e][t]]),
+        (botBlocks[t] = topBlockTable[botBlockFaceDim[e][t]]));
     natural = !1;
   }
   function twistLayers(e, t, r, o) {
-    5 == o
+    (5 == o
       ? twistLayer(e, 1 ^ t, 4 - r)
       : (2 != o && 3 != o && 4 != o) || twistLayer(e, 1 ^ t, r),
-      twistLayer(e, t, 4 - r);
+      twistLayer(e, t, 4 - r));
   }
   var cycleOrder = [0, 1, 3, 2],
     cycleFactors = [1, 2, -1, -2],
@@ -848,11 +849,11 @@ function AnimCube2(params) {
     ],
     twistBuffer = [];
   function twistLayer(e, t, r) {
-    twistLayer2(e, t, r),
+    (twistLayer2(e, t, r),
       1 == superCube &&
         r > 0 &&
         r < 4 &&
-        (twistLayer2(scube, t, r), twistSuperLayer(t, r));
+        (twistLayer2(scube, t, r), twistSuperLayer(t, r)));
   }
   function twistLayer2(e, t, r) {
     for (var o = 0; o < 4; o++) twistBuffer[(o + r) % 4] = e[t][cycleOrder[o]];
@@ -916,13 +917,13 @@ function AnimCube2(params) {
     dragAreas;
   function twistSuperLayer(e, t, r) {
     for (var o = 0; o < 4; o++) scube[e][o] = (scube[e][o] + 4 - t) % 4;
-    2 == e && superTwist2(0, 4 - t),
+    (2 == e && superTwist2(0, 4 - t),
       3 == e && superTwist2(1, t),
       4 == e && superTwist(2, t),
-      5 == e && superTwist(3, t);
+      5 == e && superTwist(3, t));
   }
   function superTwist(e, t) {
-    superTwist1(superTwistArr[e][0]), superTwist1(superTwistArr[e][t]);
+    (superTwist1(superTwistArr[e][0]), superTwist1(superTwistArr[e][t]));
   }
   function superTwist1(e) {
     for (var t = e[0], r = 0; r < 2; t += e[1], r++)
@@ -1068,7 +1069,7 @@ function AnimCube2(params) {
       [0, 1],
     ];
   function paint() {
-    graphics.save(), (graphics.fillStyle = bgColor);
+    (graphics.save(), (graphics.fillStyle = bgColor));
     var e =
       1 != buttonBar ||
       (0 != progressHeight && !demo && 0 != move[curMove].length)
@@ -1089,33 +1090,33 @@ function AnimCube2(params) {
         o < 3;
         o++
       ) {
-        (tempEye[o] = 0), (tempEyeX[o] = 0);
+        ((tempEye[o] = 0), (tempEyeX[o] = 0));
         for (var a = 0; a < 3; a++) {
           var i = Math.floor(twistedLayer / 2);
-          (tempEye[o] +=
+          ((tempEye[o] +=
             eye[a] *
             (rotVec[i][o][a] + rotCos[i][o][a] * t + rotSin[i][o][a] * r)),
             (tempEyeX[o] +=
               eyeX[a] *
-              (rotVec[i][o][a] + rotCos[i][o][a] * t + rotSin[i][o][a] * r));
+              (rotVec[i][o][a] + rotCos[i][o][a] * t + rotSin[i][o][a] * r)));
         }
       }
       vMul(tempEyeY, tempEye, tempEyeX);
       var n = Math.cos(originalAngle - currentAngle),
         s = Math.sin(originalAngle - currentAngle) * rotSign[twistedLayer];
       for (o = 0; o < 3; o++) {
-        (tempEye2[o] = 0), (tempEyeX2[o] = 0);
+        ((tempEye2[o] = 0), (tempEyeX2[o] = 0));
         for (a = 0; a < 3; a++) {
           i = Math.floor(twistedLayer / 2);
-          (tempEye2[o] +=
+          ((tempEye2[o] +=
             eye[a] *
             (rotVec[i][o][a] + rotCos[i][o][a] * n + rotSin[i][o][a] * s)),
             (tempEyeX2[o] +=
               eyeX[a] *
-              (rotVec[i][o][a] + rotCos[i][o][a] * n + rotSin[i][o][a] * s));
+              (rotVec[i][o][a] + rotCos[i][o][a] * n + rotSin[i][o][a] * s)));
         }
       }
-      vMul(tempEyeY2, tempEye2, tempEyeX2),
+      (vMul(tempEyeY2, tempEye2, tempEyeX2),
         (eyeArray[0] = eye),
         (eyeArrayX[0] = eyeX),
         (eyeArrayY[0] = eyeY),
@@ -1129,12 +1130,12 @@ function AnimCube2(params) {
         (blockArray[1] = botBlocks),
         vSub(
           vScale(vCopy(perspEye, eye), 5 + persp),
-          vScale(vCopy(perspNormal, faceNormals[twistedLayer]), 1 / 3)
+          vScale(vCopy(perspNormal, faceNormals[twistedLayer]), 1 / 3),
         ),
         vSub(
           vScale(vCopy(perspEyeI, eye), 5 + persp),
-          vScale(vCopy(perspNormal, faceNormals[1 ^ twistedLayer]), 1 / 3)
-        );
+          vScale(vCopy(perspNormal, faceNormals[1 ^ twistedLayer]), 1 / 3),
+        ));
       var l,
         c = vProd(perspEye, faceNormals[twistedLayer]),
         d = vProd(perspEyeI, faceNormals[1 ^ twistedLayer]);
@@ -1147,7 +1148,7 @@ function AnimCube2(params) {
           eyeArrayX[u],
           eyeArrayY[u],
           blockArray[a],
-          blockMode[twistedMode][a]
+          blockMode[twistedMode][a],
         );
       }
     }
@@ -1158,24 +1159,24 @@ function AnimCube2(params) {
       if (!demo && move.length > 0) {
         if (move[curMove].length > 0) {
           if (progressHeight > 0) {
-            (graphics.lineWidth = lineWidth),
-              (graphics.strokeStyle = "#526d98");
+            ((graphics.lineWidth = lineWidth),
+              (graphics.strokeStyle = "#526d98"));
             var g =
               ((width - 2) * realMovePos(move[curMove], movePos)) /
               realMoveLength(move[curMove]);
-            (graphics.fillStyle = sliderBgColor),
+            ((graphics.fillStyle = sliderBgColor),
               graphics.fillRect(
                 dph,
                 height - progressHeight - dph,
                 width - dpr,
-                progressHeight - dpr
+                progressHeight - dpr,
               ),
               (graphics.fillStyle = sliderColor),
               graphics.fillRect(
                 dph,
                 height - progressHeight - dph,
                 g,
-                progressHeight - dpr
+                progressHeight - dpr,
               ),
               graphics.beginPath(),
               graphics.roundRect(
@@ -1183,9 +1184,9 @@ function AnimCube2(params) {
                 height - progressHeight - dph,
                 width - dpr,
                 progressHeight - dpr,
-                2 * dpr
+                2 * dpr,
               ),
-              graphics.stroke();
+              graphics.stroke());
           }
           graphics.font = textHeight + "px helvetica";
           var h =
@@ -1204,12 +1205,12 @@ function AnimCube2(params) {
         }
         if (move.length > 1) {
           graphics.font = "bold " + textHeight + "px helvetica";
-          (h = curMove + 1 + "/" + move.length),
+          ((h = curMove + 1 + "/" + move.length),
             (v = graphics.measureText(h).width),
-            (f = width - v - 2 * buttonHeight - Math.floor(5 * dpr));
-          drawString(graphics, h, f, adjTextHeight()),
+            (f = width - v - 2 * buttonHeight - Math.floor(5 * dpr)));
+          (drawString(graphics, h, f, adjTextHeight()),
             drawButton(graphics, 7, width - 2 * buttonHeight, 0),
-            drawButton(graphics, 8, width - buttonHeight, 0);
+            drawButton(graphics, 8, width - buttonHeight, 0));
         }
       }
       if (curInfoText >= 0) {
@@ -1221,12 +1222,12 @@ function AnimCube2(params) {
           dpr,
           adjTextHeight(),
           v,
-          textHeight
+          textHeight,
         );
       }
     }
-    graphics.restore(),
-      drawButtons && 0 != buttonBar && drawButtonsFunc(graphics);
+    (graphics.restore(),
+      drawButtons && 0 != buttonBar && drawButtonsFunc(graphics));
   }
   function wrapText(e, t, r, o, a, i) {
     for (var n = t.split(" "), s = "", l = 0; l < n.length; l++) {
@@ -1241,10 +1242,10 @@ function AnimCube2(params) {
     return utextHeight < 10
       ? Math.floor(10 * dpr)
       : utextHeight < 12
-      ? Math.floor(12 * dpr)
-      : utextHeight < 14
-      ? Math.floor(14 * dpr)
-      : textHeight;
+        ? Math.floor(12 * dpr)
+        : utextHeight < 14
+          ? Math.floor(14 * dpr)
+          : textHeight;
   }
   var fillX = [],
     fillY = [],
@@ -1272,7 +1273,7 @@ function AnimCube2(params) {
           vProd(cornerCoords[i], t) *
           scale,
         s = (c / 3.7) * vProd(cornerCoords[i], r) * scale;
-      (n /=
+      ((n /=
         1 - (d = (c / (5 + persp)) * vProd(cornerCoords[i], e) * scale) / c),
         (s /= 1 - d / c),
         (coordsX[i] = width / 2 + n),
@@ -1280,19 +1281,20 @@ function AnimCube2(params) {
           0 == align
             ? ((height - progressHeight) / 2) * scale - s
             : 1 == align
-            ? (height - progressHeight) / 2 - s
-            : 2 == align
-            ? height -
-              progressHeight -
-              ((height - progressHeight) / 2) * scale -
-              s
-            : (height - progressHeight) * (align * (1 - scale) + scale / 2) -
-              s);
+              ? (height - progressHeight) / 2 - s
+              : 2 == align
+                ? height -
+                  progressHeight -
+                  ((height - progressHeight) / 2) * scale -
+                  s
+                : (height - progressHeight) *
+                    (align * (1 - scale) + scale / 2) -
+                  s));
     }
     for (i = 0; i < 6; i++)
       for (var l = 0; l < 4; l++)
-        (cooX[i][l] = coordsX[faceCorners[i][l]]),
-          (cooY[i][l] = coordsY[faceCorners[i][l]]);
+        ((cooX[i][l] = coordsX[faceCorners[i][l]]),
+          (cooY[i][l] = coordsY[faceCorners[i][l]]));
     if (hint)
       for (i = 0; i < 6; i++)
         if (
@@ -1301,30 +1303,30 @@ function AnimCube2(params) {
         ) {
           vScale(vCopy(tempNormal, faceNormals[i]), faceShift);
           var c, d;
-          (n =
+          ((n =
             ((c = width < height ? width : height - progressHeight) /
               hintHoriz) *
             vProd(tempNormal, t)),
-            (s = (c / hintVert) * vProd(tempNormal, r));
-          (n /= 1 - (d = (c / (5 + persp)) * vProd(tempNormal, e)) / c),
-            (s /= 1 - d / c);
+            (s = (c / hintVert) * vProd(tempNormal, r)));
+          ((n /= 1 - (d = (c / (5 + persp)) * vProd(tempNormal, e)) / c),
+            (s /= 1 - d / c));
           var u = o[i][0][1] - o[i][0][0],
             g = o[i][1][1] - o[i][1][0];
           if (u > 0 && g > 0)
             for (var h = 0, v = o[i][1][0]; h < g; h++, v++)
               for (var f = 0, m = o[i][0][0]; f < u; f++, m++) {
                 for (l = 0; l < 4; l++)
-                  getCorners(
+                  (getCorners(
                     i,
                     l,
                     fillX,
                     fillY,
                     m + border[l][0],
                     v + border[l][1],
-                    mirrored
+                    mirrored,
                   ),
                     (fillX[l] = Math.floor(fillX[l] + (mirrored ? -n : n))),
-                    (fillY[l] = Math.floor(fillY[l] - s));
+                    (fillY[l] = Math.floor(fillY[l] - s)));
                 1 == superCube
                   ? drawSuperArrow(
                       graphics,
@@ -1332,7 +1334,7 @@ function AnimCube2(params) {
                       fillY,
                       i,
                       scube[i][2 * v + m],
-                      colors[cube[i][2 * v + m]]
+                      colors[cube[i][2 * v + m]],
                     )
                   : drawFlorian(
                       graphics,
@@ -1341,22 +1343,22 @@ function AnimCube2(params) {
                       colors[cube[i][v * 2 + m]],
                       v,
                       m,
-                      1
+                      1,
                     );
               }
         }
     for (i = 0; i < 6; i++) {
-      (u = o[i][0][1] - o[i][0][0]), (g = o[i][1][1] - o[i][1][0]);
+      ((u = o[i][0][1] - o[i][0][0]), (g = o[i][1][1] - o[i][1][0]));
       if (u <= 0 || g <= 0) {
         for (l = 0; l < 4; l++) {
           var p = oppositeCorners[i][l];
-          (fillX[l] = Math.floor(
-            cooX[i][l] + (1 * (cooX[1 ^ i][p] - cooX[i][l])) / 2
+          ((fillX[l] = Math.floor(
+            cooX[i][l] + (1 * (cooX[1 ^ i][p] - cooX[i][l])) / 2,
           )),
             (fillY[l] = Math.floor(
-              cooY[i][l] + (1 * (cooY[1 ^ i][p] - cooY[i][l])) / 2
+              cooY[i][l] + (1 * (cooY[1 ^ i][p] - cooY[i][l])) / 2,
             )),
-            mirrored && (fillX[l] = width - fillX[l]);
+            mirrored && (fillX[l] = width - fillX[l]));
         }
         fillPolygon(graphics, fillX, fillY, cubeColor);
       } else {
@@ -1368,7 +1370,7 @@ function AnimCube2(params) {
             fillY,
             o[i][0][factors[l][0]],
             o[i][1][factors[l][1]],
-            mirrored
+            mirrored,
           );
         fillPolygon(graphics, fillX, fillY, cubeColor);
       }
@@ -1378,7 +1380,7 @@ function AnimCube2(params) {
         (vSub(vScale(vCopy(perspEye, e), 5 + persp), faceNormals[i]),
         vProd(perspEye, faceNormals[i]) > -(1 - scale))
       ) {
-        (u = o[i][0][1] - o[i][0][0]), (g = o[i][1][1] - o[i][1][0]);
+        ((u = o[i][0][1] - o[i][0][0]), (g = o[i][1][1] - o[i][1][0]));
         if (u > 0 && g > 0)
           for (h = 0, v = o[i][1][0]; h < g; h++, v++)
             for (f = 0, m = o[i][0][0]; f < u; f++, m++) {
@@ -1390,7 +1392,7 @@ function AnimCube2(params) {
                   fillY,
                   m + border[l][0],
                   v + border[l][1],
-                  mirrored
+                  mirrored,
                 );
               1 == superCube
                 ? (drawFlorian(graphics, fillX, fillY, "#fdfdfd", v, m, 0),
@@ -1400,7 +1402,7 @@ function AnimCube2(params) {
                     fillY,
                     i,
                     scube[i][2 * v + m],
-                    colors[cube[i][2 * v + m]]
+                    colors[cube[i][2 * v + m]],
                   ))
                 : drawFlorian(
                     graphics,
@@ -1409,7 +1411,7 @@ function AnimCube2(params) {
                     colors[cube[i][v * 2 + m]],
                     v,
                     m,
-                    0
+                    0,
                   );
             }
         if (!editable || animating) continue;
@@ -1427,7 +1429,7 @@ function AnimCube2(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[l][p][0],
                 dragBlocks[l][p][1],
-                !1
+                !1,
               );
             if (
               ((dragDirsX[dragAreas] =
@@ -1454,15 +1456,15 @@ function AnimCube2(params) {
               dragCornersY[dragAreas],
               dragBlocks[l][p][0],
               dragBlocks[l][p][1],
-              !1
+              !1,
             );
-          (dragDirsX[dragAreas] =
+          ((dragDirsX[dragAreas] =
             (b * areaDirs[l][0] + y * areaDirs[l][1]) * twistDirs[i][l]),
             (dragDirsY[dragAreas] =
               (w * areaDirs[l][0] + M * areaDirs[l][1]) * twistDirs[i][l]),
             (dragLayers[dragAreas] = twistedLayer),
             (dragModes[dragAreas] = 0),
-            dragAreas++;
+            dragAreas++);
         }
       }
   }
@@ -1518,14 +1520,14 @@ function AnimCube2(params) {
     return newPoints;
   }
   function getCorners(e, t, r, o, a, i, n) {
-    (a /= 2), (i /= 2);
+    ((a /= 2), (i /= 2));
     var s = cooX[e][0] + (cooX[e][1] - cooX[e][0]) * a,
       l = cooY[e][0] + (cooY[e][1] - cooY[e][0]) * a,
       c = cooX[e][3] + (cooX[e][2] - cooX[e][3]) * a,
       d = cooY[e][3] + (cooY[e][2] - cooY[e][3]) * a;
-    (r[t] = Math.floor(0.5 + s + (c - s) * i)),
+    ((r[t] = Math.floor(0.5 + s + (c - s) * i)),
       (o[t] = Math.floor(0.5 + l + (d - l) * i)),
-      n && (r[t] = width - r[t]);
+      n && (r[t] = width - r[t]));
   }
   var textOffsetInit = [1, 1, -1, -1, -1, 1, 1, -1, -1, 0, 1, 0, 0, 1, 0, -1],
     textOffset = [];
@@ -1550,7 +1552,7 @@ function AnimCube2(params) {
       s = e.measureText(a).width,
       l = e.measureText(i).width,
       c = 1;
-    c + n + s + l > width &&
+    (c + n + s + l > width &&
       ((c = Math.min(1, width / 2 - n - s / 2)),
       (c = Math.max(c, width - n - s - l - 2))),
       s > 0 &&
@@ -1564,19 +1566,19 @@ function AnimCube2(params) {
               height - progressHeight - textHeight - Math.floor(4 * dpr),
               s + 2,
               textHeight + Math.floor(3 * dpr),
-              dpr * 3
+              dpr * 3,
             )
           : e.roundRect(
               c + n - 1,
               height - progressHeight - textHeight - Math.floor(2 * dpr),
               s + 2,
               textHeight + Math.floor(dpr),
-              dpr * 3
+              dpr * 3,
             ),
         e.fill()),
       n > 0 && drawString(e, o, c, t),
       s > 0 && drawString(e, a, c + n, t),
-      l > 0 && drawString(e, i, c + n + s, t);
+      l > 0 && drawString(e, i, c + n + s, t));
   }
   function selectButton(e, t) {
     if (0 == buttonBar) return -1;
@@ -1614,23 +1616,23 @@ function AnimCube2(params) {
   }
   var buttonAction = [-1, 3, 2, -1, 0, 2, 4, -1];
   function vCopy(e, t) {
-    return (e[0] = t[0]), (e[1] = t[1]), (e[2] = t[2]), e;
+    return ((e[0] = t[0]), (e[1] = t[1]), (e[2] = t[2]), e);
   }
   function vNorm(e) {
     var t = Math.sqrt(vProd(e, e));
-    return (e[0] /= t), (e[1] /= t), (e[2] /= t), e;
+    return ((e[0] /= t), (e[1] /= t), (e[2] /= t), e);
   }
   function vScale(e, t) {
-    return (e[0] *= t), (e[1] *= t), (e[2] *= t), e;
+    return ((e[0] *= t), (e[1] *= t), (e[2] *= t), e);
   }
   function vProd(e, t) {
     return e[0] * t[0] + e[1] * t[1] + e[2] * t[2];
   }
   function vAdd(e, t) {
-    return (e[0] += t[0]), (e[1] += t[1]), (e[2] += t[2]), e;
+    return ((e[0] += t[0]), (e[1] += t[1]), (e[2] += t[2]), e);
   }
   function vSub(e, t) {
-    return (e[0] -= t[0]), (e[1] -= t[1]), (e[2] -= t[2]), e;
+    return ((e[0] -= t[0]), (e[1] -= t[1]), (e[2] -= t[2]), e);
   }
   function vMul(e, t, r) {
     return (
@@ -1645,21 +1647,21 @@ function AnimCube2(params) {
       o = Math.cos(t),
       a = e[1] * o - e[2] * r,
       i = e[1] * r + e[2] * o;
-    return (e[1] = a), (e[2] = i), e;
+    return ((e[1] = a), (e[2] = i), e);
   }
   function vRotY(e, t) {
     var r = Math.sin(t),
       o = Math.cos(t),
       a = e[0] * o - e[2] * r,
       i = e[0] * r + e[2] * o;
-    return (e[0] = a), (e[2] = i), e;
+    return ((e[0] = a), (e[2] = i), e);
   }
   function vRotZ(e, t) {
     var r = Math.sin(t),
       o = Math.cos(t),
       a = e[0] * o - e[1] * r,
       i = e[0] * r + e[1] * o;
-    return (e[0] = a), (e[1] = i), e;
+    return ((e[0] = a), (e[1] = i), e);
   }
   function rgbToHex(e, t, r) {
     return (
@@ -1680,14 +1682,14 @@ function AnimCube2(params) {
     return 6 == t;
   }
   function setClip(e, t, r, o, a) {
-    e.beginPath(),
+    (e.beginPath(),
       e.moveTo(t, r),
       e.lineTo(t + o, r),
       e.lineTo(t + o, r + a),
       e.lineTo(t, r + a),
       e.lineTo(t, r),
       e.closePath(),
-      e.clip();
+      e.clip());
   }
   function drawButtonsFunc(e) {
     var t = buttonHeight % 2 == 0 ? 1 : 0;
@@ -1707,14 +1709,14 @@ function AnimCube2(params) {
           e,
           0,
           buttonHeight / 2,
-          height - (buttonHeight + 1) / 2 - t
+          height - (buttonHeight + 1) / 2 - t,
         )
       );
     if (1 != buttonBar);
     else {
       for (var r = 0, o = 0; o < 4; o++) {
         var a = Math.floor((width - r) / (4 - o));
-        (e.fillStyle =
+        ((e.fillStyle =
           buttonPressed == o ? darker(buttonBgColor) : buttonBgColor),
           (e.lineWidth = lineWidth),
           (e.strokeStyle = "#526d98"),
@@ -1724,13 +1726,13 @@ function AnimCube2(params) {
             height + dpr,
             a - dph * 5,
             buttonHeight - dph * 3,
-            dpr * 5
+            dpr * 5,
           ),
           e.fill(),
           e.stroke(),
           (e.strokeStyle = "black"),
           drawButton(e, o, r + a / 2, height + buttonHeight / 2 - t),
-          (r += a);
+          (r += a));
       }
       drawButtons = !1;
     }
@@ -1759,31 +1761,31 @@ function AnimCube2(params) {
     var a = 5 * dpr,
       i = [],
       n = [];
-    (i[0] = t),
+    ((i[0] = t),
       (i[1] = t + 6 * dpr * o),
       (i[2] = t),
       (n[0] = r - a),
       (n[1] = r),
       (n[2] = r + a),
       e.beginPath(),
-      e.moveTo(i[0] + dph, n[0] + dph);
+      e.moveTo(i[0] + dph, n[0] + dph));
     for (var o = 1; o < 3; o++) e.lineTo(i[o] + dph, n[o] + dph);
   }
   function drawArrow1(e, t, r, o) {
-    drawArrow(e, t, r, o), e.closePath(), (e.fillStyle = "black"), e.fill();
+    (drawArrow(e, t, r, o), e.closePath(), (e.fillStyle = "black"), e.fill());
   }
   function drawArrow2(e, t, r, o) {
-    drawArrow(e, t, r, o), (e.strokeStyle = "black"), e.stroke();
+    (drawArrow(e, t, r, o), (e.strokeStyle = "black"), e.stroke());
   }
   function drawRect(e, t, r, o, a) {
-    (e.lineWidth = lineWidth),
+    ((e.lineWidth = lineWidth),
       e.beginPath(),
       e.rect(t + dph, r + dph, o, a),
       (e.fillStyle = "black"),
-      e.fill();
+      e.fill());
   }
   function drawPolygon(e, t, r, o) {
-    e.beginPath(),
+    (e.beginPath(),
       e.moveTo(t[0], r[0]),
       e.lineTo(t[1], r[1]),
       e.lineTo(t[2], r[2]),
@@ -1791,17 +1793,17 @@ function AnimCube2(params) {
       e.closePath(),
       (e.strokeStyle = o),
       (e.lineWidth = 0.7 * dpr),
-      e.stroke();
+      e.stroke());
   }
   function fillPolygon(e, t, r, o) {
-    e.beginPath(),
+    (e.beginPath(),
       e.moveTo(t[0], r[0]),
       e.lineTo(t[1], r[1]),
       e.lineTo(t[2], r[2]),
       e.lineTo(t[3], r[3]),
       e.closePath(),
       (e.fillStyle = o),
-      e.fill();
+      e.fill());
   }
   var superRotate = [
       [0, 1, 2, 3],
@@ -1816,9 +1818,9 @@ function AnimCube2(params) {
       s = [];
     if (2 != scw || "#ffffff" != i) {
       for (var l = 0; l < 4; l++)
-        (n[l] = Math.floor(t[l] + 0.05 * (t[superRotate[2][l]] - t[l]))),
-          (s[l] = Math.floor(r[l] + 0.05 * (r[superRotate[2][l]] - r[l])));
-      0 == o && (a = (a + 1) % 4), 4 == o && (a = (a + 3) % 4);
+        ((n[l] = Math.floor(t[l] + 0.05 * (t[superRotate[2][l]] - t[l]))),
+          (s[l] = Math.floor(r[l] + 0.05 * (r[superRotate[2][l]] - r[l]))));
+      (0 == o && (a = (a + 1) % 4), 4 == o && (a = (a + 3) % 4));
       var c = superRotate[a][0],
         d = superRotate[a][1],
         u = superRotate[a][2],
@@ -1830,7 +1832,7 @@ function AnimCube2(params) {
         p = s[u] + (s[g] - s[u]) / 2,
         b = (n[g] - n[u]) / 2,
         w = 1 ^ a;
-      (e.fillStyle = i),
+      ((e.fillStyle = i),
         e.beginPath(),
         e.moveTo(n[c] + (n[g] - n[c]) / 2, s[c] + (s[g] - s[c]) / 2),
         e.lineTo(n[w] + f, m),
@@ -1844,7 +1846,7 @@ function AnimCube2(params) {
         e.fill(),
         (e.lineWidth = 0.6 * dpr),
         (e.strokeStyle = "black"),
-        e.stroke();
+        e.stroke());
     }
   }
   function colorToHex(e) {
@@ -1867,7 +1869,7 @@ function AnimCube2(params) {
     return rgbToHex(
       (t = Math.floor(1.3 * t)) > 255 ? 255 : t,
       (r = Math.floor(1.3 * r)) > 255 ? 255 : r,
-      (o = Math.floor(1.3 * o)) > 255 ? 255 : o
+      (o = Math.floor(1.3 * o)) > 255 ? 255 : o,
     );
   }
   function darker(e) {
@@ -1878,14 +1880,14 @@ function AnimCube2(params) {
     return rgbToHex(
       (t = Math.floor(0.8 * t)),
       (r = Math.floor(0.8 * r)),
-      (o = Math.floor(0.8 * o))
+      (o = Math.floor(0.8 * o)),
     );
   }
   function run(e, t) {
     if (e > nowServing) setTimeout(run, 0, e, t);
     else {
       if (!demo && (0 == move.length || 0 == move[curMove].length))
-        return (animating = !1), (drawButtons = !0), void paint();
+        return ((animating = !1), (drawButtons = !0), void paint());
       if (!moveAnimated) {
         for (var r = move[curMove]; movePos < r.length; ) {
           if (r[movePos] >= 1e3) curInfoText = r[movePos] - 1e3;
@@ -1897,7 +1899,12 @@ function AnimCube2(params) {
           }
           movePos++;
         }
-        return (animating = !1), (drawButtons = !0), paint(), void nowServing++;
+        return (
+          (animating = !1),
+          (drawButtons = !0),
+          paint(),
+          void nowServing++
+        );
       }
       var n,
         s,
@@ -1906,7 +1913,7 @@ function AnimCube2(params) {
         d,
         u,
         g = t;
-      (interrupted = !1),
+      ((interrupted = !1),
         requestAnimationFrame(function e() {
           if (v) {
             if (((v = !1), (u = !1), repeatable))
@@ -1921,7 +1928,7 @@ function AnimCube2(params) {
                 (drawButtons = !0),
                 void paint()
               );
-            (animating = !0), (drawButtons = !0);
+            ((animating = !0), (drawButtons = !0));
           }
           if (
             f &&
@@ -1938,7 +1945,8 @@ function AnimCube2(params) {
                 ? (curInfoText = g > 0 ? r[movePos] - 1e3 : -1)
                 : (h = !0);
             if (h) {
-              (o = (r[movePos] % 4) + 1), (a = Math.floor(r[movePos] / 4) % 6);
+              ((o = (r[movePos] % 4) + 1),
+                (a = Math.floor(r[movePos] / 4) % 6));
               var t = o < 3;
               if (
                 (4 == o && (o = 2),
@@ -1951,9 +1959,9 @@ function AnimCube2(params) {
                 faceTwistDirs[i] > 0 && (t = !t),
                 moveAnimated)
               ) {
-                (d = Math.PI / 2), (c = t ? 1 : -1);
+                ((d = Math.PI / 2), (c = t ? 1 : -1));
                 var w = 67 * speed;
-                2 == o && ((d = Math.PI), (w = 67 * doubleSpeed)),
+                (2 == o && ((d = Math.PI), (w = 67 * doubleSpeed)),
                   (twisting = !0),
                   (twistedLayer = i),
                   (twistedMode = a),
@@ -1961,7 +1969,7 @@ function AnimCube2(params) {
                   (n = Date.now()),
                   (s = n),
                   (l = (c * d) / w),
-                  (currentAngle = 0);
+                  (currentAngle = 0));
               }
             } else m = !0;
           }
@@ -2008,7 +2016,7 @@ function AnimCube2(params) {
               void (1 == movePos && r[0] >= 1e3 && movePos--)
             );
           requestAnimationFrame(e);
-        });
+        }));
       var h = !1,
         v = !0,
         f = !0,
@@ -2022,8 +2030,8 @@ function AnimCube2(params) {
     movePos = 0;
     for (var t = 0; t < 6; t++)
       for (var r = 0; r < 4; r++)
-        (cube[t][r] = initialCube[t][r]), (scube[t][r] = initialSCube[t][r]);
-    initialMove.length > 0 &&
+        ((cube[t][r] = initialCube[t][r]), (scube[t][r] = initialSCube[t][r]));
+    (initialMove.length > 0 &&
       void 0 !== initialMove[curMove] &&
       doMove(cube, initialMove[curMove], 0, initialMove[curMove].length, !1),
       initialReversedMove.length > 0 &&
@@ -2033,15 +2041,15 @@ function AnimCube2(params) {
           initialReversedMove[curMove],
           0,
           initialReversedMove[curMove].length,
-          !0
+          !0,
         ),
-      initInfoText(e);
+      initInfoText(e));
   }
-  document.addEventListener("touchstart", mousedown, { passive: false }),
+  (document.addEventListener("touchstart", mousedown, { passive: false }),
     document.addEventListener("touchend", mouseup, { passive: false }),
     document.addEventListener("mousedown", mousedown),
     document.addEventListener("mouseup", mouseup),
-    document.addEventListener("contextmenu", contextmenu);
+    document.addEventListener("contextmenu", contextmenu));
   var mouseIsDown = !1,
     showContextMenu = !0,
     divs = document.getElementsByTagName("div"),
@@ -2063,18 +2071,18 @@ function AnimCube2(params) {
       (dragging = !1),
       pushed)
     )
-      (pushed = !1), (drawButtons = !0), paint();
+      ((pushed = !1), (drawButtons = !0), paint());
     else if (twisting && !spinning) {
-      (twisting = !1), (originalAngle += currentAngle), (currentAngle = 0);
+      ((twisting = !1), (originalAngle += currentAngle), (currentAngle = 0));
       for (var t = originalAngle; t < 0; ) t += 32 * Math.PI;
       var r = Math.floor((8 * t) / Math.PI) % 16;
-      (snap || r % 4 == 0 || r % 4 == 3) &&
+      ((snap || r % 4 == 0 || r % 4 == 3) &&
         ((r = Math.floor((r + 2) / 4)),
         faceTwistDirs[twistedLayer] > 0 && (r = (4 - r) % 4),
         (originalAngle = 0),
         (natural = !0),
         twistLayers(cube, twistedLayer, r, twistedMode)),
-        paint();
+        paint());
     }
   }
   function mousedown(e) {
@@ -2084,7 +2092,7 @@ function AnimCube2(params) {
     if (void 0 === e.touches)
       var a = e.clientX,
         i = e.clientY;
-    else (a = e.touches[0].clientX), (i = e.touches[0].clientY);
+    else ((a = e.touches[0].clientX), (i = e.touches[0].clientY));
     a < r ||
       a > r + width / dpr ||
       i < o + (height - progressHeight) / dpr ||
@@ -2101,47 +2109,47 @@ function AnimCube2(params) {
       (buttonPressed = selectButton(lastX, lastY)) >= 0
         ? button()
         : progressHeight > 0 &&
-          move.length > 0 &&
-          move[curMove].length > 0 &&
-          lastY > height - progressHeight &&
-          lastY <= height
-        ? clickProgress && (stopAnimation(), progress(jobNumber++))
-        : null);
+            move.length > 0 &&
+            move[curMove].length > 0 &&
+            lastY > height - progressHeight &&
+            lastY <= height
+          ? clickProgress && (stopAnimation(), progress(jobNumber++))
+          : null);
   }
   function button() {
-    (pushed = !0),
+    ((pushed = !0),
       3 == buttonPressed
         ? animating
           ? stopAnimation()
           : startAnimation(0)
         : 0 == buttonPressed
-        ? scramble > 0 && 2 == buttonBar
-          ? 1 == scrambleToggle
-            ? ((scrambleToggle = !1), stopAnimation(), clear())
-            : ((scrambleToggle = !0),
-              startAnimation(buttonAction[(buttonPressed = 6)]))
-          : (stopAnimation(), clear())
-        : 7 == buttonPressed || 8 == buttonPressed
-        ? (stopAnimation(),
-          setTimeout(clear, 0),
-          (curMove =
-            7 == buttonPressed
-              ? curMove > 0
-                ? curMove - 1
-                : move.length - 1
-              : curMove < move.length - 1
-              ? curMove + 1
-              : 0))
-        : startAnimation(buttonAction[buttonPressed]),
+          ? scramble > 0 && 2 == buttonBar
+            ? 1 == scrambleToggle
+              ? ((scrambleToggle = !1), stopAnimation(), clear())
+              : ((scrambleToggle = !0),
+                startAnimation(buttonAction[(buttonPressed = 6)]))
+            : (stopAnimation(), clear())
+          : 7 == buttonPressed || 8 == buttonPressed
+            ? (stopAnimation(),
+              setTimeout(clear, 0),
+              (curMove =
+                7 == buttonPressed
+                  ? curMove > 0
+                    ? curMove - 1
+                    : move.length - 1
+                  : curMove < move.length - 1
+                    ? curMove + 1
+                    : 0))
+            : startAnimation(buttonAction[buttonPressed]),
       (drawButtons = !0),
-      paint();
+      paint());
   }
   function progress(e) {
     if (e > nowServing) setTimeout(progress, 0, e);
     else {
       var t = realMoveLength(move[curMove]),
         r = Math.floor((((lastX - 1) * t * 2) / (width - 2) + 1) / 2);
-      (r = Math.max(0, Math.min(t, r))) > 0 &&
+      ((r = Math.max(0, Math.min(t, r))) > 0 &&
         (r = arrayMovePos(move[curMove], r)),
         r > movePos && doMove(cube, move[curMove], movePos, r - movePos, !1),
         r < movePos && doMove(cube, move[curMove], r, movePos - r, !0),
@@ -2149,7 +2157,7 @@ function AnimCube2(params) {
         (dragging = !0),
         paint(),
         (animating = !1),
-        nowServing++;
+        nowServing++);
     }
   }
   var eyeD = [],
@@ -2177,22 +2185,22 @@ function AnimCube2(params) {
     showContextMenu || e.preventDefault();
   }
   function resize() {
-    clearTimeout(timer),
+    (clearTimeout(timer),
       (timer = setTimeout(function () {
-        scaleCanvas(), (drawButtons = !0), paint();
-      }, 20));
+        (scaleCanvas(), (drawButtons = !0), paint());
+      }, 20)));
   }
   function init2() {
-    (graphics = canvas.getContext("2d")),
+    ((graphics = canvas.getContext("2d")),
       (ubuttonHeight = buttonHeight),
       (uprogressHeight = progressHeight),
       (utextHeight = textHeight),
       scaleCanvas(),
       parNode.appendChild(canvas),
-      paint();
+      paint());
   }
   function scaleCanvas() {
-    (height = parNode.clientHeight - 1),
+    ((height = parNode.clientHeight - 1),
       (width = parNode.clientWidth - 1),
       setCanvasCssSize(),
       (dpr = devicePixelRatio),
@@ -2203,17 +2211,18 @@ function AnimCube2(params) {
       (lineWidth = dpr),
       (buttonHeight = Math.floor(ubuttonHeight * dpr)),
       (progressHeight = Math.floor(uprogressHeight * dpr)),
-      (textHeight = Math.floor(utextHeight * dpr));
+      (textHeight = Math.floor(utextHeight * dpr)));
     for (var e = 1; e < 10; e++) ds[e] = e * dpr;
     for (e = 0; e < textOffsetInit.length; e++)
       textOffset[e] = textOffsetInit[e] * dpr;
     1 == buttonBar && (height -= buttonHeight);
   }
   function setCanvasCssSize() {
-    (canvas.style.width = width + "px"), (canvas.style.height = height + "px");
+    ((canvas.style.width = width + "px"),
+      (canvas.style.height = height + "px"));
   }
   function setCanvasSize() {
-    (canvas.width = width), (canvas.height = height);
+    ((canvas.width = width), (canvas.height = height));
   }
   function randMoves(e, t) {
     var r,
@@ -2229,14 +2238,14 @@ function AnimCube2(params) {
     for (var u = 0; u < t; u++) {
       for (; s == l || (Math.floor(s / 2) == Math.floor(l / 2) && s == c); )
         s = Math.floor(6 * Math.random());
-      (c = l),
+      ((c = l),
         (l = s),
         (r = Math.floor(3 * Math.random())),
         e <= 3
           ? (d += "" + a[s] + n[r] + " ")
           : ((o = Math.floor(Math.random() * (e > 4 ? 3 : 2))),
             5 == e && 1 == o && (o = 0),
-            (d += "" + a[s] + i[o] + n[r] + " "));
+            (d += "" + a[s] + i[o] + n[r] + " ")));
     }
     return d;
   }
@@ -2249,8 +2258,8 @@ function AnimCube2(params) {
     }
   }
   function init0() {
-    (canvas = document.createElement("canvas")),
-      void 0 !== params && parseSearchParams();
+    ((canvas = document.createElement("canvas")),
+      void 0 !== params && parseSearchParams());
     var e = getParameter("id");
     if (null != e) (parNode = document.getElementById(e)).innerHTML = "";
     else if (null != document.currentScript)
@@ -2261,15 +2270,15 @@ function AnimCube2(params) {
       parNode = r.parentNode;
     }
     for (var o = 0; o < 6; o++)
-      (cube[o] = []),
+      ((cube[o] = []),
         (scube[o] = []),
         (initialCube[o] = []),
-        (initialSCube[o] = []);
-    for (o = 0; o < 12; o++) (dragCornersX[o] = []), (dragCornersY[o] = []);
-    (curMove = 0),
+        (initialSCube[o] = []));
+    for (o = 0; o < 12; o++) ((dragCornersX[o] = []), (dragCornersY[o] = []));
+    ((curMove = 0),
       (originalAngle = 0),
       onModuleLoad(),
-      null != parNode.id && init_direct_access(parNode.id);
+      null != parNode.id && init_direct_access(parNode.id));
   }
   function init_direct_access(id) {
     for (var s in window)

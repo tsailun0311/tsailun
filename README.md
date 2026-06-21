@@ -59,7 +59,7 @@ if (progressHeight > 0) {
     dph,
     height - progressHeight - dph,
     width - dpr,
-    progressHeight - dpr
+    progressHeight - dpr,
   );
 
   // slider
@@ -68,7 +68,7 @@ if (progressHeight > 0) {
     dph,
     height - progressHeight - dph,
     progress,
-    progressHeight - dpr
+    progressHeight - dpr,
   );
 
   // border
@@ -78,7 +78,7 @@ if (progressHeight > 0) {
     height - progressHeight - dph,
     width - dpr,
     progressHeight - dpr,
-    2 * dpr
+    2 * dpr,
   );
   graphics.stroke();
 }
@@ -104,7 +104,7 @@ if (buttonBar == 1) {
       height + dpr,
       buttonWidth - dph * 5,
       buttonHeight - dph * 3,
-      dpr * 5
+      dpr * 5,
     );
     g.fill();
     g.stroke();
@@ -113,7 +113,7 @@ if (buttonBar == 1) {
       g,
       i,
       buttonX + buttonWidth / 2,
-      height + buttonHeight / 2 - adj
+      height + buttonHeight / 2 - adj,
     );
     buttonX += buttonWidth;
   }
@@ -239,7 +239,7 @@ function darker(s) {
 }
 ````
 
-## 10.paint 更改公式粗體
+## 9.paint 更改公式粗體
 
 更改
 
@@ -247,7 +247,7 @@ function darker(s) {
 graphics.font = textHeight + "px helvetica";
 ```
 
-## 11.更改基本參數
+## 10.更改基本參數
 
 ```js
 buttonbar=1
@@ -270,7 +270,7 @@ yz=1
 repeat=0;
 ```
 
-## 12.drawMoveTextFunc 更改當前步驟圓角
+## 11.drawMoveTextFunc 更改當前步驟圓角
 
 ```js
 if (w2 > 0) {
@@ -285,7 +285,7 @@ if (w2 > 0) {
       height - progressHeight - textHeight - Math.floor(dpr * 4),
       w2 + 2,
       textHeight + Math.floor(dpr * 3),
-      dpr * 3
+      dpr * 3,
     );
   else
     g.roundRect(
@@ -293,13 +293,13 @@ if (w2 > 0) {
       height - progressHeight - textHeight - Math.floor(dpr * 2),
       w2 + 2,
       textHeight + Math.floor(dpr),
-      dpr * 3
+      dpr * 3,
     );
   g.fill();
 }
 ```
 
-## 13.drawFlorian 新增容錯角畫面
+## 12.drawFlorian 新增容錯角畫面
 
 [照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/florian.html) 在 getCorners 函數上面新增 3 參數 2 函數，及更改 3 處地方(搜尋 supercube)
 
@@ -311,7 +311,7 @@ if (w2 > 0) {
 startAnimation(buttonAction[6]);
 ```
 
-## 2.button 更改
+## 13.button 更改
 
 ```js
 if (buttonPressed == 3) {
@@ -320,5 +320,37 @@ if (buttonPressed == 3) {
     // special feature
     startAnimation(0);
   else stopAnimation();
+}
+```
+
+## 14.supercube 背景色更改
+
+```js
+for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
+  for (var o = 0, q = blocks[i][0][0]; o < sideW; o++, q++) {
+    for (var j = 0; j < 4; j++)
+      getCorners(
+        i,
+        j,
+        fillX,
+        fillY,
+        q + border[j][0],
+        p + border[j][1],
+        mirrored,
+      );
+    if (superCube == true) {
+      drawFlorian(graphics, fillX, fillY, "#8a8a8a", p, q, 0); //這裡
+      drawSuperArrow(
+        graphics,
+        fillX,
+        fillY,
+        i,
+        scube[i][p * 3 + q],
+        colors[cube[i][p * 3 + q]],
+      );
+    } else {
+      drawFlorian(graphics, fillX, fillY, colors[cube[i][p * 3 + q]], p, q, 0);
+    }
+  }
 }
 ```

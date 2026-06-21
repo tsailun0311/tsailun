@@ -210,7 +210,7 @@ function AnimCube3(params) {
     colors[1] = rgbToHex(255, 0, 0); // 1 - pure red
     colors[2] = rgbToHex(0, 255, 0); // 2 - pure green
     colors[3] = rgbToHex(0, 0, 255); // 3 - pure blue
-    colors[4] = rgbToHex(153, 153, 153); // 4 - white grey
+    colors[4] = rgbToHex(196, 196, 196); // 4 - white grey
     colors[5] = rgbToHex(170, 170, 68); // 5 - yellow grey
     colors[6] = rgbToHex(187, 119, 68); // 6 - orange grey
     colors[7] = rgbToHex(153, 68, 68); // 7 - red grey
@@ -222,7 +222,7 @@ function AnimCube3(params) {
     colors[13] = "red"; // R - red
     colors[14] = "#0d0"; // G - green
     colors[15] = "#07f"; // B - blue
-    colors[16] = rgbToHex(176, 176, 176); // L - light gray
+    colors[16] = rgbToHex(138, 138, 138); // L - light gray
     colors[17] = rgbToHex(80, 80, 80); // D - dark gray
     colors[18] = rgbToHex(255, 0, 255); // M - magenta
     colors[19] = rgbToHex(0, 255, 255); // C - cyan
@@ -487,12 +487,13 @@ function AnimCube3(params) {
         if (param.charAt(i) >= "0" && param.charAt(i) <= "9")
           persp = persp * 10 + parseInt(param[i]);
     // cube scale
-    var varscale = 1;
+    var varscale = 0;
     param = getParameter("scale");
-    if (param != null)
+    if (param != null) {
       for (var i = 0; i < param.length; i++)
         if (param.charAt(i) >= "0" && param.charAt(i) <= "9")
           varscale = varscale * 10 + parseInt(param[i]);
+    } else varscale = 1;
     scale = 1.0 / (1.0 + varscale / 10.0);
     // hint displaying
     hint = true;
@@ -606,7 +607,7 @@ function AnimCube3(params) {
         initialReversedMove[0],
         0,
         initialReversedMove[0].length,
-        true
+        true,
       );
     if (scramble == 2) doMove(cube, move[0], 0, move[0].length, true);
     for (var i = 0; i < 3; i++) {
@@ -1038,7 +1039,7 @@ function AnimCube3(params) {
         initialReversedMove[curMove],
         0,
         initialReversedMove[curMove].length,
-        true
+        true,
       );
     if (move.length > 0) initInfoText(move[curMove]);
     if (scramble > 0) move = getMove(randMoves(3, randMoveCount), false);
@@ -1576,11 +1577,11 @@ function AnimCube3(params) {
       // perspective corrections
       vSub(
         vScale(vCopy(perspEye, eye), 5.0 + persp),
-        vScale(vCopy(perspNormal, faceNormals[twistedLayer]), 1.0 / 3.0)
+        vScale(vCopy(perspNormal, faceNormals[twistedLayer]), 1.0 / 3.0),
       );
       vSub(
         vScale(vCopy(perspEyeI, eye), 5.0 + persp),
-        vScale(vCopy(perspNormal, faceNormals[twistedLayer ^ 1]), 1.0 / 3.0)
+        vScale(vCopy(perspNormal, faceNormals[twistedLayer ^ 1]), 1.0 / 3.0),
       );
       var topProd = vProd(perspEye, faceNormals[twistedLayer]);
       var botProd = vProd(perspEyeI, faceNormals[twistedLayer ^ 1]);
@@ -1601,7 +1602,7 @@ function AnimCube3(params) {
           eyeArrayX[k],
           eyeArrayY[k],
           blockArray[j],
-          blockMode[twistedMode][j]
+          blockMode[twistedMode][j],
         );
       }
     }
@@ -1629,7 +1630,7 @@ function AnimCube3(params) {
               dph,
               height - progressHeight - dph,
               width - dpr,
-              progressHeight - dpr
+              progressHeight - dpr,
             );
 
             // slider
@@ -1638,7 +1639,7 @@ function AnimCube3(params) {
               dph,
               height - progressHeight - dph,
               progress,
-              progressHeight - dpr
+              progressHeight - dpr,
             );
 
             // border
@@ -1648,7 +1649,7 @@ function AnimCube3(params) {
               height - progressHeight - dph,
               width - dpr,
               progressHeight - dpr,
-              2 * dpr
+              2 * dpr,
             );
             graphics.stroke();
           }
@@ -1691,7 +1692,7 @@ function AnimCube3(params) {
           dpr,
           adjTextHeight(),
           w,
-          textHeight
+          textHeight,
         );
       }
     }
@@ -1815,7 +1816,7 @@ function AnimCube3(params) {
                     fillY,
                     q + border[j][0],
                     p + border[j][1],
-                    mirrored
+                    mirrored,
                   );
                   fillX[j] = Math.floor(fillX[j] + (mirrored ? -x : x));
                   fillY[j] = Math.floor(fillY[j] - y);
@@ -1834,7 +1835,7 @@ function AnimCube3(params) {
                     fillY,
                     i,
                     scube[i][p * 3 + q],
-                    colors[cube[i][p * 3 + q]]
+                    colors[cube[i][p * 3 + q]],
                   );
                 } else {
                   drawFlorian(
@@ -1844,7 +1845,7 @@ function AnimCube3(params) {
                     colors[cube[i][p * 3 + q]],
                     p,
                     q,
-                    1
+                    1,
                   );
                 }
               }
@@ -1864,10 +1865,10 @@ function AnimCube3(params) {
           // for all corners
           var k = oppositeCorners[i][j];
           fillX[j] = Math.floor(
-            cooX[i][j] + ((cooX[i ^ 1][k] - cooX[i][j]) * 2.0) / 3.0
+            cooX[i][j] + ((cooX[i ^ 1][k] - cooX[i][j]) * 2.0) / 3.0,
           );
           fillY[j] = Math.floor(
-            cooY[i][j] + ((cooY[i ^ 1][k] - cooY[i][j]) * 2.0) / 3.0
+            cooY[i][j] + ((cooY[i ^ 1][k] - cooY[i][j]) * 2.0) / 3.0,
           );
           if (mirrored) fillX[j] = width - fillX[j];
         }
@@ -1886,7 +1887,7 @@ function AnimCube3(params) {
             fillY,
             blocks[i][0][factors[j][0]],
             blocks[i][1][factors[j][1]],
-            mirrored
+            mirrored,
           );
         fillPolygon(graphics, fillX, fillY, cubeColor);
       }
@@ -1912,17 +1913,17 @@ function AnimCube3(params) {
                   fillY,
                   q + border[j][0],
                   p + border[j][1],
-                  mirrored
+                  mirrored,
                 );
               if (superCube == true) {
-                drawFlorian(graphics, fillX, fillY, "#fdfdfd", p, q, 0);
+                drawFlorian(graphics, fillX, fillY, "#8a8a8a", p, q, 0);
                 drawSuperArrow(
                   graphics,
                   fillX,
                   fillY,
                   i,
                   scube[i][p * 3 + q],
-                  colors[cube[i][p * 3 + q]]
+                  colors[cube[i][p * 3 + q]],
                 );
               } else {
                 drawFlorian(
@@ -1932,7 +1933,7 @@ function AnimCube3(params) {
                   colors[cube[i][p * 3 + q]],
                   p,
                   q,
-                  0
+                  0,
                 );
               }
             }
@@ -1962,7 +1963,7 @@ function AnimCube3(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -1984,8 +1985,8 @@ function AnimCube3(params) {
                   ? 0
                   : 2
                 : blocks[i][0][0] == 0
-                ? 3
-                : 1;
+                  ? 3
+                  : 1;
             for (var k = 0; k < 4; k++)
               getCorners(
                 i,
@@ -1994,7 +1995,7 @@ function AnimCube3(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2017,7 +2018,7 @@ function AnimCube3(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2104,7 +2105,7 @@ function AnimCube3(params) {
     cornersY,
     factor1,
     factor2,
-    mirror
+    mirror,
   ) {
     factor1 /= 3.0;
     factor2 /= 3.0;
@@ -2158,7 +2159,7 @@ function AnimCube3(params) {
           height - progressHeight - textHeight - Math.floor(dpr * 4),
           w2 + 2,
           textHeight + Math.floor(dpr * 3),
-          dpr * 3
+          dpr * 3,
         );
       else
         g.roundRect(
@@ -2166,7 +2167,7 @@ function AnimCube3(params) {
           height - progressHeight - textHeight - Math.floor(dpr * 2),
           w2 + 2,
           textHeight + Math.floor(dpr),
-          dpr * 3
+          dpr * 3,
         );
       g.fill();
     }
@@ -2368,7 +2369,7 @@ function AnimCube3(params) {
           height + dpr,
           buttonWidth - dph * 5,
           buttonHeight - dph * 3,
-          dpr * 5
+          dpr * 5,
         );
         g.fill();
         g.stroke();
@@ -2377,7 +2378,7 @@ function AnimCube3(params) {
           g,
           i,
           buttonX + buttonWidth / 2,
-          height + buttonHeight / 2 - adj
+          height + buttonHeight / 2 - adj,
         );
         buttonX += buttonWidth;
       }
@@ -2767,7 +2768,7 @@ function AnimCube3(params) {
         initialReversedMove[curMove],
         0,
         initialReversedMove[curMove].length,
-        true
+        true,
       );
     initInfoText(mv);
   }
