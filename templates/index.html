@@ -82,10 +82,65 @@
     <div class="accordion-item">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseOne">
-            轉動代號
+            魔方構造及轉動代號
         </button>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
+                1.角塊：所有角落，有<strong>8</strong>塊，每塊<strong>三個顏色</strong><br>
+                2.邊塊：角塊間的塊，有<strong>12</strong>塊，每塊<strong>兩個顏色</strong><br>
+                3.中心塊：每面中心，有<strong>6</strong>塊，每塊<strong>一個顏色</strong><br>
+                4.層(以初級玩家<strong class="w">白色</strong>為底介紹)<br>
+                　底層：4塊<strong class="w">白色</strong>角塊和4塊<strong class="w">白色</strong>邊塊<br>
+                　中間層：<strong class="r">紅</strong><strong class="b">藍</strong>、<strong class="b">藍</strong><strong
+                    class="o">橘</strong>、<strong class="o">橘</strong><strong class="g">綠</strong>、<strong
+                    class="g">綠</strong><strong class="r">紅</strong><br>
+                　頂層：4塊<strong class="y">黄色</strong>角塊和4塊<strong class="y">黄色</strong>邊塊
+                <div class="container">
+                    <div class="row row-cols-3 row-cols-md-6">
+                        <div class="col">
+                            <div style="text-align:center">
+                                角塊
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=ylylllylyglglllglgrlrlllrlr">
+                        </div>
+                        <div class="col">
+                            <div style="text-align:center">
+                                邊塊
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=lylylylyllglglglgllrlrlrlrl">
+                        </div>
+                        <div class="col">
+                            <div style="text-align:center">
+                                中心塊
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=llllyllllllllgllllllllrllll">
+                        </div>
+                        <div class="col">
+                            <div style="text-align:center">
+                                底層
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=lllllllllllllllgggllllllrrr">
+                        </div>
+                        <div class="col">
+                            <div style="text-align:center">
+                                中間層
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=llllllllllllgggllllllrrrlll">
+                        </div>
+                        <div class="col">
+                            <div style="text-align:center">
+                                頂層
+                            </div>
+                            <img
+                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=yyyyyyyyygggllllllrrrllllll">
+                        </div>
+                    </div>
+                </div>
                 大寫表示該面面對自己順時針轉90&#176;
                 <div class="container">
                     <div class="row row-cols-3 row-cols-md-6">
@@ -454,25 +509,15 @@
         <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 魔方流行的配色方案有兩種，世界標準配色(BOY Color Scheme)和日本配色(BYO Color
-                Scheme)。不同之處是<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍</strong><strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄</strong>顏色互換，日本配色通常以<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍色</strong>為底，而標準配色則以<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #fff 60%);">白色</strong>為底。
-                <br>魔方的顏色是基於CMYK的減色模式，在任一面中加入/減去<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>，就能得到它相對的顏色。
-                <br>Daisy colors(<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #fff 60%);">白色</strong>+<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>)
-                <br>Hot colors(<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, red 60%);">紅色</strong>+<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, orange 60%);">橘色</strong>)
-                <br>Cold colors(<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #07f 60%);">藍色</strong>+<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, yellow 60%);">黄色</strong>=<strong
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #0d0 60%);">綠色</strong>)
+                Scheme)。不同之處是<strong class="b">藍</strong><strong class="y">黄</strong>顏色互換，日本配色通常以<strong
+                    class="b">藍色</strong>為底，而標準配色則以<strong class="w">白色</strong>為底。
+                <br>魔方的顏色是基於CMYK的減色模式，在任一面中加入/減去<strong class="y">黄色</strong>，就能得到它相對的顏色。
+                <br>Daisy colors(<strong class="w">白色</strong>+<strong class="y">黄色</strong>=<strong
+                    class="y">黄色</strong>)
+                <br>Hot colors(<strong class="r">紅色</strong>+<strong class="y">黄色</strong>=<strong
+                    class="o">橘色</strong>)
+                <br>Cold colors(<strong class="b">藍色</strong>+<strong class="y">黄色</strong>=<strong
+                    class="g">綠色</strong>)
             </div>
         </div>
     </div>
@@ -528,4 +573,20 @@
         </div>
     </div>
 </div>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const open = params.get("open");
+        if (open === "1") {
+            bootstrap.Collapse.getOrCreateInstance(
+                document.getElementById("collapseZero"),
+                { toggle: false }
+            ).hide();
+            bootstrap.Collapse.getOrCreateInstance(
+                document.getElementById("collapseOne"),
+                { toggle: false }
+            ).show();
+        }
+    });
+</script>
 {% endblock %}
