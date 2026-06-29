@@ -1,158 +1,59 @@
 {% extends "base.html" %}
-{% set menu2 = ["剩邊型", "剩角型", "2 Pairs型", "鄰角對邊型", "對角鄰邊型", "鄰角鄰邊型", "雙環型"] %}
+{% set categories = [{"title": "剩邊","perms": [
+["Ua", "z' U L' U L U L U L' U' L' U2 z"],
+["Ub", "z U' R U' R' U' R' U' R U R U2' z'"],
+["H", "M2' U M2' U2 M2' U M2'"],
+["Z", "U2 R' U' R U' R U R U' R' U R U R2 U' R'"]]},
+{"title": "剩角","perms": [
+["Aa", "x' L' U L' D2 L U' L' D2 L2' x"],
+["Ab", "x' R U' R D2 R' U R D2 R2 x"],
+["E", "x' R U' R' D R U R' D' R U R' D R U' R' D' x"]]},
+{"title": "2 Pairs","perms": [
+["Ja", "R' U2 R U R' U2' L U' R U L'"],
+["Jb", "R U2 R' U' R U2 L' U R' U' L"],
+["Na", "R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R'"],
+["Nb", "R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R"]]},
+{"title": "鄰角對邊","perms": [
+["T", "R U R' U' R' F R2 U' R' U' R U R' F'"],
+["F", "R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"]]},
+{"title": "對角鄰邊","perms": [
+["V", "L' U R U' L U L' U R' U' L U2 R U2 R'"],
+["Y", "F R U' R' U' R U R' F' R U R' U' R' F R F'"]]},
+{"title": "鄰角鄰邊","perms": [
+["Ra", "R U' R' U' R U R D R' U' R D' R' U2 R' U'"],
+["Rb", "y' R' U2 R U2 R' F R U R' U' R' F' R2 U' y"]]},
+{"title": "雙環","perms": [
+["Ga", "R2 u R' U R' U' R u' R2 y' R' U R y"],
+["Gb", "R' U' R y R2 u R' U R U' R u' R2 y'"],
+["Gc", "R2 u' R U' R U R' u R2 y R U' R' y'"],
+["Gd", "R U R' y' R2 u' R U' R' U R' u R2 y"]]}] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container">
 	<div class="row">
-		{% for i in range(menu2|length) %}
+		{% for i in categories %}
 		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
 			<div class="menutable">
-				<a href="#c{{loop.index}}">{{menu2[i]}}</a>
+				<a href="#c{{loop.index}}">{{i.title}}型</a>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
 </div>
-<p><span class="big" id="c1">剩邊型</span></p>
+{% for cat in categories %}
+<p><span class="big" id="c{{loop.index}}">{{cat.title}}型</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">Ua-perm
+		{% for name, move in cat.perms %}
+		<div class="col">{{name}}-perm
 			<div class="cube">
-				<script>AnimCube3("move=z' U L' U L U L U L' U' L' U2 z")</script>
+				<script>AnimCube3("move={{move|safe}}")</script>
 			</div>
 		</div>
-		<div class="col">Ub-perm
-			<div class="cube">
-				<script>AnimCube3("move=z U' R U' R' U' R' U' R U R U2' z'")</script>
-			</div>
-		</div>
-		<div class="col">H-perm
-			<div class="cube">
-				<script>AnimCube3("move=M2' U M2' U2 M2' U M2'")</script>
-			</div>
-		</div>
-		<div class="col">Z-perm
-			<div class="cube">
-				<script>AnimCube3("move=U2 R' U' R U' R U R U' R' U R U R2 U' R'")</script>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </div>
-<p><span class="big" id="c2">剩角型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">Aa-perm
-			<div class="cube">
-				<script>AnimCube3("move=x' L' U L' D2 L U' L' D2 L2' x")</script>
-			</div>
-		</div>
-		<div class="col">Ab-perm
-			<div class="cube">
-				<script>AnimCube3("move=x' R U' R D2 R' U R D2 R2 x")</script>
-			</div>
-		</div>
-		<div class="col">E-perm
-			<div class="cube">
-				<script>AnimCube3("move=x' R U' R' D R U R' D' R U R' D R U' R' D' x")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c3">2 Pairs型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">Ja-perm
-			<div class="cube">
-				<script>AnimCube3("move=R' U2 R U R' U2' L U' R U L'")</script>
-			</div>
-		</div>
-		<div class="col">Jb-perm
-			<div class="cube">
-				<script>AnimCube3("move=R U2 R' U' R U2 L' U R' U' L")</script>
-			</div>
-		</div>
-		<div class="col">Na-perm
-			<div class="cube">
-				<script>AnimCube3("move=R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R'")</script>
-			</div>
-		</div>
-		<div class="col">Nb-perm
-			<div class="cube">
-				<script>AnimCube3("move=R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c4">鄰角對邊型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">T-perm
-			<div class="cube">
-				<script>AnimCube3("move=R U R' U' R' F R2 U' R' U' R U R' F'")</script>
-			</div>
-		</div>
-		<div class="col">F-perm
-			<div class="cube">
-				<script>AnimCube3("move=R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c5">對角鄰邊型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">V-perm
-			<div class="cube">
-				<script>AnimCube3("move=L' U R U' L U L' U R' U' L U2 R U2 R'")</script>
-			</div>
-		</div>
-		<div class="col">Y-perm
-			<div class="cube">
-				<script>AnimCube3("move=F R U' R' U' R U R' F' R U R' U' R' F R F'")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c6">鄰角鄰邊型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">Ra-perm
-			<div class="cube">
-				<script>AnimCube3("move=R U' R' U' R U R D R' U' R D' R' U2 R' U'")</script>
-			</div>
-		</div>
-		<div class="col">Rb-perm
-			<div class="cube">
-				<script>AnimCube3("move=y' R' U2 R U2 R' F R U R' U' R' F' R2 U' y")</script>
-			</div>
-		</div>
-	</div>
-</div>
-<p><span class="big" id="c7">雙環型</span></p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		<div class="col">Ga-perm
-			<div class="cube">
-				<script>AnimCube3("move=R2 u  R' U R' U' R u' R2 y' R' U R y")</script>
-			</div>
-		</div>
-		<div class="col">Gb-perm
-			<div class="cube">
-				<script>AnimCube3("move=R' U' R y R2 u R' U R U' R u' R2 y'")</script>
-			</div>
-		</div>
-		<div class="col">Gc-perm
-			<div class="cube">
-				<script>AnimCube3("move=R2 u' R U' R U R' u R2 y R U' R' y'")</script>
-			</div>
-		</div>
-		<div class="col">Gd-perm
-			<div class="cube">
-				<script>AnimCube3("move=R U R' y' R2 u' R U' R' U R' u R2 y")</script>
-			</div>
-		</div>
-	</div>
-</div>
+{% endfor %}
 {% endblock %}
