@@ -481,7 +481,7 @@ function AnimCube5(params) {
         if (param.charAt(i) >= "0" && param.charAt(i) <= "9")
           doubleSpeed = doubleSpeed * 10 + parseInt(param[i]);
     if (speed == 0) speed = 10;
-    if (doubleSpeed == 0) doubleSpeed = (speed * 3) / 2;
+    if (doubleSpeed == 0) doubleSpeed = (speed * 5) / 4;
     // perspective deformation
     persp = 0;
     param = getParameter("perspective");
@@ -618,7 +618,7 @@ function AnimCube5(params) {
         initialReversedMove[0],
         0,
         initialReversedMove[0].length,
-        true
+        true,
       );
     if (scramble == 2) doMove(cube, move[0], 0, move[0].length, true);
     for (var i = 0; i < 3; i++) {
@@ -1080,7 +1080,7 @@ function AnimCube5(params) {
         initialReversedMove[curMove],
         0,
         initialReversedMove[curMove].length,
-        true
+        true,
       );
     if (move.length > 0) initInfoText(move[curMove]);
     if (scramble > 0) move = getMove(randMoves(5, randMoveCount), false);
@@ -1838,7 +1838,7 @@ function AnimCube5(params) {
             blockArray[j],
             blockMode[twistedMode][j],
             j,
-            1
+            1,
           );
         }
       }
@@ -1852,7 +1852,7 @@ function AnimCube5(params) {
           blockArray[j],
           blockMode[twistedMode][j],
           j,
-          0
+          0,
         );
       }
     }
@@ -1880,7 +1880,7 @@ function AnimCube5(params) {
               dph,
               height - progressHeight - dph,
               width - dpr,
-              progressHeight - dpr
+              progressHeight - dpr,
             );
 
             // slider
@@ -1889,7 +1889,7 @@ function AnimCube5(params) {
               dph,
               height - progressHeight - dph,
               progress,
-              progressHeight - dpr
+              progressHeight - dpr,
             );
 
             // border
@@ -1899,7 +1899,7 @@ function AnimCube5(params) {
               height - progressHeight - dph,
               width - dpr,
               progressHeight - dpr,
-              2 * dpr
+              2 * dpr,
             );
             graphics.stroke();
           }
@@ -1942,7 +1942,7 @@ function AnimCube5(params) {
           dpr,
           adjTextHeight(),
           w,
-          textHeight
+          textHeight,
         );
         // drawString(graphics, infoText[curInfoText], (width-w)/2+dpr, adjTextHeight());
         // drawString(graphics, infoText[curInfoText], outlined ? dpr : 0, adjTextHeight());
@@ -2068,7 +2068,7 @@ function AnimCube5(params) {
                     fillY,
                     q + border[j][0],
                     p + border[j][1],
-                    mirrored
+                    mirrored,
                   );
                   fillX[j] = Math.floor(fillX[j] + (mirrored ? -x : x));
                   fillY[j] = Math.floor(fillY[j] - y);
@@ -2087,7 +2087,7 @@ function AnimCube5(params) {
                     fillY,
                     i,
                     scube[i][p * 5 + q],
-                    colors[cube[i][p * 5 + q]]
+                    colors[cube[i][p * 5 + q]],
                   );
                 } else {
                   drawFlorian(
@@ -2097,7 +2097,7 @@ function AnimCube5(params) {
                     colors[cube[i][p * 5 + q]],
                     p,
                     q,
-                    1
+                    1,
                   );
                 }
               }
@@ -2138,7 +2138,7 @@ function AnimCube5(params) {
             fillY,
             blocks[i][0][factors[j][0]],
             blocks[i][1][factors[j][1]],
-            mirrored
+            mirrored,
           );
         fillPolygon(graphics, fillX, fillY, cubeColor);
       }
@@ -2164,7 +2164,7 @@ function AnimCube5(params) {
                   fillY,
                   q + border[j][0],
                   p + border[j][1],
-                  mirrored
+                  mirrored,
                 );
               if (superCube == true) {
                 drawFlorian(graphics, fillX, fillY, "#fdfdfd", p, q, 0);
@@ -2174,7 +2174,7 @@ function AnimCube5(params) {
                   fillY,
                   i,
                   scube[i][p * 5 + q],
-                  colors[cube[i][p * 5 + q]]
+                  colors[cube[i][p * 5 + q]],
                 );
               } else {
                 drawFlorian(
@@ -2184,7 +2184,7 @@ function AnimCube5(params) {
                   colors[cube[i][p * 5 + q]],
                   p,
                   q,
-                  0
+                  0,
                 );
               }
             }
@@ -2214,7 +2214,7 @@ function AnimCube5(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2246,8 +2246,8 @@ function AnimCube5(params) {
                   ? 0
                   : 2
                 : blocks[i][0][0] == 0
-                ? 3
-                : 1;
+                  ? 3
+                  : 1;
             for (var k = 0; k < 4; k++)
               getCorners(
                 i,
@@ -2256,7 +2256,7 @@ function AnimCube5(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2276,8 +2276,8 @@ function AnimCube5(params) {
                   ? 0
                   : 2
                 : blocks[i][0][0] == 1
-                ? 3
-                : 1;
+                  ? 3
+                  : 1;
             j += 4;
             for (var k = 0; k < 4; k++)
               getCorners(
@@ -2287,7 +2287,7 @@ function AnimCube5(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2310,7 +2310,7 @@ function AnimCube5(params) {
                 dragCornersY[dragAreas],
                 dragBlocks[j][k][0],
                 dragBlocks[j][k][1],
-                false
+                false,
               );
             dragDirsX[dragAreas] =
               (dxh * areaDirs[j][0] + dxv * areaDirs[j][1]) * twistDirs[i][j];
@@ -2410,7 +2410,7 @@ function AnimCube5(params) {
     cornersY,
     factor1,
     factor2,
-    mirror
+    mirror,
   ) {
     factor1 /= 5.0;
     factor2 /= 5.0;
@@ -2464,7 +2464,7 @@ function AnimCube5(params) {
           height - progressHeight - textHeight - Math.floor(dpr * 4),
           w2 + 2,
           textHeight + Math.floor(dpr * 3),
-          dpr * 3
+          dpr * 3,
         );
       else
         g.roundRect(
@@ -2472,7 +2472,7 @@ function AnimCube5(params) {
           height - progressHeight - textHeight - Math.floor(dpr * 2),
           w2 + 2,
           textHeight + Math.floor(dpr),
-          dpr * 3
+          dpr * 3,
         );
       g.fill();
     }
@@ -2674,7 +2674,7 @@ function AnimCube5(params) {
           height + dpr,
           buttonWidth - dph * 5,
           buttonHeight - dph * 3,
-          dpr * 5
+          dpr * 5,
         );
         g.fill();
         g.stroke();
@@ -2683,7 +2683,7 @@ function AnimCube5(params) {
           g,
           i,
           buttonX + buttonWidth / 2,
-          height + buttonHeight / 2 - adj
+          height + buttonHeight / 2 - adj,
         );
         buttonX += buttonWidth;
       }
@@ -3069,7 +3069,7 @@ function AnimCube5(params) {
         initialReversedMove[curMove],
         0,
         initialReversedMove[curMove].length,
-        true
+        true,
       );
     initInfoText(mv);
   }

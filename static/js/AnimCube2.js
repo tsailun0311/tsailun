@@ -376,7 +376,7 @@ function AnimCube2(params) {
           (doubleSpeed = 10 * doubleSpeed + parseInt(e[t]));
     if (
       (0 == speed && (speed = 10),
-      0 == doubleSpeed && (doubleSpeed = (3 * speed) / 2),
+      0 == doubleSpeed && (doubleSpeed = (5 * speed) / 4),
       (persp = 0),
       null == (e = getParameter("perspective")))
     )

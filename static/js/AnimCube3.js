@@ -477,7 +477,7 @@ function AnimCube3(params) {
         if (param.charAt(i) >= "0" && param.charAt(i) <= "9")
           doubleSpeed = doubleSpeed * 10 + parseInt(param[i]);
     if (speed == 0) speed = 10;
-    if (doubleSpeed == 0) doubleSpeed = (speed * 3) / 2;
+    if (doubleSpeed == 0) doubleSpeed = (speed * 5) / 4;
     // perspective deformation
     persp = 0;
     param = getParameter("perspective");

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set visualcube = "https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&r=y45x-30" %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
@@ -56,7 +57,7 @@
                     <li>CFOP第四步驟(頂層歸位)：<a href="/pll"> PLL</a></li>
                 </ul>
                 <p><span class="big">資料來源</span></p>
-                <ul>
+                <ul style="text-align:initial;">
                     網站伺服：
                     <li><a href="https://www.pythonanywhere.com/">pythonanywhere</a></li>
                     魔方資料：
@@ -71,9 +72,10 @@
                         <a href="https://www.cuberoot.me/">9.Cuberoot</a>
                     </li>
                     魔方動畫：
-                    <li><a href="https://experiments.cubing.net/cubing.js/">1.Cubing.js　</a>
-                        <a href="https://github.com/cubing/AnimCubeJS">2.AnimCubeJS　</a>
-                        <a href="https://github.com/Cride5/visualcube">3.Visualcube</a>
+                    <li><a href="https://github.com/cubing/AnimCubeJS">1.AnimCubeJS　</a>
+                        <a href="https://github.com/Cride5/visualcube">2.Visualcube</a>
+                        <a href="https://github.com/tdecker91/visualcube">(js版)　</a>
+                        <a href="https://experiments.cubing.net/cubing.js/">3.Cubing.js</a>
                     </li>
                 </ul>
             </div>
@@ -101,43 +103,37 @@
                             <div style="text-align:center">
                                 角塊
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=ylylllylyglglllglgrlrlllrlr">
+                            <img src="{{ visualcube }}&fc=ylylllylyglglllglgrlrlllrlr">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 邊塊
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=lylylylyllglglglgllrlrlrlrl">
+                            <img src="{{ visualcube }}&fc=lylylylyllglglglgllrlrlrlrl">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 中心塊
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=llllyllllllllgllllllllrllll">
+                            <img src="{{ visualcube }}&fc=llllyllllllllgllllllllrllll">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 底層
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=lllllllllllllllgggllllllrrr">
+                            <img src="{{ visualcube }}&fc=lllllllllllllllgggllllllrrr">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 中間層
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=llllllllllllgggllllllrrrlll">
+                            <img src="{{ visualcube }}&fc=llllllllllllgggllllllrrrlll">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 頂層
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&bg=t&r=y45x-30&fc=yyyyyyyyygggllllllrrrllllll">
+                            <img src="{{ visualcube }}&fc=yyyyyyyyygggllllllrrrllllll">
                         </div>
                     </div>
                 </div>
@@ -148,64 +144,55 @@
                             <div style="text-align:center">
                                 <strong>R</strong>ight
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=F8U2R0-i34-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=F8U5F2-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>U</strong>p
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=B0L2U8-s11-i25-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=R2F1R0-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>F</strong>ront
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U6R6F2-i35-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U6R3U8-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>L</strong>eft
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U0F6L2-i9-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U0F3U6-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>D</strong>own
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=F6R8D2-i9-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=F6R7F8-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>B</strong>ack
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=R8U0B0-i9-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=R8U1R2-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>M</strong>iddle
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U1F7L2-i5-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U1F4U7-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>E</strong>quator
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=F3R5D2-i5-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=F3R4F5-i10-r">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>S</strong>ide
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U3R7B0-i5-red&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U3R4U5-i10-r">
                         </div>
                     </div>
                 </div>
@@ -215,21 +202,18 @@
                         <div class="col">
                             <div style="text-align:center">R<strong>'</strong>
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U2F8R0-i33-yellow&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U2F5U8-i10-y">
                         </div>
                         <div class="col">
                             <div style="text-align:center">U<strong>2</strong>
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=B0L2U8-s11-i25-red,U6U2U0-s13-i17-yellow&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=R2F1R0-i12-r,R2F1R0-s8-i8-y">
                         </div>
                         <div class="col">
                             <div style="text-align:center">
                                 <strong>f</strong>
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U6R6B0-i4-red,U3R7B0-i6-yellow&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U6R3U8-i10-r,U3R4U5-i10-y">
                         </div>
                     </div>
                 </div>
@@ -238,18 +222,15 @@
                     <div class="row row-cols-3 row-cols-md-6">
                         <div class="col">
                             <div style="text-align:center">x</div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=F6F0,F7F1,F8F2&ac=green&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=F6F0,F7F1,F8F2&ac=g">
                         </div>
                         <div class="col">
                             <div style="text-align:center">y</div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=F8F6,F5F3,F2F0&ac=green&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U0U2,U3U5,U6U8&ac=g">
                         </div>
                         <div class="col">
                             <div style="text-align:center">z</div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&arw=U0U2,U3U5,U6U8&ac=green&sch=llllll&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=llllll&arw=U0U2,U3U5,U6U8&ac=g">
                         </div>
                     </div>
                 </div>
@@ -259,8 +240,7 @@
                         <div class="col">
                             <div style="text-align:center">UFR視角
                             </div>
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&size=50&arw=F4B4-b&sch=ssssss&co=30&bg=t&fo=40&r=y45x-30">
+                            <img src="{{ visualcube }}&sch=ygrwbo&co=0&fo=40&arw=F4B4-b">
                         </div>
                     </div>
                 </div>
@@ -291,26 +271,19 @@
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=SR%27U%27RURURU%27R%27S%27">
+                        <td><img src="{{ visualcube }}&view=plan&stage=oll">
+                            <img src="{{ visualcube }}&view=plan&stage=oll&case=SR'U'RURURU'R'S'">
                         </td>
                         <td>2</td>
                         <td><math>{{ mfrac(1,216) }}</math></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=RU2R%27U%27RUR%27U%27RU%27R%27">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=RU2R2FRF%27U2R%27FRF%27">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=RUR%27U%27M%27URU%27r%27">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=rUr%27URU%27R%27URU%27R%27rU%27r%27">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&stage=oll&cc=black&case=R%27FRURU%27R2F%27R2U%27R%27URUR%27">
+                        <td><img src="{{ visualcube }}&view=plan&stage=oll&case=RU2R'U'RUR'U'RU'R'">
+                            <img src="{{ visualcube }}&view=plan&stage=oll&case=RU2R2FRF'U2R'FRF'">
+                            <img src="{{ visualcube }}&view=plan&stage=oll&case=RUR'U'M'URU'r'">
+                            <img src="{{ visualcube }}&view=plan&stage=oll&case=rUr'URU'R'URU'R'rU'r'">
+                            <img src="{{ visualcube }}&view=plan&stage=oll&case=R'FRURU'R2F'R2U'R'URUR'">
                         </td>
                         <td>5</td>
                         <td><math>{{ mfrac(1,108) }}</math></td>
@@ -344,22 +317,20 @@
                     <tr>
                         <td>單</td>
                         <td><img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&case=RUR%27URUR%27F%27RUR%27U%27R%27FR2U%27R%27U2RU%27R%27&arw=U3U5,U5U3,U2U6,U6U2">
+                                src="{{ visualcube }}&view=plan&ac=m&case=RUR'URUR'F'RUR'U'R'FR2U'R'U2RU'R'&arw=U3U5,U5U3,U2U6,U6U2">
                             <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&case=R%27URU%27R%27F%27U%27FRUR%27FR%27F%27RU%27R&arw=U3U5,U5U3,U0U8,U8U0">
-                            <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&case=M2UM2U2M2UM2&arw=U3U5,U5U3,U1U7,U7U1">
-                            <img src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan">
+                                src="{{ visualcube }}&view=plan&ac=m&case=R'URU'R'F'U'FRUR'FR'F'RU'R&arw=U3U5,U5U3,U0U8,U8U0">
+                            <img src="{{ visualcube }}&view=plan&ac=m&case=M2UM2U2M2UM2&arw=U3U5,U5U3,U1U7,U7U1">
+                            <img src="{{ visualcube }}&view=plan">
                         </td>
                         <td>4</td>
                         <td><math>{{ mfrac(1,72) }}</math></td>
                     </tr>
                     <tr>
                         <td>雙</td>
-                        <td><img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&case=M2UM2UM%27U2M2U2M%27U2&arw=U7U5,U5U7,U1U3,U3U1">
+                        <td><img src="{{ visualcube }}&view=plan&ac=m&case=M2UM2UM'U2M2U2M'U2&arw=U7U5,U5U7,U1U3,U3U1">
                             <img
-                                src="https://visualcube.api.cubing.net/visualcube.php?bg=t&fmt=svg&size=50&view=plan&case=x%27RU%27R%27DRUR%27D%27RUR%27DRU%27R%27D%27x&arw=U0U6,U6U0,U2U8,U8U2">
+                                src="{{ visualcube }}&view=plan&ac=m&case=x'RU'R'DRUR'D'RUR'DRU'R'D'x&arw=U0U6,U6U0,U2U8,U8U2">
                         </td>
                         <td>2</td>
                         <td><math>{{ mfrac(1,36) }}</math></td>
@@ -508,7 +479,7 @@
         </button>
         <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                魔方流行的配色方案有兩種，世界標準配色(BOY Color Scheme)和日本配色(BYO Color
+                魔方流行的配色有兩種，標準配色(BOY Color Scheme)和日本配色(BYO Color
                 Scheme)。不同之處是<strong class="b">藍</strong><strong class="y">黄</strong>顏色互換，日本配色通常以<strong
                     class="b">藍色</strong>為底，而標準配色則以<strong class="w">白色</strong>為底。
                 <br>魔方的顏色是基於CMYK的減色模式，在任一面中加入/減去<strong class="y">黄色</strong>，就能得到它相對的顏色。

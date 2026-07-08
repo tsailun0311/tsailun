@@ -268,6 +268,7 @@ align=0
 textsize=15
 yz=1
 repeat=0;
+doubleSpeed=Speed*1.25
 ```
 
 ## 11.drawMoveTextFunc 更改當前步驟圓角
