@@ -446,7 +446,7 @@ function AnimCube2(params) {
       (textHeight = g);
     ((e = getParameter("fonttype")),
     (outlined = null == e || "1" == e),
-    (outlined = false),
+    (outlined = true),
     (metric = 0),
     null != (e = getParameter("metric")) &&
       ("1" == e
@@ -1533,14 +1533,15 @@ function AnimCube2(params) {
     textOffset = [];
   function drawString(e, t, r, o) {
     if (outlined) {
-      e.fillStyle = "black";
+      e.fillStyle = "#e7e5e3";
       for (var a = 0; a < textOffset.length; a += 2)
         e.fillText(t, r + textOffset[a], o + textOffset[a + 1]);
-      e.fillStyle = "white";
+      e.fillStyle = textColor;
     } else e.fillStyle = textColor;
     e.fillText(t, r, o);
   }
   function drawMoveTextFunc(e, t) {
+    var oldColor;
     var r = 0 == movePos ? arrayMovePos(move[curMove], movePos) : movePos,
       o = moveTextFunc(move[curMove], 0, r),
       a = turnTextFunc(move[curMove], r),
@@ -1555,29 +1556,12 @@ function AnimCube2(params) {
     (c + n + s + l > width &&
       ((c = Math.min(1, width / 2 - n - s / 2)),
       (c = Math.max(c, width - n - s - l - 2))),
-      s > 0 &&
-        ((e.fillStyle = hlColor),
-        (e.lineWidth = 2),
-        (e.strokeStyle = "black"),
-        e.beginPath(),
-        utextHeight <= 14
-          ? e.roundRect(
-              c + n - 1,
-              height - progressHeight - textHeight - Math.floor(4 * dpr),
-              s + 2,
-              textHeight + Math.floor(3 * dpr),
-              dpr * 3,
-            )
-          : e.roundRect(
-              c + n - 1,
-              height - progressHeight - textHeight - Math.floor(2 * dpr),
-              s + 2,
-              textHeight + Math.floor(dpr),
-              dpr * 3,
-            ),
-        e.fill()),
       n > 0 && drawString(e, o, c, t),
-      s > 0 && drawString(e, a, c + n, t),
+      s > 0 &&
+        ((oldColor = textColor),
+        (textColor = "#c62828"),
+        drawString(e, a, c + n, t),
+        (textColor = oldColor)),
       l > 0 && drawString(e, i, c + n + s, t));
   }
   function selectButton(e, t) {

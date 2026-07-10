@@ -580,7 +580,7 @@ function AnimCube5(params) {
     if (param == null || "1" == param) outlined = true;
     else outlined = false;
     // metric
-    outlined = false;
+    outlined = true;
     metric = 0;
     param = getParameter("metric");
     if (param != null) {
@@ -1944,8 +1944,6 @@ function AnimCube5(params) {
           w,
           textHeight,
         );
-        // drawString(graphics, infoText[curInfoText], (width-w)/2+dpr, adjTextHeight());
-        // drawString(graphics, infoText[curInfoText], outlined ? dpr : 0, adjTextHeight());
       }
     }
     graphics.restore();
@@ -1955,7 +1953,6 @@ function AnimCube5(params) {
   } // paint()
 
   function wrapText(context, text, x, y, maxWidth, lineHeight) {
-    // source: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
     var words = text.split(" ");
     var line = "";
     for (var n = 0; n < words.length; n++) {
@@ -1974,18 +1971,14 @@ function AnimCube5(params) {
   }
 
   function adjTextHeight() {
-    // size 14 font has enough padding for the top margin, smaller fonts
-    // need space added so y value (as input to drawString) is increased
     if (utextHeight < 10) return Math.floor(10 * dpr);
     else if (utextHeight < 12) return Math.floor(12 * dpr);
     else if (utextHeight < 14) return Math.floor(14 * dpr);
     else return textHeight;
   }
 
-  // polygon co-ordinates to fill (cube faces or facelets)
   var fillX = [];
   var fillY = [];
-  // projected vertex co-ordinates (to screen)
   var coordsX = [];
   var coordsY = [];
   var cooX = [[], [], [], [], [], []];
@@ -2427,10 +2420,10 @@ function AnimCube5(params) {
 
   function drawString(g, s, x, y) {
     if (outlined) {
-      g.fillStyle = "black";
+      g.fillStyle = "#e7e5e3";
       for (var i = 0; i < textOffset.length; i += 2)
         g.fillText(s, x + textOffset[i], y + textOffset[i + 1]);
-      g.fillStyle = "white";
+      g.fillStyle = textColor;
     } else g.fillStyle = textColor;
     g.fillText(s, x, y);
   }
@@ -2452,32 +2445,13 @@ function AnimCube5(params) {
       x = Math.min(1, width / 2 - w1 - w2 / 2);
       x = Math.max(x, width - w1 - w2 - w3 - 2);
     }
-    if (w2 > 0) {
-      g.fillStyle = hlColor;
-      g.lineWidth = 2;
-      g.strokeStyle = "black";
-      g.beginPath();
-      if (utextHeight <= 14)
-        // make rectangle taller for smaller fonts
-        g.roundRect(
-          x + w1 - 1,
-          height - progressHeight - textHeight - Math.floor(dpr * 4),
-          w2 + 2,
-          textHeight + Math.floor(dpr * 3),
-          dpr * 3,
-        );
-      else
-        g.roundRect(
-          x + w1 - 1,
-          height - progressHeight - textHeight - Math.floor(dpr * 2),
-          w2 + 2,
-          textHeight + Math.floor(dpr),
-          dpr * 3,
-        );
-      g.fill();
-    }
     if (w1 > 0) drawString(g, s1, x, y);
-    if (w2 > 0) drawString(g, s2, x + w1, y);
+    if (w2 > 0) {
+      var oldColor = textColor;
+      textColor = "#c62828";
+      drawString(g, s2, x + w1, y);
+      textColor = oldColor;
+    }
     if (w3 > 0) drawString(g, s3, x + w1 + w2, y);
   }
 

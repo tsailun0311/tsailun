@@ -41,7 +41,7 @@
         {% block content %}{% endblock %}
     </div>
     <script>
-        $(document).ready(function () {
+        $(window).on("load", function () {
             $(".loading-wrapper").fadeOut(500);
         });
         $(function () {

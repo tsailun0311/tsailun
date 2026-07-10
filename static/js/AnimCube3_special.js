@@ -567,7 +567,7 @@ function AnimCube3(params) {
     param = getParameter("fonttype");
     if (param == null || "1" == param) outlined = true;
     else outlined = false;
-    outlined = false;
+    outlined = true;
     // metric
     metric = 0;
     param = getParameter("metric");
@@ -2122,10 +2122,10 @@ function AnimCube3(params) {
 
   function drawString(g, s, x, y) {
     if (outlined) {
-      g.fillStyle = "black";
+      g.fillStyle = "#e7e5e3";
       for (var i = 0; i < textOffset.length; i += 2)
         g.fillText(s, x + textOffset[i], y + textOffset[i + 1]);
-      g.fillStyle = "white";
+      g.fillStyle = textColor;
     } else g.fillStyle = textColor;
     g.fillText(s, x, y);
   }
@@ -2147,32 +2147,13 @@ function AnimCube3(params) {
       x = Math.min(1, width / 2 - w1 - w2 / 2);
       x = Math.max(x, width - w1 - w2 - w3 - 2);
     }
-    if (w2 > 0) {
-      g.fillStyle = hlColor;
-      g.lineWidth = 2;
-      g.strokeStyle = "black";
-      g.beginPath();
-      if (utextHeight <= 14)
-        // make rectangle taller for smaller fonts
-        g.roundRect(
-          x + w1 - 1,
-          height - progressHeight - textHeight - Math.floor(dpr * 4),
-          w2 + 2,
-          textHeight + Math.floor(dpr * 3),
-          dpr * 3,
-        );
-      else
-        g.roundRect(
-          x + w1 - 1,
-          height - progressHeight - textHeight - Math.floor(dpr * 2),
-          w2 + 2,
-          textHeight + Math.floor(dpr),
-          dpr * 3,
-        );
-      g.fill();
-    }
     if (w1 > 0) drawString(g, s1, x, y);
-    if (w2 > 0) drawString(g, s2, x + w1, y);
+    if (w2 > 0) {
+      var oldColor = textColor;
+      textColor = "#c62828";
+      drawString(g, s2, x + w1, y);
+      textColor = oldColor;
+    }
     if (w3 > 0) drawString(g, s3, x + w1 + w2, y);
   }
 

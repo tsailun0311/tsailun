@@ -260,7 +260,7 @@ troughcolor=b7ccdd
 scale=1
 hint=3
 movetext=5
-fonttype=0
+fonttype=1
 colorscheme=ywrobg
 initrevmove=#
 position=lluuu
@@ -304,27 +304,7 @@ if (w2 > 0) {
 
 [照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/florian.html) 在 getCorners 函數上面新增 3 參數 2 函數，及更改 3 處地方(搜尋 supercube)
 
-# Animcubejs_special
-
-## 1.init 增加
-
-```js
-startAnimation(buttonAction[6]);
-```
-
-## 13.button 更改
-
-```js
-if (buttonPressed == 3) {
-  if (movePos == move[curMove].length) clear();
-  if (!animating)
-    // special feature
-    startAnimation(0);
-  else stopAnimation();
-}
-```
-
-## 14.supercube 背景色更改
+## 13.supercube 背景色更改
 
 ```js
 for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
@@ -353,5 +333,66 @@ for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
       drawFlorian(graphics, fillX, fillY, colors[cube[i][p * 3 + q]], p, q, 0);
     }
   }
+}
+```
+
+## 14.fonttype 字改造形改色
+
+```js
+function drawString(g, s, x, y) {
+  if (outlined) {
+    g.fillStyle = "#e7e5e3";
+    for (var i = 0; i < textOffset.length; i += 2)
+      g.fillText(s, x + textOffset[i], y + textOffset[i + 1]);
+    g.fillStyle = textColor;
+  } else g.fillStyle = textColor;
+  g.fillText(s, x, y);
+}
+
+function drawMoveTextFunc(g, y) {
+  var pos = movePos == 0 ? arrayMovePos(move[curMove], movePos) : movePos;
+  var s1 = moveTextFunc(move[curMove], 0, pos);
+  var s2 = turnTextFunc(move[curMove], pos);
+  var s3 = moveTextFunc(move[curMove], pos + 1, move[curMove].length);
+  if (moveTextSpace) {
+    if (s2 == "") s1 = s1.substr(0, s1.length - 1);
+    if (s3 != "") s3 = " " + s3.substr(0, s3.length - 1);
+  }
+  var w1 = g.measureText(s1).width;
+  var w2 = g.measureText(s2).width;
+  var w3 = g.measureText(s3).width;
+  var x = 1;
+  if (x + w1 + w2 + w3 > width) {
+    x = Math.min(1, width / 2 - w1 - w2 / 2);
+    x = Math.max(x, width - w1 - w2 - w3 - 2);
+  }
+  if (w1 > 0) drawString(g, s1, x, y);
+  if (w2 > 0) {
+    var oldColor = textColor;
+    textColor = "#c62828";
+    drawString(g, s2, x + w1, y);
+    textColor = oldColor;
+  }
+  if (w3 > 0) drawString(g, s3, x + w1 + w2, y);
+}
+```
+
+# Animcubejs_special
+
+## 1.init 增加
+
+```js
+startAnimation(buttonAction[6]);
+```
+
+## 2.button 更改
+
+```js
+if (buttonPressed == 3) {
+  if (movePos == move[curMove].length) clear();
+  if (!animating)
+    // special feature
+    startAnimation(0);
+  else stopAnimation();
 }
 ```
