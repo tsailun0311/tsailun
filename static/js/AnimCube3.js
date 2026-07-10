@@ -1822,13 +1822,6 @@ function AnimCube3(params) {
                   fillY[j] = Math.floor(fillY[j] - y);
                 }
                 if (superCube == true) {
-                  /* commenting out the code that draws the facelet background
-                  fillPolygon(graphics, fillX, fillY, "#fdfdfd");
-                  if (hintBorder)
-                    drawPolygon(graphics, fillX, fillY, darker("#fdfdfd"));
-                  else
-                    drawPolygon(graphics, fillX, fillY, "#fdfdfd");
-                  */
                   drawSuperArrow(
                     graphics,
                     fillX,

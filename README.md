@@ -141,7 +141,7 @@ if (buttonBar == 1) {
 var buttonAction = [-1, 3, 2, -1, 0, 2, 4, -1];
 ```
 
-## 7.drawButton 更改按鈕造型
+## 7.drawButton 更改按鈕圖案
 
 更改
 
@@ -207,7 +207,7 @@ function drawRect(g, x, y, width, height) {
 
 更改
 
-````js
+```js
 colors[4] = rgbToHex(196, 196, 196); // 4 - white grey
 colors[5] = rgbToHex(196, 196, 0); // 5 - yellow grey
 colors[6] = rgbToHex(196, 127, 0); // 6 - orange grey
@@ -221,8 +221,10 @@ colors[13] = "red"; // R - red
 colors[14] = "#0d0"; // G - green
 colors[15] = "#07f"; // B - blue
 colors[16] = rgbToHex(138, 138, 138); // L - light gray
+colors[17] = rgbToHex(80, 80, 80); // D - dark gray
+```
 
-## 9.darker 更改 highlight
+## 9.darker 更改反灰
 
 更改
 
@@ -237,9 +239,9 @@ function darker(s) {
   b = Math.floor(b * 0.8);
   return rgbToHex(r, g, b);
 }
-````
+```
 
-## 9.paint 更改公式粗體
+## 10.paint 更改公式粗體
 
 更改
 
@@ -247,7 +249,7 @@ function darker(s) {
 graphics.font = textHeight + "px helvetica";
 ```
 
-## 10.更改基本參數
+## 11.更改基本參數
 
 ```js
 buttonbar=1
@@ -269,35 +271,6 @@ textsize=15
 yz=1
 repeat=0;
 doubleSpeed=Speed*1.25
-```
-
-## 11.drawMoveTextFunc 更改當前步驟圓角
-
-```js
-if (w2 > 0) {
-  g.fillStyle = hlColor;
-  g.lineWidth = 2;
-  g.strokeStyle = "black";
-  g.beginPath();
-  if (utextHeight <= 14)
-    // make rectangle taller for smaller fonts
-    g.roundRect(
-      x + w1 - 1,
-      height - progressHeight - textHeight - Math.floor(dpr * 4),
-      w2 + 2,
-      textHeight + Math.floor(dpr * 3),
-      dpr * 3,
-    );
-  else
-    g.roundRect(
-      x + w1 - 1,
-      height - progressHeight - textHeight - Math.floor(dpr * 2),
-      w2 + 2,
-      textHeight + Math.floor(dpr),
-      dpr * 3,
-    );
-  g.fill();
-}
 ```
 
 ## 12.drawFlorian 新增容錯角畫面
@@ -336,7 +309,7 @@ for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
 }
 ```
 
-## 14.fonttype 字改造形改色
+## 14.fonttype 字改背景色邊框及紅色當前步驟
 
 ```js
 function drawString(g, s, x, y) {
