@@ -22,7 +22,7 @@
 
 <body>
     <div class="loading-wrapper">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="d-flex justify-content-center align-items-center h-100">
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -37,7 +37,7 @@
             {% endfor %}
         </ul>
     </div>
-    <div id="mainer">
+    <div id="mainer" class="container">
         {% block content %}{% endblock %}
     </div>
     <script>

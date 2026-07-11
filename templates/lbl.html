@@ -5,7 +5,7 @@
 {% block content %}
 {% set menu2 = ["底層邊塊", "底層角塊", "中間層", "黃色邊塊", "黃色角塊", "頂層角塊","頂層邊塊"] %}
 <div class="container">
-	<div class="row" style="padding: 0 .5rem;">
+	<div class="row px-2">
 		{% for i in range(menu2|length) %}
 		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
 			<div class="menutable">
@@ -20,18 +20,13 @@
 	<li>1.層解法(Layer By Layer)：一層一層解，魔方沒辦法一面一面解。想像成26塊方塊，而不是54個顏色。</li>
 	<li>2.怎麼轉中心塊都不會亂，所以其實只要解<strong>20塊</strong>方塊！任何步驟頂層皆可自由旋轉。</li>
 	<li>3.對魔方構造還不熟可以<a href="/?open=1#accordionExample">點擊此處</a>回去複習。</li>
-	<li>4.顏色：<strong
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(255, 0, 255) 60%)">舉</strong><strong
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(255, 160, 192) 60%)">一</strong>～<strong
-			class="r">就</strong><strong class="b">要</strong><strong class="o">反</strong><strong class="g">三</strong>、
-		<strong
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(80, 80, 80) 60%)">已完成</strong>、<strong
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(138, 138, 138) 60%)">不理它</strong>、<strong
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(0, 255, 255) 60%)">特殊情況</strong>。
+	<li>4.顏色：<strong class="m">舉</strong><strong class="p">一</strong>～<strong class="r">就</strong><strong
+			class="b">要</strong><strong class="o">反</strong><strong class="g">三</strong>、
+		<strong class="d">已完成</strong>、<strong class="l">不理它</strong>、<strong class="c">特殊情況</strong>。
 	</li>
 </ul>
 <p><span class="big" id="c1">STEP1.底層邊塊</span></p>
-<p style="margin-left: 2vw;"><strong>無須公式</strong>，靠空間概念。</p>
+<p class="mx-2"><strong>無須公式</strong>，靠空間概念。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">觀察這4塊
@@ -56,9 +51,9 @@
 		</div>
 	</div>
 </div>
-<p style="margin-left: 2vw;">如果真的沒想法，可以參考<a href="/cross">CFOP CROSS</a>。</p>
+<p class="mx-2">如果真的沒想法，可以參考<a href="/cross">CFOP CROSS</a>。</p>
 <p><span class="big" id="c2">STEP2.底層角塊</span></p>
-<p style="margin-left: 2vw;"><strong>從這步開始白色面固定朝下</strong>。</p>
+<p class="mx-2"><strong>從這步開始白色面固定朝下</strong>。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">觀察這4塊<br>&nbsp;
@@ -154,9 +149,7 @@
 	</div>
 </div>
 <p><span class="big" id="c5">STEP5.黃色角塊</span></p>
-<p style="margin-left: 2vw;">
-	利用<strong>換三角</strong>持續試公式直到完成目標。
-</p>
+<p class="mx-2">利用<strong>換三角</strong>持續試公式直到完成目標。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">觀察這4塊面
@@ -182,7 +175,7 @@
 	</div>
 </div>
 <p><span class="big" id="c6">STEP6.頂層角塊</span></p>
-<p style="margin-left: 2vw;">只有兩種樣式：<strong>有眼</strong>和<strong>無眼</strong>。</p>
+<p class="mx-2">只有兩種樣式：<strong>有眼</strong>和<strong>無眼</strong>。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">觀察這4塊
@@ -213,7 +206,7 @@
 	</div>
 </div>
 <p><span class="big" id="c7">STEP7.頂層邊塊</span></p>
-<p style="margin-left: 2vw;">利用<strong>換三邊</strong>持續試公式直到完成目標。</p>
+<p class="mx-2">利用<strong>換三邊</strong>持續試公式直到完成目標。</p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		<div class="col">觀察這4塊
