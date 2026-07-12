@@ -14,15 +14,21 @@ body {
     box-sizing: border-box;
 }
 
+:root {
+    --bs-primary-rgb: 82, 109, 152;
+    --bs-info-rgb: 183, 204, 221;
+    --bs-warning-rgb: 231, 229, 227;
+}
+
 /**************** main styles ***********************************************************************************************/
 #mainer {
-    font-size: 15px;
+    font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
     background-color: @b3;
     padding: 1rem 0 50px 0;
 
     ul {
         list-style-type: none;
-        padding: 0 1rem;
+        margin: 0;
     }
 
     table {
@@ -57,7 +63,7 @@ body {
 /**************** Q&A styles ***********************************************************************************************/
 .accordion-item {
     margin: 0 auto .25rem;
-    width: 92%;
+    width: 96%;
     background-color: @b3;
     border: none;
 }
@@ -66,7 +72,7 @@ body {
     background-color: @b2;
     border-radius: 10px;
     color: @b1;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
 }
 
 .accordion-button:not(.collapsed) {
@@ -82,7 +88,7 @@ body {
 }
 
 .accordion-button::after {
-    --bs-accordion-btn-icon-width: 15px;
+    --bs-accordion-btn-icon-width: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23526d98' stroke-linecap='round' stroke-linejoin='round'><path d='M2 5L8 11L14 5'/></svg>");
 }
 
@@ -102,6 +108,7 @@ body {
 
 a {
     text-decoration: none !important;
+    white-space: nowrap;
 
     &:visited,
     &:link {
@@ -115,7 +122,7 @@ a {
 }
 
 p {
-    margin-top: 1rem;
+    margin: .5rem 0;
 }
 
 .big {
@@ -170,6 +177,12 @@ strong {
     height: 50vw;
     width: 100%;
     margin: 0 auto 5px auto;
+}
+
+.progress {
+    height: 22px;
+    width: 85%;
+    margin: 0 auto;
 }
 
 /**************** load styles ***********************************************************************************************/

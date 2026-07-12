@@ -2350,7 +2350,7 @@ function AnimCube4(params) {
     else ((a = e.touches[0].clientX), (i = e.touches[0].clientY));
     a < r ||
       a > r + width / dpr ||
-      i < o + (height - progressHeight) / dpr ||
+      i < o + height / dpr ||
       i > o + (height + buttonHeight) / dpr ||
       (e.preventDefault(),
       (mouseIsDown = !0),

@@ -2813,7 +2813,7 @@ function AnimCube3(params) {
     if (
       x < left ||
       x > left + width / dpr ||
-      y < top + (height - progressHeight) / dpr ||
+      y < top + height / dpr ||
       y > top + (height + (buttonBar == 1 ? buttonHeight : 0)) / dpr
     )
       return;

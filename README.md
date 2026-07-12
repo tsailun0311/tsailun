@@ -23,7 +23,7 @@ document.addEventListener("touchend", mouseup, { passive: false }),
 ```js
 a < r ||
 a > r + width / dpr ||
-i < o + (height - progressHeight) / dpr ||
+i < o + height / dpr ||
 i > o + (height + buttonHeight) / dpr ||
 ```
 

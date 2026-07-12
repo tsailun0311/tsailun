@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set menu2 = ["特殊造型", "2階", "4階", "高階"] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube2.js') }}" type="text/javascript"></script>
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
@@ -6,10 +7,21 @@
 <script src="{{ url_for('static', filename='js/AnimCube5.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
-<p><span class="big">特殊造型旋轉中心</span></p>
+<div class="container">
+    <div class="row px-2">
+        {% for i in range(menu2|length) %}
+        <div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
+            <div class="menutable">
+                <a href="#c{{loop.index}}">{{menu2[i]}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<p><span class="big" id="c1">特殊造型</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-        <div class="col">單一面中心旋轉180度
+        <div class="col">單面中心旋轉180度
             <div class="cube">
                 <script>AnimCube3("hint=0&supercube=1&move=Ra U2 Ra' U Ra U2 Ra' U")</script>
             </div>
@@ -21,7 +33,7 @@
         </div>
     </div>
 </div>
-<p><span class="big">二階速解Ortega</span></p>
+<p><span class="big" id="c2">二階速解Ortega</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">
@@ -36,7 +48,7 @@
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP1.底面</strong></p>
+<p class="mx-2"><i class="bi bi-1-square-fill pe-1"></i>底面</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">
@@ -56,7 +68,7 @@
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP2.OLL</strong></p>
+<p class="mx-2"><i class="bi bi-2-square-fill pe-1"></i>OLL</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">　
@@ -96,7 +108,7 @@
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP3.PBL</strong></p>
+<p class="mx-2"><i class="bi bi-3-square-fill pe-1"></i>PBL</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">對角
@@ -131,7 +143,7 @@
         </div>
     </div>
 </div>
-<p><span class="big">四階</span></p>
+<p><span class="big" id="c3">四階</span></p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">
@@ -146,7 +158,7 @@
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP1.照顏色相對位置組中心(最後2組)</strong></p>
+<p class="mx-2"><i class="bi bi-1-square-fill pe-1"></i>組中心(最後2組)<i class="bi bi-lightbulb ms-2"></i>照顏色相對位置</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">
@@ -161,7 +173,7 @@
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP2.組邊塊(最後2組)</strong></p>
+<p class="mx-2"><i class="bi bi-2-square-fill pe-1"></i>組邊塊(最後2組)</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">斜角變對角
@@ -171,12 +183,12 @@
         </div>
         <div class="col">對角
             <div class="cube">
-                <script>AnimCube4("move=2D R U R' F R' F' R 2D'&facelets=lddld55dd55dlddllddld44dd44dlddllrrld77dd77dlrrllddld66dd66dlddllddlb99db99dlddllggld88dd88dlddl")</script>
+                <script>AnimCube4("move=d R U R' F R' F' R d'&facelets=lddld55dd55dlddllddld44dd44dlddllrrld77dd77dlrrllddld66dd66dlddllddlb99db99dlddllggld88dd88dlddl")</script>
             </div>
         </div>
     </div>
 </div>
-<p class="mx-2"><strong>STEP3.特殊狀況</strong></p>
+<p class="mx-2"><i class="bi bi-3-square-fill pe-1"></i>特殊狀況</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col">單邊翻轉
@@ -191,8 +203,8 @@
         </div>
     </div>
 </div>
-<p><span class="big">五階以上</span></p>
-<p class="mx-2"><strong>組中心(最後2組)：通用公式</strong></p>
+<p><span class="big" id="c4">高階</span></p>
+<p class="mx-2"><i class="bi bi-1-square-fill pe-1"></i>組中心<i class="bi bi-lightbulb ms-2"></i>通用公式</p>
 <div class="container-fluid">
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
         <div class="col text-center">Commutator
@@ -212,6 +224,26 @@
         <div class="col">A'B'：復原AB
             <div class="cube">
                 <script>AnimCube5("move=r' U' l U&facelets=llllll555ll555ll555llllllllllllwwwll444llwwwllllllllllll777ll777ll777llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
+            </div>
+        </div>
+        <div class="col">EX<i class="bi bi-1-circle"></i>
+            <div class="cube">
+                <script>AnimCube5("move=M' U' l' U M U' l U&facelets=llllll555ll555ll5y5llllllllllll444ll444ll444llllllllllll7r7llr77ll777llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
+            </div>
+        </div>
+        <div class="col">EX<i class="bi bi-2-circle"></i>
+            <div class="cube">
+                <script>AnimCube5("move=r U' M' U r' U' M U&facelets=llllll555ll55yll555llllllllllll444ll444ll444llllllllllll777llr77ll7r7llllllllllll666ll666ll666llllllllllll999ll999ll999llllllllllll888ll888ll888llllll")</script>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="mx-2"><i class="bi bi-1-square-fill pe-1"></i>組邊塊<i class="bi bi-lightbulb ms-2"></i>剩一邊就是單邊翻轉</p>
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="col">
+            <div class="cube">
+                <script>AnimCube5("move=r2 B2 U2 l U2 r' U2' r U2 F2 r F2 l' B2 r2&facelets=lyyyld555dd555dd555dldddlldddld444dd444dd444dldddlldddlr777dr777dr777dldddlldddld666dd666dd666dldddlldddld999dd999dd999dldddlldddld888dd888dd888dldddl")</script>
             </div>
         </div>
     </div>

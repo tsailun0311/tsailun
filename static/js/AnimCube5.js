@@ -3114,7 +3114,7 @@ function AnimCube5(params) {
     if (
       x < left ||
       x > left + width / dpr ||
-      y < top + (height - progressHeight) / dpr ||
+      y < top + height / dpr ||
       y > top + (height + buttonHeight) / dpr
     )
       return;
@@ -3327,19 +3327,6 @@ function AnimCube5(params) {
         searchParams[line[0]] = decodeURIComponent(line[1].trim());
     }
   }
-
-  function removeListeners() {
-    stopAnimation();
-    document.removeEventListener("touchstart", mousedown);
-    document.removeEventListener("touchmove", mousemove);
-    document.removeEventListener("touchend", mouseup);
-    document.removeEventListener("mousedown", mousedown);
-    document.removeEventListener("mousemove", mousemove);
-    document.removeEventListener("mouseup", mouseup);
-    document.removeEventListener("contextmenu", contextmenu);
-    window.removeEventListener("resize", resize);
-  }
-
   function init0() {
     canvas = document.createElement("canvas");
     if (typeof params != "undefined") parseSearchParams();
