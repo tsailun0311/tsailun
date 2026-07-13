@@ -7,6 +7,9 @@ body {
     height: 100%;
     margin: 0;
     background-color: @b3;
+    padding-top: env(safe-area-inset-top, 0);
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
 }
 
 * {
@@ -17,7 +20,7 @@ body {
 :root {
     --bs-primary-rgb: 82, 109, 152;
     --bs-info-rgb: 183, 204, 221;
-    --bs-warning-rgb: 231, 229, 227;
+    --bs-border-radius: 5px
 }
 
 /**************** main styles ***********************************************************************************************/
@@ -183,6 +186,15 @@ strong {
     height: 22px;
     width: 85%;
     margin: 0 auto;
+    --bs-progress-bg: @b3;
+}
+
+.progress-bar {
+    --bs-progress-bar-color: @b3;
+
+    &.bg-info {
+        --bs-progress-bar-color: @b1;
+    }
 }
 
 /**************** load styles ***********************************************************************************************/
