@@ -18,7 +18,7 @@ document.addEventListener("touchend", mouseup, { passive: false }),
 
 以及刪掉 mousemove 函式
 
-更改 mousedown 函式修正漢堡選單無法點擊的問題
+更改 mousedown 函式解決觸控無法滑動的問題
 
 ```js
 a < r ||
@@ -33,9 +33,9 @@ i > o + (height + buttonHeight) / dpr ||
 
 ```js
 for (var r = 0, o = 0; o < 4; o++) {
-  var a = (width - r) / (4 - o);
-  if (e >= r && e < r + a && t >= height && t < height + buttonHeight) return o;
-  r += a;
+	var a = (width - r) / (4 - o);
+	if (e >= r && e < r + a && t >= height && t < height + buttonHeight) return o;
+	r += a;
 }
 ```
 
@@ -46,41 +46,41 @@ for (var r = 0, o = 0; o < 4; o++) {
 ```js
 // draw progress bar
 if (progressHeight > 0) {
-  graphics.lineWidth = lineWidth;
-  graphics.strokeStyle = "#526d98";
+	graphics.lineWidth = lineWidth;
+	graphics.strokeStyle = "#526d98";
 
-  var progress =
-    ((width - 2) * realMovePos(move[curMove], movePos)) /
-    realMoveLength(move[curMove]);
+	var progress =
+		((width - 2) * realMovePos(move[curMove], movePos)) /
+		realMoveLength(move[curMove]);
 
-  // trough
-  graphics.fillStyle = sliderBgColor;
-  graphics.fillRect(
-    dph,
-    height - progressHeight - dph,
-    width - dpr,
-    progressHeight - dpr,
-  );
+	// trough
+	graphics.fillStyle = sliderBgColor;
+	graphics.fillRect(
+		dph,
+		height - progressHeight - dph,
+		width - dpr,
+		progressHeight - dpr,
+	);
 
-  // slider
-  graphics.fillStyle = sliderColor;
-  graphics.fillRect(
-    dph,
-    height - progressHeight - dph,
-    progress,
-    progressHeight - dpr,
-  );
+	// slider
+	graphics.fillStyle = sliderColor;
+	graphics.fillRect(
+		dph,
+		height - progressHeight - dph,
+		progress,
+		progressHeight - dpr,
+	);
 
-  // border
-  graphics.beginPath();
-  graphics.roundRect(
-    dph,
-    height - progressHeight - dph,
-    width - dpr,
-    progressHeight - dpr,
-    2 * dpr,
-  );
-  graphics.stroke();
+	// border
+	graphics.beginPath();
+	graphics.roundRect(
+		dph,
+		height - progressHeight - dph,
+		width - dpr,
+		progressHeight - dpr,
+		2 * dpr,
+	);
+	graphics.stroke();
 }
 ```
 
@@ -90,35 +90,35 @@ if (progressHeight > 0) {
 
 ```js
 if (buttonBar == 1) {
-  // full buttonbar
-  var buttonX = 0;
-  for (var i = 0; i < 4; i++) {
-    var buttonWidth = Math.floor((width - buttonX) / (4 - i));
-    if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
-    else g.fillStyle = buttonBgColor;
-    g.lineWidth = lineWidth;
-    g.strokeStyle = "#526d98";
-    g.beginPath();
-    g.roundRect(
-      buttonX + dph * (1 + i),
-      height + dpr,
-      buttonWidth - dph * 5,
-      buttonHeight - dph * 3,
-      dpr * 5,
-    );
-    g.fill();
-    g.stroke();
-    g.strokeStyle = "black";
-    drawButton(
-      g,
-      i,
-      buttonX + buttonWidth / 2,
-      height + buttonHeight / 2 - adj,
-    );
-    buttonX += buttonWidth;
-  }
-  drawButtons = false;
-  return;
+	// full buttonbar
+	var buttonX = 0;
+	for (var i = 0; i < 4; i++) {
+		var buttonWidth = Math.floor((width - buttonX) / (4 - i));
+		if (buttonPressed == i) g.fillStyle = darker(buttonBgColor);
+		else g.fillStyle = buttonBgColor;
+		g.lineWidth = lineWidth;
+		g.strokeStyle = "#526d98";
+		g.beginPath();
+		g.roundRect(
+			buttonX + dph * (1 + i),
+			height + dpr,
+			buttonWidth - dph * 5,
+			buttonHeight - dph * 3,
+			dpr * 5,
+		);
+		g.fill();
+		g.stroke();
+		g.strokeStyle = "black";
+		drawButton(
+			g,
+			i,
+			buttonX + buttonWidth / 2,
+			height + buttonHeight / 2 - adj,
+		);
+		buttonX += buttonWidth;
+	}
+	drawButtons = false;
+	return;
 }
 ```
 
@@ -147,59 +147,59 @@ var buttonAction = [-1, 3, 2, -1, 0, 2, 4, -1];
 
 ```js
 function drawButton(g, i, x, y) {
-  x = Math.floor(x);
-  y = Math.floor(y);
-  switch (i) {
-    case 0: // rewind
-      drawArrow2(g, x - ds[1], y + ds[1], -1);
-      drawArrow2(g, x + ds[5], y + ds[1], -1);
-      break;
-    case 1: // reverse step
-      drawArrow2(g, x + ds[2], y + ds[1], -1);
-      break;
-    case 2: // reverse play
-      drawArrow2(g, x - ds[3], y + ds[1], 1);
-      break;
-    case 3: // stop / mirror
-      if (animating) drawRect(g, x - ds[4], y - ds[3], ds[7], ds[7]);
-      else {
-        drawArrow1(g, x - ds[2], y + ds[1], 1);
-      }
-      break;
-  }
+	x = Math.floor(x);
+	y = Math.floor(y);
+	switch (i) {
+		case 0: // rewind
+			drawArrow2(g, x - ds[1], y + ds[1], -1);
+			drawArrow2(g, x + ds[5], y + ds[1], -1);
+			break;
+		case 1: // reverse step
+			drawArrow2(g, x + ds[2], y + ds[1], -1);
+			break;
+		case 2: // reverse play
+			drawArrow2(g, x - ds[3], y + ds[1], 1);
+			break;
+		case 3: // stop / mirror
+			if (animating) drawRect(g, x - ds[4], y - ds[3], ds[7], ds[7]);
+			else {
+				drawArrow1(g, x - ds[2], y + ds[1], 1);
+			}
+			break;
+	}
 }
 function drawArrow(g, x, y, dir) {
-  var d5 = 5 * dpr;
-  var fillX = [];
-  var fillY = [];
-  fillX[0] = x;
-  fillX[1] = x + 6 * dpr * dir;
-  fillX[2] = x;
-  fillY[0] = y - d5;
-  fillY[1] = y;
-  fillY[2] = y + d5;
-  g.beginPath();
-  g.moveTo(fillX[0] + dph, fillY[0] + dph);
-  for (var i = 1; i < 3; i++) g.lineTo(fillX[i] + dph, fillY[i] + dph);
+	var d5 = 5 * dpr;
+	var fillX = [];
+	var fillY = [];
+	fillX[0] = x;
+	fillX[1] = x + 6 * dpr * dir;
+	fillX[2] = x;
+	fillY[0] = y - d5;
+	fillY[1] = y;
+	fillY[2] = y + d5;
+	g.beginPath();
+	g.moveTo(fillX[0] + dph, fillY[0] + dph);
+	for (var i = 1; i < 3; i++) g.lineTo(fillX[i] + dph, fillY[i] + dph);
 }
 function drawArrow1(g, x, y, dir) {
-  drawArrow(g, x, y, dir);
-  g.closePath();
-  g.fillStyle = "black";
-  g.fill();
+	drawArrow(g, x, y, dir);
+	g.closePath();
+	g.fillStyle = "black";
+	g.fill();
 }
 function drawArrow2(g, x, y, dir) {
-  drawArrow(g, x, y, dir);
-  g.strokeStyle = "black";
-  g.lineWidth = lineWidth;
-  g.stroke();
+	drawArrow(g, x, y, dir);
+	g.strokeStyle = "black";
+	g.lineWidth = lineWidth;
+	g.stroke();
 }
 function drawRect(g, x, y, width, height) {
-  g.lineWidth = lineWidth;
-  g.beginPath();
-  g.rect(x + dph, y + dph, width, height);
-  g.fillStyle = "black";
-  g.fill();
+	g.lineWidth = lineWidth;
+	g.beginPath();
+	g.rect(x + dph, y + dph, width, height);
+	g.fillStyle = "black";
+	g.fill();
 }
 ```
 
@@ -230,14 +230,14 @@ colors[17] = rgbToHex(80, 80, 80); // D - dark gray
 
 ```js
 function darker(s) {
-  if (s.substring(0, 1) != "#") s = colorToHex(s);
-  var r = parseInt(s.substring(1, 3), 16);
-  var g = parseInt(s.substring(3, 5), 16);
-  var b = parseInt(s.substring(5, 7), 16);
-  r = Math.floor(r * 0.8);
-  g = Math.floor(g * 0.8);
-  b = Math.floor(b * 0.8);
-  return rgbToHex(r, g, b);
+	if (s.substring(0, 1) != "#") s = colorToHex(s);
+	var r = parseInt(s.substring(1, 3), 16);
+	var g = parseInt(s.substring(3, 5), 16);
+	var b = parseInt(s.substring(5, 7), 16);
+	r = Math.floor(r * 0.8);
+	g = Math.floor(g * 0.8);
+	b = Math.floor(b * 0.8);
+	return rgbToHex(r, g, b);
 }
 ```
 
@@ -281,31 +281,31 @@ doubleSpeed=Speed*1.25
 
 ```js
 for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
-  for (var o = 0, q = blocks[i][0][0]; o < sideW; o++, q++) {
-    for (var j = 0; j < 4; j++)
-      getCorners(
-        i,
-        j,
-        fillX,
-        fillY,
-        q + border[j][0],
-        p + border[j][1],
-        mirrored,
-      );
-    if (superCube == true) {
-      drawFlorian(graphics, fillX, fillY, "#8a8a8a", p, q, 0); //這裡
-      drawSuperArrow(
-        graphics,
-        fillX,
-        fillY,
-        i,
-        scube[i][p * 3 + q],
-        colors[cube[i][p * 3 + q]],
-      );
-    } else {
-      drawFlorian(graphics, fillX, fillY, colors[cube[i][p * 3 + q]], p, q, 0);
-    }
-  }
+	for (var o = 0, q = blocks[i][0][0]; o < sideW; o++, q++) {
+		for (var j = 0; j < 4; j++)
+			getCorners(
+				i,
+				j,
+				fillX,
+				fillY,
+				q + border[j][0],
+				p + border[j][1],
+				mirrored,
+			);
+		if (superCube == true) {
+			drawFlorian(graphics, fillX, fillY, "#8a8a8a", p, q, 0); //這裡
+			drawSuperArrow(
+				graphics,
+				fillX,
+				fillY,
+				i,
+				scube[i][p * 3 + q],
+				colors[cube[i][p * 3 + q]],
+			);
+		} else {
+			drawFlorian(graphics, fillX, fillY, colors[cube[i][p * 3 + q]], p, q, 0);
+		}
+	}
 }
 ```
 
@@ -313,40 +313,40 @@ for (var n = 0, p = blocks[i][1][0]; n < sideH; n++, p++) {
 
 ```js
 function drawString(g, s, x, y) {
-  if (outlined) {
-    g.fillStyle = "#e7e5e3";
-    for (var i = 0; i < textOffset.length; i += 2)
-      g.fillText(s, x + textOffset[i], y + textOffset[i + 1]);
-    g.fillStyle = textColor;
-  } else g.fillStyle = textColor;
-  g.fillText(s, x, y);
+	if (outlined) {
+		g.fillStyle = "#e7e5e3";
+		for (var i = 0; i < textOffset.length; i += 2)
+			g.fillText(s, x + textOffset[i], y + textOffset[i + 1]);
+		g.fillStyle = textColor;
+	} else g.fillStyle = textColor;
+	g.fillText(s, x, y);
 }
 
 function drawMoveTextFunc(g, y) {
-  var pos = movePos == 0 ? arrayMovePos(move[curMove], movePos) : movePos;
-  var s1 = moveTextFunc(move[curMove], 0, pos);
-  var s2 = turnTextFunc(move[curMove], pos);
-  var s3 = moveTextFunc(move[curMove], pos + 1, move[curMove].length);
-  if (moveTextSpace) {
-    if (s2 == "") s1 = s1.substr(0, s1.length - 1);
-    if (s3 != "") s3 = " " + s3.substr(0, s3.length - 1);
-  }
-  var w1 = g.measureText(s1).width;
-  var w2 = g.measureText(s2).width;
-  var w3 = g.measureText(s3).width;
-  var x = 1;
-  if (x + w1 + w2 + w3 > width) {
-    x = Math.min(1, width / 2 - w1 - w2 / 2);
-    x = Math.max(x, width - w1 - w2 - w3 - 2);
-  }
-  if (w1 > 0) drawString(g, s1, x, y);
-  if (w2 > 0) {
-    var oldColor = textColor;
-    textColor = "#c62828";
-    drawString(g, s2, x + w1, y);
-    textColor = oldColor;
-  }
-  if (w3 > 0) drawString(g, s3, x + w1 + w2, y);
+	var pos = movePos == 0 ? arrayMovePos(move[curMove], movePos) : movePos;
+	var s1 = moveTextFunc(move[curMove], 0, pos);
+	var s2 = turnTextFunc(move[curMove], pos);
+	var s3 = moveTextFunc(move[curMove], pos + 1, move[curMove].length);
+	if (moveTextSpace) {
+		if (s2 == "") s1 = s1.substr(0, s1.length - 1);
+		if (s3 != "") s3 = " " + s3.substr(0, s3.length - 1);
+	}
+	var w1 = g.measureText(s1).width;
+	var w2 = g.measureText(s2).width;
+	var w3 = g.measureText(s3).width;
+	var x = 1;
+	if (x + w1 + w2 + w3 > width) {
+		x = Math.min(1, width / 2 - w1 - w2 / 2);
+		x = Math.max(x, width - w1 - w2 - w3 - 2);
+	}
+	if (w1 > 0) drawString(g, s1, x, y);
+	if (w2 > 0) {
+		var oldColor = textColor;
+		textColor = "#c62828";
+		drawString(g, s2, x + w1, y);
+		textColor = oldColor;
+	}
+	if (w3 > 0) drawString(g, s3, x + w1 + w2, y);
 }
 ```
 
@@ -362,10 +362,10 @@ startAnimation(buttonAction[6]);
 
 ```js
 if (buttonPressed == 3) {
-  if (movePos == move[curMove].length) clear();
-  if (!animating)
-    // special feature
-    startAnimation(0);
-  else stopAnimation();
+	if (movePos == move[curMove].length) clear();
+	if (!animating)
+		// special feature
+		startAnimation(0);
+	else stopAnimation();
 }
 ```
