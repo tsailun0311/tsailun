@@ -30,7 +30,7 @@
     </mrow>
 </mfrac>
 {%- endmacro %}
-<div class="cube">
+<div class="nocube">
     <script>AnimCube3("initrevmove=&hint=&speed=10&colorscheme=wygbor&move=R2 U' F2 U' F2 U' B2 D L2 D' B R2 U2 L2 F U Y Y Y Y Y Y Y Y&demo=#&buttonbar=0")</script>
 </div>
 <div class="accordion" id="accordionExample">
@@ -295,10 +295,11 @@
     <div class="accordion-item">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseThree">
-            三階魔方狀態數
+            魔方狀態數
         </button>
         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
+                3階：<br>
                 <math>
                     <mn> 8 </mn>
                     <mo> ! ×</mo>
@@ -331,7 +332,32 @@
                     {{ mfrac(1,2) }}
                     <mo>=</mo>
                 </math>
-                單角塊翻轉×單邊塊翻轉×雙邊塊互換
+                單角塊翻轉×單邊塊翻轉×雙邊塊互換<br><br>
+                2階：3,674,160<br>
+                4階：~
+                <math>
+                    <mn> 7.4 </mn>
+                    <mo> ×</mo>
+                    {{ msup(10,45) }}
+                </math>(~=地球水分子的0.13倍)<br>
+                5階：~
+                <math>
+                    <mn> 2.83 </mn>
+                    <mo> ×</mo>
+                    {{ msup(10,74) }}
+                </math>(~=宇宙所有鈾原子)<br>
+                6階：~
+                <math>
+                    <mn> 1.57 </mn>
+                    <mo> ×</mo>
+                    {{ msup(10,116) }}
+                </math><br>
+                7階：~
+                <math>
+                    <mn> 1.95 </mn>
+                    <mo> ×</mo>
+                    {{ msup(10,160) }}
+                </math>
             </div>
         </div>
     </div>
@@ -412,10 +438,12 @@
         </button>
         <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                二階：Pocket Rubik's Cube，直譯"口袋魔方"。<br>
+                二階：Pocket Cube，直譯"口袋方塊"。<br>
                 三階：Rubik's Cube，取自魯比克教授的名字。<br>
                 四階：Rubik's Revenge，直譯"魯比克的復仇"。<br>
-                五階：Professor's Cube，直譯"專家玩的方塊"。
+                五階：Professor's Cube，直譯"教授的方塊"。<br>
+                六階：Verdes' Cube，西文直譯"青春的方塊"。<br>
+                七階：V-Cube。
             </div>
         </div>
     </div>

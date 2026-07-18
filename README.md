@@ -253,7 +253,7 @@ graphics.font = textHeight + "px helvetica";
 
 ```js
 buttonbar=1
-buttonheight=22
+buttonheight=19
 borderwidth=8
 bgcolor=e7e5e3
 butbgcolor=b7ccdd
