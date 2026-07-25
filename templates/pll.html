@@ -1,39 +1,11 @@
 {% extends "base.html" %}
-{% set categories = [{"title": "剩邊","perms": [
-["Ua", "z' U L' U L U L U L' U' L' U2 z"],
-["Ub", "z U' R U' R' U' R' U' R U R U2' z'"],
-["H", "M2' U M2' U2 M2' U M2'"],
-["Z", "U2 R' U' R U' R U R U' R' U R U R2 U' R'"]]},
-{"title": "剩角","perms": [
-["Aa", "x' L' U L' D2 L U' L' D2 L2' x"],
-["Ab", "x' R U' R D2 R' U R D2 R2 x"],
-["E", "x' R U' R' D R U R' D' R U R' D R U' R' D' x"]]},
-{"title": "2 Pairs","perms": [
-["Ja", "R' U2 R U R' U2' L U' R U L'"],
-["Jb", "R U2 R' U' R U2 L' U R' U' L"],
-["Na", "R U R' U R U2 R' U' R U2 L' U R' U' L U' R U' R'"],
-["Nb", "R' U' R U' R' U2 R U R' U2' L U' R U L' U R' U R"]]},
-{"title": "鄰角對邊","perms": [
-["T", "R U R' U' R' F R2 U' R' U' R U R' F'"],
-["F", "R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"]]},
-{"title": "對角鄰邊","perms": [
-["V", "L' U R U' L U L' U R' U' L U2 R U2 R'"],
-["Y", "F R U' R' U' R U R' F' R U R' U' R' F R F'"]]},
-{"title": "鄰角鄰邊","perms": [
-["Ra", "R U' R' U' R U R D R' U' R D' R' U2 R' U'"],
-["Rb", "y' R' U2 R U2 R' F R U R' U' R' F' R2 U' y"]]},
-{"title": "雙環","perms": [
-["Ga", "R2 u R' U R' U' R u' R2 y' R' U R y"],
-["Gb", "R' U' R y R2 u R' U R U' R u' R2 y'"],
-["Gc", "R2 u' R U' R U R' u R2 y R U' R' y'"],
-["Gd", "R U R' y' R2 u' R U' R' U R' u R2 y"]]}] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container">
 	<div class="row px-2">
-		{% for i in categories %}
+		{% for i in demo %}
 		<div class="col col-4 col-sm-3 col-lg-2 col-xxl-1 p-0">
 			<div class="menutable">
 				<a href="#c{{loop.index}}">{{i.title}}型</a>
@@ -42,7 +14,7 @@
 		{% endfor %}
 	</div>
 </div>
-{% for cat in categories %}
+{% for cat in demo %}
 <p><span class="big" id="c{{loop.index}}">{{cat.title}}型</span></p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">

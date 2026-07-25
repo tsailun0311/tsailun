@@ -1,10 +1,5 @@
 {% extends "base.html" %}
 {% set menu2 = ["3缺1", "2缺2", "1缺3"] %}
-{% set demo = [["R' u R' u'", "R u R' u'", "R' F R","R2 F R2"],
-["R' F","R2 F","R F","R2 F R","R F R","F R","R F R2","F R2","R' F R2","F R'"
-,"F2 R'","F' R'","F2 R' F'","F' R' F'","R' F'","F' R' F2","R' F2","F R' F2","U2 B2","U2 B2 F"
-,"R' F R'","R F R'","R' U R' F2","U R F R","R' U R' F2","R F' R' F2","R' U2 F R'","F2 D' R2","R' F R r' U r"],
-["D R' F L","D R' Fs","U F Rs'"]] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}

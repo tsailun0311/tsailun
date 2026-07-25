@@ -2,70 +2,6 @@
 {% set menu2 = ["基本型", "雙頂藏角型", "雙頂藏邊型", "雙頂複雜型",
 "邊頂型", "角頂型", "無頂型", "魔方101非標", "中島非標1st", "中島非標2nd"] %}
 {% set common_facelets = "llllyllllwwwwwwwwwlrrlrrlrrloolooloolllbbbbbblgglgglgg" %}
-{% set categories = [{"perms": [
-["01", "R U' R'"],
-["02", "F R' F' R"],
-["03", "F' U' F"],
-["04", "R U R'"]]},
-{"perms": [
-["05", "R U R' U2 R U' R'"],
-["06", "F' U' F U2 F' U F"],
-["07", "R U2 R' U2 R U' R'"],
-["08", "F' U2 F U2 F' U F"],
-["09", "R U' R' U F' U' F"],
-["10", "F' U F U' R U R'"],
-["11", "R U2 R' U F' U' F"],
-["12", "F' U2 F U' R U R'"],
-["13", "U F' U F U' F' U' F"],
-["14", "U' R U' R' U R U R'"]]},
-{"perms": [
-["15", "F' U F U2 R U R'"],
-["16", "R U' R' U2 F' U' F"],
-["17", "R U2 R' U R U' R'"],
-["18", "R U R' U R U' R'"],
-["19", "F' U2 F U' F' U F"],
-["20", "F' U' F U' F' U F"]]},
-{"note": "善用F2L25 F2L27","perms": [
-["21", "R U2 R' U' R U R'"],
-["22", "R U R' U2 R U R' U' R U R'"],
-["23", "R U R' U F' U F U' F' U F"],
-["24", "F' U2 F U F' U' F"]]},
-{"perms": [
-["25", "R U R' U' R U R'"],
-["26", "R U' R' U R U' R'"],
-["27", "F' U F U' F' U F"],
-["28", "F' U' F U F' U' F"],
-["29", "U R U' R' U' F' U F"],
-["30", "U' F' U F U R U' R'"]]},
-{"perms": [
-["31", "R U R' U' R U R' U' R U R' U'"],
-["32", "R U R' U2 R U R'"],
-["33", "R U' R' U2 R U' R'"],
-["34", "R U' R' U2 F R' F' R"],
-["35", "U F' U' F R' F R F'"],
-["36", "U' R U R' F R' F' R"]]},
-{"perms": [
-["37", "R U' R' U2 F' U' F U' F' U F"],
-["38", "R U' R' U' R U' R' U F' U' F"],
-["39", "R U' R' U F' U2 F U2 F' U F"],
-["40", "R U R' U' R U2 R' U' R U R'"],
-["41", "R U' R' U R U2 R' U R U' R'"]]}] %}
-{% set special_categories = [
-{"link": "https://www.youtube.com/watch?v=rG7p2l2vifM&ab_channel=%E9%AD%94%E6%96%B9101",
-"facelets": "ddddydddddddwwdwwdddddrrdrrdddddddddddddddddddggdggddd",
-"perms": [
-["Class1", "R2 U' R2 U R2"],
-["Class2", "F' R' U R F"]]},
-{"perms": [
-["Class1：RF空槽", "u' R' F R F' R U' R' u","ddddydddkwwdwwwdwddrrdrrdkdkdddooddddddbbdbbddkddggkdd"],
-["Class2：LB空槽", "R U' R' y R2 y L2 F L2 F y2", "ddddydkkddwdwwwwwdddddrrdrrdddkookddddkdbddbddggdggddd"],
-["Class3", "R U' R' d R' U2 R L' U L y", "ddddydddddwwwwwdwdddddrrdddddddoodooddddbbdbbddddggddd"]]},
-{"facelets": "ddddydddddwdwwwdwwddddrrddddoodoodddddddbddbdddddggdgg",
-"perms": [
-["Class1", "R U R U R2 U' R' U' R'"],
-["Class2", "l U' R' U l' U' R"],
-["Class3", "R U2 R' U R' U' R"],
-["Class4", "R U R U R U' R' U' R'"]]}] %}
 {% block head %}
 <script src="{{ url_for('static', filename='js/AnimCube3.js') }}" type="text/javascript"></script>
 {% endblock %}
@@ -81,10 +17,14 @@
 		{% endfor %}
 	</div>
 </div>
-{% for cat in categories %}
+{% for cat in demo %}
 <p>
 	<span class="big" id="c{{ loop.index }}">
-		{{menu2[loop.index0]}}F2L{{cat.perms[0][0]}}~F2L{{cat.perms[-1][0]}}
+		{% if cat.link %}
+		<a href="{{ cat.link }}">{{menu2[loop.index0]}}</a>
+		{% else %}
+		{{menu2[loop.index0]}}
+		{% endif %}
 		{% if cat.note %}
 		&nbsp;&nbsp;<strong>{{cat.note}}</strong>
 		{% endif %}
@@ -92,30 +32,8 @@
 </p>
 <div class="container-fluid">
 	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
-		{% for name, move in cat.perms %}
-		<div class="col">F2L{{name}}
-			<div class="cube">
-				<script>AnimCube3("facelets={{common_facelets}}&move={{move|safe}}")</script>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
-</div>
-{% endfor %}
-{% for cat in special_categories %}
-<p>
-	<span class="big" id="c{{loop.index+7}}">
-		{% if cat.link %}
-		<a href="{{ cat.link }}">{{menu2[loop.index0+7]}}</a>
-		{% else %}
-		{{menu2[loop.index0+7]}}
-		{% endif %}
-	</span>
-</p>
-<div class="container-fluid">
-	<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6">
 		{% for perm in cat.perms %}
-		{% set facelets = perm[2] if perm|length > 2 else cat.facelets %}
+		{% set facelets = perm[2] if perm|length > 2 else common_facelets %}
 		<div class="col">{{perm[0]}}
 			<div class="cube">
 				<script>AnimCube3("facelets={{facelets}}&move={{perm[1]|safe}}")</script>
