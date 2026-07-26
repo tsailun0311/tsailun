@@ -1,36 +1,30 @@
 @b1: #526d98;
 @b2: #b7ccdd;
 @b3: #e7e5e3;
-
 html,
 body {
 	height: 100%;
 	margin: 0;
 	background-color: @b3;
 }
-
 * {
 	font-family: sans-serif;
 	box-sizing: border-box;
 }
-
 :root {
 	--bs-primary-rgb: 82, 109, 152;
 	--bs-info-rgb: 183, 204, 221;
 	--bs-border-radius: 5px;
 }
-
 /**************** main styles ***********************************************************************************************/
 #mainer {
 	font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
 	background-color: @b3;
 	padding: 1rem 0 50px 0;
-
 	ul {
 		list-style-type: none;
 		margin: 0;
 	}
-
 	table {
 		text-align: center;
 		margin: 0.5rem auto;
@@ -38,12 +32,10 @@ body {
 		border-collapse: separate;
 		-webkit-border-vertical-spacing: 2.5px;
 		-webkit-border-horizontal-spacing: 2.5px;
-
 		td {
 			border: 1px solid @b1;
 			background-color: @b2;
 			border-radius: 5px;
-
 			img {
 				width: 50px;
 				display: inline-block;
@@ -51,7 +43,6 @@ body {
 			}
 		}
 	}
-
 	img {
 		width: 100%;
 		max-width: 150px;
@@ -64,7 +55,6 @@ body {
 		width: 88%;
 	}
 }
-
 /**************** Q&A styles ***********************************************************************************************/
 .accordion-item {
 	margin: 0 auto 0.25rem;
@@ -72,44 +62,36 @@ body {
 	background-color: @b3;
 	border: none;
 }
-
 .accordion-button {
 	background-color: @b2;
 	border-radius: 10px;
 	color: @b1;
 	font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
 }
-
 .accordion-button:not(.collapsed) {
 	background-color: @b1;
 	color: @b2;
 }
-
 .accordion-body {
 	text-align: justify;
 	margin: auto;
 	padding: 5px 0 0 0;
 	width: 96%;
 }
-
 .accordion-button::after {
 	--bs-accordion-btn-icon-width: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23526d98' stroke-linecap='round' stroke-linejoin='round'><path d='M2 5L8 11L14 5'/></svg>");
 }
-
 .accordion-button:not(.collapsed)::after {
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23e7e5e3' stroke-linecap='round' stroke-linejoin='round'><path d='M2 5L8 11L14 5'/></svg>");
 }
-
 .accordion-button:focus {
 	box-shadow: none;
 }
-
 /**************** other styles ***********************************************************************************************/
 .col {
 	text-align: center;
 }
-
 a {
 	text-decoration: none !important;
 	white-space: nowrap;
@@ -117,27 +99,22 @@ a {
 	&:link {
 		color: @b1;
 	}
-
 	&:hover,
 	&:active {
 		color: @b2;
 	}
 }
-
 p {
 	margin: 0.5rem 0;
 }
-
 .big {
 	margin-left: 0.25rem;
 	font-size: 1.1em;
 	font-weight: bolder;
 }
-
 strong {
 	background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, @b2 60%);
 }
-
 .make(w, #fff);
 .make(y, yellow);
 .make(r, red);
@@ -149,19 +126,16 @@ strong {
 .make(d, rgb(80, 80, 80));
 .make(l, rgb(138, 138, 138));
 .make(c, #0ff);
-
 .make(@name, @color) {
 	.@{name} {
 		background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, @color 60%);
 	}
 }
-
 .menutable {
 	border: 1px solid @b1;
 	background-color: @b2;
 	border-radius: 5px;
 	margin: 2px;
-
 	a {
 		color: #000;
 		width: 100%;
@@ -173,7 +147,6 @@ strong {
 		}
 	}
 }
-
 .cube {
 	max-width: 181px;
 	max-height: 206px;
@@ -194,7 +167,6 @@ strong {
 	margin: 0 auto;
 	--bs-progress-bg: @b3;
 }
-
 .progress-bar {
 	--bs-progress-bar-color: @b3;
 
@@ -202,7 +174,6 @@ strong {
 		--bs-progress-bar-color: @b1;
 	}
 }
-
 /**************** load styles ***********************************************************************************************/
 .loading-wrapper {
 	position: fixed;
@@ -213,13 +184,11 @@ strong {
 	z-index: 9998;
 	background-color: @b3;
 }
-
 .spinner-border {
 	color: @b1;
 	width: 3rem;
 	height: 3rem;
 }
-
 /**************** menu ***********************************************************************************************/
 .top {
 	position: fixed;
@@ -231,7 +200,6 @@ strong {
 	border-radius: 999em;
 	padding: 0 4px;
 }
-
 .menu {
 	display: flex;
 	align-items: center;
@@ -240,13 +208,11 @@ strong {
 	margin: 0;
 	padding: 0;
 	height: 40px;
-
 	& > li {
 		overflow: hidden;
 		width: 60px;
 		text-align: center;
 		height: 32px;
-
 		& > a {
 			color: @b2;
 			width: 100%;
@@ -255,16 +221,13 @@ strong {
 			align-items: center;
 			justify-content: center;
 		}
-
 		&.active {
 			background-color: @b2;
 			border-radius: 999em;
-
 			& > a {
 				color: @b1;
 			}
 		}
-
 		&:hover:not(.active) {
 			background-color: @b3;
 			border-radius: 999em;
@@ -275,7 +238,6 @@ strong {
 		}
 	}
 }
-
 @media screen and (max-width: 412px) {
 	.top {
 		width: 330px;

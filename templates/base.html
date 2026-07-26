@@ -31,8 +31,8 @@
 	<div class="top">
 		<ul class="menu">
 			{% for i in range(5) %}
-			<li class="{% if request.path == menu[0][i] %}active{% endif %}"><a href="{{menu[0][i]}}" {% if
-					loop.index0==2 %} id="home" data-home-url="{{ menu[0][i] }}" {% endif %}>{{menu[1][i]}}</a>
+			<li class="{% if request.path == menu[0][i] %}active{% endif %}"><a href="{{menu[0][i]}}" {% if loop.index0==2 %}
+					id="home" data-home-url="{{ menu[0][i] }}" {% endif %}>{{menu[1][i]}}</a>
 			</li>
 			{% endfor %}
 		</ul>

@@ -173,12 +173,56 @@
 				"B2 R2 D' F2 D2 B2 U B2 L2 U L' R' B D U L2 R f2 l2 D U b2 d2 R2 B U2 R L"
 			],
 			[
-				"Cube X4",
+				"Checkerboard in cube",
+				"B D F' B' D L2 U L U' B D' R B R D' R L' F U2 D b d f' b' d l2 u l u' b d' r b r d' r l' f u2 d"
+			],
+			[
+				"Corner Pyramid",
+				"U' D B R' F R B' L' F' B L F R' B' R F' U' D u' d b r' f r b' l' f' b l f r' b' r f' u' d"
+			],
+			[
+				"Cube x4",
 				"U' L' U' F' R2 B' R F U B2 U B' L U' F U R F' u' l' u' f' r2 b' r f u b2 u b' l u' f u r f'"
 			],
 			[
-				"Rings",
+				"Cube x4 Twisted",
 				"B' m2 U2 m2 B F2 R U' R U R2 U R2 F' U F' u l u' f2 d r' u f d2 r2"
+			],
+			[
+				"Displaced Motif",
+				"L2 B2 D' B2 D L2 U R2 D R2 B U R' F2 R U' B' U' l2 b2 d' b2 d l2 u r2 d r2 b u r' f2 r u' b' u'"
+			],
+			[
+				"Exchanged Duck Feet",
+				"U F R2 F' D' R U B2 U2 F' R2 F D B2 R B' u f r2 f' d' r u b2 u2 f' r2 f d b2 r b' "
+			],
+			[
+				"Gift Box",
+				"U B2 R2 B2 L2 F2 R2 D' F2 L2 B F' L F2 D U' R2 F' L' R' u b2 r2 b2 l2 f2 r2 d' f2 l2 b f' l f2 d u' r2 f' l' r'"
+			],
+			[
+				"Spiral",
+				"L' B' D U R U' R' D2 R2 D L D' L' R' F U l' b' d u r u' r' d2 r2 d l d' l' r' f u"
+			],
+			[
+				"Staircase",
+				"L2 F2 D' L2 B2 D' U' R2 B2 U' L' B2 L D L B' D L' U l2 f2 d' l2 b2 d' u' r2 b2 u' l' b2 l d l b' dl' u"
+			],
+			[
+				"Twin Peaks",
+				"U L2 B2 R2 U R2 D' U L F' U L' D B' U L B' L R' U' u l2 b2 r2 u r2 d' u l f' u l' d b' u l b' l r' u'"
+			],
+			[
+				"Twister",
+				"F R' U L F' L' F U' R U L' U' L F' f r' u l f' l' f u' r u l' u' l f'"
+			],
+			[
+				"Vertical Stripes",
+				"F U F R L2 B D' R D2 L D' B R2 L F U F f u f r l2 b d' r d2 l d' b r2 l f u f"
+			],
+			[
+				"Wrapped 2x2",
+				"D' B2 F2 L2 U' F2 R2 D F2 U2 L' B R' U' L' F D' F L D2 d' b2 f2 l2 u' f2 r2 d f2 u2 l' b r' u' l' f d' f l d2"
 			]
 		]
 	],
