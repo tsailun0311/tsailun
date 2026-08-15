@@ -28,39 +28,17 @@
 			["ZigZag", "R2 F2 R2 U2"]
 		],
 		[
-			["( ! ) (ˆ⌣ˆԅ)", "U2 F L' R2 D B2 U' F' L2 R D' L' B' D' L2 F' U' B L'"],
 			["3 sides solved", "U2 D R' D B' L2 B D' R L2 U2 B2 L2 B2 D R2 L2 D R2"],
 			["3C3W", "D L B' L L F L' B' U D' R L' F B D L'"],
-			["3T", "B U2 L2 F2 R2 F D2 F2 R2 F' R2 U2"],
 			["4 crosses", "D F2 R2 F2 D' U R2 F2 R2 U'"],
-			["4 crosses", "F2 B2 R F2 B2 R F2 B2 R F2 B2 R F2 B2 R F2 B2 R"],
-			["4 plus 2 dots", "F U2 D2 R L U' D F B R U2 R2 U2 F2 L2 U2 F2 L2 B2"],
 			["4T", "F2 D2 F' L2 D2 U2 R2 B' U2 F2"],
 			["4V", "D2 R L U2 R2 L2 U2 R L"],
-			["6 crosses 5 colors", "L2 D' F2 D B D L F R' U' R' D' F L2 B F2 L"],
 			["6 fish", "L2 D B2 U R2 B2 D L' B2 F' D' U R' D2 R' B2 F' U' F'"],
-			["6E", "F2 R2 F2 U' R' B2 F L R' U L' R U B U2 F2 D' U'"],
-			["6J", "D2 L2 D R2 U B2 U2 B R' B' D B2 R' F R2 F' U R'"],
-			["6O 4 colors", "B2 L R B L2 B F D U' B F R2 F' L R"],
 			["6T", "U2 F2 R2 D U' L2 B2 D U"],
-			["6T", "B2 D2 L R' D2 B2 L R'"],
-			[
-				"All flags & crests",
-				"B2 U' B2 L2 U B2 U R2 B2 U' L' R' B D U' L2 F2 R'"
-			],
 			["Anaconda", "L U B' U' R L' B R' F B' D R D' F'"],
-			["Antipodal chaos", "U2 L2 U2 L2 U2 F2 R2 F2 U2 F2"],
-			["Are you high?", "L R' U2 D2 L' R U2 D2 R2 L2"],
 			["Black mamba", "R D L F' R L' D R' U D' B U' R' D'"],
-			["C spirals", "B' F' L2 D2 B' F U2 R2 F2"],
-			["C spirals", "F2 L' R B2 U2 L R' D2"],
-			["C T V", "B2 R2 D2 U2 F2 L R' U2 L' R'"],
-			["C T V", "L2 B2 R2 D2 R2 F2 U2 F2 R2 U2 R2"],
 			["C U around", "D' U B D' L' R F D' B' D' U L"],
 			["Cage", "L U F2 R L' U2 B' U D B2 L F B' R' L F' R"],
-			["Cage", "F2 U2 F2 B2 U2 F B"],
-			["Cage", "U2 L2 U2 L2 U2 L2 U2 R2 U2 R2 U2 R2 U D L2 R2"],
-			["Checker zigzag", "R2 L2 F2 B2 U F2 B2 U2 F2 B2 U"],
 			[
 				"Checkerboard in cube",
 				"B D F' B' D L2 U L U' B D' R B R D' R L' F U2 D"
@@ -68,67 +46,42 @@
 			["Corner pyramid", "U' D B R' F R B' L' F' B L F R' B' R F' U' D"],
 			["Corner pyramid", "B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'"],
 			["Cross", "R2 L' D F2 R' D' R' L U' D R D B2 R' U D2"],
-			["Crossing snake", "R L U2 R L' U2 F2 R2 D2 B2 D2 B2 L2 D2 R2"],
 			["Cube in cube", "F L F U' R U F2 L2 U' L' B D' B' L2 U"],
 			["Cube in cube in cube", "U B2 R2 D B D' U2 F' U F U2 F2 U' R B U' F"],
 			["Deckerboard", "U D R L' F' B U D' R2 U R2 L2 D2 F2 B2 D"],
 			["Displaced Motif", "L2 B2 D' B2 D L2 U R2 D R2 B U R' F2 R U' B' U'"],
 			["Don't cross line", "F2 L2 R2 B2 E2"],
-			["Doubler", "R L U2 R L' D2 R2 F2 U2 F2 U2 L2 F2 U2 L2"],
 			["Easy checkerboard", "M2 E2 S2"],
 			["Edge triangle", "U B2 U' F' U' D L' D2 L U D' F D' L2 B2 D'"],
-			[
-				"Evenly distributed",
-				"D' B2 D' L2 R2 D B2 L2 D' B2 L R' F' L2 D U' F2 R' D' U'"
-			],
 			["Exchanged chicken feet", "F L' D' B' L F U F' D' F L2 B' R' U L2 D' F"],
-			["Exchanged duck feet", "U R B2 R' D' B U L2 U2 R' B2 R D L2 B L'"],
 			["Exchanged peaks", "F U2 L F L' B L U B' R' L' U R' D' F' B R2"],
 			["Exchanged rings", "B' U' B' L' D B U D2 B U L D' L' U' L2 D"],
 			["Facing checkerboards", "U2 F2 U2 F2 B2 U2 F2 D2"],
 			["Flower", "R2 D2 R2 U2 R2 F2 U2 D2 F2 U2"],
 			["Flower field", "M S M' S' R2 L2 U2 D2 F2 B2"],
 			["Four spots", "U R2 L2 U D' F2 B2 D'"],
-			["Fruit bowl", "B2 L2 F2 R2 F2 R2 D U B2 U2 B' F' L' R' D' U'"],
 			["Gift box", "U B2 R2 B2 L2 F2 R2 D' F2 L2 B F' L F2 D U' R2 F' L' R'"],
-			["Glider", "D2 R2 F2 R2 U2 B2 D2 F2 L2 U2 R2 U2"],
 			["Glitch", "F' L' B' R' U' R B L F U"],
 			["Green mamba", "R D R F R' F' B D R' U' B' U D2"],
-			["Headlights", "U2 F2 U2 D2 B2 D2"],
 			["Henry's snake", "R2 F2 U' D' B2 L2 F2 L2 U D R2 F2"],
 			["Hi", "M2 U2 M2 U2"],
-			["Hi again", "D2 M F2 B2 M D2 x2"],
 			["Hi all around", "U2 R2 F2 U2 D2 F2 L2 U2"],
-			["Hi Ohio", "U2 F2 L2 R2 F2 U2"],
 			["Loose strap", "F2 U2 B2 U2 F2 U2"],
-			["Matching pictures", "R' D2 R L D2 L'"],
-			["Megatron", "U L D R' F D2 R2 F2 R' F D2 B L2 U2 D' R2 U R2 B2 L2"],
-			["Minority cross", "R2 B2 U2 L2 B2 U2 F2 L2 D L' R F L2 F' U' D L"],
-			["Mirror", "U D F2 B2 U' D' R2 L2 B2"],
-			["No entry", "U' L' B R L' D' L B' U F2 R2 B2 D2 B2 R2 B2 D B2"],
-			["Opposite corners", "R L U2 F2 D2 F2 R L F2 D2 B2 D2"],
 			["Opposite pillars", "R2 F2 R2 L2 F2 L2"],
 			["Order in chaos", "D' L D B2 U2 L2 F2 D R' F L' D' B D B R2 D' R U'"],
-			["Percent sign %", "R L U2 R L' U2 F2 L2 U2 F2 U2 F2 R2 U2 R2"],
 			["Perfect Scramble", "U F' L' U' R2 F' R2 B' U' R F' U F D' L2 F2 L2 U'"],
-			["Perfect Scramble", "U B2 L2 B F' U F' D2 L D2 F D R2 F2 R' B' U' R'"],
 			["Perpendicular lines", "R2 U2 L2 R2 U2 L2 M2"],
-			["Picnic", "D2 R2 L2 F2 B2"],
-			["Plus", "B2 F2 R2 U2 B2 F2 R2 U2 R2 U2"],
 			["Plus minus", "U2 R2 L2 U2 R2 L2"],
-			["Plus minus check", "U D R2 L2 U D R2 L2"],
 			["Pong", "U R2 F2 B2 L2 U2 D R2 F2 B2 L2"],
 			["Pyraminx", "D L' U R' B' R B U2 D B D' B' L U D'"],
 			["Python", "F2 R' B' U R' L F' L F' B D' R B L2"],
 			["Quick maths 1+1", "R L F2 U2 R' L' F2 U2 R2 F2 U R2 L2 F2 B2 D'"],
 			["Quote", "U2 F2 D2 B2 R2 U2 B2 R2 U2 R2"],
 			["Rockets", "U R2 F2 R2 U' D F2 R2 F2 D"],
-			["Ron's cube in cube", "F D' F' R D F' R' D R D L' F L D R' F D'"],
 			[
 				"Scottish skirt",
 				"U' R2 L2 F2 B2 U' R L F B' U F2 D2 R2 L2 F2 U2 F2 U' F2"
 			],
-			["Scottish skirt", "D2 F2 U' B2 F2 L2 R2 D R' B F D' U L R D2 U2 F' U2"],
 			["Scrambled 2x2s", "U2 B' R U' L F B2 U F' U F2 L2 U D B2 L2 B2 L2"],
 			["Six spots", "M E' M' E"],
 			["Six-two-one", "U B2 D2 L B' L' U' L' B D2 B2"],
@@ -137,14 +90,8 @@
 			["Solved in scrambled", "U2 L' D2 B L2 D U2 R2 U L2 F' L2 D L U' R2 D'"],
 			["SpeedSolving", "R' L' U2 F2 D2 F2 R L B2 U2 B2 U2"],
 			["Spiral", "L' B' D U R U' R' D2 R2 D L D' L' R' F U"],
-			["Spun T's", "U' L2 F2 L2 F2 D' L2 F' L2 F' D U2 L' B L B' U'"],
 			["Staircase", "B2 L2 D' B2 R2 D' U' F2 R2 U' B' R2 B D B R' D B' U"],
-			["Stripe dot solved", "D U B2 F2 D' U'"],
 			["Superflip", "U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2"],
-			["Superflip", "B F' L2 R2 U D'"],
-			["Tablecloth", "R L U2 F' U2 D2 R2 L2 F' D2 F2 D R2 L2 F2 B2 D B2 L2"],
-			["Tangled", "F B U D F B U D F B U D F2 B2"],
-			["Tetris", "L R F B U' D' L' R'"],
 			["The pillars", "M2 S2"],
 			["Twin Peaks", "U F2 L2 B2 U B2 D' U F R' U F' D L' U F L' F B' U'"],
 			["Twisted chicken feet", "F L' D F' U' B U F U' F R' F2 L U' R' D2"],
@@ -155,17 +102,10 @@
 			["Twister", "F R' U L F' L' F U' R U L' U' L F'"],
 			["Union Jack", "U F B' L2 U2 L2 F' B U2 L2 U"],
 			["Vertical stripes", "F U F R L2 B D' R D2 L D' B R2 L F U F"],
-			["Viaduct", "R2 U2 L2 D B2 L2 B2 R2 D' U L' D F' U' R2 F' U B2 U2 R'"],
-			["Viaduct", "R2 F2 B2 L2 U F2 R2 L2 B2 D'"],
-			["Weirdo", "R' F' U F2 U' F R' F2 D2 F2 D2 F2 D F2 R2 U2"],
 			["Wifi Downstairs", "B U' B R2 B' U B R2 U' L2 U D B2 U' F2 D' F2"],
-			["Wire", "R L F B R L F B R L F B R2 B2 L2 R2 B2 L2"],
-			["Wire", "F B R L F B R L F B R L U D' U D'"],
-			["Worms", "U' F2 L2 U D2 F2 B2 U F2 L2 D"],
 			["Wrapped 2x2", "D' B2 F2 L2 U' F2 R2 D F2 U2 L' B R' U' L' F D' F L D2"],
 			["Yan Ying", "L R F B U' D' L' R'"],
-			["Yin Yang", "R L B F R L U' D' F' B' U D"],
-			["ZZ-Line", "R L U2 R L' U2 F2 R2 U2 F2 D2 B2 L2 U2 L2"]
+			["Yin Yang", "R L B F R L U' D' F' B' U D"]
 		],
 		[
 			[
@@ -187,14 +127,6 @@
 			[
 				"Cube x4 Twisted",
 				"B' m2 U2 m2 B F2 R U' R U R2 U R2 F' U F' u l u' f2 d r' u f d2 r2"
-			],
-			[
-				"Displaced Motif",
-				"L2 B2 D' B2 D L2 U R2 D R2 B U R' F2 R U' B' U' l2 b2 d' b2 d l2 u r2 d r2 b u r' f2 r u' b' u'"
-			],
-			[
-				"Exchanged Duck Feet",
-				"U R B2 R' D' B U L2 U2 R' B2 R D L2 B L' u r b2 r' d' b u l2 u2 r' b2 r d l2 b l'"
 			],
 			[
 				"Gift Box",
@@ -235,10 +167,6 @@
 				"R2 L' D F2 R' D' R' L U' D R D B2 R' U D2 r2 l' d f2 r' d' r' l u' d r d b2 r' u d2"
 			],
 			[
-				"Four Crosses",
-				"U2 R2 L2 F2 B2 D2 L2 R2 F2 B2 u2 r2 l2 f2 b2 d2 l2 r2 f2 b2"
-			],
-			[
 				"Pyraminx",
 				"D L' U R' B' R B U2 D B D' B' L U D' d l' u r' b' r b u2 d b d' b' l u d'"
 			],
@@ -253,10 +181,6 @@
 			[
 				"Union Jack",
 				"U F B' L2 U2 L2 F' B U2 L2 U u f b' l2 u2 l2 f' b u2 l2 u"
-			],
-			[
-				"Viaduct",
-				"R2 U2 L2 D B2 L2 B2 R2 D' U L' D F' U' R2 F' U B2 U2 R' r2 u2 l2 d b2 l2 b2 r2 d' u l' d f' u' r2 f' u b2 u2 r'"
 			]
 		]
 	],
