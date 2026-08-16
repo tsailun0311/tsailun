@@ -124,6 +124,7 @@ function AnimCube2(params) {
 		borderWidth = 8,
 		rotateAllowed = 1,
 		posFaceTransform = [3, 2, 0, 5, 1, 4],
+		special = false,
 		posFaceletTransform = [
 			[2, 0, 3, 1],
 			[1, 3, 0, 2],
@@ -501,6 +502,8 @@ function AnimCube2(params) {
 			"0" == (e = getParameter("counter")) && (moveCounter = 0),
 			(curInfoText = move.length > 0 && move[0][0] >= 1e3 ? 0 : -1),
 			init2(),
+			"1" == getParameter("special") &&
+				((special = true), startAnimation(buttonAction[6])),
 			demo && startAnimation(-1));
 	}
 	function getParameter(e) {
@@ -2079,7 +2082,7 @@ function AnimCube2(params) {
 		else ((a = e.touches[0].clientX), (i = e.touches[0].clientY));
 		a < r ||
 			a > r + width / dpr ||
-			i < o + height / dpr ||
+			i < o + (height - progressHeight) / dpr ||
 			i > o + (height + buttonHeight) / dpr ||
 			(e.preventDefault(),
 			(mouseIsDown = !0),
@@ -2103,9 +2106,8 @@ function AnimCube2(params) {
 	function button() {
 		((pushed = !0),
 			3 == buttonPressed
-				? animating
-					? stopAnimation()
-					: startAnimation(0)
+				? (movePos == move[curMove].length && special == true && clear(),
+					animating ? stopAnimation() : startAnimation(0))
 				: 0 == buttonPressed
 					? scramble > 0 && 2 == buttonBar
 						? 1 == scrambleToggle

@@ -148,6 +148,7 @@ function AnimCube3(params) {
 	var scw = 0;
 	var borderWidth = 8;
 	var rotateAllowed = 1;
+	var special = false;
 	// transformation tables for compatibility with Lars's applet
 	// pos layout:
 	//           25 26 27
@@ -645,6 +646,11 @@ function AnimCube3(params) {
 		if ("0" == param) moveCounter = 0;
 		curInfoText = move.length > 0 && move[0][0] >= 1000 ? 0 : -1;
 		init2();
+		param = getParameter("special");
+		if ("1" == param) {
+			special = true;
+			startAnimation(buttonAction[6]);
+		}
 		if (demo) startAnimation(-1);
 	} // init()
 	function getParameter(s) {
@@ -2813,7 +2819,7 @@ function AnimCube3(params) {
 		if (
 			x < left ||
 			x > left + width / dpr ||
-			y < top + height / dpr ||
+			y < top + (height - progressHeight) / dpr ||
 			y > top + (height + (buttonBar == 1 ? buttonHeight : 0)) / dpr
 		)
 			return;
@@ -2853,6 +2859,7 @@ function AnimCube3(params) {
 	function button() {
 		pushed = true;
 		if (buttonPressed == 3) {
+			if (movePos == move[curMove].length && special==true) clear();
 			if (!animating)
 				// special feature
 				startAnimation(0);

@@ -23,7 +23,7 @@ document.addEventListener("touchend", mouseup, { passive: false }),
 ```js
 a < r ||
 a > r + width / dpr ||
-i < o + height / dpr ||
+i < o + (height - progressHeight) / dpr ||
 i > o + (height + buttonHeight) / dpr ||
 ```
 
@@ -350,22 +350,30 @@ function drawMoveTextFunc(g, y) {
 }
 ```
 
-# Animcubejs_special
+# 花式
 
-## 1.init 增加
+## 1.全域參數 增加
 
 ```js
-startAnimation(buttonAction[6]);
+var special = false;
+```
+
+## 2.init 增加
+
+```js
+param = getParameter("special");
+if ("1" == param) {
+	special = true;
+	startAnimation(buttonAction[6]);
+}
 ```
 
 ## 2.button 更改
 
 ```js
 if (buttonPressed == 3) {
-	if (movePos == move[curMove].length) clear();
-	if (!animating)
-		// special feature
-		startAnimation(0);
+	if (movePos == move[curMove].length && special == true) clear();
+	if (!animating) startAnimation(0);
 	else stopAnimation();
 }
 ```

@@ -150,6 +150,7 @@ function AnimCube5(params) {
 	var rotateAllowed = 1;
 	// transformation tables for compatibility with Lars's applet
 	var posFaceTransform = [3, 2, 0, 5, 1, 4];
+	var special = false;
 	var posFaceletTransform = [
 		[
 			20, 15, 10, 5, 0, 21, 16, 11, 6, 1, 22, 17, 12, 7, 2, 23, 18, 13, 8, 3,
@@ -662,6 +663,11 @@ function AnimCube5(params) {
 		if ("0" == param) moveCounter = 0;
 		curInfoText = move.length > 0 && move[0][0] >= 1000 ? 0 : -1;
 		init2();
+		param = getParameter("special");
+		if ("1" == param) {
+			special = true;
+			startAnimation(buttonAction[6]);
+		}
 		if (demo) startAnimation(-1);
 	} // init()
 	function getParameter(s) {
@@ -3114,7 +3120,7 @@ function AnimCube5(params) {
 		if (
 			x < left ||
 			x > left + width / dpr ||
-			y < top + height / dpr ||
+			y < top + (height - progressHeight) / dpr ||
 			y > top + (height + buttonHeight) / dpr
 		)
 			return;
@@ -3154,6 +3160,7 @@ function AnimCube5(params) {
 	function button() {
 		pushed = true;
 		if (buttonPressed == 3) {
+			if (movePos == move[curMove].length && special == true) clear();
 			if (!animating)
 				// special feature
 				startAnimation(0);
