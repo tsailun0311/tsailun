@@ -23,6 +23,9 @@ function AnimCube3(params) {
 	// cube facelets
 	var cube = [];
 	var scube = [];
+	var marker = false;
+	var mcube = [];
+	var initialMCube = [];
 	var initialCube = [];
 	var initialSCube = [];
 	// normal vectors
@@ -298,6 +301,11 @@ function AnimCube3(params) {
 		if (superCube) {
 			for (var i = 0; i < 6; i++) for (var j = 0; j < 9; j++) scube[i][j] = 0;
 		}
+		for (var i = 0; i < 6; i++) {
+			for (var j = 0; j < 9; j++) {
+				mcube[i][j] = 0;
+			}
+		}
 		var initialPosition = "lluuu";
 		// setup color configuration of the solved cube
 		param = getParameter("colorscheme");
@@ -373,6 +381,16 @@ function AnimCube3(params) {
 								break;
 							}
 						}
+					}
+				}
+			}
+			param = getParameter("markers");
+			if (param != null && param.length == 54) {
+				marker = true;
+				setBorderWidth(12 / 100);
+				for (var i = 0; i < 6; i++) {
+					for (var j = 0; j < 9; j++) {
+						mcube[i][j] = parseInt(param[i * 9 + j]);
 					}
 				}
 			}
@@ -599,6 +617,7 @@ function AnimCube3(params) {
 			for (var j = 0; j < 9; j++) {
 				initialCube[i][j] = cube[i][j];
 				initialSCube[i][j] = scube[i][j];
+				initialMCube[i][j] = mcube[i][j];
 			}
 		if (initialMove.length > 0)
 			doMove(cube, initialMove[0], 0, initialMove[0].length, false);
@@ -1033,6 +1052,7 @@ function AnimCube3(params) {
 			for (var j = 0; j < 9; j++) {
 				cube[i][j] = initialCube[i][j];
 				scube[i][j] = initialSCube[i][j];
+				mcube[i][j] = initialMCube[i][j];
 			}
 		if (initialMove.length > 0 && typeof initialMove[curMove] != "undefined")
 			doMove(cube, initialMove[curMove], 0, initialMove[curMove].length, false);
@@ -1217,6 +1237,7 @@ function AnimCube3(params) {
 
 	function twistLayer(cube, layer, num, middle) {
 		twistLayer2(cube, layer, num, middle);
+		twistLayer2(mcube, layer, num, middle);
 		if (superCube == true && num > 0 && num < 4) {
 			twistLayer2(scube, layer, num, middle);
 			twistSuperLayer(layer, num, middle);
@@ -1836,6 +1857,9 @@ function AnimCube3(params) {
 										scube[i][p * 3 + q],
 										colors[cube[i][p * 3 + q]],
 									);
+									if (marker) {
+										drawMarker(graphics, fillX, fillY, mcube[i][p * 3 + q]);
+									}
 								} else {
 									drawFlorian(
 										graphics,
@@ -1846,6 +1870,9 @@ function AnimCube3(params) {
 										q,
 										1,
 									);
+									if (marker) {
+										drawMarker(graphics, fillX, fillY, mcube[i][p * 3 + q]);
+									}
 								}
 							}
 						}
@@ -1934,6 +1961,9 @@ function AnimCube3(params) {
 									q,
 									0,
 								);
+								if (marker) {
+									drawMarker(graphics, fillX, fillY, mcube[i][p * 3 + q]);
+								}
 							}
 						}
 					}
@@ -2454,6 +2484,61 @@ function AnimCube3(params) {
 		[2, 3, 0, 1],
 		[1, 2, 3, 0],
 	];
+	function drawMarker(g, xx, yy, m) {
+		var x = [];
+		var y = [];
+		// scale down so there is a margin around the X
+		for (var i = 0; i < 4; i++) {
+			x[i] = Math.floor(xx[i] + (xx[superRotate[2][i]] - xx[i]) * 0.2);
+			y[i] = Math.floor(yy[i] + (yy[superRotate[2][i]] - yy[i]) * 0.2);
+		}
+		g.lineWidth = 2 * dpr;
+		g.strokeStyle = "black";
+
+		if (m === 1) {
+			// an "X"
+			g.beginPath();
+			g.moveTo(x[0], y[0]);
+			g.lineTo(x[2], y[2]);
+			g.closePath();
+			g.stroke();
+			g.beginPath();
+			g.moveTo(x[1], y[1]);
+			g.lineTo(x[3], y[3]);
+			g.closePath();
+			g.stroke();
+		} else if (m === 2) {
+			// a square "□"
+			g.beginPath();
+			g.moveTo(x[0], y[0]);
+			g.lineTo(x[1], y[1]);
+			g.lineTo(x[2], y[2]);
+			g.lineTo(x[3], y[3]);
+			g.closePath();
+			g.stroke();
+		} else if (m === 3) {
+			// a "+"
+			g.beginPath();
+			g.moveTo((x[0] + x[1]) / 2, (y[0] + y[1]) / 2);
+			g.lineTo((x[2] + x[3]) / 2, (y[2] + y[3]) / 2);
+			g.closePath();
+			g.stroke();
+			g.beginPath();
+			g.moveTo((x[0] + x[3]) / 2, (y[0] + y[3]) / 2);
+			g.lineTo((x[1] + x[2]) / 2, (y[1] + y[2]) / 2);
+			g.closePath();
+			g.stroke();
+		} else if (m === 4) {
+			// a 45°-rotated square "◇"
+			g.beginPath();
+			g.moveTo((x[0] + x[1]) / 2, (y[0] + y[1]) / 2);
+			g.lineTo((x[1] + x[2]) / 2, (y[1] + y[2]) / 2);
+			g.lineTo((x[2] + x[3]) / 2, (y[2] + y[3]) / 2);
+			g.lineTo((x[3] + x[0]) / 2, (y[3] + y[0]) / 2);
+			g.closePath();
+			g.stroke();
+		}
+	}
 
 	function drawSuperArrow(g, xx, yy, face, superTwist, color) {
 		var x = [];
@@ -2736,6 +2821,7 @@ function AnimCube3(params) {
 			for (var j = 0; j < 9; j++) {
 				cube[i][j] = initialCube[i][j];
 				scube[i][j] = initialSCube[i][j];
+				mcube[i][j] = initialMCube[i][j];
 			}
 		if (initialMove.length > 0 && typeof initialMove[curMove] != "undefined")
 			doMove(cube, initialMove[curMove], 0, initialMove[curMove].length, false);
@@ -2859,7 +2945,7 @@ function AnimCube3(params) {
 	function button() {
 		pushed = true;
 		if (buttonPressed == 3) {
-			if (movePos == move[curMove].length && special==true) clear();
+			if (movePos == move[curMove].length && special == true) clear();
 			if (!animating)
 				// special feature
 				startAnimation(0);
@@ -3053,6 +3139,8 @@ function AnimCube3(params) {
 			scube[i] = [];
 			initialCube[i] = [];
 			initialSCube[i] = [];
+			mcube[i] = [];
+			initialMCube[i] = [];
 		}
 		for (var i = 0; i < 18; i++) {
 			dragCornersX[i] = [];

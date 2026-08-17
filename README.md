@@ -350,6 +350,10 @@ function drawMoveTextFunc(g, y) {
 }
 ```
 
+## 15.drawMarker 新增標記畫面
+
+[照這個連結操作](https://animcubejs.cubing.net/sources/codes/enhancement/markers.html) 搜尋 marker 以及 mcube，最後自行增加 marker enable 的參數
+
 # 花式
 
 ## 1.全域參數 增加
