@@ -40,7 +40,7 @@
 			["Cage", "L U F2 R L' U2 B' U D B2 L F B' R' L F' R"],
 			[
 				"Checkerboard in cube",
-				"B D F' B' D L2 U L U' B D' R B R D' R L' F U2 D"
+				"D B2 D F2 L2 F2 L' B2 D' F' R' B U L D F R' F2"
 			],
 			["Corner pyramid", "U' D B R' F R B' L' F' B L F R' B' R F' U' D"],
 			["Corner pyramid", "B L2 U2 L2 B' F' U2 R' B F R2 D' L R' D' U R F'"],
@@ -48,6 +48,7 @@
 			["Cube in cube", "F L F U' R U F2 L2 U' L' B D' B' L2 U"],
 			["Cube in cube in cube", "U B2 R2 D B D' U2 F' U F U2 F2 U' R B U' F"],
 			["Deckerboard", "U D R L' F' B U D' R2 U R2 L2 D2 F2 B2 D"],
+			["Displaced motif", "L2 B2 D' B2 D L2 U R2 D R2 B U R' F2 R U' B' U'"],
 			["Easy checkerboard", "M2 E2 S2"],
 			["Edge triangle", "U B2 U' F' U' D L' D2 L U D' F D' L2 B2 D'"],
 			["Exchanged chicken feet", "F L' D' B' L F U F' D' F L2 B' R' U L2 D' F"],
@@ -55,7 +56,7 @@
 			["Exchanged rings", "B' U' B' L' D B U D2 B U L D' L' U' L2 D"],
 			["Flower field", "M S M' S' R2 L2 U2 D2 F2 B2"],
 			["Four spots", "U R2 L2 U D' F2 B2 D'"],
-			["Gift box", "U B2 R2 B2 L2 F2 R2 D' F2 L2 B F' L F2 D U' R2 F' L' R'"],
+			["Gift box", "R' F2 U L2 F U2 F2 D' U' B2 U F U L2 F D F R'"],
 			["Glitch", "F' L' B' R' U' R B L F U"],
 			["Hi", "M2 U2 M2 U2"],
 			["Hi all around", "U2 R2 F2 U2 D2 F2 L2 U2"],
@@ -63,15 +64,12 @@
 			["Order in chaos", "D' L D B2 U2 L2 F2 D R' F L' D' B D B R2 D' R U'"],
 			["Perfect Scramble", "U F' L' U' R2 F' R2 B' U' R F' U F D' L2 F2 L2 U'"],
 			["Perpendicular lines", "R2 U2 L2 R2 U2 L2 M2"],
-			["Plus minus", "U2 R2 L2 U2 R2 L2"],
+			["Plus minus", "U2 M2 U2 M2 E2"],
 			["Pyraminx", "D L' U R' B' R B U2 D B D' B' L U D'"],
 			["Python", "F2 R' B' U R' L F' L F' B D' R B L2"],
 			["Quick maths 1+1", "R L F2 U2 R' L' F2 U2 R2 F2 U R2 L2 F2 B2 D'"],
 			["Quote", "U2 F2 D2 B2 R2 U2 B2 R2 U2 R2"],
-			[
-				"Scottish skirt",
-				"U' R2 L2 F2 B2 U' R L F B' U F2 D2 R2 L2 F2 U2 F2 U' F2"
-			],
+			["Scottish skirt", "U' R D B2 D2 U B2 L' B U' R U F U R D' R' F2"],
 			["Scrambled 2x2s", "U2 B' R U' L F B2 U F' U F2 L2 U D B2 L2 B2 L2"],
 			["Six spots", "M E' M' E"],
 			["Six-two-one", "U B2 D2 L B' L' U' L' B D2 B2"],
@@ -79,19 +77,18 @@
 			["Solved in scrambled", "U2 L' D2 B L2 D U2 R2 U L2 F' L2 D L U' R2 D'"],
 			["SpeedSolving", "R' L' U2 F2 D2 F2 R L B2 U2 B2 U2"],
 			["Spiral", "L' B' D U R U' R' D2 R2 D L D' L' R' F U"],
-			["Staircase", "B2 L2 D' B2 R2 D' U' F2 R2 U' B' R2 B D B R' D B' U"],
-			["Superflip", "U2 R B D B F' L' U' B F' L F L' R D U2 F' R' U2"],
-			["Twin Peaks", "U F2 L2 B2 U B2 D' U F R' U F' D L' U F L' F B' U'"],
+			["Staircase", "F B' U F U F U L B L2 B' U F' L U L' B"],
+			["Superflip", "D' R2 F' D2 F2 U2 L' R D' R2 B F R' U2 L' F2 R' U2 R' U'"],
+			["Twin Peaks", "R' U L U' R2 F2 R2 D R2 F' U F' U B L U2 R'"],
 			["Twisted chicken feet", "F L' D F' U' B U F U' F R' F2 L U' R' D2"],
-			["Twisted corners", "F U D R2 F2 U' B U B U R2 B' U L2 U B2 U2 F2 L2 U'"],
+			["Twisted corners", "R2 U L2 B2 R2 L U L D2 U' L U2 F2 D2 U L U L'"],
 			["Twisted duck feet", "F R' B R U F' L' F' U2 L' U' D2 B D' F B' U2"],
-			["Twisted peaks", "F B' U F U F U L B L2 B' U F' L U L' B"],
 			["Twisted rings", "F D F' D2 L' B' U L D R U L' F' U L U2"],
 			["Twister", "F R' U L F' L' F U' R U L' U' L F'"],
 			["Union Jack", "U F B' L2 U2 L2 F' B U2 L2 U"],
 			["Vertical stripes", "F U F R L2 B D' R D2 L D' B R2 L F U F"],
 			["Wifi Downstairs", "B U' B R2 B' U B R2 U' L2 U D B2 U' F2 D' F2"],
-			["Wrapped 2x2", "D' B2 F2 L2 U' F2 R2 D F2 U2 L' B R' U' L' F D' F L D2"],
+			["Wrapped 2x2", "L2 U L B D' L D' U' B' F' L B' D L F L2"],
 			["Yan Ying", "L R F B U' D' L' R'"],
 			["Yin Yang", "R L B F R L U' D' F' B' U D"]
 		],
@@ -102,7 +99,7 @@
 			],
 			[
 				"Checkerboard in cube",
-				"B D F' B' D L2 U L U' B D' R B R D' R L' F U2 D b d f' b' d l2 u l u' b d' r b r d' r l' f u2 d"
+				"D B2 D F2 L2 F2 L' B2 D' F' R' B U L D F R' F2 d b2 d f2 l2 f2 l' b2 d' f' r' b u l d f r' f2"
 			],
 			[
 				"Corner Pyramid",
@@ -118,7 +115,7 @@
 			],
 			[
 				"Gift Box",
-				"U B2 R2 B2 L2 F2 R2 D' F2 L2 B F' L F2 D U' R2 F' L' R' u b2 r2 b2 l2 f2 r2 d' f2 l2 b f' l f2 d u' r2 f' l' r'"
+				"R' F2 U L2 F U2 F2 D' U' B2 U F U L2 F D F R' r' f2 u l2 f u2 f2 d' u' b2 u f u l2 f d f r'"
 			],
 			[
 				"Spiral",
@@ -130,7 +127,7 @@
 			],
 			[
 				"Twin Peaks",
-				"U F2 L2 B2 U B2 D' U F R' U F' D L' U F L' F B' U' u f2 l2 b2 u b2 d' u f r' u f' d l' u f l' f b' u'"
+				"R' U L U' R2 F2 R2 D R2 F' U F' U B L U2 R' r' u l u' r2 f2 r2 d r2 f' u f' u b l u2 r'"
 			],
 			[
 				"Twister",
@@ -142,7 +139,7 @@
 			],
 			[
 				"Wrapped 2x2",
-				"D' B2 F2 L2 U' F2 R2 D F2 U2 L' B R' U' L' F D' F L D2 d' b2 f2 l2 u' f2 r2 d f2 u2 l' b r' u' l' f d' f l d2"
+				"L2 U L B D' L D' U' B' F' L B' D L F L2 l2 u l b d' l d' u' b' f' l b' d l f l2"
 			]
 		],
 		[
@@ -164,7 +161,7 @@
 			],
 			[
 				"Scottish skirt",
-				"U' R2 L2 F2 B2 U' R L F B' U F2 D2 R2 L2 F2 U2 F2 U' F2 u' r2 l2 f2 b2 u' r l f b' u f2 d2 r2 l2 f2 u2 f2 u' f2"
+				"U' R D B2 D2 U B2 L' B U' R U F U R D' R' F2 u' r d b2 d2 u b2 l' b u' r u f u r d' r' f2"
 			],
 			[
 				"Union Jack",
